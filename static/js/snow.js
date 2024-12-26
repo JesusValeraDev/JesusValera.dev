@@ -1,10 +1,9 @@
-let snowflakesCount = 25;
+let snowflakesCount = 12;
 
-let bodyHeightPx = null;
 let pageHeightVh = null;
 
 function setHeightVariables() {
-    bodyHeightPx = document.documentElement.offsetHeight;
+    let bodyHeightPx = document.documentElement.offsetHeight;
     pageHeightVh = (100 * bodyHeightPx / window.innerHeight) - 5;
 }
 
