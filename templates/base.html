@@ -33,6 +33,8 @@
     {% set image_height = config.extra.seo.image_height | default(value=0) -%}
     {% set image_width = config.extra.seo.image_width | default(value=0) -%}
   {% endblock seo %}
+  {% block scripts %}
+  {% endblock scripts %}
   <script type="text/javascript" src="{{ get_url(path='js/snow.js') | safe }}" defer></script>
   <script type="text/javascript" src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
 </head>
