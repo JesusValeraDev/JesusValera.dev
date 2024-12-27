@@ -35,12 +35,10 @@
   {% endblock seo %}
   {% block scripts %}
   {% endblock scripts %}
-  <script type="text/javascript" src="{{ get_url(path='js/snow.js') | safe }}" defer></script>
   <script type="text/javascript" src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
 </head>
 
 <body>
-<div id="snow"></div>
   {% block header %}
   <header>
     <a class="profile-icon" href="{{ config.base_url | safe }}">

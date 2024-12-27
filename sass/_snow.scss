@@ -1,9 +1,0 @@
-.snowflake {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--snowflake-bg-color, $theme-light-snowflake-bg-color);
-  filter: drop-shadow(0 0 10px var(--snowflake-shadow-color, $theme-light-snowflake-shadow-color));
-  z-index: 1;
-}

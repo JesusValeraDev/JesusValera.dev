@@ -33,12 +33,6 @@ $theme-dark-timeline-background-color: #16558d;
 $theme-light-timeline-bullet-color: #cbebff;
 $theme-dark-timeline-bullet-color: #0d3964;
 
-$theme-light-snowflake-bg-color: #38698c;
-$theme-dark-snowflake-bg-color: #efefef;
-
-$theme-light-snowflake-shadow-color: #c0d3e3;
-$theme-dark-snowflake-shadow-color: #cbcbcb;
-
 $theme-light-tag-button-color: #545454;
 $theme-dark-tag-button-color: #a8a8a8;
 
@@ -61,8 +55,6 @@ $theme-dark-tag-text-selected-color: #a8a8a8;
   --code-background-color: #{$theme-dark-code-background-color};
   --timeline-background-color: #{$theme-dark-timeline-background-color};
   --timeline-bullet-color: #{$theme-dark-timeline-bullet-color};
-  --snowflake-bg-color: #{$theme-dark-snowflake-bg-color};
-  --snowflake-shadow-color: #{$theme-dark-snowflake-shadow-color};
   --tag-button-color: #{$theme-dark-tag-button-color};
   --tag-text-color: #{$theme-dark-tag-text-color};
   --tag-button-selected-color: #{$theme-dark-tag-button-selected-color};
