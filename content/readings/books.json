@@ -4,154 +4,154 @@
     "author": "Michael Feathers",
     "date": "",
     "img": "Working Effectively With Legacy Code.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding", "Engineering", "Computers", "Reference"]
+    "tags": ["Software"]
   },
   {
     "title": "Refactoring: Improving the Design of Existing Code",
     "author": "Martin Fowler",
     "date": "",
     "img": "Refactoring Improving the Design of Existing Code.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding", "Engineering", "Reference", "Computers"]
+    "tags": ["Software"]
   },
   {
     "title": "Extreme Programming Explained: Embrace Change",
     "author": "Kent Beck, Cynthia Andres",
     "date": "",
     "img": "Extreme Programming Explained.jpg",
-    "tags": ["Programming", "Technology", "Software", "Computer Science", "Nonfiction", "Technical", "Business", "Management", "Engineering", "Coding"]
+    "tags": ["Software", "Philosophy"]
   },
   {
     "title": "Domain-Driven Design Distilled",
     "author": "Vaughn Vernon",
     "date": "",
     "img": "Domain-Driven Design Distilled.jpg",
-    "tags": ["Programming", "Technology", "Software", "Technical", "Computer Science", "Architecture", "Nonfiction", "Engineering", "Coding", "Design"]
+    "tags": ["Software"]
   },
   {
     "title": "Tidy First? A personal Exercise in Empirical Software Design",
     "author": "Kent Beck",
     "date": "2024-01-13",
     "img": "Tidy First A personal Exercise in Empirical Software Design.jpg",
-    "tags": ["Programming", "Technology", "Software", "Nonfiction", "Computer Science", "Engineering", "Technical", "Computers", "Architecture", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "The Pragmatic Programmer: From Journeyman to Master",
     "author": "Andrew Hunt, Dave Thomas",
     "date": "",
     "img": "The Pragmatic Programmer.jpg",
-    "tags": ["Programming", "Computer Science", "Technology", "Nonfiction", "Software", "Technical", "Coding", "Engineering", "Computers", "Science"]
+    "tags": ["Software", "Psychology"]
   },
   {
     "title": "Object Design Style Guide",
     "author": "Matthias Noback",
     "date": "",
     "img": "Object Design Style Guide.jpg",
-    "tags": ["Programming", "Software", "Technology", "Computer Science", "Technical", "Design", "Coding", "Nonfiction"]
+    "tags": ["Software"]
   },
   {
     "title": "Advanced Web Application Architecture",
     "author": "Matthias Noback",
     "date": "",
     "img": "Advanced Web Application Architecture.jpg",
-    "tags": ["Architecture", "Programming", "Software", "Technical", "Technology", "Nonfiction"]
+    "tags": ["Software"]
   },
   {
     "title": "Head First Design Patterns",
     "author": "Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra",
     "date": "",
     "img": "Head First Design Patterns.png",
-    "tags": ["Programming", "Computer Science", "Technology", "Technical", "Software", "Nonfiction", "Coding", "Reference", "Computers", "Design"]
+    "tags": ["Software"]
   },
   {
     "title": "Principles of Package Design",
     "author": "Matthias Noback",
     "date": "",
     "img": "Principles of Package Design.jpg",
-    "tags": ["Software", "Design", "Architecture"]
+    "tags": ["Software"]
   },
   {
     "title": "Recipes for Decoupling",
     "author": "Matthias Noback",
     "date": "",
     "img": "Recipes for Decoupling.jpg",
-    "tags": ["Software", "Design", "Architecture", "Programming"]
+    "tags": ["Software"]
   },
   {
     "title": "PHP for the Web",
     "author": "Matthias Noback",
     "date": "",
     "img": "PHP for the Web.jpg",
-    "tags": ["Software", "Programming"]
+    "tags": ["Software"]
   },
   {
     "title": "Atomic Habits",
     "author": "James Clear",
     "date": "",
     "img": "Atomic Habits.jpg",
-    "tags": ["Nonfiction", "Self Help", "Psychology", "Personal Development", "Audiobook", "Productivity", "Business", "Leadership", "Health", "Science"]
+    "tags": ["Psychology", "Leadership"]
   },
   {
     "title": "The Power of Habits",
     "author": "Charles Duhigg",
     "date": "",
     "img": "The Power of Habits.jpg",
-    "tags": ["Nonfiction", "Self Help", "Psychology", "Business", "Personal Development", "Productivity", "Audiobook", "Science", "Leadership", "Sociology"]
+    "tags": ["Psychology", "Leadership"]
   },
   {
     "title": "The Passionate Programmer",
     "author": "Chad Fowler",
     "date": "",
     "img": "The Passionate Programmer Creating a Remarkable Career in Software Development.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Nonfiction", "Software", "Technical", "Coding", "Computers", "Business", "Self Help"]
+    "tags": ["Software", "Psychology"]
   },
   {
     "title": "Clean Code",
     "author": "Robert C. Martin",
     "date": "",
     "img": "Clean Code.png",
-    "tags": ["Programming", "Computer Science", "Technology", "Software", "Nonfiction", "Technical", "Coding", "Engineering", "Computers", "Reference"]
+    "tags": ["Software"]
   },
   {
     "title": "The Clean Coder",
     "author": "Robert C. Martin",
     "date": "",
     "img": "The Clean Coder.png",
-    "tags": ["Programming", "Computer Science", "Technology", "Software", "Nonfiction", "Technical", "Coding", "Engineering", "Computers", "Reference"]
+    "tags": ["Software"]
   },
   {
     "title": "Clean Architecture",
     "author": "Robert C. Martin",
     "date": "",
     "img": "Clean Architecture.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding", "Architecture", "Engineering", "Computers"]
+    "tags": ["Software"]
   },
   {
     "title": "Clean Agile",
     "author": "Robert C. Martin",
     "date": "",
     "img": "Clean Agile.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Management", "Nonfiction", "Technical", "Coding", "Audiobook", "Business"]
+    "tags": ["Software", "Management"]
   },
   {
     "title": "Clean Craftsmanship",
     "author": "Robert C. Martin",
     "date": "",
     "img": "Clean Craftsmanship.jpg",
-    "tags": ["Programming", "Computer Science", "Software", "Technology", "Nonfiction", "Coding", "Design", "Science", "Technical"]
+    "tags": ["Software"]
   },
   {
     "title": "Symfony 5: The fast Track",
     "author": "Fabien Potencier",
     "date": "",
     "img": "Symfony 5 The fast Track.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Computers"]
+    "tags": ["Software"]
   },
   {
     "title": "Laravel: Up & Running",
     "author": "Matt Stauffer",
     "date": "",
     "img": "Laravel Up & Running.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Computers"]
+    "tags": ["Software"]
   },
   {
     "title": "Laravel Queues in Action",
@@ -165,336 +165,336 @@
     "author": "Bruce Eckel",
     "date": "",
     "img": "Thinking in Java.jpg",
-    "tags": ["Programming", "Computer Science", "Technology", "Technical", "Nonfiction", "Software", "Reference", "Computers", "Coding", "Informatics"]
+    "tags": ["Software"]
   },
   {
     "title": "JavaScript: The Good Parts",
     "author": "Crockfold",
     "date": "",
     "img": "JavaScript The Good Parts.jpg",
-    "tags": ["Programming", "Technology", "Computer Science", "Technical", "Nonfiction", "Software", "Reference", "Coding", "Computers", "Web"]
+    "tags": ["Software"]
   },
   {
     "title": "Refactoring to Collections",
     "author": "Adam Wathan",
     "date": "",
     "img": "Refactoring to Collections.jpg",
-    "tags": ["Programming", "Computer Science"]
+    "tags": ["Software"]
   },
   {
     "title": "Laravel Secrets",
     "author": "Stefan Bauer, Bobby Bouwmann",
     "date": "",
     "img": "Laravel Secrets.png",
-    "tags": ["Programming", "Computer Science"]
+    "tags": ["Software"]
   },
   {
     "title": "Kotlin for Android Developers",
     "author": "Antonio Leiva",
     "date": "",
     "img": "Kotlin for Android Developers.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "Testing y TDD en PHP",
     "author": "Fran Iglesias",
     "date": "",
     "img": "Testing y TDD para PHP.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "La Guía del Refactor Cotidiano",
     "author": "Fran Iglesias",
     "date": "",
     "img": "La Guía del Refactor Cotidiano.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "Testing con Dobles en PHP",
     "author": "Fran Iglesias",
     "date": "",
     "img": "Testing con Dobles en PHP.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "Aprende Test Driven Development",
     "author": "Fran Iglesias",
     "date": "",
     "img": "Aprende Test Driven Development.png",
-    "tags": ["Programming", "Technology", "Computer Science", "Software", "Technical", "Nonfiction", "Coding"]
+    "tags": ["Software"]
   },
   {
     "title": "97 Things Every Programmer Should Know",
     "author": "Seb Rose, Kevlin Henney",
     "date": "",
     "img": "97 Things Every Programmer Should Know.png",
-    "tags": ["Programming", "Computer Science", "Nonfiction", "Technology", "Software", "Technical", "Coding", "Computers", "Engineering", "Reference"]
+    "tags": ["Software"]
   },
   {
-    "title": "The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change",
+    "title": "The Manager's Path: A Guide for Tech Leaders",
     "author": "Camille Fournier",
     "date": "",
     "img": "The Managers Path.jpg",
-    "tags": ["Management", "Leadership", "Business", "Nonfiction", "Technology", "Programming", "Engineering", "Software", "Technical", "Personal Development"]
+    "tags": ["Management", "Leadership", "Software"]
   },
   {
     "title": "Scrum: The Art of Doing Twice the Work in Half the Time",
     "author": "Jeff Sutherland",
     "date": "",
     "img": "Scrum The Art of Doing Twice the Work in Half the Time.jpg",
-    "tags": ["Business", "Nonfiction", "Management", "Productivity", "Leadership", "Self Help", "Audiobook", "Technology", "Programming", "Personal Development"]
+    "tags": ["Management", "Leadership"]
   },
   {
     "title": "Never Split the Difference",
     "author": "Chris Voss, Tahl Raz",
     "date": "",
     "img": "Never Split the Difference.jpg",
-    "tags": ["Business", "Nonfiction", "Psychology", "Self Help", "Communication", "Audiobook", "Personal Development", "Leadership", "Management", "Buisness"]
+    "tags": ["Leadership", "Management", "Psychology"]
   },
   {
     "title": "Start with Why",
     "author": "Simon Sinek",
     "date": "",
     "img": "Start with Why.jpg",
-    "tags": ["Business", "Leadership", "Nonfiction", "Self Help", "Personal Development", "Management", "Psychology", "Audiobook", "Entrepreneurship", "Buisness"]
+    "tags": ["Leadership", "Management", "Psychology"]
   },
   {
     "title": "Turn the Ship Around!",
     "author": "L. David Marquet",
     "date": "2023-09-02",
     "img": "Turn the Ship Around.jpg",
-    "tags": ["Leadership", "Business", "Nonfiction", "Management", "Military Fiction", "Self Help", "Audiobook", "Personal Development", "Buisness", "Psychology"]
+    "tags": ["Leadership", "Management", "Psychology"]
   },
   {
     "title": "High Output Management",
     "author": "Andrew S. Grove",
     "date": "2024-04-10",
     "img": "High Output Management.jpg",
-    "tags": ["Business", "Management", "Leadership", "Nonfiction", "Entrepreneurship", "Productivity", "Buisness", "Self Help", "Technology", "Personal Development"]
+    "tags": ["Leadership", "Management"]
   },
   {
     "title": "Who Moved my Cheese?",
     "author": "Spencer Johnson",
     "date": "",
     "img": "Who Moved my Cheese.jpg",
-    "tags": ["Nonfiction", "Self Help", "Business", "Psychology", "Leadership", "Personal Development", "Management", "Philosophy", "Inspirational", "Audiobook"]
+    "tags": ["Leadership", "Management", "Philosophy", "Psychology"]
   },
   {
-    "title": "Effective Remote Work: For Yourself, Your Team, and Your Company",
+    "title": "Effective Remote Work",
     "author": "James Stanier",
     "date": "",
     "img": "Effective Remote Work For Yourself, Your Team, and Your Company.jpg",
-    "tags": ["Management", "Business", "Programming", "Software"]
+    "tags": ["Software", "Management"]
   },
   {
     "title": "Rich Dad Poor Dad",
     "author": "Robert Kiyosaki",
     "date": "",
     "img": "Rich Dad Poor Dad.jpg",
-    "tags": ["Finance", "Business", "Nonfiction", "Self Help", "Money", "Personal Finance", "Personal Development", "Economics", "Audiobook", "Entrepreneurship"]
+    "tags": ["Finance"]
   },
   {
     "title": "The Metamorphosis",
     "author": "Franz Kafka",
     "date": "",
     "img": "The Metamorphosis.jpg",
-    "tags": ["Classics", "Fiction", "Fantasy", "Philosophy", "Short Stories", "Literature", "School", "Horror", "German Literature", "Novels"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "Animal Farm",
     "author": "George Orwell",
     "date": "",
     "img": "Animal Farm.jpg",
-    "tags": ["Fiction", "Dystopia", "Fantasy", "School", "Literature", "Science Fiction", "Novels", "Audiobook", "Read For School", "Philosophy"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "Nineteen Eighty-Four (1984)",
     "author": "George Orwell",
     "date": "",
     "img": "Nineteen Eighty-Four (1984).jpg",
-    "tags": ["Classics", "Fiction", "Science Fiction", "Dystopia", "Literature", "Politics", "Novels", "School", "Audiobook", "Fantasy"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "The Little Prince",
     "author": "Antoine de Saint-Exupéry",
     "date": "",
     "img": "The Little Prince.jpg",
-    "tags": ["Classics", "Fiction", "Fantasy", "Childrens", "France", "Philosophy", "Young Adult", "Literature", "Middle Grade", "French Literature"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "The Art of War",
     "author": "Sun Tzu",
     "date": "",
     "img": "The Art of War.jpg",
-    "tags": ["Classics", "Philosophy", "Nonfiction", "History", "Business", "War", "Military Fiction", "Leadership", "Politics", "Science"]
+    "tags": ["Leadership", "Philosophy"]
   },
   {
     "title": "Fahrenheit 451",
     "author": "Ray Bradbury",
     "date": "",
     "img": "Fahrenheit 451.jpg",
-    "tags": ["Fiction", "Science Fiction", "Dystopia", "School", "Literature", "Novels", "Audiobook", "Fantasy", "Read For School", "Adult"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Lord of the Flies",
     "author": "William Golding",
     "date": "",
     "img": "Lord of the Flies.jpg",
-    "tags": ["Fiction", "Classics", "Young Adult", "School", "Literature", "Dystopia", "Read For School", "Novels", "High School", "Adventure"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Yellow Star",
     "author": "Jennifer Roy",
     "date": "",
     "img": "Yellow Star.jpg",
-    "tags": ["Historical Fiction", "Holocaust", "Young Adult", "Historical", "World War II", "Poetry", "War", "Fiction", "Middle Grade", "Childrens"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Boy in the Striped Pajamas",
     "author": "John Boyne",
     "date": "",
     "img": "The Boy in the Striped Pajamas.jpg",
-    "tags": ["Historical Fiction", "Fiction", "Young Adult", "Historical", "Holocaust", "War", "World War II", "School", "Middle Grade", "Audiobook"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Man's Search for Meaning",
     "author": "Viktor E Frankl",
     "date": "2024-09-07",
     "img": "Man's Search for Meaning.jpg",
-    "tags": ["Nonfiction", "Psychology", "Philosophy", "Self Help", "Memoir", "Biography", "Audiobook", "Spirituality", "Holocaust", "Personal Development"]
+    "tags": ["Psychology", "Philosophy"]
   },
   {
     "title": "The Book Thief",
     "author": "Markus Zusak",
     "date": "",
     "img": "The Book Thief.jpg",
-    "tags": ["Historical Fiction", "Fiction", "Young Adult", "Classics", "Historical", "War", "World War II", "Holocaust", "Audiobook"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Last Checkmate",
     "author": "Gabriella Saab",
     "date": "2024-05-10",
     "img": "The Last Checkmate.jpg",
-    "tags": ["Historical Fiction", "Fiction", "Historical", "World War II", "Holocaust", "Adult", "War", "Audiobook", "Poland", "Adult Fiction"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Tattooist of Auschwitz",
     "author": "Heather Morris",
     "date": "2024-06-19",
     "img": "The Tattooist of Auschwitz.jpg",
-    "tags": ["Historical Fiction", "Fiction", "Historical", "Audiobook", "World War II", "Romance", "Holocaust", "War", "Adult", "Book Club"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Alchemist: A Fable About Following Your Dream",
     "author": "Paulo Coelho",
     "date": "",
     "img": "The Alchemist A Fable About Following Your Dream.jpg",
-    "tags": ["Fiction", "Fantasy", "Philosophy", "Novels", "Self Help", "Spirituality", "Audiobook", "Adventure", "Literature", "Inspirational"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "Jonathan Livingston Seagull",
     "author": "Richard Bach",
     "date": "",
     "img": "Jonathan Livingston Seagull.jpg",
-    "tags": ["Fiction", "Classics", "Philosophy", "Fantasy", "Spirituality", "Inspirational", "Self Help", "Literature", "Novels", "Animals"]
+    "tags": ["Fiction", "Philosophy"]
   },
   {
     "title": "Momo",
     "author": "Michael Ende",
     "date": "",
     "img": "Momo.jpg",
-    "tags": ["Fantasy", "Fiction", "Classics", "Childrens", "German Literature", "Young Adult", "Middle Grade", "Novels", "Literature", "Adventure"]
+    "tags": ["Fiction"]
   },
   {
     "title": "A Farewell to Arms",
     "author": "Ernest Hemingway",
     "date": "",
     "img": "A Farewell to Arms.png",
-    "tags": ["Fiction", "Historical Fiction", "Classics", "War", "Literature", "Novels", "Romance", "American", "Historical", "Classic Literature"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Hunger Games",
     "author": "Suzanne Collins",
     "date": "",
     "img": "The Hunger Games.png",
-    "tags": ["Young Adult", "Fiction", "Fantasy", "Science Fiction", "Audiobook", "Teen", "Post Apocalyptic", "Action", "Novels", "Science Fiction Fantasy"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Catching Fire",
     "author": "Suzanne Collins",
     "date": "",
     "img": "Catching Fire.png",
-    "tags": ["Young Adult", "Fiction", "Fantasy", "Science Fiction", "Romance", "Audiobook", "Teen", "Post Apocalyptic", "Action", "Science Fiction Fantasy"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Mockingjay",
     "author": "Suzanne Collins",
     "date": "",
     "img": "Mockingjay.png",
-    "tags": ["Young Adult", "Dystopia", "Fiction", "Fantasy", "Science Fiction", "Romance", "Adventure", "Audiobook", "Teen", "Post Apocalyptic"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Ballad Of Songbirds And Snakes",
     "author": "Suzanne Collins",
     "date": "",
     "img": "The Ballad Of Songbirds And Snakes.jpg",
-    "tags": ["Dystopia", "Young Adult", "Fantasy", "Fiction", "Audiobook", "Science Fiction", "Romance", "Adventure", "Teen", "Young Adult Fantasy"]
+    "tags": ["Fiction"]
   },
   {
     "title": "A Christmas Carol",
     "author": "Carles Dickens",
     "date": "",
     "img": "A Christmas Carol.jpg",
-    "tags": ["Fiction", "Christmas", "Classics", "Fantasy", "Audiobook", "Literature", "Historical Fiction", "Holiday", "School", "19th Century"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Life is a Dream",
     "author": "Pedro Calderón de la Barca",
     "date": "",
     "img": "Life is a Dream.jpg",
-    "tags": ["Plays", "Classics", "Spanish Literature", "Fiction", "Theatre", "Spain", "School", "Poetry", "Literature", "17th Century"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Life of Lazarillo de Tormes",
     "author": "Anonymous",
     "date": "",
     "img": "The Life of Lazarillo de Tormes.jpg",
-    "tags": ["Classics", "Fiction", "Spanish Literature", "School", "Spain", "Literature", "Novels", "16th Century", "Read For School", "Historical Fiction"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Antichrist",
     "author": "Friedrich Nietzsche",
     "date": "",
     "img": "The Anti-Christ.jpg",
-    "tags": ["Philosophy", "Nonfiction", "Classics", "Religion", "German Literature", "19th Century", "Germany", "Christianity", "Atheism", "Essays"]
+    "tags": ["Philosophy"]
   },
   {
     "title": "The Day of the Triffids",
     "author": "John Wyndham",
     "date": "",
     "img": "The Day of the Triffids.jpg",
-    "tags": ["Science Fiction", "Fiction", "Classics", "Horror", "Post Apocalyptic", "Dystopia", "Fantasy", "Science Fiction Fantasy", "Apocalyptic", "Audiobook"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Brave New World",
     "author": "Aldous Huxley",
     "date": "",
     "img": "Brave New World.jpg",
-    "tags": ["Literature", "Science Fiction", "Novels", "School", "Audiobook", "Science Fiction Fantasy", "Banned Books", "High School", "Adult"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Hitchhiker's Guide to the Galaxy",
     "author": "Douglas Adams",
     "date": "2024-08-20",
     "img": "The Hitchhikers Guide to the Galaxy.png",
-    "tags": ["Science Fiction", "Fiction", "Humor", "Fantasy", "Comedy", "Audiobook", "Science Fiction Fantasy", "Adventure", "Novels", "Adult"]
+    "tags": ["Fiction"]
   },
   {
     "title": "The Truth About the Harry Quebert Affair",
     "author": "Joël Dicker",
     "date": "2024-07-28",
     "img": "The Truth About the Harry Quebert Affair.jpg",
-    "tags": ["Thriller", "Fiction", "Mystery", "Crime", "France", "Mystery Thriller", "Contemporary", "Suspense", "Audiobook", "Roman"]
+    "tags": ["Fiction"]
   },
   {
     "title": "Psicología del Éxito",
@@ -508,69 +508,69 @@
     "author": "Félix Brezo Fernández, Yaiza Rubio Viñuela",
     "date": "2024-10-23",
     "img": "Bitcoin La tecnologia Blockchain y su investigacion.png",
-    "tags": []
+    "tags": ["Software", "Finance"]
   },
   {
     "title": "Hacking de Aplicaciones Web: SQL Injection",
     "author": "Enrique Rando, Chema Alonso, Pablo González",
     "date": "",
     "img": "Hacking de Aplicaciones Web SQL Injection.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Ethical Hacking: Teoría y práctica para la realización de un pentesting",
     "author": "Pablo González Pérez",
     "date": "2024-12-16",
     "img": "Ethical Hacking.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Desarrollo de aplicaciones Android seguras",
     "author": "Miguel Ángel Moreno Álvarez",
     "date": "",
     "img": "Desarrollo de aplicaciones Android seguras.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Malware en Android: Discovering, Reversing and Forensics",
     "author": "Miguel Ángel García",
     "date": "",
     "img": "Malware en Android Discovering, Reversing and Forensics.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Deep Web: TOR, FreeNET & I2P - Privacidad y Anonimato",
     "author": "Daniel Echeverri",
     "date": "",
     "img": "Deep Web TOR, FreeNET & I2P - Privacidad y Anonimato.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Hacking con buscadores: Google, Bing & Shodan + Robtex",
     "author": "Enrique Rando",
     "date": "",
     "img": "Hacking con buscadores Google, Bing & Shodan + Robtex.jpg",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Wardog y el mundo",
     "author": "Ismael Trancón Martín",
     "date": "",
     "img": "Wardog y el mundo.png",
-    "tags": ["Humor"]
+    "tags": ["Software", "Fiction"]
   },
   {
     "title": "Una al día",
     "author": "Sergio de los Santos",
     "date": "",
     "img": "Una al dia.png",
-    "tags": []
+    "tags": ["Software"]
   },
   {
     "title": "Microhistorias",
     "author": "Rafael Troncoso, Fran Ramírez",
     "date": "",
     "img": "Microhistorias anecdotas y curiosidades de la Informatica.png",
-    "tags": []
+    "tags": ["Software"]
   }
 ]
