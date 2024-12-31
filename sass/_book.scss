@@ -111,7 +111,7 @@
 @media (max-width: 720px) {
   .books {
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 10px;
+    row-gap: 30px;
 
     .book-item {
       img {
