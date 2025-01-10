@@ -273,6 +273,13 @@
     "tags": ["Leadership", "Management"]
   },
   {
+    "title": "The Coaching Habit",
+    "author": "Michael Bungay Stainer",
+    "date": "2025-01-08",
+    "img": "The Coaching Habit.png",
+    "tags": ["Leadership", "Management"]
+  },
+  {
     "title": "Who Moved my Cheese?",
     "author": "Spencer Johnson",
     "date": "",
@@ -285,6 +292,13 @@
     "date": "",
     "img": "Effective Remote Work For Yourself, Your Team, and Your Company.jpg",
     "tags": ["Software", "Management"]
+  },
+  {
+    "title": "Por si las voces vuelven",
+    "author": "Ángel Martín",
+    "date": "",
+    "img": "Por si las voces vuelven.jpg",
+    "tags": ["Psychology"]
   },
   {
     "title": "Rich Dad Poor Dad",
@@ -560,17 +574,17 @@
     "tags": ["Software", "Fiction"]
   },
   {
-    "title": "Una al día",
-    "author": "Sergio de los Santos",
-    "date": "",
-    "img": "Una al dia.png",
-    "tags": ["Software"]
-  },
-  {
     "title": "Microhistorias",
     "author": "Rafael Troncoso, Fran Ramírez",
     "date": "",
     "img": "Microhistorias anecdotas y curiosidades de la Informatica.png",
+    "tags": ["Software"]
+  },
+  {
+    "title": "Una al día",
+    "author": "Sergio de los Santos",
+    "date": "",
+    "img": "Una al dia.png",
     "tags": ["Software"]
   }
 ]
