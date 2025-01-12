@@ -6,6 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   background: var(--bg-color, $theme-light-bg-color);
   color: var(--first-text-color, $theme-light-first-text-color);
 }

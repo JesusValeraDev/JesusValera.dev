@@ -67,14 +67,4 @@
     <div class="post-line"></div>
     {{ page.content | safe }}
   </div>
-
-  <div class="pagination">
-    {% if page.later -%}
-      <a href="{{ page.later.permalink | safe }}" class="left arrow">&#8592;</a>
-    {%- endif %}
-    <a href="#" class="top">Top</a>
-    {% if page.earlier -%}
-      <a href="{{ page.earlier.permalink | safe }}" class="right arrow">&#8594;</a>
-    {%- endif %}
-  </div>
 {% endblock content %}

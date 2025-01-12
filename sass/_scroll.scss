@@ -1,0 +1,12 @@
+.top {
+  color: var(--first-text-color, $theme-light-first-text-color);
+  position: fixed;
+  bottom: 18px;
+  right: 0;
+  margin-right: 14px;
+
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
+}
