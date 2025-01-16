@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - Modularity</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/modularity/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2024-06-01T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/modularity/atom.xml</id>
+	<entry xml:lang="en">
+		<title>The importance of tests in our software</title>
+		<published>2024-06-01T00:00:00+00:00</published>
+		<updated>2024-06-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/the-importance-of-tests-in-our-software/" type="text/html"/>
+		<id>https://jesusvalera.dev/the-importance-of-tests-in-our-software/</id>
+		<content type="html">&lt;p&gt;Writing tests during software development consists of checking that every part of the program you are writing works as expected.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2024-06-01&#x2F;1.png&quot; alt=&quot;programming comic joke&quot;&gt;
+&lt;p&gt;Here are a few reasons why tests are so important:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;white-check-mark-ensuring-correctness&quot;&gt;✅ Ensuring Correctness&lt;&#x2F;h3&gt;
+&lt;p&gt;When you&#x27;re building something, you want it to work correctly. Tests help ensure that your &lt;strong&gt;software behaves the way
+it&#x27;s supposed to under different conditions&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s say you&#x27;re creating a weather app. You want to make sure that when users enter their location, they receive
+accurate weather information. By writing tests, you can verify that the app displays the right forecast for various
+locations and weather conditions.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;beetle-detecting-bugs-early&quot;&gt;🐞 Detecting Bugs Early&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Writing tests helps catch these bugs early&lt;&#x2F;strong&gt; in the development process, the longer they persist, the harder&#x2F;expensive they are.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, imagine you&#x27;re developing a game, and you want to make sure that when the player collects a coin, their
+score increases. Writing a test for this ensures that every time a coin is collected, the score goes up as expected.
+If the test fails, you know something went wrong, and you need to fix it before releasing the game.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;facilitating-refactoring&quot;&gt;🛠️ Facilitating Refactoring&lt;&#x2F;h3&gt;
+&lt;p&gt;Refactoring means &lt;strong&gt;making changes to your code to improve its structure or performance without altering its external
+behavior&lt;&#x2F;strong&gt;. Tests act as a safety net during refactoring. They ensure that your changes haven&#x27;t broken any existing
+functionality.&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, if you decide to optimize the code of your messaging app to make it faster, tests can confirm that users
+can still send and receive messages after the changes are made.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;encouraging-modularity&quot;&gt;🧩 Encouraging Modularity&lt;&#x2F;h3&gt;
+&lt;p&gt;Writing tests encourages you &lt;strong&gt;to break down your code into smaller, more manageable parts&lt;&#x2F;strong&gt;. Each part can be tested
+independently, which makes it easier to identify and fix problems.&lt;&#x2F;p&gt;
+&lt;p&gt;Think of it like assembling a puzzle. It&#x27;s easier to solve when you work on smaller sections at a time. For example, if
+you&#x27;re developing a social media platform, you might write separate tests for user authentication, posting updates, and
+liking posts. This modular approach makes it simpler to maintain and update your codebase over time.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;house-with-garden-boosting-confidence&quot;&gt;🏡 Boosting Confidence&lt;&#x2F;h3&gt;
+&lt;p&gt;Writing tests gives you confidence that your software works as intended. It&#x27;s like having a &lt;strong&gt;safety net that ensures
+your code behaves predictably&lt;&#x2F;strong&gt;, which can boost your confidence as a developer. When you know your tests cover various
+scenarios and edge cases, you can release new features or updates with peace of mind.&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;p&gt;Writing tests in software development is like having a quality control mechanism that helps you build
+better and more reliable software. &lt;strong&gt;It saves time, reduces headaches, and ultimately leads to happier users&lt;&#x2F;strong&gt;.
+Plus, it&#x27;s a &lt;strong&gt;skill that&#x27;s highly valued&lt;&#x2F;strong&gt; in the tech industry.&lt;&#x2F;p&gt;
+&lt;p&gt;If you&#x27;re not already writing tests, now&#x27;s a great time to start! 💯&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

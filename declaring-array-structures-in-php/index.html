@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesus Valera Reales</title>
+  <link rel="stylesheet" href="https://jesusvalera.dev/main.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,600" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jesusvalera.dev/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jesusvalera.dev/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jesusvalera.dev/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://jesusvalera.dev/atom.xml" title="Jesus Valera Reales" />
+  
+
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2RD5QTTM8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-K2RD5QTTM8');
+    </script>
+  
+
+  
+<title>Declaring array structures in PHP | Jesus Valera Reales</title>
+
+
+
+<meta property="og:title" content="Declaring array structures in PHP">
+
+
+<meta property="og:locale" content="en_US">
+
+
+<meta name="description" content="It is not possible in PHP to define explicitly the types of your arrays, but using PHPDoc + static analyzers (PHPStan or Psalm), we can do it. Here is how">
+<meta property="og:description" content="It is not possible in PHP to define explicitly the types of your arrays, but using PHPDoc + static analyzers (PHPStan or Psalm), we can do it. Here is how">
+
+
+
+<link rel="canonical" href="https://jesusvalera.dev/declaring-array-structures-in-php/">
+<meta property="og:url" content="https://jesusvalera.dev/declaring-array-structures-in-php/">
+
+
+
+  <meta property="og:site_name" content="Jesus Valera Reales"/>
+
+
+
+  <meta property="og:image" content="https://jesusvalera.dev/icon.ico">
+  
+  
+
+
+
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-02-20T00:00:00+00:00">
+
+
+
+
+<script type="application/ld+json">
+{
+  "description": "It is not possible in PHP to define explicitly the types of your arrays, but using PHPDoc + static analyzers (PHPStan or Psalm), we can do it. Here is how",
+  "url": "https://jesusvalera.dev/declaring-array-structures-in-php/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Declaring array structures in PHP"
+  
+    
+    
+      "datePublished":"2023-02-20T00:00:00+00:00",
+    
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://jesusvalera.dev/declaring-array-structures-in-php/"
+    },
+  
+}
+</script>
+  
+  
+  <script type="text/javascript" src="https://jesusvalera.dev/js/dark-mode.js"></script>
+  <script type="text/javascript" src="https://jesusvalera.dev/js/scroll-top.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <a class="profile-icon" href="https://jesusvalera.dev">
+      <img alt="JesusValera" src="https://jesusvalera.dev/jesus.webp" width="auto" height="auto">
+    </a>
+    <nav>
+      
+        <a href="https://jesusvalera.dev">Blog</a>
+      
+        <a href="https://jesusvalera.dev/readings">Readings</a>
+      
+        <a href="https://jesusvalera.dev/cv">CV</a>
+      
+      <button id="light-mode" onclick="toDarkMode()" title="Switch to dark mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#444" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+      <button id="dark-mode" onclick="toLightMode()" title="Switch to light mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#ccc" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  
+
+  <main>
+    
+  <div class="post">
+    <h1 class="post-title">Declaring array structures in PHP</h1>
+    <h2 class="post-subtitle"></h2>
+    <small>
+      <time datetime="2023-02-20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 20 20">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-300, -2799)" fill="#AAAAAAFF">
+              <g transform="translate(56, 160)">
+                <path d="M262,2656 C262,2656.552 261.552,2657 261,2657 L247,2657 C246.448,2657 246,2656.552 246,2656 L246,2646 C246,2645.448 246.448,2645 247,2645 L261,2645 C261.552,2645 262,2645.448 262,2646 L262,2656 Z M262,2641 L262,2640 C262,2639.448 261.552,2639 261,2639 C260.448,2639 260,2639.448 260,2640 L260,2641 L255,2641 L255,2640 C255,2639.448 254.552,2639 254,2639 C253.448,2639 253,2639.448 253,2640 L253,2641 L248,2641 L248,2640 C248,2639.448 247.552,2639 247,2639 C246.448,2639 246,2639.448 246,2640 L246,2641 C244.895,2641 244,2641.895 244,2643 L244,2657 C244,2658.104 244.895,2659 246,2659 L262,2659 C263.105,2659 264,2658.104 264,2657 L264,2643 C264,2641.895 263.105,2641 262,2641 L262,2641 Z"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        February 20, 2023 ·
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+          <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+        </svg>
+        4 mins
+      </time>
+      <span class="found-typo">
+        
+        <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" fill="#AAAAAAFF" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z"></path>
+        </svg> Found a typo? <a href="https:&#x2F;&#x2F;github.com&#x2F;JesusValeraDev&#x2F;JesusValera.dev&#x2F;blob&#x2F;main&#x2F;content&#x2F;2023-02-20-declaring-array-structures-in-php.md" target="_blank">Edit me</a>
+      </span>
+    </small>
+    <div class="post-line"></div>
+    <p><img src="/images/2023-02-20/1.png" alt="statue-people-with-a-string-and-a-cat" /></p>
+<p>Currently, it is not possible to define explicit array types as other programming languages do as Java does.</p>
+<pre data-lang="java" class="language-java z-code"><code class="language-java" data-lang="java"><span class="z-source z-java"><span class="z-support z-class z-java">List</span><span class="z-meta z-generic z-java"><span class="z-punctuation z-definition z-generic z-begin z-java">&lt;</span><span class="z-support z-class z-java">User</span><span class="z-punctuation z-definition z-generic z-end z-java">&gt;</span></span> users <span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span> <span class="z-meta z-instantiation z-java"><span class="z-keyword z-other z-storage z-new z-java">new</span> <span class="z-support z-class z-java">ArrayList</span><span class="z-punctuation z-definition z-generic z-diamond z-java">&lt;&gt;</span><span class="z-meta z-parens z-constructor-arguments z-java"><span class="z-punctuation z-section z-parens z-begin z-java">(</span><span class="z-punctuation z-section z-parens z-end z-java">)</span></span></span></span><span class="z-punctuation z-terminator z-java">;</span>
+</span></code></pre>
+<p>There have been some attempts to achieve that. <strong>Nikita Popov</strong> made one of the most recent ones in
+this <a href="https://github.com/PHPGenerics/php-generics-rfc/issues/45">pull request</a>. Unfortunately, the conclusion was that
+regarding the current PHP status, that is not doable (at least in the short/medium term), as it would require rewriting
+an enormous amount of code, some of which is very critical.</p>
+<p>Fortunately, tools like <strong>PHPStan</strong> or <strong>Psalm</strong> help us analyze the code statically. That means, they do not
+execute but check the code for inconsistencies based on PHP comments.</p>
+<p>There are three different ways to define the type of elements in a PHP array:</p>
+<ol>
+<li>Legacy way: <code>User[]</code></li>
+<li>List Shape: <code>array&lt;int,mixed&gt;</code> &amp; <code>list&lt;mixed&gt;</code></li>
+<li>Object Shape: <code>array{0:int, foo:?string, bar:mixed}</code></li>
+</ol>
+<h2 id="the-legacy-way">The Legacy way</h2>
+<p>This is a fashioned way to define a list of elements from a certain type, the problem is it becomes ambiguous, and
+clients that use this kind of list cannot know if keys are integers, floats or strings.
+Also, static analyzers will not fail if you try to get an element by key with an incorrect type, in these scenarios, I
+would suggest using <code>array&lt;int,mixed&gt;</code>.</p>
+<p>In the end, the more explicit, the better.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> User[] $users <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span> <span class="z-keyword z-operator z-spread z-php">...</span> <span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span> Are keys auto-incremental integers, random numbers, maybe strings... ?
+</span><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>firstUser</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"> ? </span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span> Static analyzers won&#39;t complain if you use an incorrect type 🤕
+</span></span></code></pre>
+<h1 id="list-shape">List Shape</h1>
+<p>We use lists when we have an array of elements with the same type.<br>
+We use the <strong>diamond syntax</strong> to declare the types of the key and the value: <code>array&lt;int,mixed&gt;</code>.</p>
+<blockquote>
+<p>💡There is a very handy shortcut when the key is an auto-incremental integer: <code>list&lt;mixed&gt;</code>.</p>
+</blockquote>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> array&lt;string, User&gt; $users <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+    <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">jesus</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-php">User</span></span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Jesus Valera</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>,
+    <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">chema</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-php">User</span></span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Chema Valera</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>,
+<span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>userJesus</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">jesus</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>userChema</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">chema</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-constant z-numeric z-integer z-decimal z-php">0</span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span> <span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span> ERROR: &quot;Offset 0 does not exist on array&lt;string, User&gt;&quot;
+</span>
+<span class="z-keyword z-operator z-increment-decrement z-php">--</span><span class="z-keyword z-operator z-arithmetic z-php">-</span>
+
+<span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> list&lt;User&gt; $users <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+    <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-php">User</span></span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Jesus Valera</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>,
+    <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-php">User</span></span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Chema Valera</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>,
+    <span class="z-comment z-line z-double-slash z-php"><span class="z-punctuation z-definition z-comment z-php">//</span> ...
+</span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>firstUser</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-constant z-numeric z-integer z-decimal z-php">0</span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>secondUser</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>users</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-constant z-numeric z-integer z-decimal z-php">1</span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></code></pre>
+<h2 id="object-shape">Object Shape</h2>
+<p>We use object shape when the array is not a collection of objects but a map which holds information.<br>
+To do that, we use the <strong>curly bracket syntax</strong> and define the key name and the type, we can split by commas if there are multiple elements: <code>array{foo:int, bar:string}</code>.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> array{id:int, birthdate:DateTimeImmutable} <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>additionalInfo</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span> <span class="z-keyword z-operator z-spread z-php">...</span> <span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>id</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>additionalInfo</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">id</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span> <span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span> int
+</span><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>birthdate</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>additionalInfo</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-arguments z-php"><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">birthdate</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span> <span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span> DateTimeImmutable
+</span></span></code></pre>
+<hr />
+<p>Given the following 'object shape' array</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">hello</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">world</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-builtin z-php">stdClass</span></span>, <span class="z-constant z-language z-php">false</span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></code></pre>
+<p>It will be addressed internally as follows:</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-constant z-other z-php">list</span><span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-storage z-type z-php">string</span>, <span class="z-storage z-type z-php">string</span>, <span class="z-constant z-other z-php">stdClass</span>, <span class="z-constant z-language z-php">false</span><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></code></pre>
+<div class="separator"></div>
+<p>Example of a User class that holds two arrays: a list and an object shape.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-constant z-other z-php">readonly</span> <span class="z-meta z-class z-php"><span class="z-storage z-type z-class z-php">class</span> <span class="z-entity z-name z-class z-php">User</span>
+<span class="z-meta z-block z-php"><span class="z-punctuation z-section z-block z-php">{</span></span></span><span class="z-meta z-class z-php"><span class="z-meta z-block z-php">
+    <span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> list&lt;Comment&gt; <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+    <span class="z-storage z-modifier z-php">public</span> <span class="z-support z-class z-php">array</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>comments</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+
+    <span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> array{id:int, birthdate:DateTimeImmutable} <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+    <span class="z-storage z-modifier z-php">public</span> <span class="z-support z-class z-php">array</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>additionalInfo</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span><span class="z-meta z-class z-php"><span class="z-meta z-block z-php"><span class="z-punctuation z-section z-block z-php">}</span></span></span>
+</span></code></pre>
+<p>There are multiple advantages when using these PHP comments, not only provide better feedback on the array shape to the developers but IDEs will suggest auto-completion when iterating on individual elements!</p>
+<div class="separator"></div>
+<p>Of course, it is possible to represent any complex array structure in PHP with these PHP comments. Example:</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-comment z-block z-documentation z-phpdoc z-php"><span class="z-punctuation z-definition z-comment z-begin z-php">/**
+</span> <span class="z-punctuation z-definition z-comment z-php">*</span> <span class="z-keyword z-other z-phpdoc z-php">@var</span> list&lt;
+ <span class="z-punctuation z-definition z-comment z-php">*</span>   array{
+ <span class="z-punctuation z-definition z-comment z-php">*</span>     uuid?: string,
+ <span class="z-punctuation z-definition z-comment z-php">*</span>     content: array{name:string, foo:?stdClass},
+ <span class="z-punctuation z-definition z-comment z-php">*</span>   }
+ <span class="z-punctuation z-definition z-comment z-php">*</span> &gt; $array
+ <span class="z-punctuation z-definition z-comment z-end z-php">*/</span></span>
+<span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>array</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+    <span class="z-constant z-numeric z-integer z-decimal z-php">0</span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+        <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">uuid</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">XXXX-XXX-XXX-XXXX</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>,
+        <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">content</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+            <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">name</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">str</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>,
+            <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">foo</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-constant z-language z-php">null</span>,
+        <span class="z-punctuation z-section z-array z-end z-php">]</span></span>,
+    <span class="z-punctuation z-section z-array z-end z-php">]</span></span>,
+    <span class="z-constant z-numeric z-integer z-decimal z-php">1</span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+        <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">content</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span>
+            <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">name</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">str</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>,
+            <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">foo</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span> <span class="z-keyword z-operator z-key z-php">=&gt;</span> <span class="z-keyword z-other z-new z-php">new</span> <span class="z-meta z-path z-php"><span class="z-support z-class z-builtin z-php">stdClass</span></span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>,
+        <span class="z-punctuation z-section z-array z-end z-php">]</span></span>,
+    <span class="z-punctuation z-section z-array z-end z-php">]</span></span>,
+    <span class="z-comment z-line z-double-slash z-php"><span class="z-punctuation z-definition z-comment z-php">//</span> ...
+</span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></code></pre>
+<blockquote>
+<p>We can use the PHP comments on arrays anywhere (class properties, function params, inline initialization…)</p>
+</blockquote>
+<h2 id="resources">Resources:</h2>
+<ul>
+<li><a href="https://psalm.dev/docs/annotating_code/type_syntax/array_types/">Psalm | Array Shapes</a></li>
+<li><a href="https://phpstan.org/writing-php-code/phpdoc-types#array-shapes">PHPStan | PHPDoc Types</a></li>
+</ul>
+
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <span style="margin-right: 6px">
+        <span>
+          <a href="/other/parlamento-entre-el-rey-cristiano-y-el-sultan-moro/">&#10015;</a> ×
+        </span>
+        <a href="/atom.xml">RSS</a> &copy; <time datetime="2025">2025</time> - Jesus Valera Reales
+      </span>
+      <a href="https://github.com/JesusValeraDev" style="display: inline-block" target="_blank">
+        <img alt="github" src="/about/github.svg" style="margin: auto" width="24" height="24">
+      </a>
+      <a href="https://www.linkedin.com/in/jesus-valera-reales/" style="display: inline-block" target="_blank">
+        <img alt="linkedin" src="/about/linkedin.svg" style="margin: auto" width="24" height="24">
+      </a>
+    </div>
+  </footer>
+  
+  <a href="#" class="top" style="display: none">
+    <svg width="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="miter" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="16 13.2 12 9.5 8 13.2"/>
+    </svg>
+  </a>
+</body>
+</html>
