@@ -10,7 +10,7 @@
     "title": "Refactoring: Improving the Design of Existing Code",
     "author": "Martin Fowler",
     "date": "",
-    "img": "Refactoring Improving the Design of Existing Code.png",
+    "img": "Refactoring Improving the Design of Existing Code.jpg",
     "tags": ["Software"]
   },
   {
@@ -59,7 +59,7 @@
     "title": "Head First Design Patterns",
     "author": "Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra",
     "date": "",
-    "img": "Head First Design Patterns.png",
+    "img": "Head First Design Patterns.jpg",
     "tags": ["Software"]
   },
   {
@@ -108,14 +108,14 @@
     "title": "Clean Code",
     "author": "Robert C. Martin",
     "date": "",
-    "img": "Clean Code.png",
+    "img": "Clean Code.jpg",
     "tags": ["Software"]
   },
   {
     "title": "The Clean Coder",
     "author": "Robert C. Martin",
     "date": "",
-    "img": "The Clean Coder.png",
+    "img": "The Clean Coder.jpg",
     "tags": ["Software"]
   },
   {
@@ -157,7 +157,7 @@
     "title": "Laravel Queues in Action",
     "author": "Mohamed Said",
     "date": "",
-    "img": "Laravel Queues in Action.png",
+    "img": "Laravel Queues in Action.jpg",
     "tags": ["Software"]
   },
   {
@@ -185,49 +185,49 @@
     "title": "Laravel Secrets",
     "author": "Stefan Bauer, Bobby Bouwmann",
     "date": "",
-    "img": "Laravel Secrets.png",
+    "img": "Laravel Secrets.jpg",
     "tags": ["Software"]
   },
   {
     "title": "Kotlin for Android Developers",
     "author": "Antonio Leiva",
     "date": "",
-    "img": "Kotlin for Android Developers.png",
+    "img": "Kotlin for Android Developers.jpg",
     "tags": ["Software"]
   },
   {
     "title": "Testing y TDD en PHP",
     "author": "Fran Iglesias",
     "date": "",
-    "img": "Testing y TDD para PHP.png",
+    "img": "Testing y TDD para PHP.jpg",
     "tags": ["Software"]
   },
   {
     "title": "La Guía del Refactor Cotidiano",
     "author": "Fran Iglesias",
     "date": "",
-    "img": "La Guía del Refactor Cotidiano.png",
+    "img": "La Guía del Refactor Cotidiano.jpg",
     "tags": ["Software"]
   },
   {
     "title": "Testing con Dobles en PHP",
     "author": "Fran Iglesias",
     "date": "",
-    "img": "Testing con Dobles en PHP.png",
+    "img": "Testing con Dobles en PHP.jpg",
     "tags": ["Software"]
   },
   {
     "title": "Aprende Test Driven Development",
     "author": "Fran Iglesias",
     "date": "",
-    "img": "Aprende Test Driven Development.png",
+    "img": "Aprende Test Driven Development.jpg",
     "tags": ["Software"]
   },
   {
     "title": "97 Things Every Programmer Should Know",
     "author": "Seb Rose, Kevlin Henney",
     "date": "",
-    "img": "97 Things Every Programmer Should Know.png",
+    "img": "97 Things Every Programmer Should Know.jpg",
     "tags": ["Software"]
   },
   {
@@ -276,7 +276,7 @@
     "title": "The Coaching Habit",
     "author": "Michael Bungay Stainer",
     "date": "2025-01-08",
-    "img": "The Coaching Habit.png",
+    "img": "The Coaching Habit.jpg",
     "tags": ["Leadership", "Management"]
   },
   {
@@ -430,28 +430,28 @@
     "title": "A Farewell to Arms",
     "author": "Ernest Hemingway",
     "date": "",
-    "img": "A Farewell to Arms.png",
+    "img": "A Farewell to Arms.jpg",
     "tags": ["Fiction"]
   },
   {
     "title": "The Hunger Games",
     "author": "Suzanne Collins",
     "date": "",
-    "img": "The Hunger Games.png",
+    "img": "The Hunger Games.jpg",
     "tags": ["Fiction"]
   },
   {
     "title": "Catching Fire",
     "author": "Suzanne Collins",
     "date": "",
-    "img": "Catching Fire.png",
+    "img": "Catching Fire.jpg",
     "tags": ["Fiction"]
   },
   {
     "title": "Mockingjay",
     "author": "Suzanne Collins",
     "date": "",
-    "img": "Mockingjay.png",
+    "img": "Mockingjay.jpg",
     "tags": ["Fiction"]
   },
   {
@@ -507,7 +507,7 @@
     "title": "The Hitchhiker's Guide to the Galaxy",
     "author": "Douglas Adams",
     "date": "2024-08-20",
-    "img": "The Hitchhikers Guide to the Galaxy.png",
+    "img": "The Hitchhikers Guide to the Galaxy.jpg",
     "tags": ["Fiction"]
   },
   {
@@ -521,14 +521,14 @@
     "title": "Psicología del Éxito",
     "author": "Mario Luna",
     "date": "",
-    "img": "Psicologia del Exito.png",
+    "img": "Psicologia del Exito.jpg",
     "tags": ["Psychology"]
   },
   {
     "title": "Bitcoin: La tecnología Blockchain y su investigación",
     "author": "Félix Brezo Fernández, Yaiza Rubio Viñuela",
     "date": "2024-10-23",
-    "img": "Bitcoin La tecnologia Blockchain y su investigacion.png",
+    "img": "Bitcoin La tecnologia Blockchain y su investigacion.jpg",
     "tags": ["Software", "Finance"]
   },
   {
@@ -577,21 +577,21 @@
     "title": "Wardog y el mundo",
     "author": "Ismael Trancón Martín",
     "date": "",
-    "img": "Wardog y el mundo.png",
+    "img": "Wardog y el mundo.jpg",
     "tags": ["Software", "Fiction"]
   },
   {
     "title": "Microhistorias",
     "author": "Rafael Troncoso, Fran Ramírez",
     "date": "",
-    "img": "Microhistorias anecdotas y curiosidades de la Informatica.png",
+    "img": "Microhistorias anecdotas y curiosidades de la Informatica.jpg",
     "tags": ["Software"]
   },
   {
     "title": "Una al día",
     "author": "Sergio de los Santos",
     "date": "",
-    "img": "Una al dia.png",
+    "img": "Una al dia.jpg",
     "tags": ["Software"]
   }
 ]
