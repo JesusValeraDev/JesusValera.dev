@@ -340,7 +340,7 @@
     "author": "Sun Tzu",
     "date": "",
     "img": "The Art of War.jpg",
-    "tags": ["Leadership", "Philosophy"]
+    "tags": ["Leadership", "Philosophy", "War"]
   },
   {
     "title": "Fahrenheit 451",
@@ -361,49 +361,49 @@
     "author": "Alberto Rojas",
     "date": "2024-01-16",
     "img": "Vivir la Guerra.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "Yellow Star",
     "author": "Jennifer Roy",
     "date": "",
     "img": "Yellow Star.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "The Boy in the Striped Pajamas",
     "author": "John Boyne",
     "date": "",
     "img": "The Boy in the Striped Pajamas.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "Man's Search for Meaning",
     "author": "Viktor E Frankl",
     "date": "2024-09-07",
     "img": "Man's Search for Meaning.jpg",
-    "tags": ["Psychology", "Philosophy"]
+    "tags": ["Psychology", "Philosophy", "War"]
   },
   {
     "title": "The Book Thief",
     "author": "Markus Zusak",
     "date": "",
     "img": "The Book Thief.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "The Last Checkmate",
     "author": "Gabriella Saab",
     "date": "2024-05-10",
     "img": "The Last Checkmate.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "The Tattooist of Auschwitz",
     "author": "Heather Morris",
     "date": "2024-06-19",
     "img": "The Tattooist of Auschwitz.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "The Alchemist: A Fable About Following Your Dream",
@@ -431,7 +431,7 @@
     "author": "Ernest Hemingway",
     "date": "",
     "img": "A Farewell to Arms.jpg",
-    "tags": ["Fiction"]
+    "tags": ["War"]
   },
   {
     "title": "The Hunger Games",
