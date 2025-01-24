@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - API</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/api/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-03-16T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/api/atom.xml</id>
+	<entry xml:lang="en">
+		<title>A brief introduction to GraphQL</title>
+		<published>2022-03-16T00:00:00+00:00</published>
+		<updated>2022-03-16T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/a-brief-introduction-to-graphql/" type="text/html"/>
+		<id>https://jesusvalera.dev/a-brief-introduction-to-graphql/</id>
+		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022-03-16&#x2F;1.png&quot; alt=&quot;atomium-graphql&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;em&gt;RESTful API&lt;&#x2F;em&gt; is a de-facto standard to allow communication between applications, although, recently &lt;em&gt;GraphQL&lt;&#x2F;em&gt; comes
+up.&lt;&#x2F;p&gt;
+&lt;p&gt;From the user-client perspective, &lt;em&gt;GraphQL&lt;&#x2F;em&gt; is similar to &lt;em&gt;RESTful&lt;&#x2F;em&gt;, they work as an entry point between different
+applications, but &lt;em&gt;GraphQL&lt;&#x2F;em&gt; is slightly different, and because of this, this technology has a reason to be.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;graphql-vs-restful-api&quot;&gt;GraphQL vs RESTful API&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;GraphQL&lt;&#x2F;em&gt; and &lt;em&gt;RESTful&lt;&#x2F;em&gt; have the same foundation. They use the HTTP methods, and they have the idea of resource, but, in
+&lt;em&gt;REST&lt;&#x2F;em&gt;, each endpoint is a single resource, while in &lt;em&gt;GraphQL&lt;&#x2F;em&gt; there is only a single resource.&lt;br&gt;
+&lt;em&gt;GraphQL&lt;&#x2F;em&gt; is not about resource state management, but about separating read operations (queries) from write operations 
+(mutations). This is known as
+the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation&quot;&gt;Command Query Separation pattern&lt;&#x2F;a&gt;.&lt;br&gt;
+In &lt;em&gt;REST&lt;&#x2F;em&gt;, the server determines the shape and size of a resource, in &lt;em&gt;GraphQL&lt;&#x2F;em&gt; depends on the user&#x27;s needs.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-to-manage-a-graphql-schema&quot;&gt;How to manage a GraphQL schema?&lt;&#x2F;h2&gt;
+&lt;p&gt;A schema contains objects, every object has different parameters, and those parameters can be properties or even
+sub-objects.&lt;&#x2F;p&gt;
+&lt;p&gt;Usually, if you want to filter an object(s) from a specific Type, you can apply a filter into brackets, the output is
+always a JSON response.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;queries&quot;&gt;Queries&lt;&#x2F;h3&gt;
+&lt;p&gt;The queries are the &lt;em&gt;GET&lt;&#x2F;em&gt; requests. That means you can only &lt;strong&gt;fetch&lt;&#x2F;strong&gt; data.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022-03-16&#x2F;2.png&quot; alt=&quot;graphql-query&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mutations&quot;&gt;Mutations&lt;&#x2F;h3&gt;
+&lt;p&gt;The mutations are the &lt;em&gt;POST&lt;&#x2F;em&gt;, &lt;em&gt;PUT&lt;&#x2F;em&gt;, &lt;em&gt;PATCH&lt;&#x2F;em&gt;, and &lt;em&gt;DELETE&lt;&#x2F;em&gt; HTTP methods. That means you can &lt;strong&gt;mutate&lt;&#x2F;strong&gt; the data model,
+and persist it in the database by creating, updating or removing elements.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022-03-16&#x2F;3.png&quot; alt=&quot;graphql-mutation&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In a mutation, the &lt;em&gt;addOffer()&lt;&#x2F;em&gt; is the instruction you will perform into the system, though the body of the mutation
+is the response you want to receive.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;p&gt;I hope you will be able to write from now on queries and mutations for your GraphQL API, in order to do that first you
+should understand the DB architecture and relations between elements, but that is the basic idea.
+In the end, it is very similar to how Restful works, but with another syntax.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022-03-16&#x2F;4.png&quot; alt=&quot;graphql-logo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I recommend you to take a look at the &lt;a href=&quot;https:&#x2F;&#x2F;graphql.org&#x2F;&quot;&gt;GraphQL documentation&lt;&#x2F;a&gt; for more information, not only from
+a black-box side perspective but also as a white box and learn more about other elements like &lt;code&gt;enums&lt;&#x2F;code&gt;, &lt;code&gt;interfaces&lt;&#x2F;code&gt;.&lt;br&gt;
+How to create and manage new entities, even building up new architectures.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

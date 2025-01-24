@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - Software</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/software/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-02-01T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/software/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Functional Programming with Phel 🐘</title>
+		<published>2021-02-01T00:00:00+00:00</published>
+		<updated>2021-02-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/functional-programming-with-phel/" type="text/html"/>
+		<id>https://jesusvalera.dev/functional-programming-with-phel/</id>
+		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2021-02-01&#x2F;1.png&quot; alt=&quot;phel-purple&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-functional-programming&quot;&gt;What is Functional Programming?&lt;&#x2F;h2&gt;
+&lt;p&gt;Functional Programming (&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_programming&quot;&gt;FP&lt;&#x2F;a&gt;) is a programming paradigm that was
+created in the late 1950s. It’s even older than Object-Oriented
+Programming (&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Object-oriented_programming&quot;&gt;OOP&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;The main concepts of this paradigm are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Pure functions&lt;&#x2F;em&gt;: The concrete input will produce always the same output.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Recursion&lt;&#x2F;em&gt;: There are no loops. In order to get this approach, the functions can call themselves using recursivity.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Functions are First-Class&lt;&#x2F;em&gt;: A function is treated as a variable, which means you can pass functions as function
+arguments.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Variables are immutables&lt;&#x2F;em&gt;: A variable cannot change its value once it is declared, but it’s possible to create new
+ones.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;imperative-vs-declarative&quot;&gt;Imperative vs Declarative&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s start with the typical &lt;em&gt;factorial&lt;&#x2F;em&gt; example to explain the differences between those two terms in the programming
+world.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The factorial is the product of all positive integers less than or equal to a given positive number.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;pre data-lang=&quot;clojure&quot; class=&quot;language-clojure z-code&quot;&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;z-source z-clojure&quot;&gt;n! = n * &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;n&lt;&#x2F;span&gt; - &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt; * &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;n&lt;&#x2F;span&gt; - &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;2&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt; * ... * &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Following this formula, we can assert that the factorial of 5 is:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;clojure&quot; class=&quot;language-clojure z-code&quot;&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;z-source z-clojure&quot;&gt;5! = &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;5&lt;&#x2F;span&gt; * &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;4&lt;&#x2F;span&gt; * &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;3&lt;&#x2F;span&gt; * &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;2&lt;&#x2F;span&gt; * &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But if you noticed, the factorial of 5 is actually 5 times the factorial of 4.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;clojure&quot; class=&quot;language-clojure z-code&quot;&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;z-source z-clojure&quot;&gt;5! = &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;5&lt;&#x2F;span&gt; * 4!
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And the factorial of 4 is 4 times the factorial of 3… and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a &lt;em&gt;recursive&lt;&#x2F;em&gt; problem!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;imperative-programming&quot;&gt;Imperative programming&lt;&#x2F;h2&gt;
+&lt;p&gt;The developer describes the steps one-by-one to achieve the desired result.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;php source&quot; class=&quot;language-php source z-code&quot;&gt;&lt;code class=&quot;language-php source&quot; data-lang=&quot;php source&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;&lt;span class=&quot;z-meta z-function z-php&quot;&gt;&lt;span class=&quot;z-storage z-type z-function z-php&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-name z-function z-php&quot;&gt;factorial&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-parameters z-php&quot;&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-parameters z-php&quot;&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-storage z-type z-php&quot;&gt;int&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-parameter z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;number&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-return-type z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-separator z-php&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;int&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-php&quot;&gt;&lt;span class=&quot;z-meta z-block z-php&quot;&gt;
+    &lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;factorial&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+    &lt;span class=&quot;z-keyword z-control z-php&quot;&gt;while&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;number&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-comparison z-php&quot;&gt;&amp;gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+        &lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;factorial&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-augmented z-php&quot;&gt;*=&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;number&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+        &lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;number&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-increment-decrement z-php&quot;&gt;--&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+    &lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+
+    &lt;span class=&quot;z-keyword z-control z-php&quot;&gt;return&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-php&quot;&gt;$&lt;&#x2F;span&gt;factorial&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-php&quot;&gt;&lt;span class=&quot;z-meta z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We are overriding the &lt;code&gt;$factorial&lt;&#x2F;code&gt; variable in every single iteration.&lt;br&gt;
+We focus on “&lt;strong&gt;HOW&lt;&#x2F;strong&gt;”.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;declarative-programming&quot;&gt;Declarative programming&lt;&#x2F;h2&gt;
+&lt;p&gt;The developer declares what the program does usually in small functions, with immutable variables, without side effects
+using recursivity instead of loops if needed.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;clojure&quot; class=&quot;language-clojure z-code&quot;&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;z-source z-clojure&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-storage z-modifier z-def z-clojure&quot;&gt;defn&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-name z-function z-clojure&quot;&gt;factorial&lt;&#x2F;span&gt;
+  &lt;span class=&quot;z-punctuation z-section z-brackets z-begin z-clojure&quot;&gt;[&lt;&#x2F;span&gt;number&lt;span class=&quot;z-punctuation z-section z-brackets z-end z-clojure&quot;&gt;]&lt;&#x2F;span&gt;
+  &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;if&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;&amp;lt;=&lt;&#x2F;span&gt; number &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;
+    &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;
+    &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;*&lt;&#x2F;span&gt; number &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;factorial&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-parens z-begin z-clojure&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-function z-clojure&quot;&gt;-&lt;&#x2F;span&gt; number &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-clojure&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-clojure&quot;&gt;)&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As you probably may guess, FP uses a declarative paradigm.&lt;br&gt;
+We focus on “&lt;strong&gt;WHAT&lt;&#x2F;strong&gt;”.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;FP is not better or worse than OOP, they are different but complementary in order to solve the same problem.&lt;br&gt;
+If you want to learn&#x2F;practice with some FP, I definitely recommend you &lt;strong&gt;Phel&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You can read more information here: &lt;a href=&quot;https:&#x2F;&#x2F;chemaclass.com&#x2F;blog&#x2F;phel-first-release&#x2F;&quot;&gt;Phel: the Lisp that compiles to PHP&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phel-lang&#x2F;phel-lang&#x2F;tags&quot;&gt;Version 0.1&lt;&#x2F;a&gt; has been recently released, and I am sure you will have fun!
+🎁&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2021-02-01&#x2F;2.png&quot; alt=&quot;phel-white&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;https-phel-lang-org&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;phel-lang.org&#x2F;&quot;&gt;https:&#x2F;&#x2F;phel-lang.org&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
+</feed>

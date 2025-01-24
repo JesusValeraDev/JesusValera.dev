@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - Unit Testing</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/unit-testing/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-08-26T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/unit-testing/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Functional Tests</title>
+		<published>2023-08-26T00:00:00+00:00</published>
+		<updated>2023-08-26T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/functional-tests/" type="text/html"/>
+		<id>https://jesusvalera.dev/functional-tests/</id>
+		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023-08-26&#x2F;1.png&quot; alt=&quot;functional testing types&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A test is an empirical assertion that demonstrates the behaviour of an expected functionality from some assertion.&lt;&#x2F;p&gt;
+&lt;p&gt;Tests can be classified by using the &amp;quot;box&amp;quot; approach.&lt;&#x2F;p&gt;
+&lt;p&gt;This approach divides the tests on how they interact with the system from the point of view of the
+tester. There are two big approaches, the white and the black-box.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;white-box&lt;&#x2F;code&gt; approach happens when the tester has access to the source code, in this scenario, the tester will focus
+on testing all possible combinations to assert the test being written will cover the different code paths.&lt;&#x2F;p&gt;
+&lt;p&gt;In the &lt;code&gt;black-box&lt;&#x2F;code&gt; approach, on the contrary, the system is opaque, what happens inside the application is &amp;quot;magic&amp;quot;, in
+this scenario, the tester can only send an input and expect some output, the tester is not worried about what happens
+internally, but how the application reacts based on the sent input.&lt;&#x2F;p&gt;
+&lt;p&gt;However, there is another classification for tests, which is a bit more specific, which are &lt;code&gt;functional&lt;&#x2F;code&gt;
+and &lt;code&gt;non-functional&lt;&#x2F;code&gt; tests.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Non-functional&lt;&#x2F;code&gt; tests refers to aspects that are not related to a specific function or user action. They can be divided
+into &lt;code&gt;security&lt;&#x2F;code&gt;, &lt;code&gt;performance&lt;&#x2F;code&gt;, &lt;code&gt;usability&lt;&#x2F;code&gt; and &lt;code&gt;compatibility&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Functional&lt;&#x2F;code&gt; tests refers to activities that verify a specific action or function of the code. They can be divided into
+&lt;code&gt;unit&lt;&#x2F;code&gt;, &lt;code&gt;integration&lt;&#x2F;code&gt; and &lt;code&gt;system&lt;&#x2F;code&gt; tests. From a tester point of view, we could consider the functional tests more
+important as we will spend most of our time on these kind of test rather than non-functional, also, it is tremendous
+important to master them to write cleaner code.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;differences-between-functional-tests&quot;&gt;Differences between functional tests&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;unit-test&quot;&gt;Unit test&lt;&#x2F;h3&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2023-08-26&#x2F;2.png&quot; alt=&quot;given-when-then&quot; style=&quot;width: 80%&quot;&gt;
+&lt;p&gt;A unit test is a verification between an input and an expected output, it is an isolated logic and decoupled from the
+outside. We could consider a unit test as the public method from one API class. Usually, it is a good idea to use
+interfaces to invert the dependencies in our application (~DIP: Dependency Inversion Principle).&lt;&#x2F;p&gt;
+&lt;p&gt;Indeed, we can also depend on external dependencies using stubs or mocks.&lt;&#x2F;p&gt;
+&lt;p&gt;The benefit of using unit test is that they took less time on execution, for that reason, they can be launched more
+often. Also, they force you to write less coupled code, doing better software design.&lt;&#x2F;p&gt;
+&lt;p&gt;So, a unit test is, therefore, the demonstration of an isolated functionality from the outside.&lt;&#x2F;p&gt;
+&lt;p&gt;The unit tests give you:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A simple way to test your code exhaustively and independently&lt;&#x2F;li&gt;
+&lt;li&gt;They command you to the portion of code that causes the problem&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A test is not a unit test if…&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;it performs queries to the database&lt;&#x2F;li&gt;
+&lt;li&gt;it connects in any way with the network&lt;&#x2F;li&gt;
+&lt;li&gt;it operates with a file system&lt;&#x2F;li&gt;
+&lt;li&gt;it cannot be launched in parallel with other unit tests&lt;&#x2F;li&gt;
+&lt;li&gt;you need to modify any file (config file for example) to be able to run it&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;They are also known as ‘white box testing’. We know the internal code from the method.&lt;&#x2F;p&gt;
+&lt;p&gt;The tests are focused on the object state.&lt;&#x2F;p&gt;
+&lt;p&gt;There are frameworks for automatizing this task, the most popular is the xUnit family: JUnit, PHPUnit…&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;integration-test&quot;&gt;Integration test&lt;&#x2F;h3&gt;
+&lt;p&gt;The integration tests are similar to the units except that they are focused on proving the interaction between two or
+more components together, they could be classes, modules, etc…&lt;&#x2F;p&gt;
+&lt;p&gt;Further, this kind of tests can connect to the database, to the network, filesystem, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;The integration tests are slower than unit tests due to their complexity, besides, sometimes it’s needed to load
+specific configuration in order to work properly.&lt;&#x2F;p&gt;
+&lt;p&gt;These kinds of tests are dependent on the environment, I mean, if a test fails, the problem could be a different
+configuration from one environment to another.&lt;&#x2F;p&gt;
+&lt;p&gt;You can even create integration tests with PHPUnit, the &lt;code&gt;Unit&lt;&#x2F;code&gt; in the name is just a convention.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;system-test&quot;&gt;System test&lt;&#x2F;h3&gt;
+&lt;p&gt;The system tests are called end-to-end (E2E) or browser testing.&lt;&#x2F;p&gt;
+&lt;p&gt;These kinds of tests do not check the how, but the what, I mean, if that specific test executes some magic but the
+expected result is whatever we want.&lt;&#x2F;p&gt;
+&lt;p&gt;In other words, we do not care what the developer did, we care about the output as we were the client.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2023-08-26&#x2F;3.png&quot; alt=&quot;functional-test&quot; style=&quot;width: 80%&quot;&gt;
+&lt;p&gt;For example, if we send a form with a wrong value, we expect to see an error message in a specific field, we do not care
+about what regular expression is and why it failed.&lt;&#x2F;p&gt;
+&lt;p&gt;Those tests are also known as “black-box testing”. We do not know the code we are testing. They focus on object
+behaviour.&lt;&#x2F;p&gt;
+&lt;p&gt;One of the best known is Selenium.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
