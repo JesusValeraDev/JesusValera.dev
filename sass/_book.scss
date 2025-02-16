@@ -59,8 +59,7 @@
   text-align: center;
   align-items: end;
   column-gap: 1.5rem;
-  row-gap: 30px;
-
+  row-gap: 35px;
 
   .book-item {
     flex-basis: 31%;
@@ -96,7 +95,7 @@
 @media (max-width: 1000px) {
   .books {
     column-gap: 4rem;
-    row-gap: 20px;
+    row-gap: 30px;
 
     .book-item {
       flex-basis: 33%;
@@ -104,14 +103,17 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 680px) {
   .books {
     row-gap: 30px;
+    flex-direction: column;
+    align-items: normal;
 
     .book-item {
       flex-basis: auto;
       img {
-        width: auto;
+        width: 90%;
+        height: 400px;
       }
     }
   }

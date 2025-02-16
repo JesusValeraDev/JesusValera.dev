@@ -7,13 +7,13 @@ date = 2024-11-29
 tags = ['PHP', 'array', 'sorting', 'Programming', 'Functional Programming', 'Functions']
 
 [extra]
-static_thumbnail = "/images/2024-11-29/1.png"
+static_thumbnail = "/images/2024-11-29/1.webp"
 subtitle = "array_find, array_find_key, array_all & array_any"
 +++
 
 The PHP 8.4 version includes four new array functions that will help to write more clear and concise code.
 
-![interlaken-mountain](/images/2024-11-29/1.png)
+![interlaken-mountain](/images/2024-11-29/1.webp)
 
 Let's take a look at the current PHP `array_*` methods and an small example about how to deal with each of them (similarly as I did in this JavaScript [post](/functional-programming-in-javascript)).
 
