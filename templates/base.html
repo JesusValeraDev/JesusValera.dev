@@ -15,16 +15,11 @@
     <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }}" />
   {% endif %}
 
-  {% if config.extra.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '{{ config.extra.google_analytics }}');
-    </script>
-  {% endif %}
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '{{ config.extra.cronitor }}' });
+  </script>
 
   {% block seo %}
     {%- set site_url = current_url | default(value=get_url(path="404.html")) -%}

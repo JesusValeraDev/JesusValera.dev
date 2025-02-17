@@ -39,9 +39,8 @@ email  = "jesusvalerareales.unfreeze992@simplelogin.com"
 
 repo_content_url = "https://github.com/JesusValeraDev/JesusValera.dev/blob/main/content/"
 
-# Google Analytics
-# If using this, add a value like "UA—XXXXXXXX-X"
-google_analytics = "G-K2RD5QTTM8"
+# Cronitor (analytics)
+cronitor = "162fa780362b916393b2692116b73be0"
 
 ## Open Graph + Twitter Cards
 [extra.seo]
