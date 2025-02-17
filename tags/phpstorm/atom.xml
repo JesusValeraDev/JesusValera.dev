@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - PhpStorm</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/phpstorm/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-11-27T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/phpstorm/atom.xml</id>
+	<entry xml:lang="en">
+		<title>PhpStorm tricks ✨</title>
+		<published>2023-11-27T00:00:00+00:00</published>
+		<updated>2023-11-27T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/phpstorm-tricks/" type="text/html"/>
+		<id>https://jesusvalera.dev/phpstorm-tricks/</id>
+		<content type="html">&lt;p&gt;PhpStorm is a powerful IDE that helps to boost your development, let&#x27;s take a look to some hidden tricks to make
+PhpStorm even better! ⚡️&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023-11-27&#x2F;1.png&quot; alt=&quot;phpstorm-logo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;&#x2F;h2&gt;
+&lt;p&gt;Plugins are a crucial part of the IDE.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are a Symfony user, probably you use plugins
+like &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;7219-symfony-support&quot; target=&quot;_blank&quot;&gt;Symfony Support&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;7303-twig&quot; target=&quot;_blank&quot;&gt;Twig&lt;&#x2F;a&gt;. In the other hand, if you are a Laravel one, I bet you use &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;13441-laravel-idea&quot; target=&quot;_blank&quot;&gt;Laravel Idea&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;7569-blade&quot; target=&quot;_blank&quot;&gt;Blade&lt;&#x2F;a&gt;.
+However, I recommend you &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;7499-gittoolbox&quot; target=&quot;_blank&quot;&gt;GitToolBox&lt;&#x2F;a&gt;
+or &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;2162-string-manipulation&quot; target=&quot;_blank&quot;&gt;String Manipulation&lt;&#x2F;a&gt; in
+case you never tried them.&lt;br&gt;
+Another recommendation, in case you want to familiarize with the IDE shortcuts
+is &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;9792-key-promoter-x&quot; target=&quot;_blank&quot;&gt;Key Promoter X&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Although, my favorite so far, which is also not very well-known
+is &lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;7622-php-inspections-ea-extended-&quot; target=&quot;_blank&quot;&gt;PHP Inspections (EA
+Extended)&lt;&#x2F;a&gt;. This plugin helps you with architecture related issues, regular expressions, non-optimal, duplicated and
+suspicious &amp;quot;if&amp;quot; conditions, performance issues beyond others.&lt;br&gt;
+You can check the full list of features on their
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kalessil&#x2F;phpinspectionsea&quot; target=&quot;_blank&quot;&gt;GitHub&lt;&#x2F;a&gt; page, this one is a &lt;strong&gt;MUST&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;code-style&quot;&gt;Code Style&lt;&#x2F;h2&gt;
+&lt;p&gt;PHP is a programming language where everybody can write the code as they wish, in order to unify the
+industry, &lt;span style=&quot;text-decoration: underline dotted&quot; title=&quot;PHP Standard Recommendation&quot;&gt;PSRs&lt;&#x2F;span&gt; was born.&lt;br&gt;
+That is the reason we can find standards for &lt;code&gt;Loggering&lt;&#x2F;code&gt; (&lt;a href=&quot;https:&#x2F;&#x2F;www.php-fig.org&#x2F;psr&#x2F;psr-3&quot; target=&quot;_blank&quot;&gt;
+PSR-3&lt;&#x2F;a&gt;), &lt;code&gt;Event Dispatcher&lt;&#x2F;code&gt; (&lt;a href=&quot;https:&#x2F;&#x2F;www.php-fig.org&#x2F;psr&#x2F;psr-14&quot; target=&quot;_blank&quot;&gt;PSR-14&lt;&#x2F;a&gt;),
+and even for the &lt;code&gt;Clock&lt;&#x2F;code&gt; (&lt;a href=&quot;https:&#x2F;&#x2F;www.php-fig.org&#x2F;psr&#x2F;psr-20&quot; target=&quot;_blank&quot;&gt;PSR-20&lt;&#x2F;a&gt;). You can check the
+full list of all available PSRs &lt;a href=&quot;https:&#x2F;&#x2F;www.php-fig.org&#x2F;psr&#x2F;&quot; target=&quot;_blank&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;One of the most popular PSRs is concerning the &lt;code&gt;Code Style&lt;&#x2F;code&gt;, that is, it defines things like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Should I use tabs or spaces?&lt;&#x2F;li&gt;
+&lt;li&gt;Where should I place the brackets in a method? And in a conditional&#x2F;loop?&lt;&#x2F;li&gt;
+&lt;li&gt;Are the parenthesis required when instantiating a class with empty constructor?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;During the last years, due to the big and fast changes the language experienced, PSR-2 was quickly replaced by PSR-12.
+However, the language continues evolving very fast,
+so &lt;span style=&quot;text-decoration: underline dotted&quot; title=&quot;PHP Evolving Recommendation&quot;&gt;PERs&lt;&#x2F;span&gt; were introduced.&lt;br&gt;
+Unfortunately, at the moment is not possible to define &lt;code&gt;PER&lt;&#x2F;code&gt; as &lt;code&gt;Code Style&lt;&#x2F;code&gt; in PhpStorm, anyway, &lt;code&gt;PSR-12&lt;&#x2F;code&gt; is good
+enough.&lt;&#x2F;p&gt;
+&lt;p&gt;To define PSR-12 by default, go to the following path and select &lt;strong&gt;PSR12&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Settings ➔ Editor ➔ Code Style ➔ PHP ➔ &amp;quot;Set from...&amp;quot; ➔ PSR12&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023-11-27&#x2F;2.png&quot; alt=&quot;phpstorm-define-psr-12&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;live-templates&quot;&gt;Live Templates&lt;&#x2F;h2&gt;
+&lt;p&gt;Live Templates are snippets of code that are very used, and you can write them in a few characters.&lt;&#x2F;p&gt;
+&lt;p&gt;PhpStorm brings some live templates, for example, if we type &lt;code&gt;prif&lt;&#x2F;code&gt;, the generated code will be:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;php source&quot; class=&quot;language-php source z-code&quot;&gt;&lt;code class=&quot;language-php source&quot; data-lang=&quot;php source&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;private&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;function&lt;&#x2F;span&gt; ░&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;There is a live template for all function combinations: &lt;code&gt;prif&lt;&#x2F;code&gt;, &lt;code&gt;prisf&lt;&#x2F;code&gt;, &lt;code&gt;prof&lt;&#x2F;code&gt;, &lt;code&gt;prosf&lt;&#x2F;code&gt;, &lt;code&gt;pubf&lt;&#x2F;code&gt; &amp;amp; &lt;code&gt;pubsf&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It is possible to enhance the auto-completion with a default &lt;code&gt;: void&lt;&#x2F;code&gt; return type as follows.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2023-11-27&#x2F;3.gif&quot; alt=&quot;live templates in action&quot; &#x2F;&gt;
+&lt;p&gt;Go to &lt;code&gt;Editor ➔ Live Templates&lt;&#x2F;code&gt; and adjust each template with the &lt;em&gt;&lt;code&gt;$RETURN_TYPE$&lt;&#x2F;code&gt;&lt;&#x2F;em&gt; variable.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;javascript&quot; class=&quot;language-javascript z-code&quot;&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;z-source z-ts&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-ts&quot;&gt;private&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-function z-ts&quot;&gt;&lt;span class=&quot;z-storage z-type z-function z-ts&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-definition z-function z-ts&quot;&gt;&lt;span class=&quot;z-entity z-name z-function z-ts&quot;&gt;$NAME$&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-parameters z-ts&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameters z-begin z-ts&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-parameter z-ts&quot;&gt;$PARAMETERS$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-parameters z-end z-ts&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-return z-type z-ts&quot;&gt;&lt;span class=&quot;z-keyword z-operator z-type z-annotation z-ts&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-name z-type z-ts&quot;&gt;$RETURN_TYPE$&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-block z-ts&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-block z-ts&quot;&gt;{&lt;&#x2F;span&gt;
+    &lt;span class=&quot;z-variable z-other z-readwrite z-ts&quot;&gt;$END$&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-punctuation z-definition z-block z-ts&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finally, press on &lt;strong&gt;Edit variables&lt;&#x2F;strong&gt; and insert &lt;code&gt;&amp;quot;void&amp;quot;&lt;&#x2F;code&gt; &lt;em&gt;(with quotes)&lt;&#x2F;em&gt; on &lt;strong&gt;RETURN_TYPE&lt;&#x2F;strong&gt; field.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023-11-27&#x2F;4.jpeg&quot; alt=&quot;live-template-setup&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;file-and-code-templates&quot;&gt;File and Code Templates&lt;&#x2F;h2&gt;
+&lt;p&gt;The scaffolding you get when you create a new file in PhpStorm is also editable.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are into &lt;code&gt;strict_types&lt;&#x2F;code&gt; and &lt;code&gt;final&lt;&#x2F;code&gt; classes by default, you are in luck! 🎉&lt;&#x2F;p&gt;
+&lt;p&gt;To change this, go to &lt;code&gt;Editor ➔ File and Code Templates&lt;&#x2F;code&gt; and update all &lt;code&gt;PHP&lt;&#x2F;code&gt; templates.&lt;&#x2F;p&gt;
+&lt;p&gt;You can copy-paste the following code snippets into its own category  (&lt;em&gt;notice the spaces&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP File&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Class&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Interface&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-storage z-type z-php&quot;&gt;interface&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Trait&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;trait&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Enum&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;enum&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${BACKED_TYPE}) : ${BACKED_TYPE} #end{
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Test&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${TESTED_NAME} &amp;amp;&amp;amp; ${NAMESPACE} &amp;amp;&amp;amp; !${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;elseif (${TESTED_NAME} &amp;amp;&amp;amp; ${TESTED_NAMESPACE} &amp;amp;&amp;amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAMESPACE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;\\$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;extends&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if(${NAMESPACE}) \PHPUnit_Framework_TestCase #else PHPUnit_Framework_TestCase #end{
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHP Unit 6 Test&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${TESTED_NAME} &amp;amp;&amp;amp; ${NAMESPACE} &amp;amp;&amp;amp; !${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;elseif (${TESTED_NAME} &amp;amp;&amp;amp; ${TESTED_NAMESPACE} &amp;amp;&amp;amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAMESPACE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;\\$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-other z-namespace z-php&quot;&gt;PHPUnit&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-other z-namespace z-php&quot;&gt;Framework&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TestCase&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;extends&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-other z-php&quot;&gt;TestCase&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;PHPSpec Specification&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${TESTED_NAME} &amp;amp;&amp;amp; ${NAMESPACE} &amp;amp;&amp;amp; !${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;elseif (${TESTED_NAME} &amp;amp;&amp;amp; ${TESTED_NAMESPACE} &amp;amp;&amp;amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAMESPACE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;\\$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-other z-namespace z-php&quot;&gt;PhpSpec&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;ObjectBehavior&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;extends&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-other z-php&quot;&gt;ObjectBehavior&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;Codeception Unit Test&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${TESTED_NAME} &amp;amp;&amp;amp; ${NAMESPACE} &amp;amp;&amp;amp; !${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;elseif (${TESTED_NAME} &amp;amp;&amp;amp; ${TESTED_NAMESPACE} &amp;amp;&amp;amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAMESPACE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;\\$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;extends&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;span class=&quot;z-support z-other z-namespace z-php&quot;&gt;Codeception&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;span class=&quot;z-support z-other z-namespace z-php&quot;&gt;Test&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-namespace z-php&quot;&gt;\&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;Unit&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;Codeception Functional Test&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;pre data-lang=&quot;php&quot; class=&quot;language-php z-code&quot;&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;z-embedding z-php&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-embedded z-begin z-php&quot;&gt;&amp;lt;?php&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-embedded z-block z-php&quot;&gt;&lt;span class=&quot;z-source z-php&quot;&gt;
+&lt;span class=&quot;z-keyword z-control z-php&quot;&gt;declare&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-php&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;strict_types&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-php&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-php&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-php&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;parse(&amp;quot;PHP File Header.php&amp;quot;)
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-namespace z-php&quot;&gt;namespace&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-namespace z-php&quot;&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAMESPACE&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;if (${TESTED_NAME} &amp;amp;&amp;amp; ${NAMESPACE} &amp;amp;&amp;amp; !${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;elseif (${TESTED_NAME} &amp;amp;&amp;amp; ${TESTED_NAMESPACE} &amp;amp;&amp;amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;&lt;span class=&quot;z-keyword z-other z-use z-php&quot;&gt;use&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-use z-php&quot;&gt;$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAMESPACE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;\\$&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-path z-php&quot;&gt;&lt;span class=&quot;z-support z-class z-php&quot;&gt;TESTED_NAME&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-php&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-expression z-php&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-comment z-line z-number-sign z-php&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-php&quot;&gt;#&lt;&#x2F;span&gt;end
+&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-storage z-modifier z-php&quot;&gt;final&lt;&#x2F;span&gt; &lt;span class=&quot;z-storage z-type z-php&quot;&gt;class&lt;&#x2F;span&gt; $&lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other z-php&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-section z-block z-begin z-php&quot;&gt;{&lt;&#x2F;span&gt;
+
+&lt;span class=&quot;z-punctuation z-section z-block z-end z-php&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;details&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;&#x2F;h2&gt;
+&lt;p&gt;It is very important to learn the IDE shortcuts, that will bring you confidence and will help you to be more productive,
+in case you don&#x27;t know them, definitely you SHOULD.&lt;br&gt;
+I would like to remind the plugin &lt;code&gt;Key Promoter X&lt;&#x2F;code&gt; that I mentioned before.&lt;&#x2F;p&gt;
+&lt;p&gt;PhpStorm also brings a PDF file with the most important shortcuts, go to &lt;code&gt;Help ➔ Keyboard Shortcuts PDF&lt;&#x2F;code&gt; to download it.&lt;&#x2F;p&gt;
+&lt;p&gt;List of most important shortcuts:&lt;&#x2F;p&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;Windows&#x2F;Linux&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + S&lt;&#x2F;code&gt; = Open Settings&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Alt + 1&lt;&#x2F;code&gt; = Display&#x2F;hide &lt;em&gt;Project&lt;&#x2F;em&gt; bar&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Alt (twice)&lt;&#x2F;code&gt; = Search in the whole project (class names, files, symbols, actions...)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + N&lt;&#x2F;code&gt; = Search by class name (similar to &lt;code&gt;Alt (twice)&lt;&#x2F;code&gt; but only for class names)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Alt + →&#x2F;←&lt;&#x2F;code&gt; = Move to left&#x2F;right tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + G&lt;&#x2F;code&gt; = Go to line X:Y&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + B&lt;&#x2F;code&gt; = Navigate in&#x2F;out (similar to &lt;code&gt;Ctrl + Click&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Y&lt;&#x2F;code&gt; = Delete current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + C&#x2F;V (without selection)&lt;&#x2F;code&gt; = Copy&#x2F;Paste full line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + V&lt;&#x2F;code&gt; = Paste with history&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + E&lt;&#x2F;code&gt; = Display recent files&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + E&lt;&#x2F;code&gt; = Display last 3 recent files&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + F&lt;&#x2F;code&gt; = Find in path (search words in the whole project)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + L&lt;&#x2F;code&gt; = Reformat Code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + ↑&#x2F;↓&lt;&#x2F;code&gt; = Moves the current code block&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + M&lt;&#x2F;code&gt; = Go to start&#x2F;end of current brackets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + T&lt;&#x2F;code&gt; = Open test from specific class (and vice-versa)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Shift + Alt + Click&lt;&#x2F;code&gt; = Multiple cursor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl (twice keeping it pushed) + arrows&lt;&#x2F;code&gt; = Multiple cursor from adjacent lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + W&lt;&#x2F;code&gt; = Select gradually&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Alt + J&lt;&#x2F;code&gt; = Select next occurrence similar to current one&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Alt + F&#x2F;M&#x2F;C&#x2F;V&#x2F;P&lt;&#x2F;code&gt; = Refactor Function&#x2F;Method&#x2F;Constant&#x2F;Variable&#x2F;Parameter&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Alt + N&lt;&#x2F;code&gt; = Inline refactor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Insert&lt;&#x2F;code&gt; = Contextual menu to override methods, generate getters, setters...&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + F10&lt;&#x2F;code&gt;: Run the scope where the caret is&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Alt + Enter&lt;&#x2F;code&gt; = Jump to next line (adds &amp;quot;;&amp;quot; automatically if needed)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;span style=&quot;cursor: pointer; font-weight: bold&quot;&gt;Mac&lt;&#x2F;span&gt;&lt;&#x2F;summary&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ,&lt;&#x2F;code&gt; = Open Settings&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + 1&lt;&#x2F;code&gt; = Display&#x2F;hide project bar&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⇧ (twice)&lt;&#x2F;code&gt; = Search in the whole project (class names, files, symbols, actions...)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + O&lt;&#x2F;code&gt; = Search by class name (similar to &lt;code&gt;⇧ (twice)&lt;&#x2F;code&gt; but only for class names)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + →&#x2F;←&lt;&#x2F;code&gt; = Move to left&#x2F;right tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + L&lt;&#x2F;code&gt; = Go to line X:Y&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + B&lt;&#x2F;code&gt; = Navigate in&#x2F;out (similar to &lt;code&gt;Ctrl + Click&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⌫&lt;&#x2F;code&gt; = Delete current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + C&#x2F;V (without selection)&lt;&#x2F;code&gt; = Copy&#x2F;Paste full line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + V&lt;&#x2F;code&gt; = Paste with history&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + E&lt;&#x2F;code&gt; = Display recent files&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + E&lt;&#x2F;code&gt; = Display last 3 recent files&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + F&lt;&#x2F;code&gt; = Find in path (search words in the whole project)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌥ + ⌘ + L&lt;&#x2F;code&gt; = Reformat Code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + ↑&#x2F;↓&lt;&#x2F;code&gt; = Moves the current code block&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + T&lt;&#x2F;code&gt; = Open test from specific class (and vice-versa)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌥ + ⌘ + ⇧ + Click&lt;&#x2F;code&gt; or = Multiple cursor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ (twice keeping it pushed) + arrows&lt;&#x2F;code&gt; = Multiple cursor from adjacent lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌥ + ↑&lt;&#x2F;code&gt; = Select gradually&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌥ + ⌘ + F&#x2F;M&#x2F;C&#x2F;V&#x2F;P&lt;&#x2F;code&gt; = Refactor Function&#x2F;Method&#x2F;Constant&#x2F;Variable&#x2F;Parameter&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌥ + ⌘ + N&lt;&#x2F;code&gt; = Inline refactor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + N&lt;&#x2F;code&gt; = Contextual menu to override methods, generate getters, setters...&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⇧ + ⌃ + R&lt;&#x2F;code&gt; = Run the scope where the caret is&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;⌘ + ⇧ + Enter&lt;&#x2F;code&gt; = Jump to next line (adds &amp;quot;;&amp;quot; automatically if needed)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In case the shortcut &lt;code&gt;⌃ + →&#x2F;←&lt;&#x2F;code&gt; changes between Desktops in Mac, you can disable it
+in &lt;code&gt;Settings ➔ Keyboard ➔ Keyboard Shortcuts... ➔ Mission Control&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;add-custom-shortcuts&quot;&gt;Add Custom shortcuts&lt;&#x2F;h3&gt;
+&lt;p&gt;We just saw the &lt;code&gt;Ctrl + 1&lt;&#x2F;code&gt;&#x2F;&lt;code&gt;⌘ + 1&lt;&#x2F;code&gt; shortcut displays&#x2F;hides the project bar, it is also very handy to set
+the shortcut &lt;code&gt;Ctrl + Alt + 1&lt;&#x2F;code&gt;&#x2F;&lt;code&gt;⌘ + ⇧ + 1&lt;&#x2F;code&gt; to display and select in the project bar the current file.&lt;br&gt;
+This way, we don&#x27;t need to use the mouse at all, we can navigate between tabs with only the keyboard.&lt;&#x2F;p&gt;
+&lt;p&gt;To set this new combination, in &lt;code&gt;Settings ➔ Keymap&lt;&#x2F;code&gt; search by &lt;code&gt;Select File in Project View&lt;&#x2F;code&gt; and &lt;code&gt;Add Keyboard Shortcut&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It is also very handy to add shortcuts to &lt;code&gt;Split and Move Right&lt;&#x2F;code&gt; or &lt;code&gt;Split and Move Down&lt;&#x2F;code&gt; with &lt;code&gt;Ctrl + I&#x2F;-&lt;&#x2F;code&gt;&#x2F;&lt;code&gt;⌃ + I&#x2F;-&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
