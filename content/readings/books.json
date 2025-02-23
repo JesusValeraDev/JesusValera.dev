@@ -567,6 +567,13 @@
     "tags": ["Software"]
   },
   {
+    "title": "Docker: SecDevOps",
+    "author": "Fran Ramírez, Elías Grande, Rafael Troncoso",
+    "date": "2025-02-23",
+    "img": "Docker SecDevOps.webp",
+    "tags": ["Software"]
+  },
+  {
     "title": "Deep Web: TOR, FreeNET & I2P - Privacidad y Anonimato",
     "author": "Daniel Echeverri",
     "date": "",
