@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - Test</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/test/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2024-04-09T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/test/atom.xml</id>
+	<entry xml:lang="en">
+		<title>The testing pyramid</title>
+		<published>2024-04-09T00:00:00+00:00</published>
+		<updated>2024-04-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/the-testing-pyramid/" type="text/html"/>
+		<id>https://jesusvalera.dev/the-testing-pyramid/</id>
+		<content type="html">&lt;p&gt;The Testing Pyramid (also known as &lt;em&gt;Cohn Pyramid&lt;&#x2F;em&gt;) is a concept that visualizes the ideal distribution of different
+types of tests within a testing strategy. It resembles a pyramid with three layers: &lt;strong&gt;Unit&lt;&#x2F;strong&gt; at the base, followed by
+&lt;strong&gt;Service&lt;&#x2F;strong&gt; in the middle, and finally, &lt;strong&gt;User Interface&lt;&#x2F;strong&gt; tests on top.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2024-04-09&#x2F;1.png&quot; alt=&quot;cohn-pyramid&quot;&gt;
+&lt;h3 id=&quot;unit-tests&quot;&gt;Unit Tests&lt;&#x2F;h3&gt;
+&lt;p&gt;Ideally between &lt;strong&gt;50-60%&lt;&#x2F;strong&gt; of all tests in our system should belong to this category. They are fast, focused, and
+inexpensive to maintain.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Are small, focused tests that validate the behavior of individual components or units of code in isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Help ensure that each function, method, or class behaves correctly under various conditions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;service-tests&quot;&gt;Service Tests&lt;&#x2F;h3&gt;
+&lt;p&gt;A range of &lt;strong&gt;20-40%&lt;&#x2F;strong&gt; is a good number of tests that should belong to this category. They are broader in scope than unit
+tests and may involve testing across multiple layers of the application, such as testing database interactions or API
+endpoints.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify interactions between different components or modules of the system&lt;&#x2F;li&gt;
+&lt;li&gt;Unlike unit tests, which isolate specific units of code, service tests examine how these units work together&lt;&#x2F;li&gt;
+&lt;li&gt;Help identify issues that may arise when different components interact with each other&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;ui-tests&quot;&gt;UI Tests&lt;&#x2F;h3&gt;
+&lt;p&gt;About &lt;strong&gt;0-10%&lt;&#x2F;strong&gt; of all tests should belong to this category. They are the slowest and most brittle tests to write and
+maintain, but they provide the highest level of confidence by simulating real user scenarios.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;These tests interact with the application as a user would, often through 3rd party applications like Selenium or
+Cypress&lt;&#x2F;li&gt;
+&lt;li&gt;Validate the flow of the application and help ensure that all components work together seamlessly in a production-like
+environment&lt;&#x2F;li&gt;
+&lt;li&gt;They are much slower to write and execute than an integration tests and are more likely to break due to changes in
+the application&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;The Testing Pyramid promotes a balanced testing strategy where the majority of tests are fast, focused, and inexpensive
+to maintain (Unit tests), while fewer tests are allocated to higher layers (Service and UI tests). This approach ensures
+efficient test coverage while minimizing the time and effort required for testing, ultimately leading to faster feedback
+cycles and more robust software.&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;p&gt;Remember which kind of project you are - you won&#x27;t have the same testing strategy approach whether the project you are
+working on is legacy or greenfield. Depending on it, those values may vary.&lt;&#x2F;p&gt;
+&lt;p&gt;In legacy projects coupled with third-party libraries (like the database), sometimes it is tough to write unit tests.
+The recommendation is to follow the inverse order, I mean, to not break the current functionality, due to the fragility,
+it might be worth writing first a Service or UI tests, and having this
+security net, you can then refactorize the code and finally write the unit tests. Writing these more general tests will
+also bring you experience in how everything interacts in the application domain.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
