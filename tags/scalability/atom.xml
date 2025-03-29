@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Jesus Valera Reales - Scalability</title>
+	<subtitle>Personal blog about technology, mostly about programming languages; time to time I like to share what I learn</subtitle>
+	<link href="https://jesusvalera.dev/tags/scalability/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jesusvalera.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-03-20T00:00:00+00:00</updated>
+	<id>https://jesusvalera.dev/tags/scalability/atom.xml</id>
+	<entry xml:lang="en">
+		<title>The importance of tests in our software</title>
+		<published>2020-03-20T00:00:00+00:00</published>
+		<updated>2020-03-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://jesusvalera.dev/the-importance-of-tests-in-our-software/" type="text/html"/>
+		<id>https://jesusvalera.dev/the-importance-of-tests-in-our-software/</id>
+		<content type="html">&lt;p&gt;If you&#x27;ve ever built software, you know how exciting it is to see your code come to life. But how do you make sure it
+works as expected in the long term? That&#x27;s where testing comes in.&lt;&#x2F;p&gt;
+&lt;p&gt;Writing tests ensures that every part of your program functions correctly under different conditions. Think of tests as
+a built-in safety net for your code: ensures correctness, catches bugs early, make refactoring safer, encourage modular
+and maintainable code and boost confidence in the code.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;2020-03-20&#x2F;1.png&quot; alt=&quot;programming comic joke&quot;&gt;
+&lt;p&gt;Here&#x27;s why testing should be a non-negotiable part of your development process:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;white-check-mark-ensuring-correctness&quot;&gt;✅ Ensuring Correctness&lt;&#x2F;h3&gt;
+&lt;p&gt;At the core of every great software product is reliability. You want to be sure that your &lt;strong&gt;software behaves as
+expected&lt;&#x2F;strong&gt;; whether handling user input, processing data, or integrating with other systems.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;beetle-catching-bugs-early&quot;&gt;🐞 Catching Bugs Early&lt;&#x2F;h3&gt;
+&lt;p&gt;Bugs are inevitable. But the &lt;strong&gt;earlier you catch them, the cheaper and easier they are to fix&lt;&#x2F;strong&gt;.
+Testing helps identify these issues before they make their way into production.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;making-refactoring-safer&quot;&gt;🛠️ Making Refactoring Safer&lt;&#x2F;h3&gt;
+&lt;p&gt;Refactoring is the process of improving your code&#x27;s structure without changing its behavior. But how do you make sure
+that your optimizations don&#x27;t break existing functionality? &lt;strong&gt;Tests act as a safety net&lt;&#x2F;strong&gt;, ensuring that everything
+still works after changes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;encouraging-modular-maintainable-code&quot;&gt;🧩 Encouraging Modular, Maintainable Code&lt;&#x2F;h3&gt;
+&lt;p&gt;Good &lt;strong&gt;testing practices naturally lead to better software design&lt;&#x2F;strong&gt;. Writing tests forces you to break your code into
+smaller, independent components—each of which can be tested separately.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;house-with-garden-boosting-confidence-in-your-code&quot;&gt;🏡 Boosting Confidence in Your Code&lt;&#x2F;h3&gt;
+&lt;p&gt;Writing tests encourages you &lt;strong&gt;to break down your code into smaller, more manageable parts&lt;&#x2F;strong&gt;. Each part can be tested
+independently, which makes it easier to identify and fix problems.&lt;&#x2F;p&gt;
+&lt;p&gt;When your tests cover different scenarios —including edge cases— you can roll out updates without worrying about
+breaking something unexpectedly.&lt;&#x2F;p&gt;
+&lt;div class=&quot;separator&quot;&gt;&lt;&#x2F;div&gt;
+&lt;p&gt;Writing tests in software development isn&#x27;t just a good practice—it&#x27;s an investment in the quality, stability, and
+longevity of your code. &lt;strong&gt;It saves time, reduces stress, and leads to better user experiences&lt;&#x2F;strong&gt;. Plus, &lt;strong&gt;testing skills
+are highly valued&lt;&#x2F;strong&gt; in the tech industry.&lt;&#x2F;p&gt;
+&lt;p&gt;If you&#x27;re not already writing tests, now it is the perfect time to start! 💯&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
