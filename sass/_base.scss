@@ -34,15 +34,15 @@ a {
 blockquote {
   border-left: .25rem solid;
   border-left-color: var(--second-text-color, $theme-light-second-text-color);
-  margin: .8rem 0;
-  padding: .5rem 1rem;
+  margin: 1.5rem 0 .8rem 0.4rem;
 
   p:last-child {
     margin-bottom: 0;
   }
 
   @media (min-width: 600px) {
-    padding: 0 5rem 0 1.25rem;
+    padding: 0 4rem 0 1.25rem;
+    font-style: italic;
   }
 }
 
@@ -50,4 +50,29 @@ img {
   display: block;
   margin: 1rem auto;
   max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+
+  th, td {
+    padding: 10px;
+  }
+
+  tr {
+    margin: 5px;
+  }
+
+  thead {
+    background-color: var(--table-header-color, $theme-light-table-header-color);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--table-nth-color, $theme-light-table-nth-color);
+  }
+
+  tbody > tr:hover {
+    background-color: var(--table-hover-color, $theme-light-table-hover-color);
+  }
 }
