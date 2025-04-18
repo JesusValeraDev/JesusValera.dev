@@ -9,7 +9,7 @@ description = "Personal blog about technology, mostly about programming language
 compile_sass = true
 
 # Whether to generate a feed file for the site
-generate_feed = true
+generate_feeds = true
 
 # The filename to use for the feed. Used as the template filename, too.
 # Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
