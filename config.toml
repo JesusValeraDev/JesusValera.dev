@@ -21,7 +21,7 @@ build_search_index = false
 
 # The taxonomies to be rendered for the site and their configuration.
 taxonomies = [
-    {name = "tags", feed = false}, # each tag will have its own feed
+    {name = "tags", feed = false},
 ]
 
 [markdown]
@@ -35,7 +35,7 @@ highlight_themes_css = [
 [extra]
 # Basic infomation
 github = "https://github.com/JesusValeraDev"
-email  = "jesusvalerareales.unfreeze992@simplelogin.com"
+email  = "me@jesusvalerareales.dev"
 
 repo_content_url = "https://github.com/JesusValeraDev/JesusValera.dev/blob/main/content/"
 
