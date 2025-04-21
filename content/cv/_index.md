@@ -31,7 +31,7 @@ aliases = ['resume']
           </svg> Berlin, Germany
         </span>
       </div>
-      <img src="/cv/fotograf.png" alt="fotograf.de logo" width="85px">
+      <img src="/cv/fotograf.png" alt="fotograf.de logo" width="85">
       <p class="title"><a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de</a></p>
       <ul>
         <li>Rewrote the old shop from scratch and migrated it to Symfony</li>
@@ -66,7 +66,7 @@ aliases = ['resume']
           </svg> Berlin, Germany
         </span>
       </div>
-      <img src="/cv/artnight.jpeg" alt="realtainment logo" width="85px">
+      <img src="/cv/artnight.jpeg" alt="realtainment logo" width="85">
       <p class="title"><a href="https://www.artnight.com/" target="_blank">ArtNight</a></p>
       <ul>
         <li>Decoupled domain from infrastructure</li>
@@ -101,7 +101,7 @@ aliases = ['resume']
           </svg> Berlin, Germany
         </span>
       </div>
-      <img src="/cv/kollex.jpeg" alt="kollex logo" width="85px">
+      <img src="/cv/kollex.jpeg" alt="kollex logo" width="85">
       <p class="title"><a href="https://www.kollex.de/" target="_blank">Kollex</a></p>
       <ul>
         <li>Worked in a eCommerce Shop built on Symfony using CQRS</li>
@@ -135,7 +135,7 @@ aliases = ['resume']
           </svg> Madrid, Spain
         </span>
       </div>
-      <img src="/cv/selectra.jpeg" alt="selectra logo" width="85px">
+      <img src="/cv/selectra.jpeg" alt="selectra logo" width="85">
       <p class="title"><a href="https://selectra.info/" target="_blank">Selectra</a></p>
       <ul>
         <li>Worked on multiple projects fixing bugs and implementing new features</li>
@@ -169,7 +169,7 @@ aliases = ['resume']
           </svg> Madrid, Spain
         </span>
       </div>
-      <img src="/cv/smile-and-learn.jpeg" alt="smile and learn logo" width="85px">
+      <img src="/cv/smile-and-learn.jpeg" alt="smile and learn logo" width="85">
       <p class="title"><a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn</a></p>
       <ul>
         <li>Exported and imported CSV files</li>
@@ -203,7 +203,7 @@ aliases = ['resume']
           </svg> Cracow, Poland
         </span>
       </div>
-      <img src="/cv/rad4m.jpg" alt="rad4m logo" width="85px">
+      <img src="/cv/rad4m.jpg" alt="rad4m logo" width="85">
       <p class="title">RAD4M · <i>Internship</i></p>
       <ul>
         <li>Developed from scratch an Android application with Maps, Shared Preferences and third-party libraries</li>

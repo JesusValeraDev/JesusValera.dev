@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='assets/apple-touch-icon.png') | safe }}">
 
   {% if config.generate_feed %}
-    <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }}" />
+    <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }}">
   {% endif %}
 
   <script async src="https://rum.cronitor.io/script.js"></script>
