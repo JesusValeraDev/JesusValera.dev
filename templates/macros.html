@@ -89,18 +89,13 @@
   "url": "{{ site_url | safe }}",
   "@context":"https://schema.org",
   "@type": "{{ web_type }}",
-  "headline": "{{ og_title }}"
-  {% if page %}
-    {% if page.updated %}
-      "dateModified":"{{ page.updated | date(format='%+') }}",
-    {% endif %}
-    {% if page.date %}
-      "datePublished":"{{ page.date | date(format='%+') }}",
-    {% endif %}
-    "mainEntityOfPage":{
-      "@type":"WebPage",
-      "@id":"{{ site_url | safe }}"
-    },
+  "headline": "{{ og_title }}"{% if page %},
+  {% if page.updated %}"dateModified":"{{ page.updated | date(format='%+') }}",{% endif %}
+  {% if page.date %}"datePublished":"{{ page.date | date(format='%+') }}",{% endif %}
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"{{ site_url | safe }}"
+  }
   {% endif %}
 }
 </script>
