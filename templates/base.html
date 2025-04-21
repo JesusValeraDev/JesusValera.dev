@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ config.title | default(value='JesusValera') }}</title>
   <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,600" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='assets/favicon-32x32.png') | safe }}">
@@ -30,15 +29,15 @@
   {% endblock seo %}
   {% block scripts %}
   {% endblock scripts %}
-  <script type="text/javascript" src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
-  <script type="text/javascript" src="{{ get_url(path='js/scroll-top.js') | safe }}"></script>
+  <script src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
+  <script src="{{ get_url(path='js/scroll-top.js') | safe }}"></script>
 </head>
 
 <body>
   {% block header %}
   <header>
     <a class="profile-icon" href="{{ config.base_url | safe }}">
-      <img alt="JesusValera" src="{{ get_url(path='jesus.webp') | safe }}" width="auto" height="auto">
+      <img alt="JesusValera" src="{{ get_url(path='jesus.webp') | safe }}">
     </a>
     <nav>
       {% for menu in config.extra.menu %}
