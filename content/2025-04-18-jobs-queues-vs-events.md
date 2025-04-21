@@ -32,7 +32,7 @@ Jobs are a powerful tool for handling **resource-intensive, time-consuming, or n
 - Process large files (PDFs, images, etc.)
 - Sync data with third-party services or APIs
 
-> Imagine a system that automatically generates and emails financial reports every night at midnight. No user action is
+> E.g.: A system that automatically generates and emails financial reports every night at midnight. No user action is
 required; it just happens as scheduled.
 
 ## Event
@@ -50,7 +50,7 @@ an event and let other parts of your system decide how to respond.
 - Trigger multiple follow-up actions
 - Improve code modularity and separation of concerns
 
-> In a chat application, when someone sends you a message, an event triggers a notification on your phone.
+> E.g.: In a chat application, when someone sends you a message, an event triggers a notification on your phone.
 
 <div class="separator"></div>
 

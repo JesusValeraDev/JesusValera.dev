@@ -85,7 +85,7 @@ There is a live template for all function combinations: `prif`, `prisf`, `prof`,
 
 It is possible to enhance the auto-completion with a default `: void` return type as follows.
 
-<img src="/images/2023-11-27/3.gif" alt="live templates in action" />
+<img src="/images/2023-11-27/3.gif" alt="live templates in action">
 
 Go to `Editor ➔ Live Templates` and adjust each template with the _`$RETURN_TYPE$`_ variable.
 

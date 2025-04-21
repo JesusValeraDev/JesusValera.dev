@@ -11,7 +11,7 @@ static_thumbnail = "/images/2020-06-11/1.png"
 subtitle = "Dummy, Stub, Spy, Mock or Fake"
 +++
 
-<img alt="parliament-budapest" src="/images/2020-06-11/1.png" style="width: 100%"/>
+<img alt="parliament-budapest" src="/images/2020-06-11/1.png" style="width: 100%">
 
 ## Test Doubles
 
@@ -23,7 +23,7 @@ several types of tests. They are also known as Test Doubles instead of â€œMocksâ
 
 ### The five types of Test Doubles are:
 
-<img alt="test-types" src="/images/2020-06-11/2.png" style="width: 90%"/>
+<img alt="test-types" src="/images/2020-06-11/2.png" style="width: 90%">
 
 - **Dummy**: It is used as a placeholder when an argument needs to be filled in.
 - **Stub**: It provides fake data to the SUT (System Under Test).

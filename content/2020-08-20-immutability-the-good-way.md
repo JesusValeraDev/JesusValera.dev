@@ -13,7 +13,7 @@ subtitle = "Practical examples of immutability in PHP"
 
 A **mutable** object can be modified after its creation, an **immutable** cannot.
 
-<img alt="parliament-budapest" src="/images/2020-08-20/1.png" style="width: 100%"/>
+<img alt="parliament-budapest" src="/images/2020-08-20/1.png" style="width: 100%">
 
 An immutable object will remain in the same state as it was created. Design and implementation will be much easier and
 consistent. In the case of problems, locate a potential bug is faster due that it won't have side effects.

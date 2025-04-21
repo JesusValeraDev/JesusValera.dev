@@ -11,14 +11,14 @@ static_thumbnail = "/images/2020-07-02/1.png"
 subtitle = "Being up-to-date and avoiding conflicts"
 +++
 
-<img alt="parliament-budapest" src="/images/2020-07-02/1.png" style="width: 100%"/>
+<img alt="parliament-budapest" src="/images/2020-07-02/1.png" style="width: 100%">
 
 Have you ever wondered how you could collaborate with open-source projects, but you didn't know how to start? It
 couldn't be easier. Take a look:
 
 - Fork the repository into your account.
 
-<img alt="parliament-budapest" src="/images/2020-07-02/2.png" style="width: 100%"/>
+<img alt="parliament-budapest" src="/images/2020-07-02/2.png" style="width: 100%">
 
 - Clone the forked project on your computer.
 
@@ -29,7 +29,7 @@ git clone git@github.com/myself/forked.git
 - Add the upstream to sync with the new changes to your project.
 
 <br>
-<img alt="parliament-budapest" src="/images/2020-07-02/3.png" style="width: 80%"/>
+<img alt="parliament-budapest" src="/images/2020-07-02/3.png" style="width: 80%">
 <br>
 
 ```bash
@@ -74,7 +74,7 @@ Once you're done, let’s create a PR!
 > **git merge upstream/master** in master to be up-to-date!
 
 <br>
-<img alt="parliament-budapest" src="/images/2020-07-02/4.png" style="width: 90%"/>
+<img alt="parliament-budapest" src="/images/2020-07-02/4.png" style="width: 90%">
 
 ## To sum up
 
