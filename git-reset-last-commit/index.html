@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jesusvalera.dev/main.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,600" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jesusvalera.dev/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jesusvalera.dev/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jesusvalera.dev/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://jesusvalera.dev/atom.xml" title="Jesus Valera Reales">
+  
+
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '162fa780362b916393b2692116b73be0' });
+  </script>
+
+  
+<title>Git: Reset last commit | Jesus Valera Reales</title>
+
+
+
+<meta property="og:title" content="Git: Reset last commit">
+
+
+<meta property="og:locale" content="en_US">
+
+
+<meta name="description" content="differences between git reset &amp; git revert">
+<meta property="og:description" content="differences between git reset &amp; git revert">
+
+
+
+<link rel="canonical" href="https://jesusvalera.dev/git-reset-last-commit/">
+<meta property="og:url" content="https://jesusvalera.dev/git-reset-last-commit/">
+
+
+
+  <meta property="og:site_name" content="Jesus Valera Reales">
+
+
+
+  <meta property="og:image" content="https://jesusvalera.dev/icon.ico">
+  
+  
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-03-25T00:00:00+00:00">
+
+
+
+
+<script type="application/ld+json">
+{
+  "description": "differences between git reset &amp; git revert",
+  "url": "https://jesusvalera.dev/git-reset-last-commit/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git: Reset last commit",
+  
+  "datePublished":"2025-03-25T00:00:00+00:00",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://jesusvalera.dev/git-reset-last-commit/"
+  }
+  
+}
+</script>
+  
+  
+  <script src="https://jesusvalera.dev/js/dark-mode.js"></script>
+  <script src="https://jesusvalera.dev/js/scroll-top.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <a class="profile-icon" href="https://jesusvalera.dev">
+      <img alt="JesusValera" src="https://jesusvalera.dev/jesus.webp">
+    </a>
+    <nav>
+      
+        <a href="https://jesusvalera.dev">Blog</a>
+      
+        <a href="https://jesusvalera.dev/readings">Readings</a>
+      
+        <a href="https://jesusvalera.dev/cv">CV</a>
+      
+      <button id="light-mode" onclick="toDarkMode()" title="Switch to dark mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#444" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+      <button id="dark-mode" onclick="toLightMode()" title="Switch to light mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#ccc" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  
+
+  <main>
+    
+  <div class="post">
+    <h1 class="post-title">Git: Reset last commit</h1>
+    <h2 class="post-subtitle">git reset --soft, git reset --hard &amp; git revert</h2>
+    <small>
+      <time datetime="2025-03-25">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 20 20">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-300, -2799)" fill="#AAAAAAFF">
+              <g transform="translate(56, 160)">
+                <path d="M262,2656 C262,2656.552 261.552,2657 261,2657 L247,2657 C246.448,2657 246,2656.552 246,2656 L246,2646 C246,2645.448 246.448,2645 247,2645 L261,2645 C261.552,2645 262,2645.448 262,2646 L262,2656 Z M262,2641 L262,2640 C262,2639.448 261.552,2639 261,2639 C260.448,2639 260,2639.448 260,2640 L260,2641 L255,2641 L255,2640 C255,2639.448 254.552,2639 254,2639 C253.448,2639 253,2639.448 253,2640 L253,2641 L248,2641 L248,2640 C248,2639.448 247.552,2639 247,2639 C246.448,2639 246,2639.448 246,2640 L246,2641 C244.895,2641 244,2641.895 244,2643 L244,2657 C244,2658.104 244.895,2659 246,2659 L262,2659 C263.105,2659 264,2658.104 264,2657 L264,2643 C264,2641.895 263.105,2641 262,2641 L262,2641 Z"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        March 25, 2025 ·
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+          <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+        </svg>
+        2 mins
+      </time>
+      <span class="found-typo">
+        
+        <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" fill="#AAAAAAFF" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z"></path>
+        </svg> Found a typo? <a href="https:&#x2F;&#x2F;github.com&#x2F;JesusValeraDev&#x2F;JesusValera.dev&#x2F;blob&#x2F;main&#x2F;content&#x2F;2025-03-25-git-reset-last-commit.md" target="_blank">Edit me</a>
+      </span>
+    </small>
+    <div class="post-line"></div>
+    <p>When working with Git, it is possible that you committed some code by mistake.
+You can use <code>git revert</code> or <code>git reset</code> commands to have a cleaner Git history.</p>
+<p><img src="/images/2025-03-25/1.webp" alt="artenara landscape" /></p>
+<h2 id="git-revert">Git revert</h2>
+<p>If you want to <strong>undo a commit without losing the history but creating a new commit</strong> undoing what you did, consider using <code>git revert</code>:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> revert HEAD<span class="z-meta z-group z-expansion z-tilde"><span class="z-variable z-language z-tilde z-shell">~</span></span>1</span>
+</span></code></pre>
+<p>This command is a safer option in shared repositories.</p>
+<h2 id="git-reset">Git reset</h2>
+<p>The <code>git reset</code> command moves the <code>HEAD</code> pointer to a previous point, removing intermediate commits.</p>
+<h3 id="git-reset-soft">Git reset soft</h3>
+<p>After running this command, the <strong>changes from the last commit will still be staged</strong>.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> reset<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>soft</span> HEAD<span class="z-meta z-group z-expansion z-tilde"><span class="z-variable z-language z-tilde z-shell">~</span></span>1</span>
+</span></code></pre>
+<p>Use cases:</p>
+<ul>
+<li>You made a commit but realized you need to modify something before finalizing it</li>
+<li>You want to combine multiple commits into one before pushing</li>
+</ul>
+<h3 id="git-reset-hard">Git reset hard</h3>
+<p>After running this command, the <strong>changes from the last commit will be removed</strong>.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> reset<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>hard</span> HEAD<span class="z-meta z-group z-expansion z-tilde"><span class="z-variable z-language z-tilde z-shell">~</span></span>1</span>
+</span></code></pre>
+<p>Use cases:</p>
+<ul>
+<li>You want to remove some commits and return to a clean state completely</li>
+<li>You accidentally committed something and need to reset without keeping any modifications</li>
+</ul>
+<h4 id="git-push-origin">Git push origin</h4>
+<p>What if you pushed some commits into a remote branch and needed to push your latest changes regardless?</p>
+<p>In that case, you can force the push using the flag <code>-f</code>. This command will override the history, which means the previous commits will be removed.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> push origin <span class="z-meta z-group z-expansion z-brace z-shell"><span class="z-punctuation z-section z-expansion z-brace z-begin z-shell">{</span>branch<span class="z-punctuation z-section z-expansion z-brace z-end z-shell">}</span></span><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>f</span></span>
+</span></code></pre>
+<div class="separator"></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Understanding when to use <code>git reset --soft</code> and <code>git reset --hard</code> is crucial for managing commits effectively.<br>
+Use <code>--soft</code> when you need to adjust your commits without losing changes and <code>--hard</code> when you need a complete reset. Always double-check before using <code>--hard</code> to avoid unintended data loss!</p>
+<p>If you have doubts, or you are working in a branch with other people, it is preferable to use <code>git revert</code> instead.</p>
+
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <span style="margin-right: 6px">
+        <span>
+          <a href="/other/parlamento-entre-el-rey-cristiano-y-el-sultan-moro/">&#10015;</a> ×
+        </span>
+        <a href="/atom.xml">RSS</a> &copy; <time datetime="2025">2025</time> - Jesus Valera Reales
+      </span>
+      <a href="https://github.com/JesusValeraDev" style="display: inline-block" target="_blank">
+        <img alt="github" src="/about/github.svg" style="margin: auto" width="24" height="24">
+      </a>
+      <a href="https://www.linkedin.com/in/jesus-valera-reales/" style="display: inline-block" target="_blank">
+        <img alt="linkedin" src="/about/linkedin.svg" style="margin: auto" width="24" height="24">
+      </a>
+    </div>
+  </footer>
+  
+  <a href="#" class="top" style="display: none">
+    <svg width="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="miter" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="16 13.2 12 9.5 8 13.2"/>
+    </svg>
+  </a>
+</body>
+</html>
