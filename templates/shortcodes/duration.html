@@ -1,0 +1,17 @@
+{% set end_year = now() | date(format="%Y") | int %}
+{% set end_month = now() | date(format="%m") | int %}
+{% set total_months = (end_year - start_year) * 12 + (end_month - start_month) + 1 %} <!-- LinkedIn adds one extra month -->
+{% set years = (total_months / 12) | int %}
+{% set months = total_months % 12 %}
+
+{%- if years > 0 -%}
+  {{ years }} yr{% if years != 1 %}s{% endif %}
+{%- endif -%}
+
+{%- if years > 0 and months > 0 -%}
+  {{ " " }}
+{%- endif -%}
+
+{%- if months > 0 -%}
+  {{ months }} mo{% if months != 1 %}s{% endif %}
+{%- endif -%}

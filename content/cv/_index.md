@@ -19,7 +19,7 @@ aliases = ['resume']
               </g>
             </g>
           </g>
-        </svg> Sep 2023 — Present
+        </svg> Sep 2023 — Present · <i style="font-size: smaller">{{ duration(start_year=2023, start_month=9) }}</i>
         </span>
         <span class="location">
           <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 48 48" fill="none">
@@ -108,8 +108,8 @@ aliases = ['resume']
         <li>Exported and imported CSV files to an S3 bucket</li>
       </ul>
       <p class="skills"><span>Skills</span>: PHP · Symfony · Docker · MySQL · PostgreSQL</p>
-      </div>
     </div>
+  </div>
 
   <div class="container">
     <div class="content">
