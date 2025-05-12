@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jesusvalera.dev/main.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,600" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jesusvalera.dev/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jesusvalera.dev/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jesusvalera.dev/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://jesusvalera.dev/atom.xml" title="Jesus Valera Reales">
+  
+
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '162fa780362b916393b2692116b73be0' });
+  </script>
+
+  
+<title>PhpStorm tricks ✨ | Jesus Valera Reales</title>
+
+
+
+<meta property="og:title" content="PhpStorm tricks ✨">
+
+
+<meta property="og:locale" content="en_US">
+
+
+<meta name="description" content="PhpStorm tricks: Customize the IDE with templates, plugins, shortcuts and more">
+<meta property="og:description" content="PhpStorm tricks: Customize the IDE with templates, plugins, shortcuts and more">
+
+
+
+<link rel="canonical" href="https://jesusvalera.dev/phpstorm-tricks/">
+<meta property="og:url" content="https://jesusvalera.dev/phpstorm-tricks/">
+
+
+
+  <meta property="og:site_name" content="Jesus Valera Reales">
+
+
+
+  <meta property="og:image" content="https://jesusvalera.dev/icon.ico">
+  
+  
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2023-11-27T00:00:00+00:00">
+
+
+
+
+<script type="application/ld+json">
+{
+  "description": "PhpStorm tricks: Customize the IDE with templates, plugins, shortcuts and more",
+  "url": "https://jesusvalera.dev/phpstorm-tricks/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PhpStorm tricks ✨",
+  
+  "datePublished":"2023-11-27T00:00:00+00:00",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://jesusvalera.dev/phpstorm-tricks/"
+  }
+  
+}
+</script>
+  
+  
+  <script src="https://jesusvalera.dev/js/dark-mode.js"></script>
+  <script src="https://jesusvalera.dev/js/scroll-top.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <a class="profile-icon" href="https://jesusvalera.dev">
+      <img alt="JesusValera" src="https://jesusvalera.dev/jesus.webp">
+    </a>
+    <nav>
+      
+        <a href="https://jesusvalera.dev">Blog</a>
+      
+        <a href="https://jesusvalera.dev/readings">Readings</a>
+      
+        <a href="https://jesusvalera.dev/cv">CV</a>
+      
+      <button id="light-mode" onclick="toDarkMode()" title="Switch to dark mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#444" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+      <button id="dark-mode" onclick="toLightMode()" title="Switch to light mode">
+        <svg width="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#ccc" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  
+
+  <main>
+    
+  <div class="post">
+    <h1 class="post-title">PhpStorm tricks ✨</h1>
+    <h2 class="post-subtitle">Customize the IDE with templates, plugins and more</h2>
+    <small>
+      <time datetime="2023-11-27">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 20 20">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-300, -2799)" fill="#AAAAAAFF">
+              <g transform="translate(56, 160)">
+                <path d="M262,2656 C262,2656.552 261.552,2657 261,2657 L247,2657 C246.448,2657 246,2656.552 246,2656 L246,2646 C246,2645.448 246.448,2645 247,2645 L261,2645 C261.552,2645 262,2645.448 262,2646 L262,2656 Z M262,2641 L262,2640 C262,2639.448 261.552,2639 261,2639 C260.448,2639 260,2639.448 260,2640 L260,2641 L255,2641 L255,2640 C255,2639.448 254.552,2639 254,2639 C253.448,2639 253,2639.448 253,2640 L253,2641 L248,2641 L248,2640 C248,2639.448 247.552,2639 247,2639 C246.448,2639 246,2639.448 246,2640 L246,2641 C244.895,2641 244,2641.895 244,2643 L244,2657 C244,2658.104 244.895,2659 246,2659 L262,2659 C263.105,2659 264,2658.104 264,2657 L264,2643 C264,2641.895 263.105,2641 262,2641 L262,2641 Z"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        November 27, 2023 ·
+        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+          <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+        </svg>
+        8 mins
+      </time>
+      <span class="found-typo">
+        
+        <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" fill="#AAAAAAFF" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z"></path>
+        </svg> Found a typo? <a href="https:&#x2F;&#x2F;github.com&#x2F;JesusValeraDev&#x2F;JesusValera.dev&#x2F;blob&#x2F;main&#x2F;content&#x2F;2023-11-27-phpstorm-tricks.md" target="_blank">Edit me</a>
+      </span>
+    </small>
+    <div class="post-line"></div>
+    <p>PhpStorm is a powerful IDE that helps to boost your development, let's take a look to some hidden tricks to make
+PhpStorm even better! ⚡️</p>
+<p><img src="/images/2023-11-27/1.png" alt="phpstorm-logo" /></p>
+<h2 id="plugins">Plugins</h2>
+<p>Plugins are a crucial part of the IDE.</p>
+<p>If you are a Symfony user, probably you use plugins
+like <a href="https://plugins.jetbrains.com/plugin/7219-symfony-support" target="_blank">Symfony Support</a>
+and <a href="https://plugins.jetbrains.com/plugin/7303-twig" target="_blank">Twig</a>. In the other hand, if you are a Laravel one, I bet you use <a href="https://plugins.jetbrains.com/plugin/13441-laravel-idea" target="_blank">Laravel Idea</a>
+and <a href="https://plugins.jetbrains.com/plugin/7569-blade" target="_blank">Blade</a>.
+However, I recommend you <a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox" target="_blank">GitToolBox</a>
+or <a href="https://plugins.jetbrains.com/plugin/2162-string-manipulation" target="_blank">String Manipulation</a> in
+case you never tried them.<br>
+Another recommendation, in case you want to familiarize with the IDE shortcuts
+is <a href="https://plugins.jetbrains.com/plugin/9792-key-promoter-x" target="_blank">Key Promoter X</a>.</p>
+<p>Although, my favorite so far, which is also not very well-known
+is <a href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-" target="_blank">PHP Inspections (EA
+Extended)</a>. This plugin helps you with architecture related issues, regular expressions, non-optimal, duplicated and
+suspicious "if" conditions, performance issues beyond others.<br>
+You can check the full list of features on their
+<a href="https://github.com/kalessil/phpinspectionsea" target="_blank">GitHub</a> page, this one is a <strong>MUST</strong>.</p>
+<div class="separator"></div>
+<h2 id="code-style">Code Style</h2>
+<p>PHP is a programming language where everybody can write the code as they wish, in order to unify the
+industry, <span style="text-decoration: underline dotted" title="PHP Standard Recommendation">PSRs</span> was born.<br>
+That is the reason we can find standards for <code>Loggering</code> (<a href="https://www.php-fig.org/psr/psr-3" target="_blank">
+PSR-3</a>), <code>Event Dispatcher</code> (<a href="https://www.php-fig.org/psr/psr-14" target="_blank">PSR-14</a>),
+and even for the <code>Clock</code> (<a href="https://www.php-fig.org/psr/psr-20" target="_blank">PSR-20</a>). You can check the
+full list of all available PSRs <a href="https://www.php-fig.org/psr/" target="_blank">here</a>.</p>
+<p>One of the most popular PSRs is concerning the <code>Code Style</code>, that is, it defines things like:</p>
+<ul>
+<li>Should I use tabs or spaces?</li>
+<li>Where should I place the brackets in a method? And in a conditional/loop?</li>
+<li>Are the parenthesis required when instantiating a class with empty constructor?</li>
+</ul>
+<p>During the last years, due to the big and fast changes the language experienced, PSR-2 was quickly replaced by PSR-12.
+However, the language continues evolving very fast,
+so <span style="text-decoration: underline dotted" title="PHP Evolving Recommendation">PERs</span> were introduced.<br>
+Unfortunately, at the moment is not possible to define <code>PER</code> as <code>Code Style</code> in PhpStorm, anyway, <code>PSR-12</code> is good
+enough.</p>
+<p>To define PSR-12 by default, go to the following path and select <strong>PSR12</strong>.</p>
+<blockquote>
+<p>Settings ➔ Editor ➔ Code Style ➔ PHP ➔ "Set from..." ➔ PSR12</p>
+</blockquote>
+<p><img src="/images/2023-11-27/2.png" alt="phpstorm-define-psr-12" /></p>
+<div class="separator"></div>
+<h2 id="live-templates">Live Templates</h2>
+<p>Live Templates are snippets of code that are very used, and you can write them in a few characters.</p>
+<p>PhpStorm brings some live templates, for example, if we type <code>prif</code>, the generated code will be:</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-storage z-modifier z-php">private</span> <span class="z-storage z-type z-php">function</span> ░<span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span><span class="z-source z-php"><span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></code></pre>
+<p>There is a live template for all function combinations: <code>prif</code>, <code>prisf</code>, <code>prof</code>, <code>prosf</code>, <code>pubf</code> &amp; <code>pubsf</code>.</p>
+<p>It is possible to enhance the auto-completion with a default <code>: void</code> return type as follows.</p>
+<img src="/images/2023-11-27/3.gif" alt="live templates in action">
+<p>Go to <code>Editor ➔ Live Templates</code> and adjust each template with the <em><code>$RETURN_TYPE$</code></em> variable.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-variable z-other z-readwrite z-ts">private</span> <span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">$NAME$</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">$PARAMETERS$</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span><span class="z-meta z-return z-type z-ts"><span class="z-keyword z-operator z-type z-annotation z-ts">:</span> <span class="z-entity z-name z-type z-ts">$RETURN_TYPE$</span> </span><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">    <span class="z-variable z-other z-readwrite z-ts">$END$</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>Finally, press on <strong>Edit variables</strong> and insert <code>"void"</code> <em>(with quotes)</em> on <strong>RETURN_TYPE</strong> field.</p>
+<p><img src="/images/2023-11-27/4.jpeg" alt="live-template-setup" /></p>
+<div class="separator"></div>
+<h2 id="file-and-code-templates">File and Code Templates</h2>
+<p>The scaffolding you get when you create a new file in PhpStorm is also editable.</p>
+<p>If you are into <code>strict_types</code> and <code>final</code> classes by default, you are in luck! 🎉</p>
+<p>To change this, go to <code>Editor ➔ File and Code Templates</code> and update all <code>PHP</code> templates.</p>
+<p>You can copy-paste the following code snippets into its own category  (<em>notice the spaces</em>).</p>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP File</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Class</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Interface</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-type z-php">interface</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Trait</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-constant z-other z-php">trait</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Enum</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-constant z-other z-php">enum</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${BACKED_TYPE}) : ${BACKED_TYPE} #end{
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Test</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${TESTED_NAME} &amp;&amp; ${NAMESPACE} &amp;&amp; !${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>elseif (${TESTED_NAME} &amp;&amp; ${TESTED_NAMESPACE} &amp;&amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAMESPACE</span></span><span class="z-punctuation z-section z-block z-php">}</span>\\$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-storage z-modifier z-php">extends</span><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if(${NAMESPACE}) \PHPUnit_Framework_TestCase #else PHPUnit_Framework_TestCase #end{
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHP Unit 6 Test</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${TESTED_NAME} &amp;&amp; ${NAMESPACE} &amp;&amp; !${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>elseif (${TESTED_NAME} &amp;&amp; ${TESTED_NAMESPACE} &amp;&amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAMESPACE</span></span><span class="z-punctuation z-section z-block z-php">}</span>\\$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php"><span class="z-meta z-path z-php"><span class="z-support z-other z-namespace z-php">PHPUnit</span><span class="z-punctuation z-separator z-namespace z-php">\</span></span><span class="z-meta z-path z-php"><span class="z-support z-other z-namespace z-php">Framework</span><span class="z-punctuation z-separator z-namespace z-php">\</span></span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TestCase</span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-storage z-modifier z-php">extends</span> <span class="z-constant z-other z-php">TestCase</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">PHPSpec Specification</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${TESTED_NAME} &amp;&amp; ${NAMESPACE} &amp;&amp; !${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>elseif (${TESTED_NAME} &amp;&amp; ${TESTED_NAMESPACE} &amp;&amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAMESPACE</span></span><span class="z-punctuation z-section z-block z-php">}</span>\\$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php"><span class="z-meta z-path z-php"><span class="z-support z-other z-namespace z-php">PhpSpec</span><span class="z-punctuation z-separator z-namespace z-php">\</span></span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">ObjectBehavior</span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-storage z-modifier z-php">extends</span> <span class="z-constant z-other z-php">ObjectBehavior</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">Codeception Unit Test</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${TESTED_NAME} &amp;&amp; ${NAMESPACE} &amp;&amp; !${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>elseif (${TESTED_NAME} &amp;&amp; ${TESTED_NAMESPACE} &amp;&amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAMESPACE</span></span><span class="z-punctuation z-section z-block z-php">}</span>\\$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-storage z-modifier z-php">extends</span> <span class="z-meta z-path z-php"><span class="z-punctuation z-separator z-namespace z-php">\</span><span class="z-support z-other z-namespace z-php">Codeception</span><span class="z-punctuation z-separator z-namespace z-php">\</span><span class="z-support z-other z-namespace z-php">Test</span><span class="z-punctuation z-separator z-namespace z-php">\</span><span class="z-constant z-other z-php">Unit</span></span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">Codeception Functional Test</span></summary>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-punctuation z-section z-embedded z-begin z-php">&lt;?php</span></span><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-keyword z-control z-php">declare</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-other z-php">strict_types</span><span class="z-keyword z-operator z-assignment z-php">=</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>parse(&quot;PHP File Header.php&quot;)
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"><span class="z-keyword z-other z-namespace z-php">namespace</span> </span></span><span class="z-meta z-namespace z-php"><span class="z-meta z-path z-php"></span></span>$<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAMESPACE</span><span class="z-punctuation z-section z-block z-end z-php">}</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>if (${TESTED_NAME} &amp;&amp; ${NAMESPACE} &amp;&amp; !${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>elseif (${TESTED_NAME} &amp;&amp; ${TESTED_NAMESPACE} &amp;&amp; ${NAMESPACE} != ${TESTED_NAMESPACE})
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-meta z-use z-php"><span class="z-keyword z-other z-use z-php">use</span> </span><span class="z-meta z-use z-php">$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAMESPACE</span></span><span class="z-punctuation z-section z-block z-php">}</span>\\$<span class="z-punctuation z-section z-block z-php">{</span><span class="z-meta z-path z-php"><span class="z-support z-class z-php">TESTED_NAME</span></span><span class="z-punctuation z-section z-block z-php">}</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span>end
+</span></span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-storage z-modifier z-php">final</span> <span class="z-storage z-type z-php">class</span> $<span class="z-punctuation z-section z-block z-begin z-php">{</span><span class="z-constant z-other z-php">NAME</span><span class="z-punctuation z-section z-block z-end z-php">}</span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php">
+</span></span></span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic"><span class="z-meta z-embedded z-block z-php"><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span></span></span></span></code></pre>
+</details>
+<div class="separator"></div>
+<h2 id="shortcuts">Shortcuts</h2>
+<p>It is very important to learn the IDE shortcuts, that will bring you confidence and will help you to be more productive,
+in case you don't know them, definitely you SHOULD.<br>
+I would like to remind the plugin <code>Key Promoter X</code> that I mentioned before.</p>
+<p>PhpStorm also brings a PDF file with the most important shortcuts, go to <code>Help ➔ Keyboard Shortcuts PDF</code> to download it.</p>
+<p>List of most important shortcuts:</p>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">Windows/Linux</span></summary>
+<ul>
+<li><code>Ctrl + Shift + S</code> = Open Settings</li>
+<li><code>Alt + 1</code> = Display/hide <em>Project</em> bar</li>
+<li><code>Alt (twice)</code> = Search in the whole project (class names, files, symbols, actions...)</li>
+<li><code>Ctrl + N</code> = Search by class name (similar to <code>Alt (twice)</code> but only for class names)</li>
+<li><code>Alt + →/←</code> = Move to left/right tab</li>
+<li><code>Ctrl + G</code> = Go to line X:Y</li>
+<li><code>Ctrl + B</code> = Navigate in/out (similar to <code>Ctrl + Click</code>)</li>
+<li><code>Ctrl + Y</code> = Delete current line</li>
+<li><code>Ctrl + C/V (without selection)</code> = Copy/Paste full line</li>
+<li><code>Ctrl + Shift + V</code> = Paste with history</li>
+<li><code>Ctrl + E</code> = Display recent files</li>
+<li><code>Ctrl + Shift + E</code> = Display last 3 recent files</li>
+<li><code>Ctrl + Shift + F</code> = Find in path (search words in the whole project)</li>
+<li><code>Ctrl + Shift + L</code> = Reformat Code</li>
+<li><code>Ctrl + Shift + ↑/↓</code> = Moves the current code block</li>
+<li><code>Ctrl + Shift + M</code> = Go to start/end of current brackets</li>
+<li><code>Ctrl + Shift + T</code> = Open test from specific class (and vice-versa)</li>
+<li><code>Shift + Alt + Click</code> = Multiple cursor</li>
+<li><code>Ctrl (twice keeping it pushed) + arrows</code> = Multiple cursor from adjacent lines</li>
+<li><code>Ctrl + W</code> = Select gradually</li>
+<li><code>Alt + J</code> = Select next occurrence similar to current one</li>
+<li><code>Ctrl + Alt + F/M/C/V/P</code> = Refactor Function/Method/Constant/Variable/Parameter</li>
+<li><code>Ctrl + Alt + N</code> = Inline refactor</li>
+<li><code>Ctrl + Insert</code> = Contextual menu to override methods, generate getters, setters...</li>
+<li><code>Ctrl + Shift + F10</code>: Run the scope where the caret is</li>
+<li><code>Ctrl + Alt + Enter</code> = Jump to next line (adds ";" automatically if needed)</li>
+</ul>
+</details>
+<details>
+  <summary><span style="cursor: pointer; font-weight: bold">Mac</span></summary>
+<ul>
+<li><code>⌘ + ,</code> = Open Settings</li>
+<li><code>⌘ + 1</code> = Display/hide project bar</li>
+<li><code>⇧ (twice)</code> = Search in the whole project (class names, files, symbols, actions...)</li>
+<li><code>⌘ + O</code> = Search by class name (similar to <code>⇧ (twice)</code> but only for class names)</li>
+<li><code>⌃ + →/←</code> = Move to left/right tab</li>
+<li><code>⌘ + L</code> = Go to line X:Y</li>
+<li><code>⌘ + B</code> = Navigate in/out (similar to <code>Ctrl + Click</code>)</li>
+<li><code>⌘ + ⌫</code> = Delete current line</li>
+<li><code>⌘ + C/V (without selection)</code> = Copy/Paste full line</li>
+<li><code>⌘ + ⇧ + V</code> = Paste with history</li>
+<li><code>⌘ + E</code> = Display recent files</li>
+<li><code>⌘ + ⇧ + E</code> = Display last 3 recent files</li>
+<li><code>⌘ + ⇧ + F</code> = Find in path (search words in the whole project)</li>
+<li><code>⌥ + ⌘ + L</code> = Reformat Code</li>
+<li><code>⌘ + ⇧ + ↑/↓</code> = Moves the current code block</li>
+<li><code>⌘ + ⇧ + T</code> = Open test from specific class (and vice-versa)</li>
+<li><code>⌥ + ⌘ + ⇧ + Click</code> or = Multiple cursor</li>
+<li><code>⌘ (twice keeping it pushed) + arrows</code> = Multiple cursor from adjacent lines</li>
+<li><code>⌥ + ↑</code> = Select gradually</li>
+<li><code>⌥ + ⌘ + F/M/C/V/P</code> = Refactor Function/Method/Constant/Variable/Parameter</li>
+<li><code>⌥ + ⌘ + N</code> = Inline refactor</li>
+<li><code>⌘ + N</code> = Contextual menu to override methods, generate getters, setters...</li>
+<li><code>⇧ + ⌃ + R</code> = Run the scope where the caret is</li>
+<li><code>⌘ + ⇧ + Enter</code> = Jump to next line (adds ";" automatically if needed)</li>
+</ul>
+<blockquote>
+<p>In case the shortcut <code>⌃ + →/←</code> changes between Desktops in Mac, you can disable it
+in <code>Settings ➔ Keyboard ➔ Keyboard Shortcuts... ➔ Mission Control</code>.</p>
+</blockquote>
+</details>
+<h3 id="add-custom-shortcuts">Add Custom shortcuts</h3>
+<p>We just saw the <code>Ctrl + 1</code>/<code>⌘ + 1</code> shortcut displays/hides the project bar, it is also very handy to set
+the shortcut <code>Ctrl + Alt + 1</code>/<code>⌘ + ⇧ + 1</code> to display and select in the project bar the current file.<br>
+This way, we don't need to use the mouse at all, we can navigate between tabs with only the keyboard.</p>
+<p>To set this new combination, in <code>Settings ➔ Keymap</code> search by <code>Select File in Project View</code> and <code>Add Keyboard Shortcut</code>.</p>
+<p>It is also very handy to add shortcuts to <code>Split and Move Right</code> or <code>Split and Move Down</code> with <code>Ctrl + I/-</code>/<code>⌃ + I/-</code>.</p>
+
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <span style="margin-right: 6px">
+        <span>
+          <a href="/other/parlamento-entre-el-rey-cristiano-y-el-sultan-moro/">&#10015;</a> ×
+        </span>
+        <a href="/atom.xml">RSS</a> &copy; <time datetime="2025">2025</time> - Jesus Valera Reales
+      </span>
+      <a href="https://github.com/JesusValeraDev" style="display: inline-block" target="_blank">
+        <img alt="github" src="/about/github.svg" style="margin: auto" width="24" height="24">
+      </a>
+      <a href="https://www.linkedin.com/in/jesus-valera-reales/" style="display: inline-block" target="_blank">
+        <img alt="linkedin" src="/about/linkedin.svg" style="margin: auto" width="24" height="24">
+      </a>
+    </div>
+  </footer>
+  
+  <a href="#" class="top" style="display: none">
+    <svg width="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="miter" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="16 13.2 12 9.5 8 13.2"/>
+    </svg>
+  </a>
+</body>
+</html>
