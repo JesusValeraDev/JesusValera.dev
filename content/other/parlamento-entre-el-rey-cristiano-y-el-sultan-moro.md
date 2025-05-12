@@ -1,5 +1,5 @@
 +++
-title = "Parlamento en las fiestas del día 3 de Mayo"
+title = "Parlamento de la batalla del 3 de Mayo"
 description = "Parlamento de la batalla del día 3 de mayo entre el Rey Cristiano y Sultán Moro en Caravaca de la Cruz, Murcia"
 date = 2023-05-03
 
