@@ -13,8 +13,8 @@ subtitle = "When to use each one?"
 
 ![cave](/images/2025-04-18/1.webp)
 
-When a heavy task needs to run — which potentially could idle the program, or multiple actions need to occur when some
-action happens, you would need to run the task outside the main request-response flow.
+When a heavy task needs to run (which potentially could idle the program), or multiple actions need to occur when some
+other action happens, usually you would want to run the task outside the main request-response flow.
 
 That's where jobs and events come in. Though they might seem similar, they serve different purposes.
 
@@ -25,7 +25,7 @@ request-response cycle (e.g., sending an email).
 
 Jobs are a powerful tool for handling **resource-intensive, time-consuming, or non-urgent** processes.
 
-### Useful when
+### It is useful when
 
 - Run scheduled tasks (like cron jobs)
 - Perform logic that doesn’t need to run immediately
@@ -44,7 +44,7 @@ listeners react to that event**.
 Events are a great way to **decouple your logic**. Rather than hardcoding all the logic inside one method, you can fire
 an event and let other parts of your system decide how to respond.
 
-### Useful when
+### It is useful when
 
 - Broadcast in real-time when a specific action occurs (like `UserRegistered`)
 - Trigger multiple follow-up actions
@@ -54,26 +54,27 @@ an event and let other parts of your system decide how to respond.
 
 <div class="separator"></div>
 
-| Scenario                                             | **Job** | **Event** |
-|:-----------------------------------------------------|:-------:|:---------:|
-| Perform a heavy or background task                   |   🟢    |    🔴     |
-| Execute a one-off task with no need for notification |   🟢    |    🔴     |
-| Retry failed operations                              |   🟢    |    🔴     |
-| Trigger multiple reactions from one action           |   🔴    |    🟢     |
-| Let the system know something happened               |   🔴    |    🟢     |
-| Decouple business logic                              |   🔴    |    🟢     |
+It is possible to combine both simultaneously, that is, send an event when the user performs an action, and potentially,
+one of the listeners runs a job in the background, like sending a welcome email.
 
-#### Simple Analogy
+### Simple Analogy
 
 - A job is like an alarm clock that rings at the same time every day, whether you're awake or not
 - An event is like a doorbell that rings when someone presses it, regardless of the time and is listened by everybody inside
-
-## Combining Events and Jobs
-
-It is possible to combine both simultaneously, that is, send an event when the user performs an action, and potentially,
-one of the listeners runs a job in the background, like sending a welcome email.
 
 ## Final Thoughts
 
 Knowing when to use jobs and events is essential if your goal is performance, scalability, and maintainability.<br>
 Use jobs for automated, scheduled tasks and events for real-time interactions.
+
+### Conclusion
+
+Use a job when:
+- Perform a heavy or background task
+- Execute a one-off task with no need for notification
+- Retry failed operations
+
+Use a event when:
+- Trigger multiple reactions from one action
+- Let the system know something happened
+- Decouple business logic
