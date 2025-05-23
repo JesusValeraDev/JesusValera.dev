@@ -43,8 +43,8 @@ You can check the full list of features on their
 
 PHP is a programming language where everybody can write the code as they wish, in order to unify the
 industry, <span style="text-decoration: underline dotted" title="PHP Standard Recommendation">PSRs</span> was born.<br>
-That is the reason we can find standards for `Loggering` (<a href="https://www.php-fig.org/psr/psr-3" target="_blank">
-PSR-3</a>), `Event Dispatcher` (<a href="https://www.php-fig.org/psr/psr-14" target="_blank">PSR-14</a>),
+That is the reason we can find standards for `Loggering` (<a href="https://www.php-fig.org/psr/psr-3" target="_blank">PSR-3</a>),
+`Event Dispatcher` (<a href="https://www.php-fig.org/psr/psr-14" target="_blank">PSR-14</a>),
 and even for the `Clock` (<a href="https://www.php-fig.org/psr/psr-20" target="_blank">PSR-20</a>). You can check the
 full list of all available PSRs <a href="https://www.php-fig.org/psr/" target="_blank">here</a>.
 
