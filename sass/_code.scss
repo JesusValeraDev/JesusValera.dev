@@ -4,8 +4,8 @@ code {
 }
 
 code {
-  background-color: var(--code-background-color, $theme-light-code-background-color);
-  color: var(--accent-text-color, $theme-light-accent-text-color);
+  background-color: var(--code-background-color);
+  color: var(--accent-text-color);
   border-radius: 4px;
   font-size: $font-size-code;
   padding: 3px 4px;

@@ -11,7 +11,7 @@ footer {
   text-align: center;
 
   span {
-    color: var(--second-text-color, $theme-light-second-text-color);
+    color: var(--second-text-color);
     font-size: .8rem;
   }
 }
@@ -53,7 +53,7 @@ header {
 
     a {
       font-size: 1.1em;
-      color: var(--first-text-color, $theme-light-first-text-color);
+      color: var(--first-text-color);
       opacity: .8;
       margin-right: 2rem;
     }

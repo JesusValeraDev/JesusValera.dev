@@ -2,7 +2,7 @@
   text-align: center;
   padding: 15px 10px;
   margin: 20px 10px;
-  background-color: var(--catalogue-color, #efefef);
+  background-color: var(--catalogue-color);
   position: relative;
   border-radius: 6px;
 }
@@ -15,8 +15,8 @@
   margin-bottom: 2em;
 
   button {
-    background-color: var(--tag-button-selected-color, $theme-light-tag-button-selected-color);
-    color: var(--tag-text-selected-color, $theme-light-tag-text-selected-color);
+    background-color: var(--tag-button-selected-color);
+    color: var(--tag-text-selected-color);
     border: none;
     cursor: pointer;
     padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
@@ -31,24 +31,24 @@
 
     svg {
       margin-right: 5px;
-      color: var(--tag-button-color, $theme-light-tag-button-color);
+      color: var(--tag-button-color);
     }
   }
 
   [selected] {
-    background-color: var(--tag-button-color, $theme-light-tag-button-color);
-    color: var(--tag-text-color, $theme-light-tag-text-color);
+    background-color: var(--tag-button-color);
+    color: var(--tag-text-color);
 
     svg {
-      color: var(--tag-text-color, $theme-light-tag-text-color);
+      color: var(--tag-text-color);
     }
   }
 
   button[selected]:hover {
-    box-shadow: 0 0 1px 2px var(--tag-button-selected-color, $theme-light-tag-button-selected-color);
+    box-shadow: 0 0 1px 2px var(--tag-button-selected-color);
   }
   button:hover {
-    box-shadow: inset 0 0 0 1px var(--tag-text-selected-color, $theme-light-tag-text-selected-color);
+    box-shadow: inset 0 0 0 1px var(--tag-text-selected-color);
   }
 }
 

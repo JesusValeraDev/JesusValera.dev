@@ -54,6 +54,12 @@ $theme-dark-table-nth-color: #2d2d2d;
 $theme-light-table-hover-color: #f7f7f7;
 $theme-dark-table-hover-color: #333333;
 
+$theme-light-snowflake-bg-color: #38698c;
+$theme-dark-snowflake-bg-color: #efefef;
+
+$theme-light-snowflake-shadow-color: #c0d3e3;
+$theme-dark-snowflake-shadow-color: #cbcbcb;
+
 .theme-dark {
   --bg-color: #{$theme-dark-bg-color};
   --first-text-color: #{$theme-dark-first-text-color};
@@ -71,4 +77,27 @@ $theme-dark-table-hover-color: #333333;
   --table-header-color: #{$theme-dark-table-header-color};
   --table-nth-color: #{$theme-dark-table-nth-color};
   --table-hover-color: #{$theme-dark-table-hover-color};
+  --snowflake-bg-color: #{$theme-dark-snowflake-bg-color};
+  --snowflake-shadow-color: #{$theme-dark-snowflake-shadow-color};
+}
+
+.theme-light {
+  --bg-color: #{$theme-light-bg-color};
+  --first-text-color: #{$theme-light-first-text-color};
+  --second-text-color: #{$theme-light-second-text-color};
+  --accent-text-color: #{$theme-light-accent-text-color};
+  --links-color: #{$theme-light-links-color};
+  --catalogue-color: #{$theme-light-catalogue-color};
+  --code-background-color: #{$theme-light-code-background-color};
+  --timeline-background-color: #{$theme-light-timeline-background-color};
+  --timeline-bullet-color: #{$theme-light-timeline-bullet-color};
+  --tag-button-color: #{$theme-light-tag-button-color};
+  --tag-text-color: #{$theme-light-tag-text-color};
+  --tag-button-selected-color: #{$theme-light-tag-button-selected-color};
+  --tag-text-selected-color: #{$theme-light-tag-text-selected-color};
+  --table-header-color: #{$theme-light-table-header-color};
+  --table-nth-color: #{$theme-light-table-nth-color};
+  --table-hover-color: #{$theme-light-table-hover-color};
+  --snowflake-bg-color: #{$theme-light-snowflake-bg-color};
+  --snowflake-shadow-color: #{$theme-light-snowflake-shadow-color};
 }

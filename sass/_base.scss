@@ -7,8 +7,8 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background: var(--bg-color, $theme-light-bg-color);
-  color: var(--first-text-color, $theme-light-first-text-color);
+  background: var(--bg-color);
+  color: var(--first-text-color);
 }
 
 html {
@@ -27,13 +27,13 @@ main {
 }
 
 a {
-  color: var(--links-color, $theme-light-links-color);
+  color: var(--links-color);
   text-decoration: none;
 }
 
 blockquote {
   border-left: .25rem solid;
-  border-left-color: var(--second-text-color, $theme-light-second-text-color);
+  border-left-color: var(--second-text-color);
   margin: 1.5rem 0 .8rem 0.4rem;
 
   p:last-child {
@@ -65,14 +65,14 @@ table {
   }
 
   thead {
-    background-color: var(--table-header-color, $theme-light-table-header-color);
+    background-color: var(--table-header-color);
   }
 
   tr:nth-child(even) {
-    background-color: var(--table-nth-color, $theme-light-table-nth-color);
+    background-color: var(--table-nth-color);
   }
 
   tbody > tr:hover {
-    background-color: var(--table-hover-color, $theme-light-table-hover-color);
+    background-color: var(--table-hover-color);
   }
 }

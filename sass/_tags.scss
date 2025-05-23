@@ -22,7 +22,7 @@
       padding: 0.2rem 0.5rem;
       background: rgba(0, 0, 0, 0.05);
       border-radius: 5px;
-      color: var(--second-text-color, $theme-light-second-text-color);
+      color: var(--second-text-color);
       text-decoration: none;
 
       &:hover,
@@ -42,7 +42,7 @@
       margin: 2rem 0 0.5rem;
       
       a {
-        color: var(--second-text-color, $theme-light-second-text-color);
+        color: var(--second-text-color);
       }
     }
   }
@@ -53,7 +53,7 @@
     padding: 5px 0;
 
     &-title {
-      color: var(--second-text-color, $theme-light-second-text-color);
+      color: var(--second-text-color);
       text-decoration: none;
       white-space: nowrap;
       overflow: hidden;

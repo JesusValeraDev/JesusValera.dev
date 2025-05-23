@@ -27,7 +27,7 @@
     margin: .3rem;
     padding: .4rem;
     opacity: .9;
-    color: var(--first-text-color, $theme-light-first-text-color);
+    color: var(--first-text-color);
   }
 
   div:hover {
@@ -35,6 +35,6 @@
     opacity: 1;
 
     border-radius: 2px;
-    background-color: var(--catalogue-color, $theme-light-catalogue-color);
+    background-color: var(--catalogue-color);
   }
 }

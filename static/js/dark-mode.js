@@ -13,12 +13,14 @@ window.toLightMode = function () {
 function updateTheme() {
     switch (localStorage.theme) {
         case 'dark':
+            document.documentElement.classList.remove('theme-light');
             document.documentElement.classList.add('theme-dark');
             document.documentElement.setAttribute('color-theme', 'dark');
             addDynamicallyCssHighlightTheme('dark');
             break;
 
         default:
+            document.documentElement.classList.add('theme-light');
             document.documentElement.classList.remove('theme-dark');
             document.documentElement.setAttribute('color-theme', 'light');
             addDynamicallyCssHighlightTheme('light');

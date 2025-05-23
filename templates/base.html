@@ -1,6 +1,6 @@
 {% import 'macros.html' as macros %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,7 @@
   {% endblock scripts %}
   <script src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
   <script src="{{ get_url(path='js/scroll-top.js') | safe }}"></script>
+  <script src="{{ get_url(path='js/snow.js') | safe }}" defer></script>
 </head>
 
 <body>
