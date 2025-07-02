@@ -357,6 +357,13 @@
     "tags": ["Fiction", "Philosophy"]
   },
   {
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "date": "2025-07-02",
+    "img": "The Diary of a Young Girl.webp",
+    "tags": ["War"]
+  },
+  {
     "title": "The Little Prince",
     "author": "Antoine de Saint-Exupéry",
     "date": "",
@@ -383,13 +390,6 @@
     "date": "",
     "img": "Lord of the Flies.webp",
     "tags": ["Fiction"]
-  },
-  {
-    "title": "Vivir la Guerra",
-    "author": "Alberto Rojas",
-    "date": "2024-01-16",
-    "img": "Vivir la Guerra.webp",
-    "tags": ["War"]
   },
   {
     "title": "Yellow Star",
@@ -488,6 +488,13 @@
     "date": "",
     "img": "The Ballad Of Songbirds And Snakes.webp",
     "tags": ["Fiction"]
+  },
+  {
+    "title": "Vivir la Guerra",
+    "author": "Alberto Rojas",
+    "date": "2024-01-16",
+    "img": "Vivir la Guerra.webp",
+    "tags": ["War"]
   },
   {
     "title": "A Christmas Carol",
