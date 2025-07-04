@@ -34,11 +34,11 @@ aliases = ['resume']
       <img src="/cv/fotograf.png" alt="fotograf.de logo" width="85">
       <p class="title"><a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de</a></p>
       <ul>
-        <li>Rewrote the old shop from scratch and migrated it to Symfony</li>
-        <li>Improved the design of the customers' package customization screen</li>
-        <li>Maintenance and bug fixing</li>
+        <li><b>Redesigned and rebuilt a new shop from scratch</b> using Symfony, implementing a RESTful API architecture, which significantly improved the performance, scalability, and maintainability</li>
+        <li>Improved the legacy shop's <b>package customization flow</b>, improving usability and logic optimization, increasing conversion rates</li>
+        <li>Maintenance, debugging, and performance work, ensuring the <b>stability and reliability</b> of production systems while reducing technical debt</li>
       </ul>
-      <p class="skills"><span>Skills</span>: PHP · Symfony · CakePHP · Docker</p>
+      <p class="skills"><span>Skills</span>: PHP · Symfony · CakePHP · Jira · MySQL · Docker · GitLab</p>
     </div>
   </div>
 
@@ -69,11 +69,11 @@ aliases = ['resume']
       <img src="/cv/artnight.jpeg" alt="realtainment logo" width="85">
       <p class="title"><a href="https://www.artnight.com/" target="_blank">ArtNight</a></p>
       <ul>
-        <li>Decoupled domain from infrastructure</li>
-        <li>Wrote tests and sorted classes by modules</li>
-        <li>Organised internal tech talks and katas</li>
+        <li>Refactor the <b>PHP monolith into a modular architecture</b> using Hexagonal Architecture, improving maintainability, scalability, and design</li>
+        <li>Contributed to the design and implementation of key features such as Group Events, Bestsellers, and other core modules</li>
+        <li>Advocated for and organized regular <b>internal tech talks and coding katas</b>, promoting best practices in PHP through clean code and <b>TDD</b></li>
       </ul>
-      <p class="skills"><span>Skills</span>: PHP · Symfony · Docker · Apache Kafka</p>
+      <p class="skills"><span>Skills</span>: PHP · Symfony · PimCore · Jira · MySQL · Docker · GitLab</p>
     </div>
   </div>
 
@@ -104,10 +104,10 @@ aliases = ['resume']
       <img src="/cv/kollex.jpeg" alt="kollex logo" width="85">
       <p class="title"><a href="https://www.kollex.de/" target="_blank">Kollex</a></p>
       <ul>
-        <li>Worked in a eCommerce Shop built on Symfony using CQRS</li>
-        <li>Exported and imported CSV files to an S3 bucket</li>
+        <li><b>Read and write CSV</b> files to an AWS S3 bucket, enabling efficient data exchange and integration with external systems</li>
+        <li>Contributed to the development of multiple features and improvements</li>
       </ul>
-      <p class="skills"><span>Skills</span>: PHP · Symfony · Docker · MySQL · PostgreSQL</p>
+      <p class="skills"><span>Skills</span>: PHP · Symfony · Jira · MySQL · PostgreSQL · Docker · GitHub</p>
     </div>
   </div>
 
@@ -138,10 +138,10 @@ aliases = ['resume']
       <img src="/cv/selectra.jpeg" alt="selectra logo" width="85">
       <p class="title"><a href="https://selectra.info/" target="_blank">Selectra</a></p>
       <ul>
-        <li>Worked on multiple projects fixing bugs and implementing new features</li>
-        <li>Organised tech talks and small katas</li>
+        <li>Actively contributed to multiple ongoing projects, focusing on bug fixing, feature development, and improving existing functionality</li>
+        <li>Took initiative in organizing <b>internal tech talks and coding katas</b></li>
       </ul>
-      <p class="skills"><span>Skills</span>: PHP · Laravel · Docker · MySQL · Redis</p>
+      <p class="skills"><span>Skills</span>: PHP · Laravel · Redis · Trello · MySQL · Docker · GitHub</p>
     </div>
   </div>
 
@@ -172,10 +172,10 @@ aliases = ['resume']
       <img src="/cv/smile-and-learn.jpeg" alt="smile and learn logo" width="85">
       <p class="title"><a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn</a></p>
       <ul>
-        <li>Exported and imported CSV files</li>
-        <li>Generated PDFs with pictures and tables populated from the DB</li>
+        <li>Developed features to <b>export and import CSV files</b>, enabling smooth data interchange between the application and external systems</li>
+        <li>Implemented <b>automated PDF generation</b> with dynamic content</li>
       </ul>
-      <p class="skills"><span>Skills</span>: PHP · JavaScript · Laravel · VueJS · MySQL</p>
+      <p class="skills"><span>Skills</span>: PHP · Laravel · JavaScript · VueJS · MySQL · Jira · BitBucket</p>
     </div>
   </div>
 
@@ -206,9 +206,9 @@ aliases = ['resume']
       <img src="/cv/rad4m.jpg" alt="rad4m logo" width="85">
       <p class="title">RAD4M · <i>Internship</i></p>
       <ul>
-        <li>Developed from scratch an Android application with Maps, Shared Preferences and third-party libraries</li>
+        <li>Designed and developed an Android application from scratch, using <b>SharedPreferences</b> or third-party libraries such as <b>Google Maps</b></li>
       </ul>
-      <p class="skills"><span>Skills</span>: Kotlin · Android · MySQL · Git</p>
+      <p class="skills"><span>Skills</span>: Android · Kotlin · MySQL · Git</p>
     </div>
   </div>
 </div>
