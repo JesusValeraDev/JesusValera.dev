@@ -7,14 +7,14 @@ date = 2023-11-27
 tags = ['PhpStorm', 'Intellij', 'Settings', 'Customize', 'IDE']
 
 [extra]
-static_thumbnail = "/images/2023-11-27/1.png"
+static_thumbnail = "/images/2023-11-27/1.webp"
 subtitle = "Customize the IDE with templates, plugins and more"
 +++
 
 PhpStorm is a powerful IDE that helps to boost your development, let's take a look to some hidden tricks to make
 PhpStorm even better! ⚡️
 
-![phpstorm-logo](/images/2023-11-27/1.png)
+![phpstorm logo](/images/2023-11-27/1.webp)
 
 ## Plugins
 
@@ -55,16 +55,14 @@ One of the most popular PSRs is concerning the `Code Style`, that is, it defines
 - Are the parenthesis required when instantiating a class with empty constructor?
 
 During the last years, due to the big and fast changes the language experienced, PSR-2 was quickly replaced by PSR-12.
-However, the language continues evolving very fast,
-so <span style="text-decoration: underline dotted" title="PHP Evolving Recommendation">PERs</span> were introduced.<br>
-Unfortunately, at the moment is not possible to define `PER` as `Code Style` in PhpStorm, anyway, `PSR-12` is good
-enough.
+However, the language continues evolving very fast, and to avoid creating a new PSR each year, a new standard called
+<span style="text-decoration: underline dotted" title="PHP Evolving Recommendation">PER</span> was introduced.
 
-To define PSR-12 by default, go to the following path and select **PSR12**.
+To define PER standard by default, go to the following path and select **PER-CS**.
 
-> Settings ➔ Editor ➔ Code Style ➔ PHP ➔ "Set from..." ➔ PSR12
+> Settings ➔ Editor ➔ Code Style ➔ PHP ➔ "Set from..." ➔ PER-CS
 
-![phpstorm-define-psr-12](/images/2023-11-27/2.png)
+![phpstorm define per](/images/2023-11-27/2.webp)
 
 <div class="separator"></div>
 
@@ -85,7 +83,7 @@ There is a live template for all function combinations: `prif`, `prisf`, `prof`,
 
 It is possible to enhance the auto-completion with a default `: void` return type as follows.
 
-<img src="/images/2023-11-27/3.gif" alt="live templates in action">
+![live templates in action](/images/2023-11-27/3.gif)
 
 Go to `Editor ➔ Live Templates` and adjust each template with the _`$RETURN_TYPE$`_ variable.
 
@@ -97,7 +95,7 @@ private function $NAME$($PARAMETERS$): $RETURN_TYPE$ {
 
 Finally, press on **Edit variables** and insert `"void"` _(with quotes)_ on **RETURN_TYPE** field.
 
-![live-template-setup](/images/2023-11-27/4.jpeg)
+![live template setup](/images/2023-11-27/4.webp)
 
 <div class="separator"></div>
 

@@ -7,13 +7,13 @@ date = 2020-08-20
 tags = ['PHP', 'Immutability', 'Good Practices', 'Programming', 'OOP']
 
 [extra]
-static_thumbnail = "/images/2020-08-20/1.png"
+static_thumbnail = "/images/2020-08-20/1.webp"
 subtitle = "Practical examples of immutability in PHP"
 +++
 
 A **mutable** object can be modified after its creation, an **immutable** cannot.
 
-<img alt="parliament-budapest" src="/images/2020-08-20/1.png" style="width: 100%">
+![parliament-budapest](/images/2020-08-20/1.webp)
 
 An immutable object will remain in the same state as it was created. Design and implementation will be much easier and
 consistent. In the case of problems, locate a potential bug is faster due that it won't have side effects.

@@ -7,30 +7,29 @@ date = 2020-07-02
 tags = ['Collaboration', 'Git', 'Github', 'Open Source', 'Programming']
 
 [extra]
-static_thumbnail = "/images/2020-07-02/1.png"
+static_thumbnail = "/images/2020-07-02/1.webp"
 subtitle = "Being up-to-date and avoiding conflicts"
 +++
 
-<img alt="parliament-budapest" src="/images/2020-07-02/1.png" style="width: 100%">
+![snow trail](/images/2020-07-02/1.webp)
 
 Have you ever wondered how you could collaborate with open-source projects, but you didn't know how to start? It
 couldn't be easier. Take a look:
 
-- Fork the repository into your account.
+- Fork the repository into your account
 
-<img alt="parliament-budapest" src="/images/2020-07-02/2.png" style="width: 100%">
+![fork project github ux](/images/2020-07-02/2.webp)
 
-- Clone the forked project on your computer.
+- Clone the forked project on your computer
 
 ```bash
 git clone git@github.com/myself/forked.git
 ```
 
-- Add the upstream to sync with the new changes to your project.
+- Add the upstream to sync with the new changes to your project
 
-<br>
-<img alt="parliament-budapest" src="/images/2020-07-02/3.png" style="width: 80%">
-<br>
+![cloning project https](/images/2020-07-02/3.webp)
+
 
 ```bash
 (master)$ git remote add upstream https://github.com/owner/repo.git
@@ -48,7 +47,7 @@ Get the last changes in your project (not necessary if you just forked the proje
 (master)$ git merge upstream/master
 ```
 
-- Create a new branch.
+- Create a new branch
 
 ```bash
 (master)$ git checkout -b new-branch
@@ -62,7 +61,7 @@ Once you're done, let’s create a PR!
 (new-branch)$ git push origin new-branch # Push in forked & origin
 ```
 
-- If you get errors trying to push your last changes, add your SSH credentials.
+- If you get errors trying to push your last changes, add your SSH credentials
 
 ```bash
 (master)$ git remote set-url origin git@github.com:myself/forked.git
@@ -73,8 +72,7 @@ Once you're done, let’s create a PR!
 > If your changes (_or someone else’s_) have been merged in the origin, you need to run **fetch upstream master** and 
 > **git merge upstream/master** in master to be up-to-date!
 
-<br>
-<img alt="parliament-budapest" src="/images/2020-07-02/4.png" style="width: 90%">
+![hungarian tori in snow](/images/2020-07-02/4.webp)
 
 ## To sum up
 

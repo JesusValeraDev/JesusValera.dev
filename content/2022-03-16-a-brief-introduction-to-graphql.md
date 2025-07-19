@@ -7,11 +7,11 @@ date = 2022-03-16
 tags = ['GraphQL', 'Rest', 'Https', 'API', 'Facebook']
 
 [extra]
-static_thumbnail = "/images/2022-03-16/1.png"
+static_thumbnail = "/images/2022-03-16/1.webp"
 subtitle = ""
 +++
 
-![atomium-graphql](/images/2022-03-16/1.png)
+![atomium graphql](/images/2022-03-16/1.webp)
 
 A _RESTful API_ is a de-facto standard to allow communication between applications, although, recently _GraphQL_ comes
 up.
@@ -40,14 +40,14 @@ always a JSON response.
 
 The queries are the _GET_ requests. That means you can only **fetch** data.
 
-![graphql-query](/images/2022-03-16/2.png)
+![graphql- uery](/images/2022-03-16/2.webp)
 
 ### Mutations
 
 The mutations are the _POST_, _PUT_, _PATCH_, and _DELETE_ HTTP methods. That means you can **mutate** the data model,
 and persist it in the database by creating, updating or removing elements.
 
-![graphql-mutation](/images/2022-03-16/3.png)
+![graphql mutation](/images/2022-03-16/3.webp)
 
 > In a mutation, the _addOffer()_ is the instruction you will perform into the system, though the body of the mutation
 > is the response you want to receive.
@@ -58,7 +58,7 @@ I hope you will be able to write from now on queries and mutations for your Grap
 should understand the DB architecture and relations between elements, but that is the basic idea.
 In the end, it is very similar to how Restful works, but with another syntax.
 
-![graphql-logo](/images/2022-03-16/4.png)
+![graphql logo](/images/2022-03-16/4.webp)
 
 I recommend you to take a look at the [GraphQL documentation](https://graphql.org/) for more information, not only from
 a black-box side perspective but also as a white box and learn more about other elements like `enums`, `interfaces`.<br>

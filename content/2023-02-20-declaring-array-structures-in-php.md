@@ -7,11 +7,11 @@ date = 2023-02-20
 tags = ["Programming", "PHP", "Arrays", "Phpstan", "Psalm"]
 
 [extra]
-static_thumbnail = "/images/2023-02-20/1.png"
+static_thumbnail = "/images/2023-02-20/1.webp"
 subtitle = ""
 +++
 
-![statue-people-with-a-string-and-a-cat](/images/2023-02-20/1.png)
+![statue-people-with-a-string-and-a-cat](/images/2023-02-20/1.webp)
 
 Currently, it is not possible to define explicit array types as other programming languages do as Java does.
 

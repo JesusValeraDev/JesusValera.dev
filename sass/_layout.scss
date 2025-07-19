@@ -121,11 +121,18 @@ img {
   max-width: 100%;
 }
 
-ul {
+ul, ol {
   list-style-position: inside;
-  list-style-type: disc;
   padding-left: 20px;
   color: var(--text-primary);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 li {
@@ -133,7 +140,7 @@ li {
 }
 
 li::marker {
-  color: var(--marker);
+  color: var(--text-primary);
 }
 
 blockquote {

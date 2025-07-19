@@ -7,11 +7,11 @@ date = 2021-08-18
 tags = ['PHP', 'Programming', 'Sorting Algorithms', 'Oop', 'Functional Programming']
 
 [extra]
-static_thumbnail = "/images/2021-08-18/1.png"
+static_thumbnail = "/images/2021-08-18/1.webp"
 subtitle = "And the Spaceship Operator 🚀🚀🚀"
 +++
 
-![rock-mountain-santiago-compostela](/images/2021-08-18/1.png)
+![rock-mountain-santiago-compostela](/images/2021-08-18/1.webp)
 
 When dealing with PHP, there are multiple ways to sort a collection of items, and sometimes it’s not clear which method we should use and why.
 

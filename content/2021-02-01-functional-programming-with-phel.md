@@ -7,11 +7,11 @@ date = 2021-02-01
 tags = ['PHP', 'Functional Programming', 'Phel', 'Programming', 'Software']
 
 [extra]
-static_thumbnail = "/images/2021-02-01/1.png"
+static_thumbnail = "/images/2021-02-01/1.webp"
 subtitle = "When PHP meets FP 🚀🚀🚀🌚"
 +++
 
-![phel-purple](/images/2021-02-01/1.png)
+![phel-purple](/images/2021-02-01/1.webp)
 
 ## What is Functional Programming?
 
@@ -100,6 +100,6 @@ You can read more information here: [Phel: the Lisp that compiles to PHP](https:
 [Version 0.1](https://github.com/phel-lang/phel-lang/tags) has been recently released, and I am sure you will have fun!
 🎁
 
-![phel-white](/images/2021-02-01/2.png)
+![phel-white](/images/2021-02-01/2.webp)
 
 > ## [https://phel-lang.org/](https://phel-lang.org/)

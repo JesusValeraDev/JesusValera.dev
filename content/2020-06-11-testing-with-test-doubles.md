@@ -7,11 +7,11 @@ date = 2020-06-11
 tags = ['PHP', 'Testing', 'Mocking', 'Test Doubles', 'Stub']
 
 [extra]
-static_thumbnail = "/images/2020-06-11/1.png"
+static_thumbnail = "/images/2020-06-11/1.webp"
 subtitle = "Dummy, Stub, Spy, Mock or Fake"
 +++
 
-<img alt="parliament-budapest" src="/images/2020-06-11/1.png" style="width: 100%">
+![parliament budapest](/images/2020-06-11/1.webp)
 
 ## Test Doubles
 
@@ -23,7 +23,7 @@ several types of tests. They are also known as Test Doubles instead of â€œMocksâ
 
 ### The five types of Test Doubles are:
 
-<img alt="test-types" src="/images/2020-06-11/2.png" style="width: 90%">
+![test types](/images/2020-06-11/2.webp)
 
 - **Dummy**: It is used as a placeholder when an argument needs to be filled in.
 - **Stub**: It provides fake data to the SUT (System Under Test).
@@ -31,7 +31,7 @@ several types of tests. They are also known as Test Doubles instead of â€œMocksâ
 - **Mock**: It defines an expectation of how it will be used. It will cause failure if the expectation isnâ€™t met.
 - **Fake**: It is an actual implementation of the contract but is unsuitable for production.
 
-![bodo-istvan](/images/2020-06-11/3.png)
+![bodo istvan](/images/2020-06-11/3.webp)
 
 > The snippets are a pseudo-language based on a mix of PHP & Java.<br>
 > The idea is to make it understandable to everyone familiar with OOP.

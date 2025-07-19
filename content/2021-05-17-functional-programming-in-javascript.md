@@ -7,11 +7,11 @@ date = 2021-05-17
 tags = ['JavaScript', 'Typescript', 'Programming', 'Functional Programming', 'Functions']
 
 [extra]
-static_thumbnail = "/images/2021-05-17/1.png"
+static_thumbnail = "/images/2021-05-17/1.webp"
 subtitle = "forEach, map, filter, reduce, find, findIndex, some & every"
 +++
 
-![rabbit](/images/2021-05-17/1.png)
+![rabbit](/images/2021-05-17/1.webp)
 
 Functional Programming is a paradigm where programs are constructed by applying and composing functions. The Functional
 Programming keys are:
@@ -162,7 +162,7 @@ false
 
 <div class="separator"></div>
 
-![burrow](/images/2021-05-17/2.png)
+![burrow](/images/2021-05-17/2.webp)
 
 These are the most common functions when dealing with Functional Programming, but there are many more (_fill_, _join_,
 _sort_, etc). You can easily check the full list on the

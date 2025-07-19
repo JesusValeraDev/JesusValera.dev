@@ -7,11 +7,11 @@ date = 2023-08-26
 tags = ['Testing', 'Test types', 'Unit Testing', 'Programming']
 
 [extra]
-static_thumbnail = "/images/2023-08-26/1.png"
+static_thumbnail = "/images/2023-08-26/1.webp"
 subtitle = "Unit, Integration and System tests"
 +++
 
-![functional testing types](/images/2023-08-26/1.png)
+![functional testing types](/images/2023-08-26/1.webp)
 
 A test is an empirical assertion that demonstrates the behaviour of an expected functionality from some assertion.
 
@@ -42,7 +42,7 @@ important to master them to write cleaner code.
 
 ### Unit test
 
-<img src="/images/2023-08-26/2.png" alt="given-when-then" style="width: 80%">
+![given when then](/images/2023-08-26/2.webp)
 
 A unit test is a verification between an input and an expected output, it is an isolated logic and decoupled from the
 outside. We could consider a unit test as the public method from one API class. Usually, it is a good idea to use
@@ -98,7 +98,7 @@ expected result is whatever we want.
 
 In other words, we do not care what the developer did, we care about the output as we were the client.
 
-<img src="/images/2023-08-26/3.png" alt="functional-test" style="width: 80%">
+![functional test](/images/2023-08-26/3.webp)
 
 For example, if we send a form with a wrong value, we expect to see an error message in a specific field, we do not care
 about what regular expression is and why it failed.

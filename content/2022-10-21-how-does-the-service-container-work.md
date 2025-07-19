@@ -7,11 +7,11 @@ date = 2022-10-21
 tags = ['Service Container', 'Binding', 'Laravel', 'Symfony', 'Programming']
 
 [extra]
-static_thumbnail = "/images/2022-10-21/1.png"
+static_thumbnail = "/images/2022-10-21/1.webp"
 subtitle = ""
 +++
 
-![acropolis-greece](/images/2022-10-21/1.png)
+![acropolis greece](/images/2022-10-21/1.webp)
 
 A _Service Container_ is basically a class that behaves like a _box_, we can think of it as a _singleton_ object (but it
 is not, it is simply an object that is instantiated by the framework while it is being bootstrapped), on which we can
@@ -161,7 +161,7 @@ This is the idea of what a framework does under the hood; ideally, we should use
 Using reflection takes a lot of resources, and it is very slow; additionally, we are not taking into consideration
 different scenarios like what to do depending on whether the resolved parameter is a primitive or even a callable.
 
-![parthenon-greece](/images/2022-10-21/2.png)
+![parthenon greece](/images/2022-10-21/2.webp)
 
 ## Reference:
 

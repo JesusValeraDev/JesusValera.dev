@@ -7,11 +7,11 @@ date = 2023-04-25
 tags = ['Git', 'Programming', 'Gitignore', 'Github', 'Version Control']
 
 [extra]
-static_thumbnail = "/images/2023-04-25/1.png"
+static_thumbnail = "/images/2023-04-25/1.webp"
 subtitle = "and forget to ignore the same files over and over again! ⚡️"
 +++
 
-![externsteine](/images/2023-04-25/1.png)
+![externsteine](/images/2023-04-25/1.webp)
 
 Sometimes while we're creating a pull request, we realise we're committing some unnecessary config files, like the
 settings from your IDE, some cache files or even auto-generated files like the `.DS_Store`.

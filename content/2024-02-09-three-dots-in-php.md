@@ -7,11 +7,11 @@ date = 2024-02-09
 tags = ['PHP', 'first-class', 'callables', 'variadic', 'varargs', 'argument unpacking', 'splat operator']
 
 [extra]
-static_thumbnail = "/images/2024-02-09/1.png"
+static_thumbnail = "/images/2024-02-09/1.webp"
 subtitle = "First-Class Callable Syntax, Variadic function & Argument unpacking"
 +++
 
-![hiroshima castle ruins](/images/2024-02-09/1.png)
+![hiroshima castle ruins](/images/2024-02-09/1.webp)
 
 In this article, let's take a look at the three different meanings of the three consecutive dots in PHP.
 

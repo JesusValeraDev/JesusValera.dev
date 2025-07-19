@@ -2,7 +2,7 @@
 $font-size-base: 18px;
 $font-size-code: 16px;
 $font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-$font-family-base: 'Inter', serif;
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 
 // Typography Scale
 $font-sizes: (
@@ -97,7 +97,7 @@ $theme-colors: (
     blockquote-bg: map-get(map-get($colors, blue), 50),
     blockquote-border: map-get(map-get($colors, blue), 500),
     button-hover: #fcfcfc,
-    marker: map-get(map-get($colors, gray), 300),
+    marker: map-get(map-get($colors, gray), 700),
     pill-border: map-get(map-get($colors, gray), 200),
     current-badge-bg: rgba(34, 197, 94, 0.2),
     current-badge-text: #166534,
@@ -133,7 +133,7 @@ $theme-colors: (
     blockquote-border: #334155,
     pill-border: #334155,
     button-hover: #2a2a2a,
-    marker: #525252,
+    marker: #cbd5e1,
     current-badge-bg: rgb(20 83 45),
     current-badge-text: #73ffa9,
     success-color: #22c55e,

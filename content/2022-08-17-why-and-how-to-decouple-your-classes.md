@@ -7,11 +7,11 @@ date = 2022-08-17
 tags = ['PHP', 'Solid', 'Decoupling', 'Dependency Inversion', 'OOP']
 
 [extra]
-static_thumbnail = "/images/2022-08-17/1.png"
+static_thumbnail = "/images/2022-08-17/1.webp"
 subtitle = "with a real decoupling example"
 +++
 
-![caravaca-fuentes-marques-1](/images/2022-08-17/1.png)
+![caravaca-fuentes-marques-1](/images/2022-08-17/1.webp)
 
 There are some ways to couple your code, some frameworks like Laravel embrace you to do using their own _façades_ or
 even using _ORM_ as _ActiveRecord_, but this is also possible using PHP native methods like `time()` beyond others.
@@ -189,4 +189,4 @@ Decoupling your classes is a good practice that will help you to maintain your c
 It will also help you not only to switch between different implementations of the same interface in case you decided to
 change the framework or the third-party service but also to test your code in a more efficient way.
 
-![caravaca-fuentes-marques-2](/images/2022-08-17/2.png)
+![caravaca-fuentes-marques-2](/images/2022-08-17/2.webp)

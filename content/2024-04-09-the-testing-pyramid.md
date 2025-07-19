@@ -7,7 +7,7 @@ date = 2024-04-09
 tags = ['Programming', 'Test', 'Cohn', 'Pyramid', 'Unit', 'Integration']
 
 [extra]
-static_thumbnail = "/images/2024-04-09/1.png"
+static_thumbnail = "/images/2024-04-09/1.webp"
 subtitle = "How to structure your test suite 🗼"
 +++
 
@@ -15,7 +15,7 @@ The Testing Pyramid (also known as _Cohn Pyramid_) is a concept that visualizes 
 types of tests within a testing strategy. It resembles a pyramid with three layers: **Unit** at the base, followed by
 **Service** in the middle, and finally, **User Interface** tests on top.
 
-<img src="/images/2024-04-09/1.png" alt="cohn-pyramid">
+![cohn-pyramid](/images/2024-04-09/1.webp)
 
 ### Unit Tests
 

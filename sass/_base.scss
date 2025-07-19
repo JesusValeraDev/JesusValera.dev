@@ -21,6 +21,9 @@ body {
   scroll-behavior: smooth;
   background: var(--bg);
   color: var(--text-primary);
+  font-variant-numeric: oldstyle-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   @include transition("color, background-color");
 }
 

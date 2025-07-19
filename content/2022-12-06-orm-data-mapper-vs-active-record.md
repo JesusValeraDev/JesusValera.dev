@@ -7,11 +7,11 @@ date = 2022-12-06
 tags = ["PHP", "Testing", "Orm", "Programming", "Refactoring"]
 
 [extra]
-static_thumbnail = "/images/2022-12-06/1.png"
+static_thumbnail = "/images/2022-12-06/1.webp"
 subtitle = "Which one is better and why?"
 +++
 
-![hiking in Grunewald](/images/2022-12-06/1.png)
+![hiking in Grunewald](/images/2022-12-06/1.webp)
 
 ORM stands for **Object-Relational Mapping**, that is, the technique that transforms Objects from OOP into rows in the
 database and vice versa.

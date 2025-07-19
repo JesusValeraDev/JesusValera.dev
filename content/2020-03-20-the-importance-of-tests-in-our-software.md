@@ -7,7 +7,7 @@ date = 2020-03-20
 tags = ['Testing', 'Programming', 'Scalability', 'Modularity', 'Refactoring', 'Quality']
 
 [extra]
-static_thumbnail = "/images/2020-03-20/1.png"
+static_thumbnail = "/images/2020-03-20/1.webp"
 subtitle = ""
 +++
 
@@ -18,7 +18,7 @@ Writing tests ensures that every part of your program functions correctly under 
 a built-in safety net for your code: ensures correctness, catches bugs early, make refactoring safer, encourage modular
 and maintainable code and boost confidence in the code.
 
-<img src="/images/2020-03-20/1.png" alt="programming comic joke">
+![programming comic joke](/images/2020-03-20/1.webp)
 
 Here's why testing should be a non-negotiable part of your development process:
 
