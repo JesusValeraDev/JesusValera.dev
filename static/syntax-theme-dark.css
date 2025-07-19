@@ -4,7 +4,8 @@
 
 .z-code {
  color: #dcdfe4;
- background-color: #282c34;
+ background-color: #0f162b;
+ border-radius: .75rem;
 }
 
 .z-comment {

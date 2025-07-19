@@ -1,40 +1,77 @@
 .catalogue {
+  @extend .article-list;
 
-  font-size: large;
-  margin: 20px 0;
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: inherit;
 
-  &-title {
-    margin: 0;
-    font-size: larger;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+    div {
+      @extend .article-item;
 
-  &-subtitle {
-    margin: 0;
-    font-size: large;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+      time {
+        @extend .article-date;
 
-  div {
-    margin: .3rem;
-    padding: .4rem;
-    opacity: .9;
-    color: var(--first-text-color);
-  }
+        .day {
+          svg {
+            width: 0.75rem;
+            height: 0.75rem;
+            display: block;
+            vertical-align: middle;
+          }
 
-  div:hover {
-    text-decoration: none;
-    opacity: 1;
+          align-items: center;
+          display: flex;
+          margin-right: calc(0.25rem);
+          margin-left: calc(0.25rem);
 
-    border-radius: 2px;
-    background-color: var(--catalogue-color);
+          span {
+            margin-right: calc(0.25rem);
+            margin-left: calc(0.25rem);
+          }
+        }
+
+        .reading {
+          svg {
+            width: 0.75rem;
+            height: 0.75rem;
+            display: block;
+            vertical-align: middle;
+          }
+
+          margin-left: calc(0.75rem);
+          align-items: center;
+          display: flex;
+
+          span {
+            margin-right: calc(0.25rem);
+            margin-left: calc(0.25rem);
+          }
+        }
+      }
+
+      .catalogue-title {
+        @extend .article-title;
+      }
+
+      .catalogue-subtitle {
+        @extend .article-subtitle;
+      }
+
+      .catalogue-more {
+        @extend .article-more;
+
+        // Dark mode specific color
+        .theme-dark & {
+          color: var(--link);
+        }
+      }
+    }
+
+    div:hover {
+      .catalogue-more {
+        text-decoration: underline;
+      }
+    }
   }
 }

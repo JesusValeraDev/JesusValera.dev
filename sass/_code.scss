@@ -4,18 +4,19 @@ code {
 }
 
 code {
-  background-color: var(--code-background-color);
-  color: var(--accent-text-color);
+  background-color: var(--code-bg);
+  color: var(--text-accent);
   border-radius: 4px;
   font-size: $font-size-code;
-  padding: 3px 4px;
-  transition: color 0.25s, background-color 0.5s;
+  @include padding(1);
+  @include transition("color, background-color");
 }
 
 pre {
-  margin: 0 0 1rem;
+  @include margin-y(0);
+  margin-bottom: spacing(4);
   overflow: auto;
-  padding: .8em;
+  @include padding(3);
 }
 
 pre code {
@@ -41,7 +42,7 @@ pre code {
     padding: 0 .75rem 0 .25rem;
     // Make sure numbers aren't selectable
     -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    user-select: none;
   }
 }

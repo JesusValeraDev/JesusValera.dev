@@ -1,19 +1,24 @@
 @charset "utf-8";
 
 @import 'variables';
-@import 'menu';
-@import 'base';
-@import 'headings';
-@import 'code';
-@import 'post';
-@import 'footnote';
-@import 'syntax';
-@import 'layout';
-@import 'scroll';
-@import 'catalogue';
-@import '404';
-@import 'tags';
-@import 'custom';
+@import 'mixins';
 
+@import 'base';
+
+@import 'components';
+
+@import 'layout';
+@import 'menu';
+
+@import 'post';
+@import 'catalogue';
 @import 'book';
-@import "cv";
+@import 'tags';
+@import 'table';
+
+@import 'code';
+@import 'syntax';
+
+@import 'scroll';
+@import '404';
+@import 'cv';

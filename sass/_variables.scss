@@ -1,103 +1,185 @@
-$body-width: 720px;
-
-$font-size: 18px;
+// Base Typography
+$font-size-base: 18px;
 $font-size-code: 16px;
-$font-primary: 'Poppins', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-base: 'Inter', serif;
 
-// Dark/light colors
-$theme-light-bg-color: white;
-$theme-dark-bg-color: #292929;
+// Typography Scale
+$font-sizes: (
+  xs: 0.75rem,    // 12px
+  sm: 0.875rem,   // 14px
+  base: 1rem,     // 16px
+  lg: 1.125rem,   // 18px
+  xl: 1.25rem,    // 20px
+  2xl: 1.5rem,    // 24px
+  3xl: 1.875rem,  // 30px
+  4xl: 2.25rem,   // 36px
+  5xl: 3rem,      // 48px
+);
 
-$theme-light-first-text-color: #444;
-$theme-dark-first-text-color: #ccc;
+// Spacing Scale
+$spacing: (
+  1: 0.25rem,   // 4px
+  2: 0.5rem,    // 8px
+  3: 0.75rem,   // 12px
+  4: 1rem,      // 16px
+  5: 1.25rem,   // 20px
+  6: 1.5rem,    // 24px
+  8: 2rem,      // 32px
+  10: 2.5rem,   // 40px
+  12: 3rem,     // 48px
+  16: 4rem,     // 64px
+  20: 5rem,     // 80px
+  24: 6rem,     // 96px
+);
 
-$theme-light-second-text-color: #555;
-$theme-dark-second-text-color: #ccc;
+// Base Color Palette
+$colors: (
+  white: #ffffff,
+  black: #000000,
+  gray: (
+    50: #f9fafb,
+    100: #f3f4f6,
+    200: #e5e7eb,
+    300: #d1d5db,
+    400: #9ca3af,
+    500: #6b7280,
+    600: #4b5563,
+    700: #374151,
+    800: #1f2937,
+    900: #111827,
+  ),
+  blue: (
+    50: #eff6ff,
+    100: #dbeafe,
+    200: #bfdbfe,
+    300: #93c5fd,
+    400: #60a5fa,
+    500: #3b82f6,
+    600: #2563eb,
+    700: #1d4ed8,
+    800: #1e40af,
+    900: #1e3a8a,
+  ),
+  accent: #00a3f1,
+  link-light: #3b82f6,
+  link-dark: #6cbaff,
+);
 
-$theme-light-accent-text-color: #00a3f1;
-$theme-dark-accent-text-color: #00a3f1;
+// Theme-specific Colors
+$theme-colors: (
+  light: (
+    bg: #fcfcfd,
+    text-primary: map-get(map-get($colors, gray), 700),
+    text-secondary: map-get(map-get($colors, gray), 600),
+    text-accent: map-get($colors, accent),
+    link: map-get($colors, link-light),
+    catalogue-bg: #fefefe,
+    catalogue-item-bg: #ffffff,
+    code-bg: rgba(27, 31, 35, 0.05),
+    timeline-bg: map-get($colors, accent),
+    timeline-bullet: #cbebff,
+    tag-button: map-get(map-get($colors, gray), 600),
+    tag-text: map-get(map-get($colors, gray), 200),
+    tag-button-selected: map-get(map-get($colors, gray), 200),
+    tag-text-selected: map-get(map-get($colors, gray), 600),
+    table-header: map-get(map-get($colors, gray), 100),
+    table-nth: #fcfcfc,
+    table-hover: #fcfcfc,
+    snowflake-bg-color: #38698c,
+    snowflake-shadow-color: #c0d3e3,
+    // Additional properties for dark mode compatibility
+    border: map-get(map-get($colors, gray), 200),
+    footer-bg: #f9fafb,
+    footer-border: map-get(map-get($colors, gray), 200),
+    header-bg: rgba(255, 255, 255, 0.75),
+    header-border: map-get(map-get($colors, gray), 200),
+    blockquote-bg: map-get(map-get($colors, blue), 50),
+    blockquote-border: map-get(map-get($colors, blue), 500),
+    button-hover: #fcfcfc,
+    marker: map-get(map-get($colors, gray), 300),
+    pill-border: map-get(map-get($colors, gray), 200),
+    current-badge-bg: rgba(34, 197, 94, 0.2),
+    current-badge-text: #166534,
+  ),
+  dark: (
+    bg: #161e32,
+    text-primary: #cbd5e1,
+    text-secondary: #a1a1aa,
+    text-accent: #60a5fa,
+    link: #70acf6,
+    link-hover: #e6ecf3,
+    catalogue-bg: #1b2638,
+    catalogue-item-bg: #1b2537,
+    code-bg: #2d2d2d,
+    timeline-bg: #3b82f6,
+    timeline-bullet: #1e40af,
+    tag-button: #71717a,
+    tag-text: #f4f4f5,
+    tag-button-selected: #f4f4f5,
+    tag-text-selected: #27272a,
+    table-header: #404040,
+    table-nth: #2a2a2a,
+    table-hover: #374151,
+    snowflake-bg-color: #f1f5f9,
+    snowflake-shadow-color: #cbd5e1,
+    // Additional properties for dark mode compatibility
+    border: #334155,
+    footer-bg: #0f172a,
+    footer-border: #1f2937,
+    header-bg: rgba(15, 23, 42, 0.8),
+    header-border: #1f2937,
+    blockquote-bg: #0f172a,
+    blockquote-border: #334155,
+    pill-border: #334155,
+    button-hover: #2a2a2a,
+    marker: #525252,
+    current-badge-bg: rgb(20 83 45),
+    current-badge-text: #73ffa9,
+    success-color: #22c55e,
+    primary-color: #3b82f6,
+    secondary-color: #8b5cf6,
+    accent-color: #f59e0b,
+  ),
+);
 
-$theme-light-links-color: #16558d;
-$theme-dark-links-color: #6cbaff;
+// Note: Primary colors now managed through theme system below
 
-$theme-light-catalogue-color: #efefef;
-$theme-dark-catalogue-color: #212121;
+// Breakpoints
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+);
 
-$theme-light-code-background-color: #1B1F230C;
-$theme-dark-code-background-color: #3f3f3f;
+// Transitions
+$transition-duration: 150ms;
+$transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 
-$theme-light-timeline-background-color: #00a3f1;
-$theme-dark-timeline-background-color: #16558d;
-
-$theme-light-timeline-bullet-color: #cbebff;
-$theme-dark-timeline-bullet-color: #0d3964;
-
-$theme-light-tag-button-color: #545454;
-$theme-dark-tag-button-color: #a8a8a8;
-
-$theme-light-tag-text-color: #e7e7e7;
-$theme-dark-tag-text-color: #3b3b3b;
-
-$theme-light-tag-button-selected-color: #e7e7e7;
-$theme-dark-tag-button-selected-color: #3b3b3b;
-
-$theme-light-tag-text-selected-color: #545454;
-$theme-dark-tag-text-selected-color: #a8a8a8;
-
-$theme-light-table-header-color: #efefef;
-$theme-dark-table-header-color: #3a3a3a;
-
-$theme-light-table-nth-color: #fcfcfc;
-$theme-dark-table-nth-color: #2d2d2d;
-
-$theme-light-table-hover-color: #f7f7f7;
-$theme-dark-table-hover-color: #333333;
-
-$theme-light-snowflake-bg-color: #38698c;
-$theme-dark-snowflake-bg-color: #efefef;
-
-$theme-light-snowflake-shadow-color: #c0d3e3;
-$theme-dark-snowflake-shadow-color: #cbcbcb;
-
-.theme-dark {
-  --bg-color: #{$theme-dark-bg-color};
-  --first-text-color: #{$theme-dark-first-text-color};
-  --second-text-color: #{$theme-dark-second-text-color};
-  --accent-text-color: #{$theme-dark-accent-text-color};
-  --links-color: #{$theme-dark-links-color};
-  --catalogue-color: #{$theme-dark-catalogue-color};
-  --code-background-color: #{$theme-dark-code-background-color};
-  --timeline-background-color: #{$theme-dark-timeline-background-color};
-  --timeline-bullet-color: #{$theme-dark-timeline-bullet-color};
-  --tag-button-color: #{$theme-dark-tag-button-color};
-  --tag-text-color: #{$theme-dark-tag-text-color};
-  --tag-button-selected-color: #{$theme-dark-tag-button-selected-color};
-  --tag-text-selected-color: #{$theme-dark-tag-text-selected-color};
-  --table-header-color: #{$theme-dark-table-header-color};
-  --table-nth-color: #{$theme-dark-table-nth-color};
-  --table-hover-color: #{$theme-dark-table-hover-color};
-  --snowflake-bg-color: #{$theme-dark-snowflake-bg-color};
-  --snowflake-shadow-color: #{$theme-dark-snowflake-shadow-color};
+// Theme Classes
+@each $theme-name, $theme-colors in $theme-colors {
+  .theme-#{$theme-name} {
+    @each $property, $value in $theme-colors {
+      --#{$property}: #{$value};
+    }
+  }
 }
 
-.theme-light {
-  --bg-color: #{$theme-light-bg-color};
-  --first-text-color: #{$theme-light-first-text-color};
-  --second-text-color: #{$theme-light-second-text-color};
-  --accent-text-color: #{$theme-light-accent-text-color};
-  --links-color: #{$theme-light-links-color};
-  --catalogue-color: #{$theme-light-catalogue-color};
-  --code-background-color: #{$theme-light-code-background-color};
-  --timeline-background-color: #{$theme-light-timeline-background-color};
-  --timeline-bullet-color: #{$theme-light-timeline-bullet-color};
-  --tag-button-color: #{$theme-light-tag-button-color};
-  --tag-text-color: #{$theme-light-tag-text-color};
-  --tag-button-selected-color: #{$theme-light-tag-button-selected-color};
-  --tag-text-selected-color: #{$theme-light-tag-text-selected-color};
-  --table-header-color: #{$theme-light-table-header-color};
-  --table-nth-color: #{$theme-light-table-nth-color};
-  --table-hover-color: #{$theme-light-table-hover-color};
-  --snowflake-bg-color: #{$theme-light-snowflake-bg-color};
-  --snowflake-shadow-color: #{$theme-light-snowflake-shadow-color};
+// Utility functions
+@function color($color, $shade: null) {
+  @if $shade {
+    @return map-get(map-get($colors, $color), $shade);
+  } @else {
+    @return map-get($colors, $color);
+  }
+}
+
+@function spacing($size) {
+  @return map-get($spacing, $size);
+}
+
+@function font-size($size) {
+  @return map-get($font-sizes, $size);
 }

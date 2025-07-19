@@ -1,0 +1,473 @@
+/* ==========================================================================
+   COMPONENT SYSTEM
+   Reusable UI components that can be used across different sections
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CARD COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Base card class - shared styling for all card-like elements */
+.card {
+  @include card-shadow;
+  background-color: var(--catalogue-item-bg);
+  border-radius: spacing(3);
+  overflow: hidden;
+  @include transition(transform, box-shadow, background-color);
+
+  &:hover {
+    background-color: var(--catalogue-bg);
+  }
+}
+
+/* Card with enhanced hover effects */
+.card-hover {
+  @extend .card;
+}
+
+/* Card content wrapper */
+.card-content {
+  @include padding(6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card with minimal padding */
+.card-compact {
+  @extend .card;
+
+  .card-content {
+    @include padding(4);
+  }
+}
+
+/* Card with full height */
+.card-full-height {
+  @extend .card;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Timeline card variant */
+.card-timeline {
+  @extend .card;
+  border-radius: 12px;
+  @include padding(4);
+
+  &:hover {
+    background-color: var(--catalogue-bg);
+  }
+}
+
+/* Card with no hover effect */
+.card-static {
+  @extend .card;
+
+  &:hover {
+    background-color: var(--catalogue-item-bg);
+    transform: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BUTTON COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Base button reset */
+.btn {
+  @include button-reset;
+  @include transition(all);
+  border-radius: spacing(2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Primary button */
+.btn-primary {
+  @extend .btn;
+  background-color: var(--text-primary);
+  color: var(--bg);
+  border: 2px solid var(--text-primary);
+  @include padding-x(4);
+  @include padding-y(2);
+
+  &:hover {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Secondary button */
+.btn-secondary {
+  @extend .btn;
+  background-color: var(--catalogue-item-bg);
+  color: var(--text-secondary);
+  border: 2px solid var(--border);
+  @include padding-x(4);
+  @include padding-y(2);
+
+  .theme-dark & {
+    border-color: var(--pill-border);
+  }
+
+  &:hover {
+    background-color: var(--catalogue-bg);
+    border-color: var(--text-secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Pill-shaped button */
+.btn-pill {
+  @extend .btn-secondary;
+  border-radius: 25px;
+  @include typography(sm, 700, 1);
+  text-transform: uppercase;
+  gap: spacing(1);
+  max-width: calc(25% - 1rem);
+  min-width: fit-content;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: currentColor;
+  }
+}
+
+/* Active state for pill buttons */
+.btn-pill.active {
+  background-color: var(--text-primary);
+  color: var(--bg);
+  border-color: var(--text-primary);
+
+  &:hover {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  svg {
+    color: var(--bg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   GRID COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Base grid container */
+.grid {
+  display: grid;
+  gap: spacing(6);
+}
+
+/* Responsive grid with 3 columns */
+.grid-3-cols {
+  @extend .grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: spacing(8);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Large screens (≥720px): 3 columns (default above)
+  
+  // Medium screens (640px-719px): 2 columns
+  @media (max-width: 719px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: spacing(6);
+  }
+
+  // Small screens (<640px): 1 column
+  @media (max-width: 639px) {
+    grid-template-columns: 1fr !important;
+    gap: spacing(6);
+  }
+}
+
+/* Books specific grid */
+.grid-books {
+  @extend .grid-3-cols;
+
+  .grid-item {
+    @extend .card-full-height;
+    @extend .card-hover;
+
+    .item-cover {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background-color: var(--catalogue-bg);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        @include transition(transform);
+        display: block;
+        margin: auto;
+      }
+
+      // Medium screens (2 columns): taller for better proportion
+      @media (max-width: 719px) {
+        height: 450px;
+      }
+
+      // Small screens (1 column): even taller for single column layout
+      @media (max-width: 639px) {
+        height: 500px;
+      }
+    }
+
+    .item-content {
+      @extend .card-content;
+      text-align: center;
+
+      .item-title {
+        @include typography(lg, 700, 1.4);
+        color: var(--text-primary);
+        margin-bottom: spacing(2);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item-subtitle {
+        @include typography(sm, 400, 1.3);
+        color: var(--text-secondary);
+        margin-bottom: spacing(1);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    @include respond-below(sm) {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* Timeline grid for CV */
+.grid-timeline {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--timeline-bg);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      left: 10px;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LAYOUT COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Flex utilities */
+.flex-center {
+  @include flex-center;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+/* Container with max-width and centered */
+.container {
+  @include container;
+}
+
+/* Content wrapper with padding */
+.content-wrapper {
+  @include padding-y(8);
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Badge/Tag component */
+.badge {
+  @include padding-x(3);
+  @include padding-y(1);
+  @include typography(xs, 500, 1);
+  border-radius: 12px;
+  display: inline-block;
+
+  &.badge-primary {
+    background-color: var(--text-primary);
+    color: var(--bg);
+  }
+
+  &.badge-secondary {
+    background-color: var(--catalogue-bg);
+    color: var(--text-secondary);
+  }
+}
+
+/* Date badge overlay */
+.badge-overlay {
+  @extend .badge;
+  position: absolute;
+  top: spacing(3);
+  right: spacing(2);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Spacing utilities */
+.mb-2 {
+  margin-bottom: spacing(2);
+}
+
+.mb-4 {
+  margin-bottom: spacing(4);
+}
+
+.mb-6 {
+  margin-bottom: spacing(6);
+}
+
+.mt-2 {
+  margin-top: spacing(2);
+}
+
+.mt-4 {
+  margin-top: spacing(4);
+}
+
+.mt-6 {
+  margin-top: spacing(6);
+}
+
+/* Responsive utilities */
+.hidden-sm {
+  @include respond-below(sm) {
+    display: none;
+  }
+}
+
+.hidden-md {
+  @include respond-below(md) {
+    display: none;
+  }
+}
+
+.hidden-lg {
+  @include respond-below(lg) {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SPECIAL COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Button group for filters */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: spacing(3) spacing(2);
+  margin-bottom: 2em;
+
+  .btn-pill {
+    flex: 0 0 auto;
+  }
+}
+
+/* Info card variant */
+.card-info {
+  @extend .card-static;
+  text-align: center;
+  @include padding(4);
+  margin: spacing(5) spacing(3);
+}
+
+/* Article list component */
+.article-list {
+  .article-item {
+    @extend .card;
+    @include margin-y(6);
+    @include padding(6);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--catalogue-bg);
+    }
+
+    .article-date {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      line-height: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .article-title {
+      color: var(--text-primary);
+      @include typography(xl, 600, 1.75);
+      margin: 0 0 spacing(2);
+    }
+
+    .article-subtitle {
+      color: var(--text-secondary);
+      margin-top: 0;
+    }
+
+    .article-more {
+      color: var(--link);
+      font-weight: 500;
+      @include typography(sm, 500, 1.25);
+    }
+  }
+} 

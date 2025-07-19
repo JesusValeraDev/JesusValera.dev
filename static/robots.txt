@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /tags/
+
+# Allow everything else
+Allow: /
+
+# Sitemap and feed locations
+Sitemap: https://jesusvalera.dev/sitemap.xml
+Sitemap: https://jesusvalera.dev/atom.xml

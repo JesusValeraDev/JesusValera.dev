@@ -22,7 +22,7 @@ function createSnowContainer() {
     return container;
 }
 
-function createFlakeElement({ size, duration, startLeft, startTop, endLeft, endTop, progress }) {
+function createFlakeElement({size, duration, startLeft, startTop, endLeft, endTop, progress}) {
     const flake = document.createElement('div');
     flake.className = 'flake';
 
@@ -51,28 +51,31 @@ function createFlakeElement({ size, duration, startLeft, startTop, endLeft, endT
     return flake;
 }
 
-function createFlakeFactory(container, options, getWidth) {
+function createFlakeFactory(container, options, getDimensions) {
     let currentFlakeCount = 0;
+    let flakeTimeouts = new Set();
+    let spawnInterval = null;
+    let isRunning = false;
 
-    return function spawnFlake(progress = 0) {
-        if (currentFlakeCount >= options.maxFlakes) {
+    const spawnFlake = function (progress = 0) {
+        if (currentFlakeCount >= options.maxFlakes || !isRunning) {
             return;
         }
 
         currentFlakeCount++;
 
+        const {width, height} = getDimensions();
         const size = options.minSize + Math.random() * (options.maxSize - options.minSize);
-        const width = getWidth();
         const startLeft = Math.random() * (width - size);
 
-        const endTop = window.innerHeight + 100;
+        const endTop = height + 100;
         const startTop = -50 + (endTop + 50) * progress;
 
         const randomDrift = -150 + Math.random() * 300;
         const windDrift = options.windX + randomDrift;
         const endLeft = startLeft + windDrift;
 
-        const duration = 40000 + Math.random() * 10000;
+        const duration = 30000 + Math.random() * 15000; // Slower, more graceful fall (30-45 seconds)
 
         const flake = createFlakeElement({
             size,
@@ -86,34 +89,117 @@ function createFlakeFactory(container, options, getWidth) {
 
         container.appendChild(flake);
 
-        setTimeout(() => {
-            flake.remove();
-            currentFlakeCount--;
-            spawnFlake(); // keep total flake count steady
-        }, duration * (1 - progress) + 1000);
+        // Calculate when flake reaches the bottom (not when animation ends)
+        const timeToBottom = duration * (1 - progress) * 0.85; // Spawn new one slightly before it reaches bottom
+
+        // Spawn replacement when this flake nears the bottom
+        const replaceTimeoutId = setTimeout(() => {
+            if (isRunning) {
+                currentFlakeCount--; // Decrement count to allow new spawn
+                flakeTimeouts.delete(replaceTimeoutId);
+                spawnFlake(); // Spawn replacement immediately
+            }
+        }, timeToBottom);
+
+        flakeTimeouts.add(replaceTimeoutId);
+
+        // Clean up DOM element after full animation + buffer
+        const cleanupTimeoutId = setTimeout(() => {
+            if (flake.parentNode) {
+                flake.remove();
+            }
+            flakeTimeouts.delete(cleanupTimeoutId);
+        }, duration * (1 - progress) + 2000);
+
+        flakeTimeouts.add(cleanupTimeoutId);
+    };
+
+    return {
+        spawnFlake,
+
+        clearAll: function () {
+            const flakes = container.querySelectorAll('.flake');
+            flakes.forEach(flake => flake.remove());
+
+            flakeTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
+            flakeTimeouts.clear();
+
+            if (spawnInterval) {
+                clearInterval(spawnInterval);
+                spawnInterval = null;
+            }
+
+            currentFlakeCount = 0;
+            isRunning = false;
+        },
+
+        start: function () {
+            if (isRunning) return;
+
+            isRunning = true;
+
+            // Initial burst spawn
+            for (let i = 0; i < options.maxFlakes; i++) {
+                setTimeout(() => spawnFlake(Math.random()), i * 200); // Stagger initial spawn
+            }
+
+            // Continuous gentle spawning to maintain flow
+            spawnInterval = setInterval(() => {
+                if (currentFlakeCount < options.maxFlakes && isRunning) {
+                    spawnFlake(0); // Always spawn from top
+                }
+            }, 2000 + Math.random() * 3000); // Random interval between 2-5 seconds
+        },
+
+        restart: function () {
+            this.clearAll();
+            setTimeout(() => this.start(), 100); // Small delay to ensure cleanup
+        }
     };
 }
 
 function createSnow(userOptions = {}) {
     const defaults = {
-        minSize: 10,
-        maxSize: 10,
+        minSize: 8,
+        maxSize: 12,
         windX: 30,
-        maxFlakes: 8
+        maxFlakes: 10 // Slightly increased for better coverage
     };
-    const options = { ...defaults, ...userOptions };
+    const options = {...defaults, ...userOptions};
 
     const container = createSnowContainer();
 
-    let width = document.documentElement.clientWidth;
-    const updateWidth = () => { width = document.documentElement.clientWidth; };
-    window.addEventListener('resize', debounce(updateWidth, 100));
+    let dimensions = {
+        width: document.documentElement.clientWidth,
+        height: window.innerHeight
+    };
 
-    const createFlake = createFlakeFactory(container, options, () => width);
+    const updateDimensions = () => {
+        dimensions = {
+            width: document.documentElement.clientWidth,
+            height: window.innerHeight
+        };
+    };
 
-    for (let i = 0; i < options.maxFlakes; i++) {
-        createFlake(Math.random());
-    }
+    const flakeFactory = createFlakeFactory(container, options, () => dimensions);
+
+    // Handle window resize
+    const handleResize = debounce(() => {
+        updateDimensions();
+        flakeFactory.restart();
+    }, 150);
+
+    window.addEventListener('resize', handleResize);
+
+    // Start the snow
+    flakeFactory.start();
+
+    // Return cleanup function
+    return () => {
+        window.removeEventListener('resize', handleResize);
+        flakeFactory.clearAll();
+        container.remove();
+    };
 }
 
 function isChristmas() {

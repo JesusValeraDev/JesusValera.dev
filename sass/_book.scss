@@ -1,120 +1,81 @@
 .book-info {
-  text-align: center;
-  padding: 15px 10px;
-  margin: 20px 10px;
-  background-color: var(--catalogue-color);
-  position: relative;
-  border-radius: 6px;
+  @extend .card-info;
 }
 
 .book-tags {
-  justify-content: center;
-  display: flex;
-  gap: 15px 5px;
-  flex-wrap: wrap;
-  margin-bottom: 2em;
+  @extend .btn-group;
 
   button {
-    background-color: var(--tag-button-selected-color);
-    color: var(--tag-text-selected-color);
-    border: none;
-    cursor: pointer;
-    padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
-    margin: 0 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 9999px;
-    transition: background-color 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
+    @extend .btn-pill;
+  }
 
-    svg {
-      margin-right: 5px;
-      color: var(--tag-button-color);
+  button[selected="true"] {
+    @extend .btn-pill;
+
+    &.btn-pill {
+      background-color: var(--text-primary);
+      color: var(--bg);
+      border-color: var(--text-primary);
+
+      &:hover {
+        background-color: var(--text-secondary);
+        border-color: var(--text-secondary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      svg {
+        color: var(--bg);
+      }
     }
-  }
-
-  [selected] {
-    background-color: var(--tag-button-color);
-    color: var(--tag-text-color);
-
-    svg {
-      color: var(--tag-text-color);
-    }
-  }
-
-  button[selected]:hover {
-    box-shadow: 0 0 1px 2px var(--tag-button-selected-color);
-  }
-  button:hover {
-    box-shadow: inset 0 0 0 1px var(--tag-text-selected-color);
   }
 }
 
 .books {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  align-items: end;
-  column-gap: 1.5rem;
-  row-gap: 35px;
+  @extend .grid-books;
 
   .book-item {
-    flex-basis: 31%;
+    @extend .grid-item;
 
-    .title {
-      font-weight: bold;
-    }
+    .book-cover {
+      @extend .item-cover;
 
-    img {
-      width: 100%;
-      height: 300px;
-      margin: .5rem auto;
-    }
-
-    .author {
-      font-size: 0.8rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 1;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      padding: 5px 0;
-    }
-
-    .date {
-      font-weight: lighter;
-      font-size: small;
-      position: absolute;
-    }
-  }
-}
-
-@media (max-width: 1000px) {
-  .books {
-    column-gap: 4rem;
-    row-gap: 30px;
-
-    .book-item {
-      flex-basis: 33%;
-    }
-  }
-}
-
-@media (max-width: 680px) {
-  .books {
-    row-gap: 30px;
-    flex-direction: column;
-    align-items: normal;
-
-    .book-item {
-      flex-basis: auto;
-      img {
-        width: 90%;
-        height: 400px;
+      .date {
+        @extend .badge-overlay;
       }
     }
+
+    .book-content {
+      @extend .item-content;
+
+      .title {
+        @extend .item-title;
+      }
+
+      .author {
+        @extend .item-subtitle;
+      }
+    }
+  }
+}
+
+// Legacy responsive styles removed - now handled by .grid-books component
+// All book styling is now managed through the component system in _components.scss
+
+// Responsive styles for book tags
+@include respond-below(sm) {
+  .book-tags button {
+    max-width: calc(100% - 1rem);
+  }
+}
+
+@include respond-below(md) {
+  .book-tags button {
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@include respond-below(lg) {
+  .book-tags button {
+    max-width: calc(33.333% - 1rem);
   }
 }

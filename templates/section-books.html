@@ -113,10 +113,16 @@
   <div class="books">
     {% for book in books %}
     <div class="book-item" data-tags="{{ book.tags }}">
-      <span class="title">{{ book.title}}</span>
-      <span class="author">{{ book.author}}</span>
-      <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}">
-      <span class="date">{{ book.date}}</span>
+      <div class="book-cover">
+        <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}">
+        {% if book.date %}
+        <div class="date">{{ book.date}}</div>
+        {% endif %}
+      </div>
+      <div class="book-content">
+        <div class="title">{{ book.title}}</div>
+        <div class="author">{{ book.author}}</div>
+      </div>
     </div>
     {% endfor %}
   </div>

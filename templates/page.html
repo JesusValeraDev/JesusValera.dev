@@ -38,24 +38,20 @@
 
 {% block content %}
   <div class="post">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <h2 class="post-subtitle">{{ page.extra.subtitle }}</h2>
     <small>
       <time datetime="{{ page.date }}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 20 20">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g transform="translate(-300, -2799)" fill="#AAAAAAFF">
-              <g transform="translate(56, 160)">
-                <path d="M262,2656 C262,2656.552 261.552,2657 261,2657 L247,2657 C246.448,2657 246,2656.552 246,2656 L246,2646 C246,2645.448 246.448,2645 247,2645 L261,2645 C261.552,2645 262,2645.448 262,2646 L262,2656 Z M262,2641 L262,2640 C262,2639.448 261.552,2639 261,2639 C260.448,2639 260,2639.448 260,2640 L260,2641 L255,2641 L255,2640 C255,2639.448 254.552,2639 254,2639 C253.448,2639 253,2639.448 253,2640 L253,2641 L248,2641 L248,2640 C248,2639.448 247.552,2639 247,2639 C246.448,2639 246,2639.448 246,2640 L246,2641 C244.895,2641 244,2641.895 244,2643 L244,2657 C244,2658.104 244.895,2659 246,2659 L262,2659 C263.105,2659 264,2658.104 264,2657 L264,2643 C264,2641.895 263.105,2641 262,2641 L262,2641 Z"></path>
-              </g>
-            </g>
-          </g>
-        </svg>
-        {{ page.date | date(format="%B %e, %Y") }} ·
-        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
-          <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
-        </svg>
-        {{ page.reading_time }} mins
+        <span class="day">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#AAAAAAFF" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18" fill="#AAAAAAFF"></path>
+          </svg>
+          <span>{{ page.date | date(format="%B %e, %Y") }}</span>
+        </span>
+        <span class="reading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+              <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+            </svg>
+            <span>{{ page.reading_time }} mins</span>
+          </span>
       </time>
       <span class="found-typo">
         {% set url = config.extra.repo_content_url ~ page.relative_path %}
@@ -64,6 +60,8 @@
         </svg> Found a typo? <a href="{{ url }}" target="_blank">Edit me</a>
       </span>
     </small>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <h2 class="post-subtitle">{{ page.extra.subtitle }}</h2>
     <div class="post-line"></div>
     {{ page.content | safe }}
   </div>
