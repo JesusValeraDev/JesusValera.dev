@@ -7,9 +7,11 @@ date = 2024-07-01
 tags = ['Git', 'Rebase', 'Onto', 'Branch']
 
 [extra]
-static_thumbnail = "/images/2025-03-20/1.png"
+static_thumbnail = "/images/2024-07-01/1.webp"
 subtitle = "How to modify the commit history with git rebase onto"
 +++
+
+![tuendern](/images/2024-07-01/1.webp)
 
 When you are working with Git, you may find yourself in a situation where you need to rebase your branch onto another branch.<br>
 This can happen when you want to incorporate changes from one branch into another, but you want to keep the commit history clean and linear.

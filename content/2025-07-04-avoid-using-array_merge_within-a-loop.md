@@ -7,7 +7,7 @@ date = 2025-07-04
 tags = ['php', 'arrays', 'merge', 'array_merge', 'resources']
 
 [extra]
-static_thumbnail = "/images/2025-03-20/1.png"
+static_thumbnail = "/images/2025-07-04/1.webp"
 subtitle = ""
 +++
 

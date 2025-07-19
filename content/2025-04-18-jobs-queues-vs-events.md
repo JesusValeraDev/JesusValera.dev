@@ -7,7 +7,7 @@ date = 2025-04-18
 tags = ['programming', 'job', 'event', 'queue', 'async']
 
 [extra]
-static_thumbnail = "/images/2025-04-18/1.png"
+static_thumbnail = "/images/2025-04-18/1.webp"
 subtitle = "When to use each one?"
 +++
 

@@ -7,7 +7,7 @@ date = 2024-02-09
 tags = ['PHP', 'first-class', 'callables', 'variadic', 'varargs', 'argument unpacking', 'splat operator']
 
 [extra]
-static_thumbnail = "/images/2023-11-27/1.png"
+static_thumbnail = "/images/2024-02-09/1.png"
 subtitle = "First-Class Callable Syntax, Variadic function & Argument unpacking"
 +++
 

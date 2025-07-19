@@ -7,7 +7,7 @@ date = 2025-03-25
 tags = ['git', 'git reset', 'git revert', 'commit']
 
 [extra]
-static_thumbnail = "/images/2025-03-20/1.png"
+static_thumbnail = "/images/2025-03-25/1.webp"
 subtitle = "git reset --soft, git reset --hard & git revert"
 +++
 

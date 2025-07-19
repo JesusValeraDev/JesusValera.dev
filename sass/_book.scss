@@ -1,5 +1,14 @@
 .book-info {
   @extend .card-info;
+
+  // Remove hover effect in dark mode
+  .theme-dark & {
+    &:hover {
+      background-color: var(--catalogue-item-bg);
+      transform: none;
+      box-shadow: none;
+    }
+  }
 }
 
 .book-tags {
