@@ -11,7 +11,7 @@
   <!-- Ultra-aggressive font preloading to prevent font swapping -->
   <link rel="preload" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
   <link rel="prefetch" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high" imagesrcset="{{ get_url(path='jesus-100.webp') | safe }} 1x, {{ get_url(path='jesus-150.webp') | safe }} 1.5x">
   <link rel="preload" as="script" href="{{ get_url(path='js/dark-mode.js') | safe }}" fetchpriority="high">
 
   <!-- Inline critical CSS for immediate render -->
@@ -192,7 +192,7 @@
     'use strict';
 
     // Critical resources that should be monitored
-    const CRITICAL_RESOURCES = ['/main.css', '/Inter-Variable.woff2', '/jesus-100.webp'];
+    const CRITICAL_RESOURCES = ['/main.css', '/Inter-Variable.woff2', '/jesus-100.webp', '/jesus-150.webp'];
 
     // LCP Optimizer - runs immediately to prevent layout shifts
     function optimizeMarkdownImages() {
@@ -411,7 +411,12 @@
   <header>
     <div class="header-content">
       <a class="profile-icon" href="{{ config.base_url | safe }}">
-        <img alt="JesusValera" src="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high" width="100" height="100">
+        <img alt="JesusValera" 
+             src="{{ get_url(path='jesus-100.webp') | safe }}" 
+             srcset="{{ get_url(path='jesus-100.webp') | safe }} 1x, {{ get_url(path='jesus-150.webp') | safe }} 1.5x"
+             fetchpriority="high" 
+             width="100" 
+             height="100">
       </a>
       <nav>
         {% for menu in config.extra.menu %}

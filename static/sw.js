@@ -18,7 +18,8 @@ const CRITICAL_ASSETS = [
     '/js/dark-mode.js',
     '/favicon.webp',
     '/icon.ico',
-    '/jesus-100.webp'               // 5 KiB - profile image
+    '/jesus-100.webp',              // 5 KiB - profile image (1x)
+    '/jesus-150.webp'               // 6 KiB - profile image (1.5x)
 ];
 
 // Long-term cacheable assets (fonts, images, etc.) - Cache these aggressively to overcome GitHub Pages 10m limit
