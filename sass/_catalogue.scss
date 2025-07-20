@@ -1,5 +1,3 @@
-/* Clean Catalogue Design - Rebuilt from Scratch */
-
 .catalogue {
   .catalogue-link {
     display: block;
@@ -39,6 +37,7 @@
   .catalogue-image {
     flex-shrink: 0;
     width: 250px;
+    height: 140px; /* Fixed height prevents layout shifts */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

@@ -24,7 +24,7 @@ aliases = ['resume']
 <div class="timeline-item current">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/fotograf.png" alt="fotograf.de logo" class="company-logo">
+      <img src="/cv/fotograf.webp" alt="fotograf.de logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">
           <a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de
@@ -84,7 +84,7 @@ aliases = ['resume']
 <div class="timeline-item">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/artnight.jpeg" alt="artnight logo" class="company-logo">
+      <img src="/cv/artnight.webp" alt="artnight logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">
           <a href="https://www.artnight.com/" target="_blank">ArtNight
@@ -144,7 +144,7 @@ aliases = ['resume']
 <div class="timeline-item">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/kollex.jpeg" alt="kollex logo" class="company-logo">
+      <img src="/cv/kollex.webp" alt="kollex logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">
           <a href="https://www.kollex.de/" target="_blank">Kollex
@@ -203,7 +203,7 @@ aliases = ['resume']
 <div class="timeline-item">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/selectra.jpeg" alt="selectra logo" class="company-logo">
+      <img src="/cv/selectra.webp" alt="selectra logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">
           <a href="https://selectra.info/" target="_blank">Selectra
@@ -262,7 +262,7 @@ aliases = ['resume']
 <div class="timeline-item">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/smile-and-learn.jpeg" alt="smile and learn logo" class="company-logo">
+      <img src="/cv/smile-and-learn.webp" alt="smile and learn logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">
           <a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn
@@ -321,7 +321,7 @@ aliases = ['resume']
 <div class="timeline-item">
   <div class="timeline-card">
     <div class="timeline-header">
-      <img src="/cv/rad4m.jpg" alt="rad4m logo" class="company-logo">
+      <img src="/cv/rad4m.webp" alt="rad4m logo" class="company-logo">
       <div class="timeline-info">
         <h3 class="company-name">RAD4M</h3>
         <div class="job-role">Android Developer Intern</div>

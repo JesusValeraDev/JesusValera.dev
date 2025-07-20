@@ -7,11 +7,11 @@ date = 2023-05-03
 tags = ["Caravaca", "Parlamento", "Discurso", "Moros", "Cristianos", "batalla"]
 
 [extra]
-static_thumbnail = "/other/1.png"
+static_thumbnail = "/other/1.webp"
 subtitle = "en Caravaca de la Cruz entre el Rey Cristiano y Sultán Moro ☨"
 +++
 
-![parlamento-batalla-moros-cristianos](/other/1.png)
+![parlamento-batalla-moros-cristianos](/other/1.webp)
 
 **CRISTIANO**<br>
 Cita te di y a la cita<br>

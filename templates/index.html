@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block scripts %}
+<!-- Preload first blog post thumbnails for homepage LCP -->
+{% set first_posts = section.pages | slice(end=2) %}
+{% for page in first_posts %}
+  {% if page.extra.static_thumbnail %}
+  <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
+  {% endif %}
+{% endfor %}
+{% endblock scripts %}
+
 {% block seo -%}
   {{ super() }}
 
@@ -16,9 +26,9 @@
 {%- endblock seo %}
 
 {% block content %}
-  <nav class="catalogue">
+  <div class="catalogue">
     {% for page in section.pages %}
       {{ macros::page(page=page) }}
     {% endfor %}
-  </nav>
+  </div>
 {% endblock content %}

@@ -60,7 +60,7 @@ header {
     position: relative;
   }
 
-  nav {
+  header nav {
     align-items: center;
     display: flex;
     gap: 20px;
@@ -82,6 +82,7 @@ header {
       line-height: 1.25rem;
       padding: 0;
       border-radius: 6px;
+      border: 1px solid var(--border);
       white-space: nowrap;
       gap: 0.5rem;
       justify-content: center;
@@ -90,8 +91,8 @@ header {
       height: 2rem;
       display: inline-flex;
       cursor: pointer;
-      color: white;
-      background-color: white;
+      color: var(--text-primary);
+      background-color: transparent;
 
       svg {
         flex-shrink: 0;
@@ -105,7 +106,7 @@ header {
 
     button:hover {
       background-color: var(--button-hover);
-      color: var(--button-hover);
+      border-color: var(--text-secondary);
     }
   }
 }
@@ -177,7 +178,7 @@ blockquote {
       margin-bottom: 25px;
     }
 
-    nav {
+    header nav {
       flex: 1 0 100%;
       @include flex-center;
     }
