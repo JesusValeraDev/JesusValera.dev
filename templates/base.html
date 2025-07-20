@@ -4,123 +4,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- DNS prefetch and preconnect for external resources -->
   <link rel="dns-prefetch" href="//rum.cronitor.io">
   <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
-      <!-- Ultra-aggressive font preloading to prevent font swapping -->
-    <link rel="preload" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
-    <link rel="prefetch" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="image" href="{{ get_url(path='jesus-80.webp') | safe }}" fetchpriority="high">
-    <link rel="preload" as="script" href="{{ get_url(path='js/dark-mode.js') | safe }}" fetchpriority="high">
+  <!-- Ultra-aggressive font preloading to prevent font swapping -->
+  <link rel="preload" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
+  <link rel="prefetch" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high">
+  <link rel="preload" as="script" href="{{ get_url(path='js/dark-mode.js') | safe }}" fetchpriority="high">
 
   <!-- Inline critical CSS for immediate render -->
   <style>html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;}*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:var(--border);}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;font-size:1.125rem;margin:0;line-height:1.6;min-height:100vh;scroll-behavior:smooth;background:var(--bg);color:var(--text-primary);font-variant-numeric:oldstyle-nums;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transition:color 150ms cubic-bezier(0.4,0,0.2,1),background-color 150ms cubic-bezier(0.4,0,0.2,1);}.theme-light{--bg:#fcfcfd;--text-primary:#374151;--text-secondary:#4b5563;--text-accent:#00a3f1;--link:#3b82f6;--catalogue-bg:#fefefe;--catalogue-item-bg:#ffffff;--code-bg:rgba(27,31,35,0.05);--timeline-bg:#00a3f1;--timeline-bullet:#cbebff;--tag-button:#4b5563;--tag-text:#e5e7eb;--tag-button-selected:#e5e7eb;--tag-text-selected:#4b5563;--table-header:#f3f4f6;--table-nth:#fcfcfc;--table-hover:#fcfcfc;--snowflake-bg-color:#38698c;--snowflake-shadow-color:#c0d3e3;--border:#e5e7eb;--footer-bg:#f9fafb;--footer-border:#e5e7eb;--header-bg:rgba(255,255,255,0.75);--header-border:#e5e7eb;--blockquote-bg:#eff6ff;--blockquote-border:#3b82f6;--button-hover:#fcfcfc;--marker:#374151;--pill-border:#e5e7eb;--current-badge-bg:rgba(34,197,94,0.2);--current-badge-text:#166534;}.theme-dark{--bg:#161e32;--text-primary:#cbd5e1;--text-secondary:#a1a1aa;--text-accent:#60a5fa;--link:#70acf6;--link-hover:#e6ecf3;--catalogue-bg:#1b2638;--catalogue-item-bg:#1b2537;--code-bg:#2d2d2d;--timeline-bg:#3b82f6;--timeline-bullet:#1e40af;--tag-button:#71717a;--tag-text:#f4f4f5;--tag-button-selected:#f4f4f5;--tag-text-selected:#27272a;--table-header:#404040;--table-nth:#2a2a2a;--table-hover:#374151;--snowflake-bg-color:#f1f5f9;--snowflake-shadow-color:#cbd5e1;--border:#334155;--footer-bg:#0f172a;--footer-border:#1f2937;--header-bg:rgba(15,23,42,0.8);--header-border:#1f2937;--blockquote-bg:#0f172a;--blockquote-border:#334155;--pill-border:#334155;--button-hover:#2a2a2a;--marker:#cbd5e1;--current-badge-bg:rgb(20 83 45);--current-badge-text:#73ffa9;--success-color:#22c55e;--primary-color:#3b82f6;--secondary-color:#8b5cf6;--accent-color:#f59e0b;}header{backdrop-filter:blur(6px);background-color:var(--header-bg);border-color:var(--header-border);border-bottom-width:1px;width:100%;z-index:50;top:0;position:sticky;}.header-content{max-width:56rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;display:flex;align-items:center;justify-content:space-between;height:4rem;width:100%;}.profile-icon img{border-radius:9999px;overflow:hidden;flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;position:relative;}nav{align-items:center;display:flex;gap:20px;}nav a{font-weight:500;text-decoration:none!important;color:var(--text-primary);}nav a:hover{color:var(--text-secondary);text-decoration:none!important;}nav button{font-weight:500;font-size:0.875rem;line-height:1.25rem;padding:0;border-radius:6px;white-space:nowrap;gap:0.5rem;justify-content:center;align-items:center;width:2rem;height:2rem;display:inline-flex;cursor:pointer;color:white;background-color:white;}nav button:hover{background-color:var(--button-hover);color:var(--button-hover);}nav button svg{flex-shrink:0;width:1rem;height:1rem;pointer-events:none;transition:all 150ms cubic-bezier(0.4,0,0.2,1);color:var(--text-primary);}main{max-width:56rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;padding-top:2rem;padding-bottom:2rem;}a{color:var(--link);text-decoration:underline;text-decoration-color:rgba(59,130,246,0.3);transition:color 150ms cubic-bezier(0.4,0,0.2,1);}.theme-dark a{text-decoration-color:rgba(112,172,246,0.3);}a:hover{color:var(--text-primary);text-decoration:underline;text-decoration-color:currentColor;}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
-  
-     <!-- Inline theme detection to prevent dark mode FOUC -->
-   <script>
-           (function() {
-        // Apply theme IMMEDIATELY before any content renders
-        const theme = localStorage.getItem('theme') || 'light';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('theme-dark');
-          document.documentElement.classList.remove('theme-light');
-          document.documentElement.setAttribute('color-theme', 'dark');
-        } else {
-          document.documentElement.classList.add('theme-light');  
-          document.documentElement.classList.remove('theme-dark');
-          document.documentElement.setAttribute('color-theme', 'light');
-        }
-        
-        // Force font loading immediately
-        if ('fonts' in document) {
-          document.fonts.load('400 1rem Inter').then(function() {
-            document.documentElement.classList.add('fonts-loaded');
-          }).catch(function() {
-            // Font loading failed, continue with fallbacks
-            document.documentElement.classList.add('fonts-fallback');
-          });
-        }
-      })();
-   </script>
 
-   <!-- Critical CSS inline to prevent FOUC and layout shifts -->
-   <style>
-     /* Critical layout styles to prevent CLS */
-     body { 
-       margin: 0; 
-       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; 
-       font-display: swap;
-     }
-     main { 
-       min-height: 50vh; 
-       contain: layout style paint; /* CSS containment for better performance */
-     }
-     
-     /* Catalogue layout stability */
-     .catalogue-card { 
-       display: flex; 
-       min-height: 140px; 
-       contain: layout style paint;
-     }
-     .catalogue-image { 
-       width: 250px; 
-       height: 140px; 
-       flex-shrink: 0; 
-       background-color: #f3f4f6; /* Placeholder while loading */
-     }
-     .catalogue-text { flex: 1; }
-     
-     /* Image dimension defaults to prevent shifts */
-     .post img {
-       width: 100%;
-       height: auto;
-       max-width: 100%;
-       aspect-ratio: 3/2; /* Default aspect ratio */
-     }
-     
-     @media (max-width: 768px) {
-       .catalogue-card { flex-direction: column; }
-       .catalogue-image { width: 100%; height: 200px; }
-     }
-     
-     /* Ultra-aggressive font loading optimization */
-     @font-face {
-       font-family: 'Inter';
-       src: url('/Inter-Variable.woff2') format('woff2-variations');
-       font-weight: 100 900;
-       font-style: normal;
-       font-display: block; /* Prevent font swap, wait for Inter to load */
-     }
-     
-     /* Improved font fallback matching */
-     body {
-       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-       font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-       font-variant-numeric: oldstyle-nums;
-     }
-     
-     /* Font loading states */
-     .fonts-loaded body {
-       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-     }
-     
-     .fonts-fallback body {
-       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-     }
-   </style>
-  
+  <!-- Inline theme detection to prevent dark mode FOUC -->
+  <script>
+  (function () {
+    // Apply theme IMMEDIATELY before any content renders
+    const theme = localStorage.getItem('theme') || 'light';
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+      document.documentElement.classList.remove('theme-light');
+      document.documentElement.setAttribute('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.add('theme-light');
+      document.documentElement.classList.remove('theme-dark');
+      document.documentElement.setAttribute('color-theme', 'light');
+    }
+
+    // Force font loading immediately
+    if ('fonts' in document) {
+      document.fonts.load('400 1rem Inter').then(function () {
+        document.documentElement.classList.add('fonts-loaded');
+      }).catch(function () {
+        // Font loading failed, continue with fallbacks
+        document.documentElement.classList.add('fonts-fallback');
+      });
+    }
+  })();
+  </script>
+
+  <!-- Critical CSS inline to prevent FOUC and layout shifts -->
+  <style>
+    /* Critical layout styles to prevent CLS */
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-display: swap;
+    }
+
+    main {
+      min-height: 50vh;
+      contain: layout style paint; /* CSS containment for better performance */
+    }
+
+    /* Enhanced catalogue layout stability with mobile optimization */
+    .catalogue {
+      contain: layout;
+    }
+
+    .catalogue-card {
+      display: flex;
+      min-height: 140px;
+      contain: layout style paint;
+      will-change: transform; /* Optimize for animations */
+      overflow: hidden; /* Prevent any overflow issues */
+    }
+
+    .catalogue-text {
+      flex: 1;
+      contain: layout style;
+    }
+
+    /* Mobile-first responsive optimizations */
+    @media (max-width: 768px) {
+      .catalogue-card {
+        flex-direction: column;
+        min-height: 200px;
+      }
+
+      /* Reduce DOM complexity on mobile */
+      .catalogue-meta svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      /* Optimize scroll performance */
+      body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    /* Books grid optimization */
+    .books {
+      contain: layout;
+    }
+
+    .book-item {
+      contain: layout style paint;
+      will-change: transform;
+    }
+
+    /* Performance optimizations for mobile devices */
+    @media (max-width: 480px) {
+      /* Reduce animation complexity on smaller screens */
+      *, *::before, *::after {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+      }
+
+      /* Simplify shadows for better performance */
+      .load-more-btn, .load-more-books-btn {
+        box-shadow: none !important;
+      }
+    }
+
+    /* Ultra-aggressive font loading optimization */
+    @font-face {
+      font-family: 'Inter';
+      src: url('/Inter-Variable.woff2') format('woff2-variations');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block; /* Prevent font swap, wait for Inter to load */
+    }
+
+    /* Improved font fallback matching */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      font-variant-numeric: oldstyle-nums;
+    }
+
+    /* Font loading states */
+    .fonts-loaded body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .fonts-fallback body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
+
   <!-- Load full CSS asynchronously after critical styles -->
   <link rel="preload" href="{{ get_url(path='main.css') | safe }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}"></noscript>
-  
+
   <!-- PWA Manifest -->
   <link rel="manifest" href="{{ get_url(path='manifest.json') | safe }}">
   <meta name="theme-color" content="#3b82f6">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="JesusValera.dev">
-  
+
   <!-- Favicon and touch icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='assets/favicon-32x32.webp') | safe }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='assets/favicon-16x16.webp') | safe }}">
@@ -148,122 +184,81 @@
   {% endblock scripts %}
   <!-- Dark mode functions loaded after theme is applied -->
   <script src="{{ get_url(path='js/dark-mode.js') | safe }}" defer></script>
-  
+
   <!-- Inlined performance optimization scripts to eliminate render-blocking requests -->
   <script>
-  // LCP Optimizer - runs immediately to prevent layout shifts
-  function optimizeMarkdownImages() {
-      const postContainer = document.querySelector('.post');
-      if (!postContainer) return;
-
-      const images = postContainer.querySelectorAll('img');
-      
-      images.forEach((img, index) => {
-          // First image gets high priority (likely LCP candidate)
-          if (index === 0) {
-              img.setAttribute('fetchpriority', 'high');
-          }
-          
-          // Add explicit dimensions to prevent layout shift
-          if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
-              img.setAttribute('width', '600');
-              img.setAttribute('height', '400');
-              img.style.width = '100%';
-              img.style.height = 'auto';
-          }
-
-          // Add alt text for accessibility if missing
-          if (!img.hasAttribute('alt') || img.getAttribute('alt') === '') {
-              img.setAttribute('alt', 'Blog post illustration');
-          }
-      });
-  }
-  
-  // Run immediately for any images already in DOM
-  optimizeMarkdownImages();
-  
-  // Run again after DOM loaded for dynamically added content
-  document.addEventListener('DOMContentLoaded', optimizeMarkdownImages);
-
-function optimizeMarkdownImages() {
-    // Find the main post container
-    const postContainer = document.querySelector('.post');
-    if (!postContainer) return;
-
-    const images = postContainer.querySelectorAll('img');
-    
-    images.forEach((img, index) => {
-        // First image gets high priority (likely LCP candidate)
-        if (index === 0) {
-            img.setAttribute('fetchpriority', 'high');
-            
-            // Add explicit dimensions to prevent layout shift
-            if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
-                img.setAttribute('width', '600');
-                img.setAttribute('height', '400');
-                img.style.width = '100%';
-                img.style.height = 'auto';
-            }
-        } else {
-            // Later images get lazy loading (after first 3 images)
-            if (index > 2) {
-                img.setAttribute('loading', 'lazy');
-            }
-        }
-
-        // Add alt text for accessibility if missing
-        if (!img.hasAttribute('alt') || img.getAttribute('alt') === '') {
-            img.setAttribute('alt', 'Blog post illustration');
-        }
-    });
-
-    // Optimize catalogue images as well
-    optimizeCatalogueImages();
-}
-
-function optimizeCatalogueImages() {
-    const catalogueImages = document.querySelectorAll('.catalogue-image img');
-    
-    catalogueImages.forEach((img, index) => {
-        if (index < 3) {
-            // First 3 catalogue images get high priority
-            if (!img.hasAttribute('fetchpriority')) {
-                img.setAttribute('fetchpriority', 'high');
-            }
-        } else {
-            // Rest get lazy loading
-            img.setAttribute('loading', 'lazy');
-        }
-    });
-}
-
-function preloadCriticalImages() {
-    // Preload the first catalogue image if it exists
-    const firstCatalogueImage = document.querySelector('.catalogue-image img');
-    
-    if (firstCatalogueImage && !document.querySelector(`link[href="${firstCatalogueImage.src}"]`)) {
-        const preloadLink = document.createElement('link');
-        preloadLink.rel = 'preload';
-        preloadLink.as = 'image';
-        preloadLink.href = firstCatalogueImage.src;
-        preloadLink.setAttribute('fetchpriority', 'high');
-        document.head.appendChild(preloadLink);
-    }
-}
-
-// Run critical image preloading immediately
-preloadCriticalImages();
-
-// Critical Path Optimizer - inlined for optimal performance
-(function() {
+  // Critical Path Optimizer - consolidated for optimal performance
+  (function() {
     'use strict';
 
     // Critical resources that should be monitored
-    const CRITICAL_RESOURCES = [
-        '/main.css',
-        '/Inter-Variable.woff2',
-        '/jesus-80.webp'
-    ];
+    const CRITICAL_RESOURCES = ['/main.css', '/Inter-Variable.woff2', '/jesus-100.webp'];
+
+    // LCP Optimizer - runs immediately to prevent layout shifts
+    function optimizeMarkdownImages() {
+        const postContainer = document.querySelector('.post');
+        if (!postContainer) return;
+
+        const images = postContainer.querySelectorAll('img');
+
+        images.forEach((img, index) => {
+            // First image gets high priority (likely LCP candidate)
+            if (index === 0) {
+                img.setAttribute('fetchpriority', 'high');
+
+                // Add explicit dimensions to prevent layout shift
+                if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+                    img.setAttribute('width', '600');
+                    img.setAttribute('height', '400');
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                }
+            } else {
+                // Later images get lazy loading (after first 3 images)
+                if (index > 2) {
+                    img.setAttribute('loading', 'lazy');
+                }
+            }
+
+            // Add alt text for accessibility if missing
+            if (!img.hasAttribute('alt') || img.getAttribute('alt') === '') {
+                img.setAttribute('alt', 'Blog post illustration');
+            }
+        });
+
+        // Optimize catalogue images as well
+        optimizeCatalogueImages();
+    }
+
+    function optimizeCatalogueImages() {
+        const catalogueImages = document.querySelectorAll('.catalogue-image img');
+
+        catalogueImages.forEach((img, index) => {
+            if (index < 3) {
+                // First 3 catalogue images get high priority
+                if (!img.hasAttribute('fetchpriority')) {
+                    img.setAttribute('fetchpriority', 'high');
+                }
+            } else {
+                // Rest get lazy loading
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+    }
+
+    function preloadCriticalImages() {
+        // Preload the first catalogue image if it exists
+        const firstCatalogueImage = document.querySelector('.catalogue-image img');
+
+        if (firstCatalogueImage && !document.querySelector(`link[href="${firstCatalogueImage.src}"]`)) {
+            const preloadLink = document.createElement('link');
+            preloadLink.rel = 'preload';
+            preloadLink.as = 'image';
+            preloadLink.href = firstCatalogueImage.src;
+            preloadLink.setAttribute('fetchpriority', 'high');
+            document.head.appendChild(preloadLink);
+        }
+    }
 
     function measureCriticalPath() {
         if (!window.performance || !window.performance.getEntriesByType) return;
@@ -271,7 +266,7 @@ preloadCriticalImages();
         const navigationStart = performance.timing.navigationStart;
         const domContentLoaded = performance.timing.domContentLoadedEventEnd;
         const criticalPathTime = domContentLoaded - navigationStart;
-        
+
         const resourceTiming = performance.getEntriesByType('resource');
         CRITICAL_RESOURCES.forEach(resource => {
             const timing = resourceTiming.find(t => t.name.includes(resource));
@@ -281,7 +276,7 @@ preloadCriticalImages();
 
     function prefetchNextResources() {
         const currentPath = window.location.pathname;
-        
+
         if (currentPath === '/' || currentPath === '') {
             prefetchBlogPostResources();
         } else if (currentPath.includes('/readings')) {
@@ -314,7 +309,7 @@ preloadCriticalImages();
 
     function prefetchResource(url, type) {
         if (!url || document.querySelector(`link[href="${url}"]`)) return;
-        
+
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.as = type;
@@ -336,7 +331,7 @@ preloadCriticalImages();
     function loadSeasonalScripts() {
         const currentMonth = new Date().getMonth();
         const isWinter = currentMonth === 11 || currentMonth === 0; // December or January
-        
+
         if (isWinter) {
             loadScript('/js/snow.js');
         }
@@ -345,12 +340,18 @@ preloadCriticalImages();
     function loadScript(src) {
         // Check if script already exists
         if (document.querySelector(`script[src*="${src}"]`)) return;
-        
+
         const script = document.createElement('script');
         script.src = src;
         script.defer = true;
         document.head.appendChild(script);
     }
+
+    // Run critical image preloading immediately
+    preloadCriticalImages();
+
+    // Run image optimization immediately for any images already in DOM
+    optimizeMarkdownImages();
 
     function init() {
         // Measure critical path performance
@@ -361,13 +362,15 @@ preloadCriticalImages();
         }
 
         optimizeFontLoading();
-
         loadSeasonalScripts();
 
         // Prefetch resources after page load
         window.addEventListener('load', () => {
             setTimeout(prefetchNextResources, 1000);
         });
+
+        // Run image optimization again after DOM loaded for dynamically added content
+        document.addEventListener('DOMContentLoaded', optimizeMarkdownImages);
     }
 
     init();
@@ -376,6 +379,7 @@ preloadCriticalImages();
   <script src="{{ get_url(path='js/scroll-top.js') | safe }}" defer></script>
   <script src="{{ get_url(path='js/external-links.js') | safe }}" defer></script>
   <script src="{{ get_url(path='js/image-optimizer.js') | safe }}" defer></script>
+
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
@@ -390,7 +394,7 @@ preloadCriticalImages();
   <header>
     <div class="header-content">
       <a class="profile-icon" href="{{ config.base_url | safe }}">
-        <img alt="JesusValera" src="{{ get_url(path='jesus-80.webp') | safe }}" fetchpriority="high" width="80" height="80">
+        <img alt="JesusValera" src="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high" width="100" height="100">
       </a>
       <nav>
         {% for menu in config.extra.menu %}

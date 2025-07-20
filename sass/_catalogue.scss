@@ -37,15 +37,17 @@
   .catalogue-image {
     flex-shrink: 0;
     width: 250px;
-    height: 140px; /* Fixed height prevents layout shifts */
+    height: auto;
+    min-height: 140px; /* Minimum height to maintain layout */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: var(--catalogue-bg);
+    overflow: hidden; /* Ensure no content spills out */
     
     @media (max-width: 768px) {
       width: 100%;
-      height: 200px;
+      min-height: 200px;
     }
   }
   

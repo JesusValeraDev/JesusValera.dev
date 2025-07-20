@@ -1,28 +1,24 @@
 // Service Worker for Ultra-Aggressive Caching
 // Maximizes cache lifetimes to overcome GitHub Pages 10m TTL limit
-const CACHE_NAME = 'jesusvalera-v3';
-const STATIC_CACHE_NAME = 'jesusvalera-static-v3';
-const LONG_TERM_CACHE = 'jesusvalera-longterm-v2';
-const FONT_CACHE = 'jesusvalera-fonts-v1';
+const CACHE_NAME = 'jesusvalera-v4';
+const STATIC_CACHE_NAME = 'jesusvalera-static-v4';
+const LONG_TERM_CACHE = 'jesusvalera-longterm-v3';
+const FONT_CACHE = 'jesusvalera-fonts-v2';
 
 // Ultra-long-term cacheable assets (virtually never change)
 const FONT_ASSETS = [
-    '/Inter-Variable.woff2',
-    '/fonts/Inter-400.woff',
-    '/fonts/Inter-500.woff', 
-    '/fonts/Inter-600.woff',
-    '/fonts/Inter-700.woff'
+    '/Inter-Variable.woff2'
 ];
 
 // Critical assets to cache immediately (high priority)
+// Note: main.css is cached dynamically during fetch (not at install) since it's build-generated
 const CRITICAL_ASSETS = [
-    '/main.css',
     '/syntax-theme-light.css', 
     '/syntax-theme-dark.css',
     '/js/dark-mode.js',
     '/favicon.webp',
     '/icon.ico',
-    '/jesus-80.webp'
+    '/jesus-100.webp'
 ];
 
 // Long-term cacheable assets (fonts, images, etc.)
@@ -54,25 +50,34 @@ const SECONDARY_ASSETS = [
     '/js/snow.js'
 ];
 
-// Install event - ultra-aggressive caching with four tiers
+// Install event - ultra-aggressive caching with error handling
 self.addEventListener('install', event => {
     event.waitUntil(
-        Promise.all([
+        Promise.allSettled([
             // Tier 1: Fonts (cache virtually forever)
             caches.open(FONT_CACHE)
-                .then(cache => cache.addAll(FONT_ASSETS)),
+                .then(cache => cache.addAll(FONT_ASSETS))
+                .catch(err => console.warn('Font assets caching failed:', err)),
             
             // Tier 2: Critical assets (high priority)
             caches.open(STATIC_CACHE_NAME)
-                .then(cache => cache.addAll(CRITICAL_ASSETS)),
+                .then(cache => cache.addAll(CRITICAL_ASSETS))
+                .catch(err => console.warn('Critical assets caching failed:', err)),
             
-            // Tier 3: Long-term assets (images, optimized for bandwidth)
+            // Tier 3: Long-term assets (images, optimized for bandwidth) - cache individually to prevent one failure from breaking all
             caches.open(LONG_TERM_CACHE)
-                .then(cache => cache.addAll(LONG_TERM_ASSETS)),
+                .then(cache => {
+                    return Promise.allSettled(
+                        LONG_TERM_ASSETS.map(asset => 
+                            cache.add(asset).catch(err => console.warn(`Failed to cache ${asset}:`, err))
+                        )
+                    );
+                }),
             
             // Tier 4: Secondary assets (lower priority)
             caches.open(STATIC_CACHE_NAME)
                 .then(cache => cache.addAll(SECONDARY_ASSETS))
+                .catch(err => console.warn('Secondary assets caching failed:', err))
         ])
     );
     self.skipWaiting();
@@ -198,7 +203,8 @@ self.addEventListener('activate', event => {
                 cacheNames.filter(cacheName => {
                     return cacheName !== CACHE_NAME && 
                            cacheName !== STATIC_CACHE_NAME && 
-                           cacheName !== LONG_TERM_CACHE;
+                           cacheName !== LONG_TERM_CACHE &&
+                           cacheName !== FONT_CACHE;
                 }).map(cacheName => {
                     return caches.delete(cacheName);
                 })
