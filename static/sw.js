@@ -54,7 +54,6 @@ const SECONDARY_ASSETS = [
     '/js/scroll-top.js',
     '/js/filter-books.js', 
     '/js/external-links.js',
-    '/js/image-optimizer.js',
     '/js/snow.js'
 ];
 

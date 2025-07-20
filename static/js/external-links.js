@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initExternalLinks() {
     // Find all external links
     const allLinks = document.querySelectorAll('a[href^="http"], a[href^="https"]');
     const currentDomain = window.location.hostname;
@@ -41,4 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+}
+
+// Initialize when DOM is ready  
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExternalLinks);
+} else {
+    initExternalLinks();
+}
+
+// Handle bfcache restoration
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        // Page was restored from bfcache, reinitialize external link handling
+        initExternalLinks();
+    }
 });

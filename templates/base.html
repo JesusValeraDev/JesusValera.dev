@@ -364,21 +364,38 @@
         optimizeFontLoading();
         loadSeasonalScripts();
 
-        // Prefetch resources after page load
+        // Prefetch resources after page load (use passive event listeners for bfcache)
         window.addEventListener('load', () => {
             setTimeout(prefetchNextResources, 1000);
-        });
+        }, { passive: true });
 
         // Run image optimization again after DOM loaded for dynamically added content
-        document.addEventListener('DOMContentLoaded', optimizeMarkdownImages);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', optimizeMarkdownImages);
+        }
+    }
+
+    // Handle bfcache restoration
+    function handlePageRestore() {
+        // Reinitialize optimizations when page is restored from bfcache
+        optimizeMarkdownImages();
+        preloadCriticalImages();
+        optimizeFontLoading();
     }
 
     init();
+
+    // Support bfcache restoration
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page was restored from bfcache, reinitialize performance optimizations
+            handlePageRestore();
+        }
+    });
   })();
   </script>
   <script src="{{ get_url(path='js/scroll-top.js') | safe }}" defer></script>
   <script src="{{ get_url(path='js/external-links.js') | safe }}" defer></script>
-  <script src="{{ get_url(path='js/image-optimizer.js') | safe }}" defer></script>
 
   <script>
     if ('serviceWorker' in navigator) {
