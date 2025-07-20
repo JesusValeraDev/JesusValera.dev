@@ -1,44 +1,52 @@
 // Service Worker for Ultra-Aggressive Caching
 // Maximizes cache lifetimes to overcome GitHub Pages 10m TTL limit
-const CACHE_NAME = 'jesusvalera-v4';
-const STATIC_CACHE_NAME = 'jesusvalera-static-v4';
-const LONG_TERM_CACHE = 'jesusvalera-longterm-v3';
-const FONT_CACHE = 'jesusvalera-fonts-v2';
+const CACHE_NAME = 'jesusvalera-v5';
+const STATIC_CACHE_NAME = 'jesusvalera-static-v5';
+const LONG_TERM_CACHE = 'jesusvalera-longterm-v4';
+const FONT_CACHE = 'jesusvalera-fonts-v3';
 
 // Ultra-long-term cacheable assets (virtually never change)
 const FONT_ASSETS = [
     '/Inter-Variable.woff2'
 ];
 
-// Critical assets to cache immediately (high priority)
-// Note: main.css is cached dynamically during fetch (not at install) since it's build-generated
+// Critical assets to cache immediately (high priority) - These are needed for every page load
 const CRITICAL_ASSETS = [
+    '/main.css',                    // 6 KiB - now cached immediately for faster loads
     '/syntax-theme-light.css', 
     '/syntax-theme-dark.css',
     '/js/dark-mode.js',
     '/favicon.webp',
     '/icon.ico',
-    '/jesus-100.webp'
+    '/jesus-100.webp'               // 5 KiB - profile image
 ];
 
-// Long-term cacheable assets (fonts, images, etc.)
+// Long-term cacheable assets (fonts, images, etc.) - Cache these aggressively to overcome GitHub Pages 10m limit
 const LONG_TERM_ASSETS = [
-    // Large images from Lighthouse report
-    '/images/2021-05-17/1.webp',
-    '/images/2025-07-04/1.webp', 
-    '/images/2025-03-25/1.webp',
-    '/images/2024-11-29/1.webp',
-    '/images/2022-03-16/1.webp',
-    '/images/2022-08-17/1.webp',
-    '/images/2024-07-01/1.webp',
-    '/images/2024-02-09/1.webp',
-    '/images/2022-12-06/1.webp',
-    '/images/2020-08-20/1.webp',
-    '/images/2023-02-20/1.webp',
-    '/images/2020-07-02/1.webp',
-    '/images/2021-08-18/1.webp',
-    '/images/2020-06-11/1.webp',
-    '/images/2020-04-03/1.webp'
+    // Large images from Lighthouse report (total: ~2.3MB - these are the biggest wins)
+    '/images/2021-05-17/1.webp',    // 202 KiB
+    '/images/2025-07-04/1.webp',    // 148 KiB  
+    '/images/2025-03-25/1.webp',    // 139 KiB
+    '/images/2024-11-29/1.webp',    // 115 KiB
+    '/images/2022-08-17/1.webp',    // 86 KiB
+    '/images/2024-02-09/1.webp',    // 83 KiB
+    '/images/2024-07-01/1.webp',    // 83 KiB
+    '/images/2022-12-06/1.webp',    // 78 KiB
+    '/images/2020-08-20/1.webp',    // 74 KiB
+    '/images/2020-06-11/1.webp',    // 62 KiB
+    '/images/2021-08-18/1.webp',    // 59 KiB
+    '/images/2022-03-16/1.webp',    // 52 KiB
+    '/images/2023-02-20/1.webp',    // 50 KiB
+    '/images/2020-07-02/1.webp',    // 45 KiB
+    '/images/2025-04-18/1.webp',    // 43 KiB
+    '/images/2020-04-03/1.webp',    // 37 KiB
+    '/images/2022-10-21/1.webp',    // 31 KiB
+    '/images/2020-03-20/1.webp',    // 29 KiB
+    '/images/2023-04-25/1.webp',    // 23 KiB
+    '/images/2023-08-26/1.webp',    // 21 KiB
+    '/images/2023-11-27/1.webp',    // 10 KiB
+    '/images/2021-02-01/1.webp',    // 9 KiB
+    '/images/2024-04-09/1.webp'     // 9 KiB
 ];
 
 // Secondary assets (lower priority)  
@@ -64,7 +72,7 @@ self.addEventListener('install', event => {
                 .then(cache => cache.addAll(CRITICAL_ASSETS))
                 .catch(err => console.warn('Critical assets caching failed:', err)),
             
-            // Tier 3: Long-term assets (images, optimized for bandwidth) - cache individually to prevent one failure from breaking all
+            // Tier 3: Long-term assets (images + CSS, optimized for bandwidth) - cache individually to prevent one failure from breaking all
             caches.open(LONG_TERM_CACHE)
                 .then(cache => {
                     return Promise.allSettled(
@@ -116,9 +124,10 @@ self.addEventListener('fetch', event => {
         return;
     }
 
-    // Long-term assets: Large images (cache aggressively, stale-while-revalidate)
+    // Long-term assets: Large images + CSS (cache aggressively, stale-while-revalidate)
     const isLongTermAsset = LONG_TERM_ASSETS.some(asset => request.url.includes(asset)) ||
-                           request.url.includes('/images/') && request.url.includes('.webp');
+                           (request.url.includes('/images/') && request.url.includes('.webp')) ||
+                           request.url.includes('main.css');
     
     if (isLongTermAsset) {
         event.respondWith(
