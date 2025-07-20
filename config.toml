@@ -21,7 +21,7 @@ build_search_index = false
 
 # The taxonomies to be rendered for the site and their configuration.
 taxonomies = [
-    {name = "tags", feed = false},
+    {name = "tags", feed = false, render = false},
 ]
 
 [markdown]

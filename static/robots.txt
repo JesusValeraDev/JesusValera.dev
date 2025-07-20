@@ -1,7 +1,6 @@
 User-agent: *
-Disallow: /tags/
 
-# Allow everything else
+# Allow everything
 Allow: /
 
 # Sitemap and feed locations
