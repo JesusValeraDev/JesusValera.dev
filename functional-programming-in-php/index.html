@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- DNS prefetch and preconnect for external resources -->
+  <link rel="dns-prefetch" href="//rum.cronitor.io">
+  <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
+  <!-- Ultra-aggressive font preloading to prevent font swapping -->
+  <link rel="preload" as="font" href="https://jesusvalera.dev/Inter-Variable.woff2" type="font/woff2" crossorigin fetchpriority="high">
+  <link rel="prefetch" as="font" href="https://jesusvalera.dev/Inter-Variable.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="https://jesusvalera.dev/jesus-100.webp" fetchpriority="high" imagesrcset="https://jesusvalera.dev/jesus-100.webp 1x, https://jesusvalera.dev/jesus-150.webp 1.5x">
+  <link rel="preload" as="script" href="https://jesusvalera.dev/js/dark-mode.js" fetchpriority="high">
+
+  <!-- Inline critical CSS for immediate render -->
+  <style>html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;}*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:var(--border);}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;font-size:1.125rem;margin:0;line-height:1.6;min-height:100vh;scroll-behavior:smooth;background:var(--bg);color:var(--text-primary);font-variant-numeric:oldstyle-nums;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transition:color 150ms cubic-bezier(0.4,0,0.2,1),background-color 150ms cubic-bezier(0.4,0,0.2,1);}.theme-light{--bg:#fcfcfd;--text-primary:#374151;--text-secondary:#4b5563;--text-accent:#00a3f1;--link:#3b82f6;--catalogue-bg:#fefefe;--catalogue-item-bg:#ffffff;--code-bg:rgba(27,31,35,0.05);--timeline-bg:#00a3f1;--timeline-bullet:#cbebff;--tag-button:#4b5563;--tag-text:#e5e7eb;--tag-button-selected:#e5e7eb;--tag-text-selected:#4b5563;--table-header:#f3f4f6;--table-nth:#fcfcfc;--table-hover:#fcfcfc;--snowflake-bg-color:#38698c;--snowflake-shadow-color:#c0d3e3;--border:#e5e7eb;--footer-bg:#f9fafb;--footer-border:#e5e7eb;--header-bg:rgba(255,255,255,0.75);--header-border:#e5e7eb;--blockquote-bg:#eff6ff;--blockquote-border:#3b82f6;--button-hover:#fcfcfc;--marker:#374151;--pill-border:#e5e7eb;--current-badge-bg:rgba(34,197,94,0.2);--current-badge-text:#166534;}.theme-dark{--bg:#161e32;--text-primary:#cbd5e1;--text-secondary:#a1a1aa;--text-accent:#60a5fa;--link:#70acf6;--link-hover:#e6ecf3;--catalogue-bg:#1b2638;--catalogue-item-bg:#1b2537;--code-bg:#2d2d2d;--timeline-bg:#3b82f6;--timeline-bullet:#1e40af;--tag-button:#71717a;--tag-text:#f4f4f5;--tag-button-selected:#f4f4f5;--tag-text-selected:#27272a;--table-header:#404040;--table-nth:#2a2a2a;--table-hover:#374151;--snowflake-bg-color:#f1f5f9;--snowflake-shadow-color:#cbd5e1;--border:#334155;--footer-bg:#0f172a;--footer-border:#1f2937;--header-bg:rgba(15,23,42,0.8);--header-border:#1f2937;--blockquote-bg:#0f172a;--blockquote-border:#334155;--pill-border:#334155;--button-hover:#2a2a2a;--marker:#cbd5e1;--current-badge-bg:rgb(20 83 45);--current-badge-text:#73ffa9;--success-color:#22c55e;--primary-color:#3b82f6;--secondary-color:#8b5cf6;--accent-color:#f59e0b;}header{backdrop-filter:blur(6px);background-color:var(--header-bg);border-color:var(--header-border);border-bottom-width:1px;width:100%;z-index:50;top:0;position:sticky;}.header-content{max-width:56rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;display:flex;align-items:center;justify-content:space-between;height:4rem;width:100%;}.profile-icon img{border-radius:9999px;overflow:hidden;flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;position:relative;}nav{align-items:center;display:flex;gap:20px;}nav a{font-weight:500;text-decoration:none!important;color:var(--text-primary);}nav a:hover{color:var(--text-secondary);text-decoration:none!important;}nav button{font-weight:500;font-size:0.875rem;line-height:1.25rem;padding:0;border-radius:6px;white-space:nowrap;gap:0.5rem;justify-content:center;align-items:center;width:2rem;height:2rem;display:inline-flex;cursor:pointer;color:white;background-color:white;}nav button:hover{background-color:var(--button-hover);color:var(--button-hover);}nav button svg{flex-shrink:0;width:1rem;height:1rem;pointer-events:none;transition:all 150ms cubic-bezier(0.4,0,0.2,1);color:var(--text-primary);}main{max-width:56rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;padding-top:2rem;padding-bottom:2rem;}a{color:var(--link);text-decoration:underline;text-decoration-color:rgba(59,130,246,0.3);transition:color 150ms cubic-bezier(0.4,0,0.2,1);}.theme-dark a{text-decoration-color:rgba(112,172,246,0.3);}a:hover{color:var(--text-primary);text-decoration:underline;text-decoration-color:currentColor;}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+
+  <!-- Inline theme detection to prevent dark mode FOUC -->
+  <script>
+  (function () {
+    // Apply theme IMMEDIATELY before any content renders
+    const theme = localStorage.getItem('theme') || 'light';
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+      document.documentElement.classList.remove('theme-light');
+      document.documentElement.setAttribute('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.add('theme-light');
+      document.documentElement.classList.remove('theme-dark');
+      document.documentElement.setAttribute('color-theme', 'light');
+    }
+
+    // Force font loading immediately
+    if ('fonts' in document) {
+      document.fonts.load('400 1rem Inter').then(function () {
+        document.documentElement.classList.add('fonts-loaded');
+      }).catch(function () {
+        // Font loading failed, continue with fallbacks
+        document.documentElement.classList.add('fonts-fallback');
+      });
+    }
+  })();
+  </script>
+
+  <!-- Critical CSS inline to prevent FOUC and layout shifts -->
+  <style>
+    /* Critical layout styles to prevent CLS */
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-display: swap;
+    }
+
+    main {
+      min-height: 50vh;
+      contain: layout style paint; /* CSS containment for better performance */
+    }
+
+    /* Enhanced catalogue layout stability with mobile optimization */
+    .catalogue {
+      contain: layout;
+    }
+
+    .catalogue-card {
+      display: flex;
+      min-height: 140px;
+      contain: layout style paint;
+      will-change: transform; /* Optimize for animations */
+      overflow: hidden; /* Prevent any overflow issues */
+    }
+
+    .catalogue-text {
+      flex: 1;
+      contain: layout style;
+    }
+
+    /* Mobile-first responsive optimizations */
+    @media (max-width: 768px) {
+      .catalogue-card {
+        flex-direction: column;
+        min-height: 200px;
+      }
+
+      /* Reduce DOM complexity on mobile */
+      .catalogue-meta svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      /* Optimize scroll performance */
+      body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    /* Books grid optimization */
+    .books {
+      contain: layout;
+    }
+
+    .book-item {
+      contain: layout style paint;
+      will-change: transform;
+    }
+
+    /* Performance optimizations for mobile devices */
+    @media (max-width: 480px) {
+      /* Reduce animation complexity on smaller screens */
+      *, *::before, *::after {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+      }
+
+      /* Simplify shadows for better performance */
+      .load-more-btn, .load-more-books-btn {
+        box-shadow: none !important;
+      }
+    }
+
+    /* Ultra-aggressive font loading optimization */
+    @font-face {
+      font-family: 'Inter';
+      src: url('/Inter-Variable.woff2') format('woff2-variations');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block; /* Prevent font swap, wait for Inter to load */
+    }
+
+    /* Improved font fallback matching */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      font-variant-numeric: oldstyle-nums;
+    }
+
+    /* Font loading states */
+    .fonts-loaded body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .fonts-fallback body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
+
+  <!-- Load full CSS asynchronously after critical styles -->
+  <link rel="preload" href="https://jesusvalera.dev/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://jesusvalera.dev/main.css"></noscript>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="https://jesusvalera.dev/manifest.json">
+  <meta name="theme-color" content="#3b82f6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="JesusValera.dev">
+
+  <!-- Favicon and touch icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jesusvalera.dev/assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jesusvalera.dev/assets/favicon-16x16.webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jesusvalera.dev/assets/apple-touch-icon.webp">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://jesusvalera.dev/atom.xml" title="Jesus Valera Reales - RSS Feed">
+    <link type="application/rss+xml" rel="alternate" href="https://jesusvalera.dev/atom.xml" title="Jesus Valera Reales - RSS Feed">
+  
+
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '162fa780362b916393b2692116b73be0' });
+  </script>
+
+  
+<title>New PHP 8.4 array functions | Jesus Valera Reales</title>
+
+
+
+<meta property="og:title" content="New PHP 8.4 array functions">
+
+
+<meta property="og:locale" content="en_US">
+
+
+<meta name="description" content="Imperative vs declarative and the new PHP 8.4 functions: array_find, array_find_key, array_all &amp; array_any">
+<meta property="og:description" content="Imperative vs declarative and the new PHP 8.4 functions: array_find, array_find_key, array_all &amp; array_any">
+
+
+
+<link rel="canonical" href="https://jesusvalera.dev/functional-programming-in-php/">
+<meta property="og:url" content="https://jesusvalera.dev/functional-programming-in-php/">
+
+
+
+  <meta property="og:site_name" content="Jesus Valera Reales">
+
+
+
+  <meta property="og:image" content="https://jesusvalera.dev/icon.ico">
+  
+  
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2024-11-29T00:00:00+00:00">
+
+
+
+
+<script type="application/ld+json">
+{
+  "description": "Imperative vs declarative and the new PHP 8.4 functions: array_find, array_find_key, array_all &amp; array_any",
+  "url": "https://jesusvalera.dev/functional-programming-in-php/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "New PHP 8.4 array functions",
+  
+  "datePublished":"2024-11-29T00:00:00+00:00",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://jesusvalera.dev/functional-programming-in-php/"
+  }
+  
+}
+</script>
+  
+  <!-- Preload blog post hero image if available -->
+  
+  <link rel="preload" as="image" href="https://jesusvalera.dev/images/2024-11-29/1.webp" fetchpriority="high">
+  
+  
+  
+  <!-- Dark mode functions loaded after theme is applied -->
+  <script src="https://jesusvalera.dev/js/dark-mode.js" defer></script>
+
+  <!-- Inlined performance optimization scripts to eliminate render-blocking requests -->
+  <script>
+  // Critical Path Optimizer - consolidated for optimal performance
+  (function() {
+    'use strict';
+
+    // Critical resources that should be monitored
+    const CRITICAL_RESOURCES = ['/main.css', '/Inter-Variable.woff2', '/jesus-100.webp', '/jesus-150.webp'];
+
+    // LCP Optimizer - runs immediately to prevent layout shifts
+    function optimizeMarkdownImages() {
+        const postContainer = document.querySelector('.post');
+        if (!postContainer) return;
+
+        const images = postContainer.querySelectorAll('img');
+
+        images.forEach((img, index) => {
+            // First image gets high priority (likely LCP candidate)
+            if (index === 0) {
+                img.setAttribute('fetchpriority', 'high');
+
+                // Add explicit dimensions to prevent layout shift
+                if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+                    img.setAttribute('width', '600');
+                    img.setAttribute('height', '400');
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                }
+            } else {
+                // Later images get lazy loading (after first 3 images)
+                if (index > 2) {
+                    img.setAttribute('loading', 'lazy');
+                }
+            }
+
+            // Add alt text for accessibility if missing
+            if (!img.hasAttribute('alt') || img.getAttribute('alt') === '') {
+                img.setAttribute('alt', 'Blog post illustration');
+            }
+        });
+
+        // Optimize catalogue images as well
+        optimizeCatalogueImages();
+    }
+
+    function optimizeCatalogueImages() {
+        const catalogueImages = document.querySelectorAll('.catalogue-image img');
+
+        catalogueImages.forEach((img, index) => {
+            if (index < 3) {
+                // First 3 catalogue images get high priority
+                if (!img.hasAttribute('fetchpriority')) {
+                    img.setAttribute('fetchpriority', 'high');
+                }
+            } else {
+                // Rest get lazy loading
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+    }
+
+    function preloadCriticalImages() {
+        // Preload the first catalogue image if it exists
+        const firstCatalogueImage = document.querySelector('.catalogue-image img');
+
+        if (firstCatalogueImage && !document.querySelector(`link[href="${firstCatalogueImage.src}"]`)) {
+            const preloadLink = document.createElement('link');
+            preloadLink.rel = 'preload';
+            preloadLink.as = 'image';
+            preloadLink.href = firstCatalogueImage.src;
+            preloadLink.setAttribute('fetchpriority', 'high');
+            document.head.appendChild(preloadLink);
+        }
+    }
+
+    function measureCriticalPath() {
+        if (!window.performance || !window.performance.getEntriesByType) return;
+
+        const navigationStart = performance.timing.navigationStart;
+        const domContentLoaded = performance.timing.domContentLoadedEventEnd;
+        const criticalPathTime = domContentLoaded - navigationStart;
+
+        const resourceTiming = performance.getEntriesByType('resource');
+        CRITICAL_RESOURCES.forEach(resource => {
+            const timing = resourceTiming.find(t => t.name.includes(resource));
+            // Can add logging here if needed for debugging
+        });
+    }
+
+    function prefetchNextResources() {
+        const currentPath = window.location.pathname;
+
+        if (currentPath === '/' || currentPath === '') {
+            prefetchBlogPostResources();
+        } else if (currentPath.includes('/readings')) {
+            prefetchBookCovers();
+        }
+    }
+
+    function prefetchBlogPostResources() {
+        const firstBlogLink = document.querySelector('.catalogue-link');
+        if (firstBlogLink) {
+            const href = firstBlogLink.getAttribute('href');
+            if (href) prefetchResource(href, 'document');
+        }
+    }
+
+    function prefetchBookCovers() {
+        const bookImages = document.querySelectorAll('.book-item img[loading="lazy"]');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    prefetchResource(img.src, 'image');
+                    observer.unobserve(img);
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        bookImages.forEach(img => observer.observe(img));
+    }
+
+    function prefetchResource(url, type) {
+        if (!url || document.querySelector(`link[href="${url}"]`)) return;
+
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = type;
+        link.href = url;
+        document.head.appendChild(link);
+    }
+
+    function optimizeFontLoading() {
+        if ('fonts' in document) {
+            const fontPromise = document.fonts.load('400 1rem Inter');
+            fontPromise.then(() => {
+                document.documentElement.classList.add('fonts-loaded');
+            }).catch(() => {
+                // Font loading failed, continue without optimization
+            });
+        }
+    }
+
+    function loadSeasonalScripts() {
+        const currentMonth = new Date().getMonth();
+        const isWinter = currentMonth === 11 || currentMonth === 0; // December or January
+
+        if (isWinter) {
+            loadScript('/js/snow.js');
+        }
+    }
+
+    function loadScript(src) {
+        // Check if script already exists
+        if (document.querySelector(`script[src*="${src}"]`)) return;
+
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+
+    // Run critical image preloading immediately
+    preloadCriticalImages();
+
+    // Run image optimization immediately for any images already in DOM
+    optimizeMarkdownImages();
+
+    function init() {
+        // Measure critical path performance
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', measureCriticalPath);
+        } else {
+            measureCriticalPath();
+        }
+
+        optimizeFontLoading();
+        loadSeasonalScripts();
+
+        // Prefetch resources after page load (use passive event listeners for bfcache)
+        window.addEventListener('load', () => {
+            setTimeout(prefetchNextResources, 1000);
+        }, { passive: true });
+
+        // Run image optimization again after DOM loaded for dynamically added content
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', optimizeMarkdownImages);
+        }
+    }
+
+    // Handle bfcache restoration
+    function handlePageRestore() {
+        // Reinitialize optimizations when page is restored from bfcache
+        optimizeMarkdownImages();
+        preloadCriticalImages();
+        optimizeFontLoading();
+    }
+
+    init();
+
+    // Support bfcache restoration
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page was restored from bfcache, reinitialize performance optimizations
+            handlePageRestore();
+        }
+    });
+  })();
+  </script>
+  <script src="https://jesusvalera.dev/js/scroll-top.js" defer></script>
+  <script src="https://jesusvalera.dev/js/external-links.js" defer></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</head>
+
+<body>
+  
+  <header>
+    <div class="header-content">
+      <a class="profile-icon" href="https://jesusvalera.dev">
+        <img alt="JesusValera" 
+             src="https://jesusvalera.dev/jesus-100.webp" 
+             srcset="https://jesusvalera.dev/jesus-100.webp 1x, https://jesusvalera.dev/jesus-150.webp 1.5x"
+             fetchpriority="high" 
+             width="100" 
+             height="100">
+      </a>
+      <nav>
+        
+        <a href="https://jesusvalera.dev">Blog</a>
+        
+        <a href="https://jesusvalera.dev/readings">Readings</a>
+        
+        <a href="https://jesusvalera.dev/cv">CV</a>
+        
+        <button id="light-mode" onclick="toDarkMode()" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <span class="sr-only">Switch to dark mode</span>
+        </button>
+        <button id="dark-mode" onclick="toLightMode()" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <span class="sr-only">Switch to light mode</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  
+
+  <main>
+    
+  <div class="post">
+    <small>
+      <time datetime="2024-11-29">
+        <span class="day">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#AAAAAAFF" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18" fill="#AAAAAAFF"></path>
+          </svg>
+          <span>November 29, 2024</span>
+        </span>
+        <span class="reading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+              <path stroke="#AAAAAAFF" stroke-width="3" stroke-linecap="round" d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+            </svg>
+            <span>7 mins</span>
+          </span>
+      </time>
+      <span class="found-typo">
+        
+        <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill-rule="evenodd" fill="#AAAAAAFF" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z"></path>
+        </svg> Found a typo? <a href="https:&#x2F;&#x2F;github.com&#x2F;JesusValeraDev&#x2F;JesusValera.dev&#x2F;blob&#x2F;main&#x2F;content&#x2F;2024-11-29-functional-programming-in-php.md" target="_blank" aria-label="Edit this page on GitHub to submit a pull request" title="Edit on GitHub">Edit me</a>
+      </span>
+    </small>
+    <h1 class="post-title">New PHP 8.4 array functions</h1>
+    <h2 class="post-subtitle">array_find, array_find_key, array_all &amp; array_any</h2>
+    <div class="post-line"></div>
+    <p>The PHP 8.4 version includes four new array functions that will help to write more clear and concise code.</p>
+<p><img src="/images/2024-11-29/1.webp" alt="interlaken-mountain" /></p>
+<p>Let's take a look at the current PHP <code>array_*</code> methods and an small example about how to deal with each of them (similarly as I did in this JavaScript <a href="/functional-programming-in-javascript">post</a>).</p>
+<h2 id="imperative-vs-declarative">Imperative vs Declarative</h2>
+<p>There are two ways of applying transformations to arrays in PHP.</p>
+<ul>
+<li>While in <strong>imperative</strong> way we tell step by step <strong>how</strong> to get,</li>
+<li>in the <strong>declarative</strong> we tell not how to do it, but <strong>what</strong> we want</li>
+</ul>
+<p><strong>Example:</strong> Having a list of numbers from 1 to 10, to filter odd numbers, we can do:</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>numbers</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">2</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">3</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">4</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">5</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">6</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">7</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">8</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">9</span>, <span class="z-constant z-numeric z-integer z-decimal z-php">10</span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span># Imperative
+</span></span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>result</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-empty z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-keyword z-control z-php">foreach</span> <span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>numbers</span> <span class="z-keyword z-operator z-logical z-php">as</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>n</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span><span class="z-source z-php">    <span class="z-keyword z-control z-php">if</span> <span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>n</span> <span class="z-keyword z-operator z-arithmetic z-php">%</span> <span class="z-constant z-numeric z-integer z-decimal z-php">2</span> <span class="z-keyword z-operator z-comparison z-php">===</span> <span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span> <span class="z-punctuation z-section z-block z-begin z-php">{</span>
+</span><span class="z-source z-php">        <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>result</span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-begin z-php">[</span></span><span class="z-meta z-item-access z-php"><span class="z-punctuation z-section z-brackets z-end z-php">]</span></span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>n</span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">    <span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span><span class="z-source z-php"><span class="z-punctuation z-section z-block z-end z-php">}</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-comment z-line z-number-sign z-php"><span class="z-punctuation z-definition z-comment z-php">#</span># Declarative
+</span></span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>result</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-support z-function z-array z-php">array_filter</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>numbers</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span> </span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">int</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>n</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>n</span> <span class="z-keyword z-operator z-arithmetic z-php">%</span> <span class="z-constant z-numeric z-integer z-decimal z-php">2</span> <span class="z-keyword z-operator z-comparison z-php">===</span> <span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span></code></pre>
+<p>As you can see, in the declarative way, we did not create any explicit loop or added any <code>if</code> statement, it was all done automatically under-the-hood, we just defined which condition should be applied to each element of the list.</p>
+<p>There is no a better way, both imperative and declarative codes do the same, in some situations one way could fit better than the other, although, usually the declarative is shorter and cleaner.</p>
+<h2 id="declarative-functions">Declarative functions</h2>
+<p>Before PHP 8.4, we have numerous PHP functions, eg:</p>
+<ul>
+<li><code><small><b>array_map</b>(?callable $callback, array $array, array ...$arrays): array</small></code> <a href="https://www.php.net/manual/en/function.array-map.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_walk</b>(array|object &amp;$array, callable $callback, mixed $arg = null): true</small></code> <a href="https://www.php.net/manual/en/function.array-walk.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_filter</b>(array $array, ?callable $callback = null, int $mode = 0): array</small></code> <a href="https://www.php.net/manual/en/function.array-filter.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_reduce</b>(array $array, callable $callback, mixed $initial = null): mixed</small></code> <a href="https://www.php.net/manual/en/function.array-reduce.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_key_exists</b>(string|int|float|bool|resource|null $key, array $array): bool</small></code> <a href="https://www.php.net/manual/en/function.array-key-exists.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>in_array</b>(mixed $needle, array $haystack, bool $strict = false): bool</small></code> <a href="https://www.php.net/manual/en/function.in-array.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+</ul>
+<p>Since PHP 8.4 we have the new following methods:</p>
+<ul>
+<li><code><small><b>array_find</b>(array $array, callable $callback): mixed</small></code> <a href="https://www.php.net/manual/en/function.array-find.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_find_key</b>(array|object &amp;$array, callable $callback, mixed $arg = null): true</small></code> <a href="https://www.php.net/manual/en/function.array-find-key.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_all</b>(array $array, ?callable $callback = null, int $mode = 0): array</small></code> <a href="https://www.php.net/manual/en/function.array-all.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+<li><code><small><b>array_any</b>(array $array, callable $callback, mixed $initial = null): mixed</small></code> <a href="https://www.php.net/manual/en/function.array-any.php" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
+</ul>
+<p>The new four methods were discussed in this <a href="https://wiki.php.net/rfc/array_find" target="_blank"><abbr title="Request for comments">RFC</abbr></a>.</p>
+<h2 id="new-functions">New functions</h2>
+<h3 id="array-find-mag-right">array_find 🔎</h3>
+<p><code>array_find()</code> is useful to get the <strong>value</strong> of the first occurrence of a certain element in an array. It will return <em>NULL</em> otherwise.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Spain</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Germany</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Portugal</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">France</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>find</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_find</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">an</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>find</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span> <span class="z-constant z-other z-php">OUTPUT</span> <span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">string</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-numeric z-integer z-decimal z-php">7</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span> <span class="z-string z-quoted z-double z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&quot;</span></span><span class="z-string z-quoted z-double z-php"><span class="z-meta z-string-contents z-quoted z-double z-php"></span></span><span class="z-string z-quoted z-double z-php"><span class="z-meta z-string-contents z-quoted z-double z-php">Germany</span><span class="z-punctuation z-definition z-string z-end z-php">&quot;</span></span>
+</span></code></pre>
+<h3 id="array-find-key-key">array_find_key 🔑</h3>
+<p><code>array_find_key()</code> is useful to get the <strong>key</strong> of the first occurrence of a certain element in an array. It will return <em>NULL</em> otherwise.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Spain</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Germany</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Portugal</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">France</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>findKey</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_find_key</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">an</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>findKey</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span> <span class="z-constant z-other z-php">OUTPUT</span> <span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">int</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-numeric z-integer z-decimal z-php">1</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span></code></pre>
+<h3 id="array-all-shamrock">array_all ☘️</h3>
+<p><code>array_all()</code> is useful to know if <strong>all</strong> elements from an array meet a specific closure. This method will return <em>true</em> or <em>false</em>.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Spain</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Germany</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Portugal</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">France</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>allA</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_all</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">a</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>allE</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_all</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">e</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>allA</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>allE</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span> <span class="z-constant z-other z-php">OUTPUT</span> <span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">bool</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-language z-php">true</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">bool</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-language z-php">false</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span></code></pre>
+<h3 id="array-any-thread">array_any 🧵</h3>
+<p><code>array_any()</code> is useful to know if <strong>any</strong> element from an array meet a specific closure. This method will return <em>true</em> or <em>false</em>.</p>
+<pre data-lang="php source" class="language-php source z-code"><code class="language-php source" data-lang="php source"><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-array z-php"><span class="z-punctuation z-section z-array z-begin z-php">[</span><span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Spain</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Germany</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">Portugal</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span>, <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">France</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-punctuation z-section z-array z-end z-php">]</span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>anyA</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_any</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">a</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>anyE</span> <span class="z-keyword z-operator z-assignment z-php">=</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">array_any</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>countries</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-meta z-function z-arrow-function z-php"><span class="z-storage z-type z-function z-php">fn</span></span><span class="z-meta z-function z-parameters z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-storage z-type z-php">string</span> <span class="z-variable z-parameter z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-section z-group z-end z-php">)</span><span class="z-meta z-function z-php"> </span><span class="z-punctuation z-definition z-arrow-function z-php">=&gt;</span> <span class="z-meta z-function-call z-php"><span class="z-variable z-function z-php">str_contains</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>c</span><span class="z-punctuation z-separator z-php">,</span> <span class="z-string z-quoted z-single z-php"><span class="z-punctuation z-definition z-string z-begin z-php">&#39;</span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php"></span></span><span class="z-string z-quoted z-single z-php"><span class="z-meta z-string-contents z-quoted z-single z-php">e</span><span class="z-punctuation z-definition z-string z-end z-php">&#39;</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>anyA</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php"><span class="z-meta z-function-call z-php"><span class="z-support z-function z-var z-php">var_dump</span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span></span></span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-variable z-other z-php"><span class="z-punctuation z-definition z-variable z-php">$</span>anyE</span><span class="z-meta z-function-call z-php"><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-end z-php">)</span></span></span></span></span><span class="z-punctuation z-terminator z-expression z-php">;</span>
+</span><span class="z-source z-php">
+</span><span class="z-source z-php"><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span> <span class="z-constant z-other z-php">OUTPUT</span> <span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span><span class="z-keyword z-operator z-arithmetic z-php">*</span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">bool</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-language z-php">true</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span><span class="z-source z-php"><span class="z-storage z-type z-php">bool</span><span class="z-meta z-group z-php"><span class="z-punctuation z-section z-group z-begin z-php">(</span><span class="z-constant z-language z-php">true</span><span class="z-punctuation z-section z-group z-end z-php">)</span></span>
+</span></code></pre>
+
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <div class="footer-container">
+      <span>© 2025 Jesus Valera Reales</span>
+      <div class="social-icons">
+        <a href="https://github.com/JesusValeraDev" target="_blank" aria-label="Visit my GitHub profile" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+          <span class="sr-only">Visit my GitHub profile</span>
+        </a>
+        <a href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" aria-label="Connect with me on LinkedIn" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <span class="sr-only">Connect with me on LinkedIn</span>
+        </a>
+        <a href="mailto:me@jesusvalera.dev" aria-label="Send me an email" title="Email me">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <span class="sr-only">Send me an email</span>
+        </a>
+        
+        <a href="https://jesusvalera.dev/atom.xml" aria-label="Subscribe to RSS feed" title="RSS Feed">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          <span class="sr-only">Subscribe to RSS feed</span>
+        </a>
+        
+      </div>
+      </div>
+  </footer>
+  
+  <a href="#" class="top" style="display: none" aria-label="Scroll to top" title="Scroll to top">
+    <svg width="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="miter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="16 13.2 12 9.5 8 13.2"/>
+    </svg>
+    <span class="sr-only">Scroll to top</span>
+  </a>
+</body>
+</html>
