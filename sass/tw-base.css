@@ -1,0 +1,42 @@
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url('/Inter-Variable.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  html { @apply scroll-smooth leading-relaxed bg-light-bg dark:bg-dark-bg; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; }
+  *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
+  body { @apply font-inter text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary font-variant-numeric-oldstyle antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
+  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(59,130,246,0.3); }
+  .theme-dark a { text-decoration-color: rgba(112,172,246,0.3); }
+  a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
+  h2 { @apply mb-4; }
+  ul,ol { @apply list-inside pl-5 text-light-text-primary dark:text-dark-text-primary; }
+  ul { @apply list-disc; }
+  ol { @apply list-decimal; }
+  li { @apply my-1.5; }
+  li::marker { @apply text-light-text-primary dark:text-dark-text-primary; }
+  img { @apply block mx-auto my-4 max-w-full; }
+  blockquote { @apply p-2 px-4 bg-light-blockquote-bg dark:bg-dark-blockquote-bg border-l-4 border-light-blockquote-border dark:border-dark-blockquote-border mb-6 mx-3; }
+  .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
+  
+  /* Revert Tailwind Preflight margin:0 for headings and text elements */
+  blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
+
+  /* Reset text selection to system default-like colors */
+  ::selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
+  ::-moz-selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
+
+  .theme-light { --border: theme('colors.light-border'); }
+  .theme-dark { --border: theme('colors.dark-border'); }
+
+  /* Accessible focus styles for keyboard navigation */
+  .theme-light a:focus-visible,
+  .theme-light button:focus-visible,
+  .theme-light .top:focus-visible { outline: 2px solid theme('colors.light-text-primary'); outline-offset: 3px; border-radius: 6px; }
+  .theme-dark a:focus-visible,
+  .theme-dark button:focus-visible,
+  .theme-dark .top:focus-visible { outline: 2px solid theme('colors.dark-text-primary'); outline-offset: 3px; border-radius: 6px; }
+}

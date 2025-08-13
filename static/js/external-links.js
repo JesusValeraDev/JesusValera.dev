@@ -1,26 +1,28 @@
 function initExternalLinks() {
-    // Find all external links
-    const allLinks = document.querySelectorAll('a[href^="http"], a[href^="https"]');
     const currentDomain = window.location.hostname;
-    
-    allLinks.forEach(link => {
+
+    // Apply rel="noopener noreferrer" to ALL anchors for safety
+    document.querySelectorAll('a').forEach(link => {
+        const currentRel = (link.getAttribute('rel') || '').trim();
+        const needsNoopener = !currentRel.split(/\s+/).includes('noopener');
+        const needsNoreferrer = !currentRel.split(/\s+/).includes('noreferrer');
+        if (needsNoopener || needsNoreferrer) {
+            const parts = currentRel ? currentRel.split(/\s+/) : [];
+            if (needsNoopener) parts.push('noopener');
+            if (needsNoreferrer) parts.push('noreferrer');
+            link.setAttribute('rel', parts.join(' ').trim());
+        }
+    });
+
+    // Enhance external links only
+    document.querySelectorAll('a[href^="http"], a[href^="https"]').forEach(link => {
         const url = new URL(link.href);
-        
-        // Check if link is external (different domain)
         if (url.hostname !== currentDomain) {
-            // Add target="_blank" if not already set
             if (!link.hasAttribute('target')) {
                 link.setAttribute('target', '_blank');
             }
-            
-            // Add security attributes
-            const currentRel = link.getAttribute('rel') || '';
-            if (!currentRel.includes('noopener')) {
-                const newRel = currentRel ? `${currentRel} noopener noreferrer` : 'noopener noreferrer';
-                link.setAttribute('rel', newRel);
-            }
-            
-            // Add accessibility attributes
+
+            // Accessibility hints for external links
             const ariaLabel = link.getAttribute('aria-label');
             if (ariaLabel && !ariaLabel.includes('opens in new tab')) {
                 link.setAttribute('aria-label', `${ariaLabel} (opens in new tab)`);
@@ -30,8 +32,7 @@ function initExternalLinks() {
                     link.setAttribute('aria-label', `${linkText} (opens in new tab)`);
                 }
             }
-            
-            // Add title attribute for tooltip
+
             const title = link.getAttribute('title');
             if (!title) {
                 const linkText = link.textContent.trim();

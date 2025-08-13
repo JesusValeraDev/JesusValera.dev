@@ -1,2 +1,15 @@
 .idea
+
+# Zola build output
 public
+
+# Node.js and npm
+node_modules/
+.npm-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tailwind CSS generated files
+static/tailwind.css
+sass/tailwind.entry.css

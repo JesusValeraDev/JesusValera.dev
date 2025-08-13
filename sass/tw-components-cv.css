@@ -1,0 +1,64 @@
+@layer components {
+  .theme-light .cv-container { --current-badge-bg: theme('colors.light-current-badge-bg'); --current-badge-text: theme('colors.light-current-badge-text'); }
+  .theme-dark .cv-container { --current-badge-bg: theme('colors.dark-current-badge-bg'); --current-badge-text: theme('colors.dark-current-badge-text'); }
+  .cv-container #about-me, .cv-container #experience { @apply text-xl md:text-2xl font-semibold; }
+  .cv-container { @apply max-w-4xl mx-auto; }
+  .cv-timeline { @apply relative; }
+  .about-me-card { @apply mb-12; }
+  .about-me-card .timeline-card { @apply card-base ml-0 rounded-xl p-4; transition-property: transform, box-shadow, background-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4,0,0.2,1); }
+  .about-me-card .timeline-card:hover { @apply bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg; transform: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); }
+  .about-me-content p { @apply m-0 mb-3 leading-relaxed text-light-text-primary dark:text-dark-text-primary text-base opacity-90 relative pl-6; }
+  .about-me-content p::before { content: '•'; @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg font-bold text-xl leading-none; top: 0.1em; }
+  .about-me-content p:last-child { @apply mb-0; }
+
+  .timeline-items { @apply relative; }
+  .timeline-items::before { content: ''; @apply absolute left-2.5 top-0 bottom-0 w-0.5 bg-light-timeline-bg dark:bg-dark-timeline-bg z-10; }
+  .timeline-item { @apply relative mb-8 ml-5 pl-8; }
+  .timeline-item::before { content: ''; @apply absolute w-3 h-3 bg-light-timeline-bg dark:bg-dark-timeline-bg rounded-full border-2 border-light-bg dark:border-dark-bg; left: -.95rem; top: 2.5rem; z-index: 20; }
+  .timeline-item.current::before { @apply bg-light-timeline-bg dark:bg-dark-timeline-bg; }
+  .timeline-card { @apply card-base rounded-xl p-4 relative; transition-property: transform, box-shadow, background-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4,0,0.2,1); }
+  .timeline-card:hover { @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg; }
+  .timeline-header { @apply flex items-start gap-4 mb-4; }
+  .company-logo { @apply w-16 h-16 rounded-lg object-cover flex-shrink-0; border-radius: 8px; border: 2px solid var(--border); }
+  .timeline-info { @apply flex-1 min-w-0 self-center; }
+  .company-name { @apply text-lg font-bold leading-tight text-light-text-primary dark:text-dark-text-primary m-0 mb-1; }
+  .company-name a { @apply text-light-link dark:text-dark-link no-underline hover:underline inline-flex items-center gap-1; }
+  .external-link-icon { @apply w-3 h-3 opacity-70; }
+  .job-role { @apply text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary; }
+  .job-meta { @apply flex flex-wrap gap-4 mb-4 text-sm text-light-text-secondary dark:text-dark-text-secondary; }
+  .job-meta > * + * { @apply pl-4 border-l border-light-border dark:border-dark-border; }
+  .job-date, .job-location { @apply inline-flex items-center gap-1; }
+  .job-date svg, .job-location svg { @apply w-3 h-3 flex-shrink-0; }
+  .job-description { @apply mb-4 text-sm; }
+  .job-description ul { @apply list-none pl-0 space-y-2; }
+  .job-description li { @apply relative pl-4 text-light-text-primary dark:text-dark-text-primary leading-relaxed; }
+  .job-description li::before { content: '▸'; @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg font-bold; }
+  .job-skills { @apply flex flex-col items-start gap-2; }
+  .skills-label { @apply text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary pt-1; }
+  .skill-tags { @apply flex flex-wrap gap-2; }
+  .skill-tag { @apply inline-block px-3 py-1 text-xs font-medium bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full; }
+
+  @media (max-width: 768px) {
+    .timeline-item { @apply ml-3 pl-6; }
+    .timeline-item::before { left: -0.45rem; }
+    .timeline-header { @apply flex-col items-start gap-2; }
+    .company-name { @apply text-center; }
+    .job-role { @apply text-center; }
+    .job-meta { @apply gap-2; }
+    .skills-label { @apply pt-0; }
+  }
+
+  .timeline-item.current .timeline-card::after {
+    content: "Current";
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--current-badge-bg);
+    color: var(--current-badge-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    z-index: 10;
+  }
+}

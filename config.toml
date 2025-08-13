@@ -6,7 +6,7 @@ title = "Jesus Valera Reales"
 description = "Personal blog about technology, mostly about programming languages; time to time I like to share what I learn"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+compile_sass = false
 
 # Whether to generate a feed file for the site
 generate_feeds = true

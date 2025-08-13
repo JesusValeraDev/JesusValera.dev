@@ -20,12 +20,11 @@
 
 
 {% block content %}
-<div class="notfound">
-  <h1 class="notfound-error">{{ config.extra.expressions.p404 | default(value="404: Page not found") }}</h1>
-  <div class="notfound-line"></div>
-  <p class="notfound-message">
+<section class="text-center py-20">
+  <h1 class="text-3xl font-bold mb-4">{{ config.extra.expressions.p404 | default(value="404: Page not found") }}</h1>
+  <div class="h-0.5 w-16 bg-light-border dark:bg-dark-border mx-auto mb-6"></div>
+  <p class="text-light-text-secondary dark:text-dark-text-secondary">
     Oops! We can't seem to find the page you are looking for. Let's <a href="{{ config.base_url | safe }}">head back home</a>.
   </p>
-  <p></p>
-</div>
+</section>
 {% endblock content %}
