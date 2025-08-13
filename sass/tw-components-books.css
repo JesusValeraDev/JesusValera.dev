@@ -19,11 +19,9 @@
   @media (max-width: 639px) { .book-item { @apply max-w-sm w-full mx-auto; } }
 
   .book-tags { @apply flex flex-wrap justify-center gap-y-3 gap-x-2 mb-8; }
-  .book-tags button { @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium leading-none uppercase tracking-wide bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full cursor-pointer transition-colors duration-150 ease-custom hover:bg-light-catalogue-item-bg dark:hover:bg-dark-catalogue-item-bg hover:text-light-text-primary dark:hover:text-dark-text-primary hover:border-light-text-secondary dark:hover:border-dark-text-secondary; }
+  .book-tags button { @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium leading-none uppercase tracking-wide bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full cursor-pointer transition-colors duration-150 ease-custom hover:bg-light-catalogue-item-bg dark:hover:bg-dark-catalogue-item-bg hover:text-light-text-primary dark:hover:text-dark-text-primary hover:border-light-text-secondary dark:hover:border-dark-text-secondary whitespace-nowrap; }
+  .book-tags button svg { @apply flex-shrink-0; }
   .book-tags button[selected="true"] { @apply bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-light-text-primary dark:border-dark-text-primary; }
   .book-tags button[selected="true"]:hover { @apply bg-light-text-secondary dark:bg-dark-text-secondary border-light-text-secondary dark:border-dark-text-secondary; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
   .book-tags button[selected="true"] svg { @apply text-light-bg dark:text-dark-bg; }
-  @media (max-width: 639px) { .book-tags button { max-width: calc(100% - 1rem); } }
-  @media (max-width: 767px) { .book-tags button { max-width: calc(50% - 1rem); } }
-  @media (max-width: 1023px) { .book-tags button { max-width: calc(33.333% - 1rem); } }
 }

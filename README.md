@@ -1,6 +1,6 @@
 # JesusValera.dev
 
-Personal site (blog, readings and projects) built with Zola and Tailwind CSS.
+Personal site built with Zola and Tailwind CSS.
 
 ### Stack
 - Zola (static site generator)

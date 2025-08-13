@@ -1,6 +1,6 @@
 {% import 'macros.html' as macros %}
 <!DOCTYPE html>
-<html lang="en" class="theme-light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,36 +21,29 @@
   <script>
   (function () {
     // Apply theme IMMEDIATELY before any content renders
-    const theme = localStorage.getItem('theme') || 'light';
+    const theme = localStorage.theme || 'light';
     if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
       document.documentElement.classList.add('theme-dark');
       document.documentElement.classList.remove('theme-light');
-      document.documentElement.classList.add('dark');
       document.documentElement.setAttribute('color-theme', 'dark');
       // Prevent white flash before CSS loads
       document.documentElement.style.backgroundColor = '#161e32';
       document.documentElement.style.color = '#cbd5e1';
     } else {
+      document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('theme-light');
       document.documentElement.classList.remove('theme-dark');
-      document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('color-theme', 'light');
       // Ensure a consistent light background before CSS loads
       document.documentElement.style.backgroundColor = '#fcfcfd';
       document.documentElement.style.color = '#374151';
     }
-
-    // Force font loading immediately
-    if ('fonts' in document) {
-      document.fonts.load('400 1rem Inter').then(function () {
-        document.documentElement.classList.add('fonts-loaded');
-      }).catch(function () {
-        // Font loading failed, continue with fallbacks
-        document.documentElement.classList.add('fonts-fallback');
-      });
-    }
   })();
   </script>
+
+  <!-- Load dark-mode script immediately after theme detection -->
+  <script src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
 
   <!-- Critical CSS inline to prevent FOUC and layout shifts -->
   <style>
@@ -59,6 +52,36 @@
     main {
       min-height: 50vh;
       contain: layout style paint; /* CSS containment for better performance */
+    }
+
+    #dark-mode { display: none; }
+    .dark #light-mode { display: none !important; }
+    .dark #dark-mode { display: inline-flex !important; }
+    
+    /* Ensure buttons are clickable and properly sized for mobile */
+    #light-mode, #dark-mode { 
+      pointer-events: auto !important; 
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+    
+    /* Force proper display and interaction on mobile */
+    @media (max-width: 768px) {
+      #light-mode, #dark-mode {
+        min-width: 48px !important;
+        min-height: 48px !important;
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
     }
 
     /* Mobile-first responsive optimizations */
@@ -70,6 +93,19 @@
 
   <!-- Load Tailwind CSS (blocking to avoid first-paint mismatch) -->
   <link rel="stylesheet" href="{{ get_url(path='tailwind.css', cachebust=true) | safe }}">
+
+  <!-- Trigger Inter font load after CSS is available so preload is actually used -->
+  <script>
+    (function() {
+      if ('fonts' in document && document.documentElement) {
+        document.fonts.load('400 1rem Inter').then(function () {
+          document.documentElement.classList.add('fonts-loaded');
+        }).catch(function () {
+          document.documentElement.classList.add('fonts-fallback');
+        });
+      }
+    })();
+  </script>
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfd">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a">
@@ -102,8 +138,6 @@
   {% endblock seo %}
   {% block scripts %}
   {% endblock scripts %}
-  <!-- Dark mode functions loaded after theme is applied -->
-  <script src="{{ get_url(path='js/dark-mode.js') | safe }}" defer></script>
 
   <!-- Inlined performance optimization scripts to eliminate render-blocking requests -->
   <script>
@@ -175,26 +209,26 @@
 
 <body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
   {% block header %}
-  <header class="sticky top-0 z-50 backdrop-blur-header bg-light-catalogue-bg/80 dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full" style="backdrop-filter: blur(6px);">
-    <div class="container-custom h-16 flex items-center justify-between">
-      <a class="profile-icon flex items-center" href="{{ get_url(path='') | safe }}">
+  <header class="header-fixed-md z-50 backdrop-blur-header bg-light-catalogue-bg/80 dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full" style="backdrop-filter: blur(6px);">
+    <div class="container-custom md:h-16 flex flex-col md:flex-row items-center md:justify-between gap-3 md:gap-0 py-3 md:py-0">
+      <a class="profile-icon flex items-center justify-center mx-auto md:mx-0" href="{{ get_url(path='') | safe }}">
         <img alt="JesusValera" 
-             class="rounded-full w-10 h-10 flex-shrink-0"
+             class="rounded-full w-22 h-22 md:w-10 md:h-10 flex-shrink-0"
              src="{{ get_url(path='jesus-100.webp') | safe }}" 
              srcset="{{ get_url(path='jesus-100.webp') | safe }} 1x, {{ get_url(path='jesus-150.webp') | safe }} 1.5x"
              fetchpriority="high" 
              width="100" 
              height="100">
       </a>
-      <nav class="flex items-center gap-5">
+      <nav class="flex items-center justify-center gap-6">
         {% for menu in config.extra.menu %}
         <a class="font-medium no-underline text-light-text-primary dark:text-dark-text-primary hover:text-light-text-secondary dark:hover:text-dark-text-secondary" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
-        <button id="light-mode" onclick="toDarkMode()" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center self-center" style="width: 1rem; height: 1rem;">
+        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 ml-3 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors" style="min-width: 44px; min-height: 44px;">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-sun"></use></svg>
           <span class="sr-only">Switch to dark mode</span>
         </button>
-        <button id="dark-mode" onclick="toLightMode()" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center self-center" style="width: 1rem; height: 1rem;">
+        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 ml-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors" style="min-width: 44px; min-height: 44px;">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-moon"></use></svg>
           <span class="sr-only">Switch to light mode</span>
         </button>
@@ -203,7 +237,7 @@
   </header>
   {% endblock header %}
 
-  <main class="container-custom py-8">
+  <main class="container-custom py-8 main-offset-md">
     {% block content %}{% endblock content %}
   </main>
 

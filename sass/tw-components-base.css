@@ -6,9 +6,9 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .card-base:hover { @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg shadow-card-hover; }
-  .theme-dark .card-base:hover { @apply shadow-card-dark-hover; }
+  .dark .card-base:hover { @apply shadow-card-dark-hover; }
 
-  .container-custom { @apply max-w-content mx-auto px-4; }
+  .container-custom { @apply max-w-content mx-auto px-6 md:px-4; }
 
   /* Badges */
   .badge { @apply px-3 py-1 text-xs font-medium leading-none rounded-xl inline-block; }
@@ -20,4 +20,14 @@
   }
   .top:hover { @apply text-light-text-primary dark:text-dark-text-primary; }
   .top svg { @apply w-full h-full; }
+
+  /* Header fixed only on md and up; normal flow on mobile */
+  .header-fixed-md { position: static; left: auto; right: auto; top: auto; }
+  @media (min-width: 768px) {
+    .header-fixed-md { position: fixed; top: 0; left: 0; right: 0; }
+  }
+
+  @media (min-width: 768px) {
+    .main-offset-md { padding-top: 6rem !important; }
+  }
 }
