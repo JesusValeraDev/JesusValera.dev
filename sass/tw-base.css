@@ -10,7 +10,7 @@
   *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
   body { @apply font-inter text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary font-variant-numeric-oldstyle antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
   a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(59,130,246,0.3); }
-  .theme-dark a { text-decoration-color: rgba(112,172,246,0.3); }
+  .dark a { text-decoration-color: rgba(112,172,246,0.3); }
   a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
   h2 { @apply mb-4; }
   ul,ol { @apply list-inside pl-5 text-light-text-primary dark:text-dark-text-primary; }
@@ -29,14 +29,14 @@
   ::selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
   ::-moz-selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
 
-  .theme-light { --border: theme('colors.light-border'); }
-  .theme-dark { --border: theme('colors.dark-border'); }
+  :root { --border: theme('colors.light-border'); }
+  .dark { --border: theme('colors.dark-border'); }
 
   /* Accessible focus styles for keyboard navigation */
-  .theme-light a:focus-visible,
-  .theme-light button:focus-visible,
-  .theme-light .top:focus-visible { outline: 2px solid theme('colors.light-text-primary'); outline-offset: 3px; border-radius: 6px; }
-  .theme-dark a:focus-visible,
-  .theme-dark button:focus-visible,
-  .theme-dark .top:focus-visible { outline: 2px solid theme('colors.dark-text-primary'); outline-offset: 3px; border-radius: 6px; }
+  a:focus-visible,
+  button:focus-visible,
+  .top:focus-visible { outline: 2px solid theme('colors.light-text-primary'); outline-offset: 3px; border-radius: 6px; }
+  .dark a:focus-visible,
+  .dark button:focus-visible,
+  .dark .top:focus-visible { outline: 2px solid theme('colors.dark-text-primary'); outline-offset: 3px; border-radius: 6px; }
 }

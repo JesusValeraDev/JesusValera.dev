@@ -15,8 +15,8 @@
   @media (max-width: 768px) { .catalogue-text { @apply p-5; } }
 
   .catalogue-meta { @apply mb-3 flex justify-between items-start gap-4 flex-wrap; }
-  .catalogue-meta time { @apply flex gap-6 flex-wrap; }
-  @media (max-width: 480px) { .catalogue-meta time { @apply flex-col gap-1; } }
+  .catalogue-meta time { @apply flex gap-6; }
+  @media (max-width: 480px) { .catalogue-meta time { @apply gap-6; } }
   .catalogue-meta .day, .catalogue-meta .reading { @apply text-sm font-medium leading-relaxed text-light-text-secondary dark:text-dark-text-secondary inline-flex items-center gap-1; }
   .catalogue-meta .day svg, .catalogue-meta .reading svg { @apply w-3 h-3 flex-shrink-0; }
   @media (max-width: 768px) { .catalogue-meta svg { width: 10px; height: 10px; } }

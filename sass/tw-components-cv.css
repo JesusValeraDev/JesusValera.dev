@@ -1,8 +1,11 @@
 @layer components {
-  .theme-light .cv-container { --current-badge-bg: theme('colors.light-current-badge-bg'); --current-badge-text: theme('colors.light-current-badge-text'); }
-  .theme-dark .cv-container { --current-badge-bg: theme('colors.dark-current-badge-bg'); --current-badge-text: theme('colors.dark-current-badge-text'); }
+  .cv-container { 
+    --current-badge-bg: theme('colors.light-current-badge-bg'); 
+    --current-badge-text: theme('colors.light-current-badge-text'); 
+    @apply max-w-4xl mx-auto; 
+  }
+  .dark .cv-container { --current-badge-bg: theme('colors.dark-current-badge-bg'); --current-badge-text: theme('colors.dark-current-badge-text'); }
   .cv-container #about-me, .cv-container #experience { @apply text-xl md:text-2xl font-semibold; }
-  .cv-container { @apply max-w-4xl mx-auto; }
   .cv-timeline { @apply relative; }
   .about-me-card { @apply mb-12; }
   .about-me-card .timeline-card { @apply card-base ml-0 rounded-xl p-4; transition-property: transform, box-shadow, background-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4,0,0.2,1); }
