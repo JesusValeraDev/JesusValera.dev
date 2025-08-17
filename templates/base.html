@@ -24,16 +24,12 @@
     const theme = localStorage.theme || 'light';
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      document.documentElement.classList.add('theme-dark');
-      document.documentElement.classList.remove('theme-light');
       document.documentElement.setAttribute('color-theme', 'dark');
       // Prevent white flash before CSS loads
       document.documentElement.style.backgroundColor = '#161e32';
       document.documentElement.style.color = '#cbd5e1';
     } else {
       document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('theme-light');
-      document.documentElement.classList.remove('theme-dark');
       document.documentElement.setAttribute('color-theme', 'light');
       // Ensure a consistent light background before CSS loads
       document.documentElement.style.backgroundColor = '#fcfcfd';
@@ -54,13 +50,21 @@
       contain: layout style paint; /* CSS containment for better performance */
     }
 
-    #dark-mode { display: none; }
-    .dark #light-mode { display: none !important; }
-    .dark #dark-mode { display: inline-flex !important; }
+    #dark-mode { 
+      display: none; 
+    }
+    .dark #light-mode { 
+      display: none; 
+    }
+    .dark #dark-mode { 
+      display: inline-flex; 
+    }
     
-    /* Ensure buttons are clickable and properly sized for mobile */
+    /* Ensure buttons are clickable and properly sized */
     #light-mode, #dark-mode { 
-      pointer-events: auto !important; 
+      min-width: 44px;
+      min-height: 44px;
+      pointer-events: auto; 
       user-select: none;
       -webkit-user-select: none;
       -webkit-tap-highlight-color: transparent;
@@ -70,23 +74,12 @@
       background: transparent;
       border: none;
       outline: none;
-    }
-    
-    /* Force proper display and interaction on mobile */
-    @media (max-width: 768px) {
-      #light-mode, #dark-mode {
-        min-width: 48px !important;
-        min-height: 48px !important;
-        touch-action: manipulation;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-      }
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
     }
 
     /* Mobile-first responsive optimizations */
     @media (max-width: 768px) {
-      /* Optimize scroll performance */
       body { -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; }
     }
   </style>
@@ -224,11 +217,11 @@
         {% for menu in config.extra.menu %}
         <a class="font-medium no-underline text-light-text-primary dark:text-dark-text-primary hover:text-light-text-secondary dark:hover:text-dark-text-secondary" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
-        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 ml-3 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors" style="min-width: 44px; min-height: 44px;">
+        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 ml-3 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-sun"></use></svg>
           <span class="sr-only">Switch to dark mode</span>
         </button>
-        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 ml-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors" style="min-width: 44px; min-height: 44px;">
+        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 ml-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-moon"></use></svg>
           <span class="sr-only">Switch to light mode</span>
         </button>

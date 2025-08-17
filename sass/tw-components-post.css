@@ -36,7 +36,7 @@
     /* Hide literal backticks if present inside inline code */
     position: relative;
   }
-  .theme-dark .post :not(pre)>code {
+  .dark .post :not(pre)>code {
     background: theme('colors.dark-code-inline-bg');
     color: theme('colors.dark-text-accent');
   }

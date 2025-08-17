@@ -27,7 +27,13 @@
     .header-fixed-md { position: fixed; top: 0; left: 0; right: 0; }
   }
 
+  .main-offset-md {
+    padding-top: 0;
+  }
+
   @media (min-width: 768px) {
-    .main-offset-md { padding-top: 6rem !important; }
+    body .main-offset-md {
+      padding-top: 6rem;
+    }
   }
 }

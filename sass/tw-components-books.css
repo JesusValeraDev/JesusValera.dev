@@ -2,7 +2,7 @@
   .book-info { @apply card-base rounded-xl p-4 mb-6 text-center; }
   .books { @apply grid gap-8 max-w-6xl mx-auto; grid-template-columns: repeat(3, 1fr); contain: layout; }
   @media (max-width: 719px) { .books { grid-template-columns: repeat(2, 1fr); @apply gap-6; } }
-  @media (max-width: 639px) { .books { grid-template-columns: 1fr !important; @apply gap-6; } }
+  @media (max-width: 639px) { .books { grid-template-columns: 1fr; @apply gap-6; } }
 
   .book-item { @apply card-base flex flex-col h-full; transition-property: transform, box-shadow, background-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4,0,0,0.2,1); contain: layout style paint; will-change: transform; }
   .book-item:hover { @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg; }
