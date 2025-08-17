@@ -217,11 +217,11 @@
         {% for menu in config.extra.menu %}
         <a class="font-medium no-underline text-light-text-primary dark:text-dark-text-primary hover:text-light-text-secondary dark:hover:text-dark-text-secondary" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
-        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 ml-3 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
+        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-sun"></use></svg>
           <span class="sr-only">Switch to dark mode</span>
         </button>
-        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 ml-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
+        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-moon"></use></svg>
           <span class="sr-only">Switch to light mode</span>
         </button>

@@ -2,13 +2,11 @@
 
 Personal site built with Zola and Tailwind CSS.
 
-## Stack
-
 - Zola (static site generator)
 - Tailwind CSS 3
 - Node scripts for CSS build/concat
 
-### Prerequisites
+## Prerequisites
 
 - Zola installed and on your PATH
 - Node.js 18+ and npm
