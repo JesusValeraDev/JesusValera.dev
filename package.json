@@ -5,8 +5,9 @@
   "scripts": {
     "prebuild-css": "node ./scripts/concat-tailwind.js",
     "build-css": "npm run prebuild-css && tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --watch",
+    "build-css-dev": "concurrently \"node ./scripts/concat-tailwind.js --watch\" \"tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --watch --poll\" --names \"CONCAT,TAILWIND\" --prefix-colors \"yellow,cyan\"",
     "build-css-prod": "npm run prebuild-css && tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --minify",
-    "dev": "npm run build-css & zola serve",
+    "dev": "concurrently \"npm run build-css-dev\" \"zola serve\" --names \"CSS,ZOLA\" --prefix-colors \"blue,green\"",
     "lint:css": "stylelint \"sass/**/*.{css,scss}\"",
     "prepare": "husky"
   },
