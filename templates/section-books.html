@@ -37,9 +37,72 @@
 
 {% set books = load_data(path="content/readings/books.json", format="json") %}
 
+{% set total_books = books | length %}
+{% set books_last_12_months = 0 %}
+{% set software_books = 0 %}
+{% set all_authors = [] %}
+
+{% set current_year = now() | date(format="%Y") | int %}
+{% set current_month = now() | date(format="%m") | int %}
+{% set last_year = current_year - 1 %}
+
+{% for book in books %}
+  {% if book.date %}
+    {% set book_year = book.date | split(pat="-") | first | int %}
+    {% set book_month = book.date | split(pat="-") | nth(n=1) | int %}
+    
+    {% if book_year == current_year %}
+      {% set_global books_last_12_months = books_last_12_months + 1 %}
+    {% elif book_year == last_year and book_month >= current_month %}
+      {% set_global books_last_12_months = books_last_12_months + 1 %}
+    {% endif %}
+  {% endif %}
+  
+  {% for tag in book.tags %}
+    {% if tag == "Software" %}
+      {% set_global software_books = software_books + 1 %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if book.author not in all_authors %}
+    {% set_global all_authors = all_authors | concat(with=[book.author]) %}
+  {% endif %}
+{% endfor %}
+
+{% set total_authors = all_authors | length %}
+
 <div class="post">
+  <h2 id="reading-collection">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    Reading Collection
+  </h2>
+  
+  <p class="reading-description">I keep this list to track the books that have helped me grow both personally and professionally.<br>It helps me remember what I've learned and serves as a resource I can share with others who are looking for book recommendations in areas I'm passionate about.</p>
+
   <div class="book-info">
-    The idea of this list is to keep track of the books I've read so far 🙂
+    <div class="book-intro">
+      <span class="stats-title">Book Statistics</span>
+    </div>
+    <div class="book-statistics">
+      <div class="stats-grid-enhanced">
+        <div class="stat-item">
+          <div class="stat-label">Total Books</div>
+          <div class="stat-number">{{ total_books }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Authors</div>
+          <div class="stat-number">{{ total_authors }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Read last year</div>
+          <div class="stat-number">{{ books_last_12_months }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Software Books</div>
+          <div class="stat-number">{{ software_books }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="book-tags" role="group" aria-label="Book category filters">

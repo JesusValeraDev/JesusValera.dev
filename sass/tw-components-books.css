@@ -24,4 +24,25 @@
   .book-tags button[selected="true"] { @apply bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-light-text-primary dark:border-dark-text-primary; }
   .book-tags button[selected="true"]:hover { @apply bg-light-text-secondary dark:bg-dark-text-secondary border-light-text-secondary dark:border-dark-text-secondary; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
   .book-tags button[selected="true"] svg { @apply text-light-bg dark:text-dark-bg; }
+
+  #reading-collection { @apply text-xl md:text-2xl font-semibold mb-4; }
+  .reading-description { @apply text-base text-light-text-secondary dark:text-dark-text-secondary mb-6 leading-relaxed; }
+
+  .book-statistics { @apply pt-6; }
+  
+  .book-intro { @apply text-left; }
+  .stats-title { @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary text-left block; }
+  .book-statistics .stats-grid-enhanced { @apply grid gap-4; grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 768px) { 
+    .book-statistics .stats-grid-enhanced { grid-template-columns: repeat(2, 1fr); @apply gap-3; } 
+  }
+  .book-statistics .stat-item { 
+    @apply flex flex-col text-center p-4 border border-light-border dark:border-dark-border rounded-lg;
+  }
+  .book-statistics .stat-label { 
+    @apply text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary mb-1; 
+  }
+  .book-statistics .stat-number { 
+    @apply text-2xl font-bold text-light-text-primary dark:text-dark-text-primary; 
+  }
 }
