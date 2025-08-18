@@ -1,5 +1,5 @@
 @layer components {
-  .book-info { @apply card-base rounded-xl p-4 mb-6 text-center; }
+  .book-info { @apply card-base rounded-xl p-4 mb-12 text-center; }
   .books { @apply grid gap-8 max-w-6xl mx-auto; grid-template-columns: repeat(3, 1fr); contain: layout; }
   @media (max-width: 719px) { .books { grid-template-columns: repeat(2, 1fr); @apply gap-6; } }
   @media (max-width: 639px) { .books { grid-template-columns: 1fr; @apply gap-6; } }
@@ -19,28 +19,28 @@
   @media (max-width: 639px) { .book-item { @apply max-w-sm w-full mx-auto; } }
 
   .book-tags { @apply flex flex-wrap justify-center gap-y-3 gap-x-2 mb-8; }
-  .book-tags button { @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium leading-none uppercase tracking-wide bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full cursor-pointer transition-colors duration-150 ease-custom hover:bg-light-catalogue-item-bg dark:hover:bg-dark-catalogue-item-bg hover:text-light-text-primary dark:hover:text-dark-text-primary hover:border-light-text-secondary dark:hover:border-dark-text-secondary whitespace-nowrap; }
+  .book-tags button { @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold leading-none uppercase tracking-wide bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border-2 border-light-border dark:border-dark-border rounded-full cursor-pointer transition-colors duration-150 ease-custom hover:bg-light-catalogue-item-bg dark:hover:bg-dark-catalogue-item-bg hover:text-light-text-primary dark:hover:text-dark-text-primary hover:border-light-text-secondary dark:hover:border-dark-text-secondary whitespace-nowrap; }
   .book-tags button svg { @apply flex-shrink-0; }
-  .book-tags button[selected="true"] { @apply bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-light-text-primary dark:border-dark-text-primary; }
-  .book-tags button[selected="true"]:hover { @apply bg-light-text-secondary dark:bg-dark-text-secondary border-light-text-secondary dark:border-dark-text-secondary; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .book-tags button[selected="true"] { @apply bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-2 border-light-text-primary dark:border-dark-text-primary; }
+  .book-tags button[selected="true"]:hover { @apply bg-light-text-secondary dark:bg-dark-text-secondary border-2 border-light-text-secondary dark:border-dark-text-secondary; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
   .book-tags button[selected="true"] svg { @apply text-light-bg dark:text-dark-bg; }
 
   #reading-collection { @apply text-xl md:text-2xl font-semibold mb-4; }
-  .reading-description { @apply text-base text-light-text-secondary dark:text-dark-text-secondary mb-6 leading-relaxed; }
+  #books-section { @apply text-xl md:text-2xl font-semibold mb-4; }
+  .reading-description { @apply text-base md:text-lg text-light-text-primary dark:text-dark-text-primary mb-6 leading-snug font-normal max-w-4xl mx-auto text-center; font-style: italic; padding: 1rem 0; }
 
   .book-statistics { @apply pt-6; }
-  
   .book-intro { @apply text-left; }
-  .stats-title { @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary text-left block; }
+  .stats-title { @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary text-center block; }
   .book-statistics .stats-grid-enhanced { @apply grid gap-4; grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 768px) { 
     .book-statistics .stats-grid-enhanced { grid-template-columns: repeat(2, 1fr); @apply gap-3; } 
   }
   .book-statistics .stat-item { 
-    @apply flex flex-col text-center p-4 border border-light-border dark:border-dark-border rounded-lg;
+    @apply flex flex-col text-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg;
   }
   .book-statistics .stat-label { 
-    @apply text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary mb-1; 
+    @apply text-sm font-medium text-light-text-primary dark:text-dark-text-primary mb-1; 
   }
   .book-statistics .stat-number { 
     @apply text-2xl font-bold text-light-text-primary dark:text-dark-text-primary; 
