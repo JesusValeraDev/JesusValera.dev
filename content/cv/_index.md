@@ -9,7 +9,7 @@ aliases = ['resume']
 <div class="about-me-card">
   <div class="timeline-card">
     <div class="about-me-content">
-      <p><strong>6+ years of experience</strong> developing <strong>scalable, maintainable software</strong> across various domains</p>
+      <p><strong>{{ experience_years(start_year=2018) }}+ years of experience</strong> developing <strong>scalable, maintainable software</strong> across various domains</p>
       <p>Focused on <strong>clean architecture</strong>, <strong>design patterns</strong>, and <strong>test-driven development</strong></p>
       <p>Committed to <strong>continuous learning</strong> and staying current with <strong>industry practices</strong></p>
       <p>Experienced in <strong>mentoring</strong>, <strong>knowledge sharing</strong>, and <strong>technical communication</strong></p>
