@@ -75,7 +75,7 @@
     .timeline-header { @apply flex-col items-start gap-2; }
     .company-name { @apply text-center; }
     .job-role { @apply text-center; }
-    .job-meta { @apply gap-2; }
+    .job-meta { @apply gap-2 justify-center; }
     .skills-label { @apply pt-0; }
   }
 }
