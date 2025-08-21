@@ -13,3 +13,6 @@ yarn-error.log*
 # Tailwind CSS generated files
 static/tailwind.css
 sass/tailwind.entry.css
+
+# Posts in progress
+content/202?-01-01-*

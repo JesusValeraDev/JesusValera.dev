@@ -198,6 +198,7 @@
   </script>
   <script src="{{ get_url(path='js/scroll-top.js') | safe }}" defer></script>
   <script src="{{ get_url(path='js/external-links.js') | safe }}" defer></script>
+  <script src="{{ get_url(path='js/email-protection.js') | safe }}" defer></script>
 </head>
 
 <body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
@@ -247,7 +248,7 @@
           <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-linkedin"></use></svg>
           <span class="sr-only">Connect with me on LinkedIn</span>
         </a>
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="mailto:me@jesusvalera.dev" aria-label="Send me an email" title="Email me">
+        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white email-protected" data-user="me" data-domain="jesusvalera.dev" aria-label="Send me an email" title="Email me">
           <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-mail"></use></svg>
           <span class="sr-only">Send me an email</span>
         </a>

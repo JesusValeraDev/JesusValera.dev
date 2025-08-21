@@ -4,6 +4,40 @@ template = "cv.html"
 aliases = ['resume']
 +++
 
+<div class="cv-header">
+    <div class="profile-photo">
+        <img src="/jesus-150.webp" alt="Jesus Valera" />
+    </div>
+    <h1 class="profile-name">Jesus Valera Reales</h1>
+    <h2 class="profile-title">Senior Software Engineer</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Berlin, Germany</span>
+        </div>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span class="email-protected" data-user="me" data-domain="jesusvalera.dev">Contact via email</span>
+        </div>
+    </div>
+    <div class="download-section">
+        <a href="/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PDF
+        </a>
+    </div>
+</div>
+
 ## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M9 21h6"></path><path d="M12 17v4"></path><path d="M12 3C8.686 3 6 5.686 6 9c0 2.25 1.5 4.5 3 6v2h6v-2c1.5-1.5 3-3.75 3-6 0-3.314-2.686-6-6-6z"></path></svg>About Me
 
 <div class="about-me-card">
@@ -14,6 +48,45 @@ aliases = ['resume']
       <p>Committed to <strong>continuous learning</strong> and staying current with <strong>industry practices</strong></p>
       <p>Experienced in <strong>mentoring</strong>, <strong>knowledge sharing</strong>, and <strong>technical communication</strong></p>
       <p><strong>Strong collaborator</strong> dedicated to building <strong>high-quality, reliable products</strong></p>
+    </div>
+  </div>
+</div>
+
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>Skills
+
+<div class="about-me-card">
+  <div class="timeline-card">
+    <div class="skills-content">
+      <div class="skills-category">
+        <h3 class="skills-category-title">Programming Languages & Frameworks</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Symfony</span>
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">VueJS</span>
+          <span class="skill-tag">Android</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Java</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 class="skills-category-title">Databases & Storage</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Redis</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 class="skills-category-title">Tools & Platforms</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Atlassian</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
