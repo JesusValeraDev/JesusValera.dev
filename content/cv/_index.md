@@ -23,7 +23,7 @@ aliases = ['resume']
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <span class="email-protected" data-user="me" data-domain="jesusvalera.dev">Contact via email</span>
+            <span class="email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2">Contact via email</span>
         </div>
     </div>
     <div class="download-section">
@@ -96,6 +96,7 @@ aliases = ['resume']
 <div class="timeline-items">
 <div class="timeline-item current">
   <div class="timeline-card">
+    <span class="absolute top-4 right-6 py-1 px-3 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold rounded-full z-10">Current</span>
     <div class="timeline-header">
       <img src="/cv/fotograf.webp" alt="fotograf.de logo" class="company-logo">
       <div class="timeline-info">
