@@ -30,7 +30,7 @@
     }
   }
 
-  #about-me, #skills, #experience { @apply text-xl md:text-2xl font-semibold; }
+  #about-me, #skills, #experience, #education, #languages { @apply text-xl md:text-2xl font-semibold; }
   .about-me-card { @apply mb-12; }
   .about-me-card .timeline-card { @apply card-base ml-0 rounded-xl p-4; transition-property: transform, box-shadow, background-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4,0,0.2,1); }
   .about-me-card .timeline-card:hover { @apply bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg; transform: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); }
@@ -68,6 +68,13 @@
   .skills-label { @apply text-sm text-light-text-primary dark:text-dark-text-primary pt-1; font-weight: 600; }
   .skill-tags { @apply flex flex-wrap gap-2; }
   .skill-tag { @apply inline-block px-3 py-1 text-xs font-medium bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full; }
+
+  .languages-content { @apply p-0; }
+  .language-items { @apply flex flex-wrap gap-6 justify-around; }
+  .language-item { @apply flex flex-col items-center text-center; }
+  .language-flag { @apply text-3xl mb-2; }
+  .language-name { @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary; }
+  .language-level { @apply text-sm text-light-text-secondary dark:text-dark-text-secondary mt-1 px-2 py-1 bg-light-catalogue-bg dark:bg-dark-catalogue-bg rounded-md; }
 
   @media (max-width: 768px) {
     .timeline-item { @apply ml-3 pl-6; }

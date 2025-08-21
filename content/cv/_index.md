@@ -519,3 +519,30 @@ aliases = ['resume']
     </div>
   </div>
 </div>
+</div>
+
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Languages
+
+<div class="about-me-card">
+  <div class="timeline-card">
+    <div class="languages-content">
+      <div class="language-items">
+        <div class="language-item">
+          <span class="language-flag">🇪🇸</span>
+          <span class="language-name">Spanish</span>
+          <span class="language-level">Native</span>
+        </div>
+        <div class="language-item">
+          <span class="language-flag">🇬🇧</span>
+          <span class="language-name">English</span>
+          <span class="language-level">C1</span>
+        </div>
+        <div class="language-item">
+          <span class="language-flag">🇩🇪</span>
+          <span class="language-name">German</span>
+          <span class="language-level">A2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
