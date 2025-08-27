@@ -33,7 +33,7 @@ The command takes three arguments:
 git rebase --onto <new-base> <upstream> <branch>
 ```
 
-## When to use `--onto`?
+<div class="separator"></div>
 
 ### 1. Rebasing a Subset of Commits
 
@@ -62,6 +62,8 @@ This command will rebase the commits from `feature` branch onto the `master` bra
 ---X---Y---Z  (master)
 ```
 
+<div class="separator"></div>
+
 ### 2. Skipping Commits
 
 When you want to skip a set of commits from your current branch:
@@ -72,10 +74,10 @@ When you want to skip a set of commits from your current branch:
 ---X---Y---Z  (master)
 ```
 
-If you want to skip `A` and `B` and rebase the rest onto `Z`, you can use the following command:
+If you want to skip `A` and `B` (start from **`C`** commit), and rebase the rest onto **`Z`**, you can use the following command:
 
 ```bash
-(feature)$ git rebase --onto master B feature
+(feature)$ git rebase --onto master B feature # exclusive selection - we pick B, not C
 ```
 
 This skips commits `A` and `B` and applies the remaining commits onto the `master` branch.
@@ -85,6 +87,8 @@ This skips commits `A` and `B` and applies the remaining commits onto the `maste
             /
 ---X---Y---Z  (master)
 ```
+
+<div class="separator"></div>
 
 ### 3. Rebasing to a different base
 
