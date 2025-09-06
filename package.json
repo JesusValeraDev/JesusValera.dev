@@ -2,6 +2,15 @@
   "name": "jesusvalera-blog",
   "version": "1.0.0",
   "description": "Personal blog by Jesus Valera Reales",
+  "keywords": [
+    "blog",
+    "zola",
+    "tailwindcss"
+  ],
+  "homepage": "https://jesusvalera.dev/",
+  "repository": "https://github.com/JesusValeraDev/JesusValera.dev",
+  "license": "MIT",
+  "author": "Jesus Valera Reales",
   "scripts": {
     "prebuild-css": "node ./scripts/concat-tailwind.js",
     "build-css": "npm run prebuild-css && tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --watch",
@@ -17,19 +26,13 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "postcss": "^8.5.6",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.0",
     "stylelint-config-tailwindcss": "^1.0.0",
-    "tailwindcss": "^3.4.0"
-  },
-  "keywords": [
-    "blog",
-    "zola",
-    "tailwindcss"
-  ],
-  "author": "Jesus Valera Reales",
-  "license": "MIT"
+    "tailwindcss": "^3.4.17"
+  }
 }
