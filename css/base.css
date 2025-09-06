@@ -18,8 +18,8 @@
   ul { @apply list-disc; }
   ol { @apply list-decimal; }
   li { @apply my-1.5; }
-  li::marker { color: theme('colors.light-text-primary'); }
-  .dark li::marker { color: theme('colors.dark-text-primary'); }
+  li::marker { color: var(--color-light-text-primary); }
+  .dark li::marker { color: var(--color-dark-text-primary); }
   img { @apply block mx-auto my-4 max-w-full; }
   blockquote { @apply p-2 px-4 bg-light-blockquote-bg dark:bg-dark-blockquote-bg border-l-4 border-light-blockquote-border dark:border-dark-blockquote-border mb-6 mx-3; }
   .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
@@ -31,14 +31,14 @@
   ::selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
   ::-moz-selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
 
-  :root { --border: theme('colors.light-border'); }
-  .dark { --border: theme('colors.dark-border'); }
+  :root { --border: var(--color-light-border); }
+  .dark { --border: var(--color-dark-border); }
 
   /* Accessible focus styles for keyboard navigation */
   a:focus-visible,
   button:focus-visible,
-  .top:focus-visible { outline: 2px solid theme('colors.light-text-primary'); outline-offset: 3px; border-radius: 6px; }
+  .top:focus-visible { outline: 2px solid var(--color-light-text-primary); outline-offset: 3px; border-radius: 6px; }
   .dark a:focus-visible,
   .dark button:focus-visible,
-  .dark .top:focus-visible { outline: 2px solid theme('colors.dark-text-primary'); outline-offset: 3px; border-radius: 6px; }
+  .dark .top:focus-visible { outline: 2px solid var(--color-dark-text-primary); outline-offset: 3px; border-radius: 6px; }
 }

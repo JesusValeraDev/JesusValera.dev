@@ -126,14 +126,14 @@
   }
   & :not(pre) > code {
     @apply px-1.5 py-0.5 rounded text-[0.9em] font-mono whitespace-nowrap;
-    background: theme('colors.light-code-inline-bg');
-    color: theme('colors.light-text-accent');
+    background: var(--color-light-code-inline-bg);
+    color: var(--color-light-text-accent);
     /* Hide literal backticks if present inside inline code */
     position: relative;
   }
   .dark & :not(pre) > code {
-    background: theme('colors.dark-code-inline-bg');
-    color: theme('colors.dark-text-accent');
+    background: var(--color-dark-code-inline-bg);
+    color: var(--color-dark-text-accent);
   }
   & :not(pre) > code::before {
     content: none;
@@ -168,7 +168,7 @@
 
 @utility dark {
   & .post :not(pre) > code {
-    background: theme('colors.dark-code-inline-bg');
-    color: theme('colors.dark-text-accent');
+    background: var(--color-dark-code-inline-bg);
+    color: var(--color-dark-text-accent);
   }
 }
