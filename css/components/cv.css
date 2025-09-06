@@ -3,7 +3,7 @@
 }
 
 @utility profile-photo {
-  @apply flex justify-center;
+  @apply flex justify-center mb-5;
   .cv-header & img {
     @apply w-22 h-22 md:w-32 md:h-32 rounded-full object-cover shadow-lg;
   }
@@ -186,6 +186,12 @@
     @apply flex flex-wrap gap-2;
   }
   @apply flex flex-wrap gap-2;
+
+  .job-skills & {
+    @media (max-width: 768px) {
+      @apply justify-center;
+    }
+  }
 }
 
 @utility timeline-items {
@@ -284,6 +290,10 @@
 
 @utility job-skills {
   @apply flex flex-col items-start gap-2;
+
+  @media (max-width: 768px) {
+    @apply items-center;
+  }
 }
 
 @utility skills-label {
@@ -291,7 +301,7 @@
   font-weight: 600;
 
   @media (max-width: 768px) {
-    @apply pt-0;
+    @apply hidden;
   }
 }
 
@@ -325,4 +335,11 @@
 
 @layer components {
   #about-me, #skills, #experience, #education, #languages { @apply text-xl md:text-2xl font-semibold; }
+}
+
+@media (max-width: 768px) {
+  div.post img {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
 }

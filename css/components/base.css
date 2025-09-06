@@ -11,12 +11,6 @@
   }
 }
 
-@utility dark {
-  & .card-base:hover {
-    @apply shadow-card-dark-hover;
-  }
-}
-
 @utility container-custom {
   @apply max-w-content mx-auto px-6 md:px-4;
 }
