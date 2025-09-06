@@ -13,6 +13,7 @@
   .dark a { text-decoration-color: rgba(112,172,246,0.3); }
   a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
   h2 { @apply mb-4; }
+  .post h2 { @apply mt-12 mb-4; }
   ul,ol { @apply list-inside pl-5 text-light-text-primary dark:text-dark-text-primary; }
   ul { @apply list-disc; }
   ol { @apply list-decimal; }
