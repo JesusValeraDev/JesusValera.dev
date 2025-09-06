@@ -107,9 +107,10 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io ws://127.0.0.1:* ws://localhost:*; base-uri 'self'">
 
   <!-- Favicon and touch icons -->
-  <link rel="icon" type="image/webp" sizes="32x32" href="{{ get_url(path='assets/favicon-32x32.webp') | safe }}">
-  <link rel="icon" type="image/webp" sizes="16x16" href="{{ get_url(path='assets/favicon-16x16.webp') | safe }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='assets/apple-touch-icon.webp') | safe }}">
+  <link rel="icon" type="image/x-icon" href="{{ get_url(path='assets/icons/icon.ico') | safe }}">
+  <link rel="icon" type="image/webp" sizes="32x32" href="{{ get_url(path='assets/icons/favicon-32x32.webp') | safe }}">
+  <link rel="icon" type="image/webp" sizes="16x16" href="{{ get_url(path='assets/icons/favicon-16x16.webp') | safe }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='assets/icons/apple-touch-icon.webp') | safe }}">
 
   {% if config.generate_feeds %}
     <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
