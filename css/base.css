@@ -17,11 +17,12 @@
   ul { @apply list-disc; }
   ol { @apply list-decimal; }
   li { @apply my-1.5; }
-  li::marker { @apply text-light-text-primary dark:text-dark-text-primary; }
+  li::marker { color: theme('colors.light-text-primary'); }
+  .dark li::marker { color: theme('colors.dark-text-primary'); }
   img { @apply block mx-auto my-4 max-w-full; }
   blockquote { @apply p-2 px-4 bg-light-blockquote-bg dark:bg-dark-blockquote-bg border-l-4 border-light-blockquote-border dark:border-dark-blockquote-border mb-6 mx-3; }
   .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
-  
+
   /* Revert Tailwind Preflight margin:0 for headings and text elements */
   blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
 
