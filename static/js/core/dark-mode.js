@@ -34,7 +34,7 @@ function addDynamicallyCssHighlightTheme(theme) {
 
     const style = document.createElement('link');
     style.classList.add('highlight_theme');
-    style.href = `/syntax-theme-${theme}.css`;
+    style.href = `/assets/styles/syntax-theme-${theme}.css`;
     style.type = 'text/css';
     style.rel = 'stylesheet';
     head.append(style);
@@ -43,14 +43,14 @@ function addDynamicallyCssHighlightTheme(theme) {
 function initDarkModeButtons() {
     const lightModeBtn = document.getElementById('light-mode');
     const darkModeBtn = document.getElementById('dark-mode');
-    
+
     if (lightModeBtn) {
         lightModeBtn.addEventListener('click', function(e) {
             e.preventDefault();
             window.toDarkMode();
         });
     }
-    
+
     if (darkModeBtn) {
         darkModeBtn.addEventListener('click', function(e) {
             e.preventDefault();

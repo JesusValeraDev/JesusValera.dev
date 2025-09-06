@@ -39,7 +39,7 @@
   </script>
 
   <!-- Load dark-mode script immediately after theme detection -->
-  <script src="{{ get_url(path='js/dark-mode.js') | safe }}"></script>
+  <script src="{{ get_url(path='js/core/dark-mode.js') | safe }}"></script>
 
   <!-- Critical CSS inline to prevent FOUC and layout shifts -->
   <style>
@@ -153,7 +153,7 @@
         const isWinter = currentMonth === 11 || currentMonth === 0; // December or January
 
         if (isWinter) {
-            loadScript('/js/snow.js');
+            loadScript('/js/effects/snow.js');
         }
     }
 
@@ -196,9 +196,9 @@
     });
   })();
   </script>
-  <script src="{{ get_url(path='js/scroll-top.js') | safe }}" defer></script>
-  <script src="{{ get_url(path='js/external-links.js') | safe }}" defer></script>
-  <script src="{{ get_url(path='js/email-protection.js') | safe }}" defer></script>
+  <script src="{{ get_url(path='js/ui/scroll-top.js') | safe }}" defer></script>
+  <script src="{{ get_url(path='js/ui/external-links.js') | safe }}" defer></script>
+  <script src="{{ get_url(path='js/core/email-protection.js') | safe }}" defer></script>
 </head>
 
 <body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
@@ -219,11 +219,11 @@
         <a class="font-medium no-underline text-light-text-primary dark:text-dark-text-primary hover:text-light-text-secondary dark:hover:text-dark-text-secondary" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
         <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
-          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-sun"></use></svg>
+          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-sun"></use></svg>
           <span class="sr-only">Switch to dark mode</span>
         </button>
         <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
-          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-moon"></use></svg>
+          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-moon"></use></svg>
           <span class="sr-only">Switch to light mode</span>
         </button>
       </nav>
@@ -241,20 +241,20 @@
       <span class="text-base text-light-text-secondary dark:text-dark-text-primary">© 2025 Jesus Valera Reales</span>
       <div class="flex items-center gap-4 max-md:justify-center">
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="https://github.com/JesusValeraDev" target="_blank" aria-label="Visit my GitHub profile" title="GitHub">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-github"></use></svg>
+          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
           <span class="sr-only">Visit my GitHub profile</span>
         </a>
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" aria-label="Connect with me on LinkedIn" title="LinkedIn">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-linkedin"></use></svg>
+          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
           <span class="sr-only">Connect with me on LinkedIn</span>
         </a>
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" target="_blank" aria-label="Send me an email" title="Email me">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-mail"></use></svg>
+          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-mail"></use></svg>
           <span class="sr-only">Send me an email</span>
         </a>
         {% if config.generate_feeds %}
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" aria-label="Subscribe to RSS feed" title="RSS Feed">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='sprite.svg') | safe }}#icon-rss"></use></svg>
+          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-rss"></use></svg>
           <span class="sr-only">Subscribe to RSS feed</span>
         </a>
         {% endif %}

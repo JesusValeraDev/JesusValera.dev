@@ -1,7 +1,7 @@
 @layer base {
   @font-face {
     font-family: 'Inter';
-    src: url('/Inter-Variable.woff2') format('woff2-variations');
+    src: url('/assets/fonts/Inter-Variable.woff2') format('woff2-variations');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
