@@ -1,0 +1,174 @@
+@utility post-meta {
+  @apply flex items-center gap-4 whitespace-nowrap w-full text-light-text-secondary dark:text-dark-text-secondary;
+  & time {
+    @apply inline-flex items-center gap-4;
+  }
+  & .day {
+    @apply inline-flex items-center gap-1;
+  }
+  & .reading {
+    @apply inline-flex items-center gap-1;
+  }
+  & .found-typo {
+    @apply inline-flex items-center gap-1;
+  }
+  & .found-typo {
+    @apply ml-auto;
+  }
+  & svg {
+    @apply w-3 h-3;
+  }
+}
+
+@utility day {
+  .post-meta & {
+    @apply inline-flex items-center gap-1;
+  }
+}
+
+@utility reading {
+  .post-meta & {
+    @apply inline-flex items-center gap-1;
+  }
+}
+
+@utility found-typo {
+  .post-meta & {
+    @apply inline-flex items-center gap-1;
+  }
+  .post-meta & {
+    @apply ml-auto;
+  }
+}
+
+@utility post-title {
+  @apply text-3xl md:text-4xl font-extrabold tracking-tight text-light-text-primary dark:text-dark-text-primary mt-4 mb-2 pt-2 pb-1;
+}
+
+@utility post-subtitle {
+  @apply text-lg md:text-xl font-medium text-light-text-secondary dark:text-dark-text-secondary mt-1 mb-2 pt-0;
+
+  .post & {
+    @apply font-medium;
+  }
+}
+
+@utility post {
+  /* Post typography */
+  & a {
+    @apply text-light-link dark:text-dark-link no-underline hover:underline;
+  }
+  & h1 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h2 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h3 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h4 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h5 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h6 {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+  & h1 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  & h2 {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+  & h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  & h4 {
+    @apply text-lg md:text-xl font-semibold;
+  }
+  & h5 {
+    @apply text-base md:text-lg font-medium;
+  }
+  & h6 {
+    @apply text-sm md:text-base font-medium;
+  }
+
+  & .post-subtitle {
+    @apply font-medium;
+  }
+  & p {
+    @apply leading-relaxed;
+  }
+  & ul {
+    @apply list-disc pl-6;
+  }
+  & ol {
+    @apply list-decimal pl-6;
+  }
+  & hr {
+    @apply my-8 border-t border-light-border dark:border-dark-border;
+  }
+  & img {
+    @apply rounded-md my-6;
+  }
+  & .book-cover img {
+    @apply m-0 rounded-none;
+  }
+
+  /* Code */
+  & pre {
+    @apply bg-light-code-bg dark:bg-dark-code-bg rounded-lg p-4 overflow-x-auto text-sm leading-relaxed dark:text-dark-text-accent;
+  }
+  & pre code {
+    @apply bg-transparent p-0 dark:text-dark-text-accent;
+  }
+  & :not(pre) > code {
+    @apply px-1.5 py-0.5 rounded text-[0.9em] font-mono whitespace-nowrap;
+    background: theme('colors.light-code-inline-bg');
+    color: theme('colors.light-text-accent');
+    /* Hide literal backticks if present inside inline code */
+    position: relative;
+  }
+  .dark & :not(pre) > code {
+    background: theme('colors.dark-code-inline-bg');
+    color: theme('colors.dark-text-accent');
+  }
+  & :not(pre) > code::before {
+    content: none;
+  }
+  & :not(pre) > code::after {
+    content: none;
+  }
+  /* Keep inline code unwrapped; pre handles long code blocks */
+  & p > code + a {
+    @apply inline whitespace-nowrap align-baseline;
+  }
+  & li > code + a {
+    @apply inline whitespace-nowrap align-baseline;
+  }
+  & p > code + a svg {
+    @apply inline-block align-middle;
+  }
+  & li > code + a svg {
+    @apply inline-block align-middle;
+  }
+
+  & blockquote {
+    @apply my-6;
+  }
+}
+
+@utility book-cover {
+  .post & img {
+    @apply m-0 rounded-none;
+  }
+}
+
+@utility dark {
+  & .post :not(pre) > code {
+    background: theme('colors.dark-code-inline-bg');
+    color: theme('colors.dark-text-accent');
+  }
+}

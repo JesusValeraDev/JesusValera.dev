@@ -3,7 +3,7 @@
 Personal site built with Zola and Tailwind CSS.
 
 - Zola (static site generator)
-- Tailwind CSS 3
+- TailwindCSS v4
 - Node scripts for CSS build/concat
 
 ## Prerequisites
@@ -44,16 +44,24 @@ Output goes to the `public/` directory.
 ### CSS/Tailwind workflow
 
 - The final CSS is `static/tailwind.css`.
-- Source files live under `sass/` and are concatenated by `scripts/concat-tailwind.js` into `sass/tailwind.entry.css` (keeps a predictable layer order), then processed by Tailwind.
-- Tailwind scans templates, markdown and JS per `tailwind.config.js`:
-  - `./templates/**/*.html`
-  - `./content/**/*.md`
-  - `./static/js/**/*.js`
+- Source files live under `css/` and are concatenated by `scripts/concat-tailwind.js` into `css/tailwind.entry.css` (keeps a predictable layer order), then processed by TailwindCSS v4.
+- TailwindCSS v4 auto-scans content using `@source` directive in `css/theme.css`:
+  - `../content/**/*.md`
+  - Templates and JS files
 
-Common locations to edit styles:
+CSS structure:
 
-- `sass/tw-base.css` — base resets, global HTML/body, theme variables
-- `sass/tw-components-*.css` — component-level styles using `@layer components`
+```
+css/
+├── theme.css        # TailwindCSS v4 config (@theme blocks, @source)
+├── base.css         # Base resets, global HTML/body styles
+└── components/      # Component-specific styles
+    ├── base.css     # Common components (badges, buttons)
+    ├── books.css    # Reading list components
+    ├── catalogue.css # Project catalogue  
+    ├── cv.css       # CV/resume components
+    └── post.css     # Blog post components
+```
 
 ### Linting & Git hooks
 
@@ -75,10 +83,10 @@ Colors, font stacks, spacing scales, etc. are defined in `tailwind.config.js` un
 {
   "scripts": {
     "prebuild-css": "node ./scripts/concat-tailwind.js",
-    "build-css": "npm run prebuild-css && tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --watch",
-    "build-css-prod": "npm run prebuild-css && tailwindcss -i ./sass/tailwind.entry.css -o ./static/tailwind.css --minify",
+    "build-css": "npm run prebuild-css && postcss ./css/tailwind.entry.css -o ./static/tailwind.css --watch",
+    "build-css-prod": "npm run prebuild-css && postcss ./css/tailwind.entry.css -o ./static/tailwind.css",
     "dev": "npm run build-css & zola serve",
-    "lint:css": "stylelint \"sass/**/*.{css,scss}\"",
+    "lint:css": "stylelint \"css/**/*.{css,scss}\"",
     "prepare": "husky"
   }
 }

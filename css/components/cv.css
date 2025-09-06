@@ -1,0 +1,330 @@
+@utility cv-header {
+  @apply max-w-4xl mx-auto text-center;
+  & .profile-photo img {
+    @apply w-32 h-32 rounded-full object-cover shadow-lg;
+  }
+}
+
+@utility profile-photo {
+  @apply hidden md:flex justify-center;
+  .cv-header & img {
+    @apply w-32 h-32 rounded-full object-cover shadow-lg;
+  }
+}
+
+@utility profile-name {
+  @apply text-3xl md:text-4xl font-bold text-light-text-primary dark:text-dark-text-primary my-0;
+  letter-spacing: -0.025em;
+
+  @media (max-width: 640px) {
+    @apply text-3xl;
+  }
+}
+
+@utility profile-title {
+  @apply text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary my-2 font-medium;
+
+  @media (max-width: 640px) {
+    @apply text-base;
+  }
+}
+
+@utility contact-info {
+  @apply flex flex-col sm:flex-row justify-center items-center gap-4 mb-4;
+
+  @media (max-width: 640px) {
+    @apply gap-2;
+  }
+}
+
+@utility contact-item {
+  @apply flex items-center gap-2 text-light-text-secondary dark:text-dark-text-secondary;
+  & svg {
+    @apply shrink-0;
+  }
+}
+
+@utility download-section {
+  @apply flex justify-center;
+}
+
+@utility post {
+  & .download-button {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold leading-none bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-2 border-light-text-primary dark:border-dark-text-primary rounded-full cursor-pointer whitespace-nowrap my-4 no-underline;
+  }
+  & .download-button:hover {
+    @apply bg-light-text-secondary dark:bg-dark-text-secondary border-2 border-light-text-secondary dark:border-dark-text-secondary text-light-bg dark:text-dark-bg no-underline;
+    box-shadow: 0 4px 12px rgba(165, 165, 165, 0.15);
+  }
+  & .download-button svg {
+    @apply shrink-0 text-light-bg dark:text-dark-bg;
+  }
+
+  & .timeline-card .job-description ul {
+    @apply list-none;
+  }
+  & .timeline-card .job-description ul li {
+    list-style: none;
+  }
+  & .timeline-card .job-description li::marker {
+    display: none;
+  }
+}
+
+@utility download-button {
+  .post & {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold leading-none bg-light-text-primary dark:bg-dark-text-primary text-light-bg dark:text-dark-bg border-2 border-light-text-primary dark:border-dark-text-primary rounded-full cursor-pointer whitespace-nowrap my-4 no-underline;
+  }
+  .post &:hover {
+    @apply bg-light-text-secondary dark:bg-dark-text-secondary border-2 border-light-text-secondary dark:border-dark-text-secondary text-light-bg dark:text-dark-bg no-underline;
+    box-shadow: 0 4px 12px rgba(165, 165, 165, 0.15);
+  }
+  .post & svg {
+    @apply shrink-0 text-light-bg dark:text-dark-bg;
+  }
+}
+
+@utility timeline-card {
+  .post & .job-description ul {
+    @apply list-none;
+  }
+  .post & .job-description ul li {
+    list-style: none;
+  }
+  .post & .job-description li::marker {
+    display: none;
+  }
+  .about-me-card & {
+    @apply card-base ml-0 rounded-xl p-4;
+    transition-property: transform, box-shadow, background-color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .about-me-card &:hover {
+    @apply bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg;
+    transform: none;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  @apply card-base rounded-xl p-4 relative;
+  transition-property: transform, box-shadow, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg;
+  }
+}
+
+@utility job-description {
+  .post .timeline-card & ul {
+    @apply list-none;
+  }
+  .post .timeline-card & ul li {
+    list-style: none;
+  }
+  .post .timeline-card & li::marker {
+    display: none;
+  }
+  @apply mb-4 text-sm;
+  & ul {
+    @apply list-none pl-0 space-y-2;
+  }
+  & li {
+    @apply relative pl-4 text-light-text-primary dark:text-dark-text-primary leading-relaxed;
+  }
+  & li::before {
+    content: '▸';
+    @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg font-bold;
+  }
+}
+
+@utility about-me-card {
+  @apply mb-12;
+  & .timeline-card {
+    @apply card-base ml-0 rounded-xl p-4;
+    transition-property: transform, box-shadow, background-color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  & .timeline-card:hover {
+    @apply bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg;
+    transform: none;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@utility about-me-content {
+  & p {
+    @apply m-0 mb-3 leading-relaxed text-light-text-primary dark:text-dark-text-primary text-base opacity-90 relative pl-6;
+  }
+  & p::before {
+    content: '•';
+    @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg font-bold text-xl leading-none;
+    top: 0.1em;
+  }
+  & p:last-child {
+    @apply mb-0;
+  }
+}
+
+@utility skills-content {
+  @apply space-y-6;
+  & .skill-tags {
+    @apply flex flex-wrap gap-2;
+  }
+}
+
+@utility skills-category-title {
+  &:first-child {
+    @apply mt-0;
+  }
+  @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary mb-2;
+}
+
+@utility skill-tags {
+  .skills-content & {
+    @apply flex flex-wrap gap-2;
+  }
+  @apply flex flex-wrap gap-2;
+}
+
+@utility timeline-items {
+  @apply relative;
+  &::before {
+    content: '';
+    @apply absolute left-2.5 top-0 bottom-0 w-0.5 bg-light-timeline-bg dark:bg-dark-timeline-bg z-10;
+  }
+}
+
+@utility timeline-item {
+  @apply relative mb-8 ml-5 pl-8;
+  &::before {
+    content: '';
+    @apply absolute w-3 h-3 bg-light-timeline-bg dark:bg-dark-timeline-bg rounded-full border-2 border-light-bg dark:border-dark-bg;
+    left: -0.95rem;
+    top: 1.5rem;
+    z-index: 20;
+  }
+
+  @media (max-width: 768px) {
+    @apply ml-3 pl-6;
+    &::before {
+      left: -0.45rem;
+    }
+  }
+}
+
+@utility timeline-header {
+  @apply flex items-start gap-4 mb-4;
+
+  @media (max-width: 768px) {
+    @apply flex-col items-start gap-2;
+  }
+}
+
+@utility company-logo {
+  @apply w-16 h-16 rounded-lg object-cover shrink-0;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+}
+
+@utility timeline-info {
+  @apply flex-1 min-w-0 self-center;
+}
+
+@utility company-name {
+  @apply text-lg font-bold leading-tight text-light-text-primary dark:text-dark-text-primary m-0 mb-1;
+  & a {
+    @apply text-light-link dark:text-dark-link no-underline hover:underline inline-flex items-center gap-1;
+  }
+
+  @media (max-width: 768px) {
+    @apply text-center;
+  }
+}
+
+@utility external-link-icon {
+  @apply w-3 h-3 opacity-70;
+}
+
+@utility job-role {
+  @apply text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary;
+
+  @media (max-width: 768px) {
+    @apply text-center;
+  }
+}
+
+@utility job-meta {
+  @apply flex flex-wrap gap-4 mb-4 text-sm text-light-text-secondary dark:text-dark-text-secondary;
+  & > * + * {
+    @apply pl-4 border-l border-light-border dark:border-dark-border;
+  }
+
+  @media (max-width: 768px) {
+    @apply gap-2 justify-center;
+  }
+}
+
+@utility job-date {
+  @apply inline-flex items-center gap-1;
+  & svg {
+    @apply w-3 h-3 shrink-0;
+  }
+}
+
+@utility job-location {
+  @apply inline-flex items-center gap-1;
+  & svg {
+    @apply w-3 h-3 shrink-0;
+  }
+}
+
+@utility job-skills {
+  @apply flex flex-col items-start gap-2;
+}
+
+@utility skills-label {
+  @apply text-sm text-light-text-primary dark:text-dark-text-primary pt-1;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    @apply pt-0;
+  }
+}
+
+@utility skill-tag {
+  @apply inline-block px-3 py-1 text-xs font-medium bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-full;
+}
+
+@utility languages-content {
+  @apply p-0;
+}
+
+@utility language-items {
+  @apply flex flex-wrap gap-6 justify-around;
+}
+
+@utility language-item {
+  @apply flex flex-col items-center text-center;
+}
+
+@utility language-flag {
+  @apply text-3xl mb-2;
+}
+
+@utility language-name {
+  @apply text-lg font-semibold text-light-text-primary dark:text-dark-text-primary;
+}
+
+@utility language-level {
+  @apply text-sm text-light-text-secondary dark:text-dark-text-secondary mt-1 px-2 py-1 bg-light-catalogue-bg dark:bg-dark-catalogue-bg rounded-md;
+}
+
+@layer components {
+
+  #about-me, #skills, #experience, #education, #languages { @apply text-xl md:text-2xl font-semibold; }
+}

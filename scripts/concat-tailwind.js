@@ -2,17 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 const projectRoot = __dirname + '/..';
-const outFile = path.join(projectRoot, 'sass', 'tailwind.entry.css');
+const outFile = path.join(projectRoot, 'css', 'tailwind.entry.css');
 
 // Define concatenation order (top → bottom)
 const parts = [
-  'sass/tw-head.css',
-  'sass/tw-base.css',
-  'sass/tw-components-base.css',
-  'sass/tw-components-catalogue.css',
-  'sass/tw-components-books.css',
-  'sass/tw-components-cv.css',
-  'sass/tw-components-post.css',
+  'css/theme.css',
+  'css/base.css',
+  'css/components/base.css',
+  'css/components/catalogue.css',
+  'css/components/books.css',
+  'css/components/cv.css',
+  'css/components/post.css',
 ];
 
 // Check if we're in watch mode
