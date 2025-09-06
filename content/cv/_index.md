@@ -528,17 +528,14 @@ aliases = ['resume']
     <div class="languages-content">
       <div class="language-items">
         <div class="language-item">
-          <span class="language-flag">🇪🇸</span>
           <span class="language-name">Spanish</span>
           <span class="language-level">Native</span>
         </div>
         <div class="language-item">
-          <span class="language-flag">🇬🇧</span>
           <span class="language-name">English</span>
           <span class="language-level">C1</span>
         </div>
         <div class="language-item">
-          <span class="language-flag">🇩🇪</span>
           <span class="language-name">German</span>
           <span class="language-level">A2</span>
         </div>

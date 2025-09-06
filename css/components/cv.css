@@ -203,11 +203,13 @@
   @apply relative mb-8 ml-5 pl-8;
   &::before {
     content: '';
-    @apply absolute w-3 h-3 bg-light-timeline-bg dark:bg-dark-timeline-bg rounded-full border-2 border-light-bg dark:border-dark-bg;
+    @apply absolute w-3 h-3 bg-light-timeline-bg dark:bg-dark-timeline-bg rounded-full border-2 border-light-bg;
+    border-color: var(--color-light-bg);
     left: -0.95rem;
     top: 1.5rem;
     z-index: 20;
   }
+  .dark &::before { border-color: var(--color-dark-bg); }
 
   @media (max-width: 768px) {
     @apply ml-3 pl-6;
