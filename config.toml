@@ -45,7 +45,7 @@ cronitor = "162fa780362b916393b2692116b73be0"
 ## Open Graph + Twitter Cards
 [extra.seo]
 # this image will be used as fallback if a page has no image of its own
-image = "icon.ico"
+image = "assets/icons/icon.ico"
 image_height = 0
 image_width = 0
 og_locale = "en_US"

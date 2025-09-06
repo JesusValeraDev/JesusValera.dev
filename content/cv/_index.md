@@ -6,7 +6,7 @@ aliases = ['resume']
 
 <div class="cv-header">
     <div class="profile-photo">
-        <img src="/jesus-150.webp" alt="Jesus Valera" />
+        <img src="/assets/images/profile/jesus-150.webp" alt="Jesus Valera" />
     </div>
     <h1 class="profile-name">Jesus Valera Reales</h1>
     <h2 class="profile-title">Senior Software Engineer</h2>
@@ -27,7 +27,7 @@ aliases = ['resume']
         </div>
     </div>
     <div class="download-section">
-        <a href="/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">
+        <a href="/assets/documents/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7,10 12,15 17,10"/>

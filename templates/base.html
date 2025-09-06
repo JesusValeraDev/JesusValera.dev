@@ -9,8 +9,8 @@
   <link rel="dns-prefetch" href="//rum.cronitor.io">
   <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
   <!-- Ultra-aggressive font preloading to prevent font swapping -->
-  <link rel="preload" as="font" href="{{ get_url(path='Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
-  <link rel="preload" as="image" href="{{ get_url(path='jesus-100.webp') | safe }}" fetchpriority="high" imagesrcset="{{ get_url(path='jesus-100.webp') | safe }} 1x, {{ get_url(path='jesus-150.webp') | safe }} 1.5x">
+  <link rel="preload" as="font" href="{{ get_url(path='assets/fonts/Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
+  <link rel="preload" as="image" href="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}" fetchpriority="high" imagesrcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x">
 
   <!-- Minimal critical CSS (screen reader only) -->
   <style>
@@ -208,8 +208,8 @@
       <a class="profile-icon flex items-center justify-center mx-auto md:mx-0" href="{{ get_url(path='') | safe }}">
         <img alt="JesusValera" 
              class="rounded-full w-22 h-22 md:w-10 md:h-10 shrink-0"
-             src="{{ get_url(path='jesus-100.webp') | safe }}" 
-             srcset="{{ get_url(path='jesus-100.webp') | safe }} 1x, {{ get_url(path='jesus-150.webp') | safe }} 1.5x"
+             src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}" 
+             srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
              fetchpriority="high" 
              width="100" 
              height="100">
