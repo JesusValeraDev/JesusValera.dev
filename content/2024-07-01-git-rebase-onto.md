@@ -33,9 +33,7 @@ The command takes three arguments:
 git rebase --onto <new-base> <upstream> <branch>
 ```
 
-<div class="separator"></div>
-
-### 1. Rebasing a Subset of Commits
+## Rebasing a Subset of Commits
 
 When you want to rebase a subset of commits from your branch onto another branch:
 
@@ -62,9 +60,7 @@ This command will rebase the commits from `feature` branch onto the `master` bra
 ---X---Y---Z  (master)
 ```
 
-<div class="separator"></div>
-
-### 2. Skipping Commits
+## Skipping Commits
 
 When you want to skip a set of commits from your current branch:
 
@@ -88,9 +84,7 @@ This skips commits `A` and `B` and applies the remaining commits onto the `maste
 ---X---Y---Z  (master)
 ```
 
-<div class="separator"></div>
-
-### 3. Rebasing to a different base
+## Rebasing to a different base
 
 When you want to rebase a branch onto a completely different base that is not its current base.
 
@@ -115,6 +109,8 @@ This command will rebase `feature2` onto `feature1`.
     /
 ---X---Y---Z  (master)
 ```
+
+<div class="separator"></div>
 
 ## References
 
