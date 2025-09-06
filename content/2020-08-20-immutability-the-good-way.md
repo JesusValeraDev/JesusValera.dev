@@ -268,7 +268,6 @@ As you can see, having the _@psalm-immutable_ on your immutable classes you donâ
 
 ## Reference
 
-- [PHP best practices | Chemaclass](https://php.chemaclass.com/technical-skills/immutability.html)
 - [Mutable vs Immutable Objects | InterviewCake](https://www.interviewcake.com/concept/java/mutable)
 - [From Impure to Pure Code | Tommi Kaikkonen](https://tommikaikkonen.github.io/impure-to-pure/)
 - [Entity vs DTO | StackOverflow](https://stackoverflow.com/a/51458159/4988034)

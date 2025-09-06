@@ -91,5 +91,5 @@ git merge upstream/master
 ## Reference
 
 - [Syncing a fork | GitHub doc](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
-- [Learn Git commands | GitExplorer](https://gitexplorer.com/)
+- [Learn Git commands | GitExplorer](https://git.gaozih.com/)
 - [Git Tips | Oh Shit, Git!?!](https://ohshitgit.com/)
