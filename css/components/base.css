@@ -56,8 +56,6 @@
 }
 
 @utility main-offset-md {
-  padding-top: 0;
-
   @media (min-width: 768px) {
     body & {
       padding-top: 6rem;

@@ -1,14 +1,11 @@
 @utility cv-header {
   @apply max-w-4xl mx-auto text-center;
-  & .profile-photo img {
-    @apply w-32 h-32 rounded-full object-cover shadow-lg;
-  }
 }
 
 @utility profile-photo {
-  @apply hidden md:flex justify-center;
+  @apply flex justify-center;
   .cv-header & img {
-    @apply w-32 h-32 rounded-full object-cover shadow-lg;
+    @apply w-22 h-22 md:w-32 md:h-32 rounded-full object-cover shadow-lg;
   }
 }
 
@@ -327,6 +324,5 @@
 }
 
 @layer components {
-
   #about-me, #skills, #experience, #education, #languages { @apply text-xl md:text-2xl font-semibold; }
 }

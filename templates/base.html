@@ -208,7 +208,7 @@
     <div class="container-custom md:h-16 flex flex-col md:flex-row items-center md:justify-between gap-3 md:gap-0 py-3 md:py-0">
       <a class="profile-icon flex items-center justify-center mx-auto md:mx-0" href="{{ get_url(path='') | safe }}">
         <img alt="JesusValera" 
-             class="rounded-full w-22 h-22 md:w-10 md:h-10 shrink-0"
+             class="hidden md:block rounded-full w-10 h-10 shrink-0"
              src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}" 
              srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
              fetchpriority="high" 
