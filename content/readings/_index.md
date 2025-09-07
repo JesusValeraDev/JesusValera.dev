@@ -1,4 +1,4 @@
 +++
 title = "Readings"
-template = "section-books.html"
+template = "readings.html"
 +++
