@@ -50,7 +50,7 @@ Pros and cons:
   default value)
 - 🔴 Holds all intermediate arrays in memory before merging
 - 🟢 Clean and modern syntax
-- 🟢 Performs only one merge operation — faster than repeated array_merge() in a loop
+- 🟢 Performs only one merge operation - faster than repeated array_merge() in a loop
 
 ### Manual nested loop
 

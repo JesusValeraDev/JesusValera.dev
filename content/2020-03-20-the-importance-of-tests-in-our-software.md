@@ -41,19 +41,19 @@ still works after changes.
 ### 🧩 Encouraging Modular, Maintainable Code
 
 Good **testing practices naturally lead to better software design**. Writing tests forces you to break your code into
-smaller, independent components—each of which can be tested separately.
+smaller, independent components-each of which can be tested separately.
 
 ### 🏡 Boosting Confidence in Your Code
 
 Writing tests encourages you **to break down your code into smaller, more manageable parts**. Each part can be tested
 independently, which makes it easier to identify and fix problems.
 
-When your tests cover different scenarios —including edge cases— you can roll out updates without worrying about
+When your tests cover different scenarios -including edge cases- you can roll out updates without worrying about
 breaking something unexpectedly.
 
 <div class="separator"></div>
 
-Writing tests in software development isn't just a good practice—it's an investment in the quality, stability, and
+Writing tests in software development isn't just a good practice-it's an investment in the quality, stability, and
 longevity of your code. **It saves time, reduces stress, and leads to better user experiences**. Plus, **testing skills
 are highly valued** in the tech industry.
 
