@@ -104,7 +104,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a">
   <meta name="color-scheme" content="dark light">
   <!-- Basic Content Security Policy suitable for static hosting; adjust if needed -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io ws://127.0.0.1:* ws://localhost:*; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io ws://127.0.0.1:* ws://localhost:*; frame-src 'self' https://www.youtube.com https://youtube.com; base-uri 'self'">
 
   <!-- Favicon and touch icons -->
   <link rel="icon" type="image/x-icon" href="{{ get_url(path='assets/icons/icon.ico') | safe }}">
