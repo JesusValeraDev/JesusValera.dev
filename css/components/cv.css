@@ -334,7 +334,7 @@
 }
 
 @layer components {
-  #about-me, #skills, #experience, #education, #languages { @apply text-xl md:text-2xl font-semibold; }
+  #about-me, #skills, #experience, #education, #languages, #projects { @apply text-xl md:text-2xl font-semibold; }
 }
 
 @media (max-width: 768px) {

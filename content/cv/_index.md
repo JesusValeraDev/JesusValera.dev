@@ -519,7 +519,6 @@ aliases = ['resume']
     </div>
   </div>
 </div>
-</div>
 
 ## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Languages
 
@@ -539,6 +538,55 @@ aliases = ['resume']
           <span class="language-name">German</span>
           <span class="language-level">A2</span>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><g><path d="M50.448,345.976c-13.915,13.916-13.915,36.484,0,50.4L155.63,501.548c13.914,13.932,36.484,13.932,50.4,0.017 l77.045-77.054L127.494,268.93L50.448,345.976z M178.932,464.636c-3.121,3.12-8.209,3.137-11.33,0.008l-80.24-80.24 c-3.129-3.12-3.12-8.21,0-11.338l33.504-33.496l91.57,91.562L178.932,464.636z"/><polygon points="437.965,85.493 471.988,75.571 396.416,0 141.566,254.858 275.516,388.809 309.193,378.369 294.619,348.841 333.105,334.456 318.514,304.929 357,290.552 342.401,261.042 380.887,246.665 366.288,217.163 404.782,202.786 390.174,173.26 428.661,158.891 414.078,129.38 452.548,115.004"/></g></svg>Projects
+
+<div class="timeline-items">
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/gacela.webp" alt="Gacela logo" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="https://gacela-project.com/" target="_blank" rel="noopener noreferrer">Gacela Project
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">Gacela is a framework that helps you split your application's logic into different modules</div>
+        </div>
+      </div>
+      <div class="job-description">
+        I helped design the framework's concept and worked on functionalities such as the dependency resolver, code generator, and event manager system.
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/phel.webp" alt="Phel Lang" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+        <h3 class="company-name">
+            <a href="https://phel-lang.org/" target="_blank" rel="noopener noreferrer">Phel Lang
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">Phel is a Functional Programming language that compiles to PHP. It is a dialect of Lisp</div>
+        </div>
+      </div>
+      <div class="job-description">
+        I contributed to the project by fixing bugs, writing automated tests, and participating in internal discussions. Additionally, I assisted in implementing the search engine and refining the webpage's design.
       </div>
     </div>
   </div>
