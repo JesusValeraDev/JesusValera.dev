@@ -5,43 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- DNS prefetch and preconnect for external resources -->
   <link rel="dns-prefetch" href="//rum.cronitor.io">
   <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
   <!-- Ultra-aggressive font preloading to prevent font swapping -->
   <link rel="preload" as="font" href="{{ get_url(path='assets/fonts/Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
-  <link rel="preload" as="image" href="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}" fetchpriority="high" imagesrcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x">
 
   <!-- Minimal critical CSS (screen reader only) -->
   <style>
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
-
-  <!-- Inline theme detection to prevent dark mode FOUC -->
   <script>
   (function () {
-    // Apply theme IMMEDIATELY before any content renders
     const theme = localStorage.theme || 'light';
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       document.documentElement.setAttribute('color-theme', 'dark');
-      // Prevent white flash before CSS loads
       document.documentElement.style.backgroundColor = '#161e32';
       document.documentElement.style.color = '#cbd5e1';
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('color-theme', 'light');
-      // Ensure a consistent light background before CSS loads
       document.documentElement.style.backgroundColor = '#fcfcfd';
       document.documentElement.style.color = '#374151';
     }
   })();
   </script>
 
-  <!-- Load dark-mode script immediately after theme detection -->
   <script src="{{ get_url(path='js/core/dark-mode.js') | safe }}"></script>
 
-  <!-- Critical CSS inline to prevent FOUC and layout shifts -->
   <style>
     body { margin: 0; }
 
@@ -59,7 +50,7 @@
     .dark #dark-mode { 
       display: inline-flex; 
     }
-    
+
     /* Ensure buttons are clickable and properly sized */
     #light-mode, #dark-mode { 
       min-width: 44px;
@@ -84,26 +75,11 @@
     }
   </style>
 
-  <!-- Load Tailwind CSS (blocking to avoid first-paint mismatch) -->
   <link rel="stylesheet" href="{{ get_url(path='tailwind.css', cachebust=true) | safe }}">
-
-  <!-- Trigger Inter font load after CSS is available so preload is actually used -->
-  <script>
-    (function() {
-      if ('fonts' in document && document.documentElement) {
-        document.fonts.load('400 1rem Inter').then(function () {
-          document.documentElement.classList.add('fonts-loaded');
-        }).catch(function () {
-          document.documentElement.classList.add('fonts-fallback');
-        });
-      }
-    })();
-  </script>
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfd">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a">
   <meta name="color-scheme" content="dark light">
-  <!-- Basic Content Security Policy suitable for static hosting; adjust if needed -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io ws://127.0.0.1:* ws://localhost:*; frame-src 'self' https://www.youtube.com https://youtube.com; base-uri 'self'">
 
   <!-- Favicon and touch icons -->
