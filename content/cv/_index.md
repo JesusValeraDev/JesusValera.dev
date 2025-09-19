@@ -135,8 +135,9 @@ aliases = ['resume']
       </div>
       <div class="job-description">
         <ul>
-          <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a RESTful API architecture, which significantly improved the performance, scalability, and maintainability</li>
-          <li>Improved the legacy shop's <strong>package customization flow</strong>, improving usability and logic optimization, increasing conversion rates</li>
+          <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a <strong>RESTful API</strong> architecture, which significantly improved the performance, scalability, and maintainability</li>
+          <li>Improved the legacy shop's <strong>package customization flow</strong>, improving usability and logic optimization, contributing to higher conversion rates</li>
+          <li><strong>Extracted components</strong> from the monolith into external services, improving maintainability and drastically reducing deployment time</li>
           <li>Maintenance, debugging, and performance work, ensuring the <strong>stability and reliability</strong> of production systems while reducing technical debt</li>
         </ul>
       </div>
@@ -194,9 +195,9 @@ aliases = ['resume']
       </div>
       <div class="job-description">
         <ul>
-          <li>Refactor the <strong>PHP monolith into a modular architecture</strong> using Hexagonal Architecture, improving maintainability, scalability, and design</li>
+          <li>Refactored the <strong>PHP monolith into a modular architecture</strong> using Hexagonal Architecture, improving maintainability, scalability, and design</li>
           <li>Contributed to the design and implementation of key features such as Group Events, Bestsellers, and other core modules</li>
-          <li>Advocated for and organized regular <strong>internal tech talks and coding katas</strong>, promoting best practices in PHP through clean code and <strong>TDD</strong></li>
+          <li>Promoted best practices by organizing regular <strong>internal tech talks and coding katas</strong>, and encouraged best practices through clean code and <strong>TDD</strong></li>
         </ul>
       </div>
       <div class="job-skills">
@@ -419,7 +420,7 @@ aliases = ['resume']
       </div>
       <div class="job-description">
         <ul>
-          <li>Designed and developed an Android application from scratch, using <strong>SharedPreferences</strong> or third-party libraries such as <strong>Google Maps</strong></li>
+          <li>Designed and developed an Android application from scratch, with persistent storage (<strong>SharedPreferences</strong>) and third-party APIs such as <strong>Google Maps</strong></li>
         </ul>
       </div>
       <div class="job-skills">
@@ -532,11 +533,11 @@ aliases = ['resume']
         </div>
         <div class="language-item">
           <span class="language-name">English</span>
-          <span class="language-level">C1</span>
+          <span class="language-level">C1 (Advanced)</span>
         </div>
         <div class="language-item">
           <span class="language-name">German</span>
-          <span class="language-level">A2</span>
+          <span class="language-level">A2 (Basic)</span>
         </div>
       </div>
     </div>
@@ -560,11 +561,11 @@ aliases = ['resume']
               </svg>
             </a>
           </h3>
-          <div class="job-role">Gacela is a framework that helps you split your application's logic into different modules</div>
         </div>
       </div>
       <div class="job-description">
-        I helped design the framework's concept and worked on functionalities such as the dependency resolver, code generator, and event manager system.
+        <p>Co-designed and developed a PHP modular framework, implementing the dependency resolver, code generator, and event manager system.</p>
+        <i>Gacela helps developers split application logic into different modules.</i>
       </div>
     </div>
   </div>
@@ -582,11 +583,33 @@ aliases = ['resume']
               </svg>
             </a>
           </h3>
-          <div class="job-role">Phel is a Functional Programming language that compiles to PHP. It is a dialect of Lisp</div>
         </div>
       </div>
       <div class="job-description">
-        I contributed to the project by fixing bugs, writing automated tests, and participating in internal discussions. Additionally, I assisted in implementing the search engine and refining the webpage's design.
+        <p>Contributed bug fixes, automated tests, and design improvements; implemented the project’s search engine and refined the webpage.</p>
+        <i>Phel is a functional programming language (Lisp dialect) that compiles to PHP.</i>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/phel-plugin.webp" alt="Phel Lang Plugin" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+        <h3 class="company-name">
+          <a href="https://plugins.jetbrains.com/plugin/28459-phel-lang/" target="_blank" rel="noopener noreferrer">Phel Lang IntelliJ Plugin
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15,3 21,3 21,9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </h3>
+        </div>
+      </div>
+      <div class="job-description">
+        <p>Developed an IntelliJ plugin from scratch in Kotlin, adding syntax highlighting, code navigation, and editing support for Phel.</p>
+        <i>Published in the JetBrains Marketplace.</i>
       </div>
     </div>
   </div>
