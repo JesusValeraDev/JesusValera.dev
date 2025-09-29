@@ -136,9 +136,8 @@ aliases = ['resume']
       <div class="job-description">
         <ul>
           <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a <strong>RESTful API</strong> architecture, which significantly improved the performance, scalability, and maintainability</li>
-          <li>Improved the legacy shop's <strong>package customization flow</strong>, improving usability and logic optimization, contributing to higher conversion rates</li>
+          <li>Improved the legacy shop's <strong>package customization flow</strong>, optimizing usability and logic, contributing to higher conversion rates</li>
           <li><strong>Extracted components</strong> from the monolith into external services, improving maintainability and drastically reducing deployment time</li>
-          <li>Maintenance, debugging, and performance work, ensuring the <strong>stability and reliability</strong> of production systems while reducing technical debt</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -197,7 +196,7 @@ aliases = ['resume']
         <ul>
           <li>Refactored the <strong>PHP monolith into a modular architecture</strong> using Hexagonal Architecture, improving maintainability, scalability, and design</li>
           <li>Contributed to the design and implementation of key features such as Group Events, Bestsellers, and other core modules</li>
-          <li>Promoted best practices by organizing regular <strong>internal tech talks and coding katas</strong>, and encouraged best practices through clean code and <strong>TDD</strong></li>
+          <li>Promoted best practices by organizing <strong>internal tech talks and coding katas</strong>, fostering clean code and <strong>TDD</strong> culture</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -544,9 +543,53 @@ aliases = ['resume']
   </div>
 </div>
 
-## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><g><path d="M50.448,345.976c-13.915,13.916-13.915,36.484,0,50.4L155.63,501.548c13.914,13.932,36.484,13.932,50.4,0.017 l77.045-77.054L127.494,268.93L50.448,345.976z M178.932,464.636c-3.121,3.12-8.209,3.137-11.33,0.008l-80.24-80.24 c-3.129-3.12-3.12-8.21,0-11.338l33.504-33.496l91.57,91.562L178.932,464.636z"/><polygon points="437.965,85.493 471.988,75.571 396.416,0 141.566,254.858 275.516,388.809 309.193,378.369 294.619,348.841 333.105,334.456 318.514,304.929 357,290.552 342.401,261.042 380.887,246.665 366.288,217.163 404.782,202.786 390.174,173.26 428.661,158.891 414.078,129.38 452.548,115.004"/></g></svg>Projects
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projects
 
 <div class="timeline-items">
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/phel-plugin.webp" alt="Phel Lang Plugin" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="https://plugins.jetbrains.com/plugin/28459-phel-lang/" target="_blank" rel="noopener noreferrer">Phel Lang IntelliJ Plugin
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">A plugin written in Kotlin for the JetBrains IDE family</div>
+        </div>
+      </div>
+      <div class="job-description">
+        <p>Added syntax highlighting, code navigation, editing support, and more for Phel files; published in the JetBrains Marketplace.</p>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/phel.webp" alt="Phel Lang" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="https://phel-lang.org/" target="_blank" rel="noopener noreferrer">Phel Lang
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">A functional programming language (Lisp dialect) that compiles to PHP</div>
+        </div>
+      </div>
+      <div class="job-description">
+        <p>Contributed bug fixes, automated tests, and design improvements; implemented the project’s search engine and refined the webpage.</p>
+      </div>
+    </div>
+  </div>
   <div class="timeline-item">
     <div class="timeline-card">
       <div class="timeline-header" style="margin-bottom: 0;">
@@ -561,56 +604,31 @@ aliases = ['resume']
               </svg>
             </a>
           </h3>
+          <div class="job-role">An application that helps you to split your application into different modules</div>
         </div>
       </div>
       <div class="job-description">
         <p>Co-designed and developed a PHP modular framework, implementing the dependency resolver, code generator, and event manager system.</p>
-        <i>Gacela helps developers split application logic into different modules.</i>
       </div>
     </div>
   </div>
-  <div class="timeline-item">
-    <div class="timeline-card">
-      <div class="timeline-header" style="margin-bottom: 0;">
-        <img src="/cv/phel.webp" alt="Phel Lang" class="company-logo" loading="lazy">
-        <div class="timeline-info">
-        <h3 class="company-name">
-            <a href="https://phel-lang.org/" target="_blank" rel="noopener noreferrer">Phel Lang
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15,3 21,3 21,9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="job-description">
-        <p>Contributed bug fixes, automated tests, and design improvements; implemented the project’s search engine and refined the webpage.</p>
-        <i>Phel is a functional programming language (Lisp dialect) that compiles to PHP.</i>
-      </div>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-card">
-      <div class="timeline-header" style="margin-bottom: 0;">
-        <img src="/cv/phel-plugin.webp" alt="Phel Lang Plugin" class="company-logo" loading="lazy">
-        <div class="timeline-info">
-        <h3 class="company-name">
-          <a href="https://plugins.jetbrains.com/plugin/28459-phel-lang/" target="_blank" rel="noopener noreferrer">Phel Lang IntelliJ Plugin
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15,3 21,3 21,9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </h3>
-        </div>
-      </div>
-      <div class="job-description">
-        <p>Developed an IntelliJ plugin from scratch in Kotlin, adding syntax highlighting, code navigation, and editing support for Phel.</p>
-        <i>Published in the JetBrains Marketplace.</i>
-      </div>
+</div>
+
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Conferences
+
+<div class="about-me-card">
+  <div class="timeline-card">
+    <div class="about-me-content">
+      <a class="text-2xl font-semibold inline-flex items-center gap-1" href="https://phpconference.com/speaker/valera-reales-jesus/" target="_blank" rel="noopener noreferrer"><abbr title="International PHP Conference">IPC</abbr> 2025
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15,3 21,3 21,9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <p style="margin-top: 10px"><strong>Speaker, Berlin</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming</p>
+      <p><strong>Workshop Leader, Munich</strong> - Hands-On Refactoring Workshop: Modernizing Legacy PHP with Pair Programming</p>
+      <p><strong>Speaker, Munich</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques</p>
     </div>
   </div>
 </div>
