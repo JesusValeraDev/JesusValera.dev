@@ -543,9 +543,31 @@ aliases = ['resume']
   </div>
 </div>
 
-## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projects
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path class="st0" d="M27.8,28.2L27.8,28.2c-1.3,1.3-3.3,1.3-4.6,0L17,22l4.6-4.6l6.2,6.2C29.1,24.8,29.1,26.9,27.8,28.2z"/><polygon class="st0" points="6.2,3.5 3.2,6.6 5.5,10.5 9.3,12.8 17.8,21.3 20.9,18.2 12.4,9.7 10.1,5.8 "/><path class="st1" d="M18.9,16.1l2.7-2.7c1.9,0.7,4.2,0.4,5.7-1.2c1.5-1.5,1.9-3.8,1.2-5.7l-2.6,2.6l-2.4-0.6l-0.6-2.4l2.6-2.6  c-1.9-0.7-4.2-0.4-5.7,1.2c-1.5,1.5-1.9,3.8-1.2,5.7l-2.7,2.7"/><path class="st1" d="M12.7,16.3l-2.3,2.3c-1.9-0.7-4.2-0.4-5.7,1.2c-1.5,1.5-1.9,3.8-1.2,5.7l2.6-2.6l2.4,0.6l0.6,2.4l-2.6,2.6  c1.9,0.7,4.2,0.4,5.7-1.2c1.5-1.5,1.9-3.8,1.2-5.7l2.4-2.4"/></svg>Projects
 
 <div class="timeline-items">
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/bip39.webp" alt="BIP39 Word Selector" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="https://bip39.jesusvalera.dev/" target="_blank" rel="noopener noreferrer">BIP39 Word Selector
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">An online bidirectional Bitcoin mnemonic tool</div>
+        </div>
+      </div>
+      <div class="job-description">
+        <p>Developed a free, privacy-focused web tool for working with BIP39 mnemonics. Enables bidirectional conversion between BIP39 words and binary patterns by typing words or selecting numbers.</p>
+      </div>
+    </div>
+  </div>
   <div class="timeline-item">
     <div class="timeline-card">
       <div class="timeline-header" style="margin-bottom: 0;">
