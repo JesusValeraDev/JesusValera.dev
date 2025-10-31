@@ -543,6 +543,25 @@ aliases = ['resume']
   </div>
 </div>
 
+## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Conferences
+
+<div class="about-me-card">
+  <div class="timeline-card">
+    <div class="about-me-content">
+      <a class="text-2xl font-semibold inline-flex items-center gap-1" href="https://phpconference.com/speaker/valera-reales-jesus/" target="_blank" rel="noopener noreferrer"><abbr title="International PHP Conference">IPC</abbr> 2025
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15,3 21,3 21,9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <p style="margin-top: 10px"><strong>Speaker, Berlin</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming</p>
+      <p><strong>Workshop Leader, Munich</strong> - Hands-On Refactoring Workshop: Modernizing Legacy PHP with Pair Programming</p>
+      <p><strong>Speaker, Munich</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques</p>
+    </div>
+  </div>
+</div>
+
 ## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path class="st0" d="M27.8,28.2L27.8,28.2c-1.3,1.3-3.3,1.3-4.6,0L17,22l4.6-4.6l6.2,6.2C29.1,24.8,29.1,26.9,27.8,28.2z"/><polygon class="st0" points="6.2,3.5 3.2,6.6 5.5,10.5 9.3,12.8 17.8,21.3 20.9,18.2 12.4,9.7 10.1,5.8 "/><path class="st1" d="M18.9,16.1l2.7-2.7c1.9,0.7,4.2,0.4,5.7-1.2c1.5-1.5,1.9-3.8,1.2-5.7l-2.6,2.6l-2.4-0.6l-0.6-2.4l2.6-2.6  c-1.9-0.7-4.2-0.4-5.7,1.2c-1.5,1.5-1.9,3.8-1.2,5.7l-2.7,2.7"/><path class="st1" d="M12.7,16.3l-2.3,2.3c-1.9-0.7-4.2-0.4-5.7,1.2c-1.5,1.5-1.9,3.8-1.2,5.7l2.6-2.6l2.4,0.6l0.6,2.4l-2.6,2.6  c1.9,0.7,4.2,0.4,5.7-1.2c1.5-1.5,1.9-3.8,1.2-5.7l2.4-2.4"/></svg>Projects
 
 <div class="timeline-items">
@@ -632,25 +651,6 @@ aliases = ['resume']
       <div class="job-description">
         <p>Co-designed and developed a PHP modular framework, implementing the dependency resolver, code generator, and event manager system.</p>
       </div>
-    </div>
-  </div>
-</div>
-
-## <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Conferences
-
-<div class="about-me-card">
-  <div class="timeline-card">
-    <div class="about-me-content">
-      <a class="text-2xl font-semibold inline-flex items-center gap-1" href="https://phpconference.com/speaker/valera-reales-jesus/" target="_blank" rel="noopener noreferrer"><abbr title="International PHP Conference">IPC</abbr> 2025
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15,3 21,3 21,9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-      </a>
-      <p style="margin-top: 10px"><strong>Speaker, Berlin</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming</p>
-      <p><strong>Workshop Leader, Munich</strong> - Hands-On Refactoring Workshop: Modernizing Legacy PHP with Pair Programming</p>
-      <p><strong>Speaker, Munich</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques</p>
     </div>
   </div>
 </div>
