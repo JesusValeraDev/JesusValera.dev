@@ -13,7 +13,7 @@ subtitle = ""
 
 ![statue-people-with-a-string-and-a-cat](/images/2023-02-20/1.webp)
 
-Currently, it is not possible to define explicit array types as other programming languages do as Java does.
+Currently, it is not possible to define explicit array types like Java does.
 
 ```java
 List<User> users = new ArrayList<>();
@@ -30,15 +30,20 @@ execute but check the code for inconsistencies based on PHP comments.
 There are three different ways to define the type of elements in a PHP array:
 
 1. Legacy way: `User[]`
-2. List Shape: `array<int,mixed>` & `list<mixed>`
-3. Object Shape: `array{0:int, foo:?string, bar:mixed}`
+2. List Shape: `array<int, mixed>` & `list<mixed>`
+3. Object Shape: `array{foo:?string, bar:array{name:string, value:mixed}}`
 
 ## The Legacy way
 
-This is a fashioned way to define a list of elements from a certain type, the problem is it becomes ambiguous, and
-clients that use this kind of list cannot know if keys are integers, floats or strings.
-Also, static analyzers will not fail if you try to get an element by key with an incorrect type, in these scenarios, I
-would suggest using `array<int,mixed>`.
+This is a legacy approach to define a list of elements of a specific type. The problem is that it becomes ambiguous,
+and developers using this kind of list cannot know if keys are integers or strings. Also, while modern static analyzers
+will infer `User[]` as `array<int, User>` by default, this inference may not always align with the actual runtime
+behavior or your intent.<br>
+Being explicit with `array<int, User>` or `list<User>` is still a better practice because:
+
+- It's more explicit about intent
+- Avoids any ambiguity about what keys are valid
+- Makes the code more self-documenting
 
 In the end, the more explicit, the better.
 
@@ -49,15 +54,16 @@ $users = [ ... ];
 # Are keys auto-incremental integers, random numbers, maybe strings... ?
 $firstUser = $users[ ? ];
 
-# Static analyzers won't complain if you use an incorrect type 🤕
+# Static analyzers won't complain if you use an incorrect key type 🤕
 ```
 
-# List Shape
+## List Shape
 
 We use lists when we have an array of elements with the same type.<br>
-We use the **diamond syntax** to declare the types of the key and the value: `array<int,mixed>`.
+We use **angled brackets** to declare the types of the key and the value: `array<TKey, TValue>`.
 
-> 💡There is a very handy shortcut when the key is an auto-incremental integer: `list<mixed>`.
+> 💡There is a very handy shortcut when the key is an auto-incremental integer: `list<T>`.<br>
+> `list<T>` is an alias of `array<int<0, max>, T>`
 
 ```php source
 /** @var array<string, User> $users */
@@ -102,14 +108,16 @@ $birthdate = $additionalInfo['birthdate']; # DateTimeImmutable
 Given the following 'object shape' array
 
 ```php source
-['hello', 'world', new stdClass, false];
+['hello' => 'world', new stdClass(), false];
 ```
 
 It will be addressed internally as follows:
 
 ```php source
-list{string, string, stdClass, false}
+array{'hello': string, 0: stdClass, 1: false}
 ```
+
+> By default, numeric indices starting from 0 are auto-assigned to elements without explicit keys
 
 <div class="separator"></div>
 
@@ -126,11 +134,11 @@ final readonly class User
 }
 ```
 
-There are multiple advantages when using these PHP comments, not only provide better feedback on the array shape to the developers but IDEs will suggest auto-completion when iterating on individual elements!
+There are multiple advantages when using these PHP comments, they not only provide better feedback on the array shape to the developers but IDEs will suggest auto-completion when iterating on individual elements!
 
 <div class="separator"></div>
 
-Of course, it is possible to represent any complex array structure in PHP with these PHP comments. Example:
+Of course, it's possible to represent any complex array structure using these PHPDoc annotations. Example:
 
 ```php source
 /**
@@ -143,7 +151,7 @@ Of course, it is possible to represent any complex array structure in PHP with t
  */
 $array = [
     0 => [
-        'uuid' => 'XXXX-XXX-XXX-XXXX',
+        'uuid' => '550e8400-e29b-41d4-a716-446655444000',
         'content' => [
             'name' => 'str',
             'foo' => null,
