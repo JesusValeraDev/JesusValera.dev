@@ -1,13 +1,13 @@
 (function () {
     // Configuration constants
-    const MAX_SNOWFLAKES = 8;
-    const SNOWFLAKE_SIZE_MIN = 4;
-    const SNOWFLAKE_SIZE_MAX = 12;
+    const MAX_SNOWFLAKES = 10;
+    const SNOWFLAKE_SIZE_MIN = 3;
+    const SNOWFLAKE_SIZE_MAX = 8;
     const ANIMATION_DURATION_MIN = 60000; // 60 seconds
     const ANIMATION_DURATION_MAX = 90000; // 90 seconds
     const DRIFT_RANGE = 100; // -50 to +50px
-    const SWAY_AMPLITUDE_MIN = 20;
-    const SWAY_AMPLITUDE_MAX = 80;
+    const SWAY_AMPLITUDE_MIN = 40;
+    const SWAY_AMPLITUDE_MAX = 100;
     const SWAY_SPEED_MIN = 2;
     const SWAY_SPEED_MAX = 5;
     const SPAWN_INTERVAL = 3000; // 3 seconds
@@ -35,7 +35,7 @@
         return container;
     }
 
-    function createSnowflake() {
+    function createSnowflake(isInitialSpawn = false) {
         if (!snowContainer) return;
         
         const flake = document.createElement('div');
@@ -44,15 +44,21 @@
         const animationDuration = Math.random() * (ANIMATION_DURATION_MAX - ANIMATION_DURATION_MIN) + ANIMATION_DURATION_MIN;
         const drift = (Math.random() - 0.5) * DRIFT_RANGE;
         
-        // Start snowflakes at random positions at initial load
         let startY = -SCREEN_BUFFER;
         let adjustedDuration = animationDuration;
 
         const documentHeight = window.innerHeight;
-        startY = Math.random() * (documentHeight * RANDOM_START_HEIGHT_FACTOR);
-
-        const progressPercentage = startY / (documentHeight + SCREEN_BUFFER);
-        adjustedDuration = animationDuration * (1 - progressPercentage);
+        
+        if (isInitialSpawn) {
+            // For initial spawn, use random positions to create natural distribution
+            startY = Math.random() * (documentHeight * RANDOM_START_HEIGHT_FACTOR);
+            const progressPercentage = startY / (documentHeight + SCREEN_BUFFER);
+            adjustedDuration = animationDuration * (1 - progressPercentage);
+        } else {
+            // For replacement snowflakes, always start from the top
+            startY = -SCREEN_BUFFER;
+            adjustedDuration = animationDuration;
+        }
 
         flake.style.cssText = `
             position: absolute;
@@ -79,23 +85,23 @@
             @keyframes ${animationName} {
                 0% {
                     transform: translateY(0) translateX(0) rotate(0deg);
-                    opacity: 0.8;
+                    opacity: 0.4;
                 }
                 25% {
                     transform: translateY(${fallDistance * 0.25}px) translateX(${swayAmplitude * Math.sin(swaySpeed * 0.5 * Math.PI)}px) rotate(${Math.random() * 15 - 7.5}deg);
-                    opacity: 0.7;
+                    opacity: 0.35;
                 }
                 50% {
                     transform: translateY(${fallDistance * 0.5}px) translateX(${swayAmplitude * Math.sin(swaySpeed * Math.PI)}px) rotate(${Math.random() * 15 - 7.5}deg);
-                    opacity: 0.5;
+                    opacity: 0.25;
                 }
                 75% {
                     transform: translateY(${fallDistance * 0.75}px) translateX(${swayAmplitude * Math.sin(swaySpeed * 1.5 * Math.PI)}px) rotate(${Math.random() * 15 - 7.5}deg);
-                    opacity: 0.3;
+                    opacity: 0.15;
                 }
                 100% {
                     transform: translateY(${fallDistance}px) translateX(${drift + swayAmplitude * Math.sin(swaySpeed * 2 * Math.PI)}px) rotate(${Math.random() * 20 - 10}deg);
-                    opacity: 0.1;
+                    opacity: 0.05;
                 }
             }
         `;
@@ -148,7 +154,7 @@
 
                 for (let i = 0; i < MAX_SNOWFLAKES; i++) {
                     setTimeout(() => {
-                        createSnowflake();
+                        createSnowflake(true);
                     }, i * INITIAL_SPAWN_DELAY);
                 }
             }
@@ -166,13 +172,13 @@
         // Create initial batch of snowflakes at random positions
         for (let i = 0; i < MAX_SNOWFLAKES; i++) {
             setTimeout(() => {
-                createSnowflake();
+                createSnowflake(true);
             }, i * INITIAL_SPAWN_DELAY);
         }
 
         snowInterval = setInterval(() => {
             if (snowContainer && snowContainer.children.length < MAX_SNOWFLAKES) {
-                createSnowflake();
+                createSnowflake(false); // Replacement snowflakes start from top
             }
         }, SPAWN_INTERVAL);
     }
