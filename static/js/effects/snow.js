@@ -133,7 +133,7 @@
                 --snowflake-shadow-color: rgba(0, 163, 241, 0.3);
             }
             .dark {
-                --snowflake-bg-color: rgba(255, 255, 255, 0.8);
+                --snowflake-bg-color: #0077b0;
                 --snowflake-shadow-color: rgba(180, 180, 255, 0.4);
             }
             #snow-container {
@@ -144,18 +144,41 @@
     }
 
     let resizeTimeout;
+    let lastWindowWidth = window.innerWidth;
+    let lastWindowHeight = window.innerHeight;
+    
     function handleResize() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             if (snowContainer) {
-                const styles = document.head.querySelectorAll('style[id^="snowfall-"], style[id*="snowfall-"]');
-                styles.forEach(style => style.remove());
-                snowContainer.innerHTML = '';
+                const currentWidth = window.innerWidth;
+                const currentHeight = window.innerHeight;
+                
+                // Calculate percentage changes
+                const widthChange = Math.abs(currentWidth - lastWindowWidth) / lastWindowWidth;
+                const heightChange = Math.abs(currentHeight - lastWindowHeight) / lastWindowHeight;
+                
+                // Detect mobile devices
+                const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                
+                // Use more conservative thresholds on mobile devices
+                const widthThreshold = isMobile ? 0.4 : 0.25;  // 40% on mobile, 25% on desktop
+                const heightThreshold = isMobile ? 0.7 : 0.5;  // 70% on mobile, 50% on desktop
+                
+                if (widthChange > widthThreshold || heightChange > heightThreshold) {
+                    const styles = document.head.querySelectorAll('style[id^="snowfall-"], style[id*="snowfall-"]');
+                    styles.forEach(style => style.remove());
+                    snowContainer.innerHTML = '';
 
-                for (let i = 0; i < MAX_SNOWFLAKES; i++) {
-                    setTimeout(() => {
-                        createSnowflake(true);
-                    }, i * INITIAL_SPAWN_DELAY);
+                    for (let i = 0; i < MAX_SNOWFLAKES; i++) {
+                        setTimeout(() => {
+                            createSnowflake(true);
+                        }, i * INITIAL_SPAWN_DELAY);
+                    }
+                    
+                    // Update last known dimensions
+                    lastWindowWidth = currentWidth;
+                    lastWindowHeight = currentHeight;
                 }
             }
         }, RESIZE_DEBOUNCE);
@@ -166,6 +189,10 @@
 
         addSnowCSS();
         snowContainer = createSnowContainer();
+        
+        // Initialize window dimensions for resize detection
+        lastWindowWidth = window.innerWidth;
+        lastWindowHeight = window.innerHeight;
 
         window.addEventListener('resize', handleResize);
 
