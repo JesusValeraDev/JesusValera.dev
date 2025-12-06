@@ -81,6 +81,12 @@
   & ol {
     @apply list-decimal pl-6;
   }
+
+  @media (max-width: 768px) {
+    & ul {
+      @apply pl-0;
+    }
+  }
   & hr {
     @apply my-8 border-t border-light-border dark:border-dark-border;
   }

@@ -200,6 +200,12 @@
     content: '';
     @apply absolute left-2.5 top-0 bottom-0 w-0.5 bg-light-timeline-bg dark:bg-dark-timeline-bg z-10;
   }
+
+  @media (max-width: 768px) {
+    &::before {
+      display: none;
+    }
+  }
 }
 
 @utility timeline-item {
@@ -215,9 +221,9 @@
   .dark &::before { border-color: var(--color-dark-bg); }
 
   @media (max-width: 768px) {
-    @apply ml-3 pl-6;
+    @apply ml-0 pl-0;
     &::before {
-      left: -0.45rem;
+      display: none;
     }
   }
 }
