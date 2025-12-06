@@ -551,16 +551,22 @@ aliases = ['resume']
 <div class="about-me-card">
   <div class="timeline-card">
     <div class="about-me-content">
-      <a class="text-2xl font-semibold inline-flex items-center gap-1" href="https://phpconference.com/speaker/valera-reales-jesus/" target="_blank" rel="noopener noreferrer"><abbr title="International PHP Conference">IPC</abbr> 2025
+      <a class="text-2xl font-semibold inline-flex items-center mb-3" href="https://phpconference.com/speaker/valera-reales-jesus/" target="_blank" rel="noopener noreferrer">International PHP Conference&nbsp;
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
           <polyline points="15,3 21,3 21,9"></polyline>
           <line x1="10" y1="14" x2="21" y2="3"></line>
         </svg>
       </a>
-      <p style="margin-top: 10px"><strong>Speaker, Berlin</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming</p>
-      <p><strong>Workshop Leader, Munich</strong> - Hands-On Refactoring Workshop: Modernizing Legacy PHP with Pair Programming</p>
-      <p><strong>Speaker, Munich</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques</p>
+      <br/>
+      <span style="font-size:1.3em; font-weight: bold">IPC 2026 - Berlin</span>
+      <p><strong>Workshop Leader</strong> - Modern PHP in Practice: TDD, Refactoring, and Pair Programming</p>
+      <p><strong>Speaker</strong> - Evolving a Legacy PHP Application: Patterns for Refactoring Success</p>
+      <span style="font-size:1.3em; font-weight: bold">PC 2025 - Munich</span>
+      <p><strong>Workshop Leader</strong> - Hands-On Refactoring Workshop: Modernizing Legacy PHP with Pair Programming</p>
+      <p><strong>Speaker</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques</p>
+      <span style="font-size:1.3em; font-weight: bold">IPC 2025 - Berlin</span>
+      <p><strong>Speaker</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming</p>
     </div>
   </div>
 </div>
