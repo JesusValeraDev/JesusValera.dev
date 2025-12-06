@@ -69,7 +69,7 @@
             background: var(--snowflake-bg-color, #ffffff);
             border-radius: 50%;
             box-shadow: 0 0 ${size/2}px var(--snowflake-shadow-color, #cccccc);
-            animation: snowfall-${Date.now()}-${Math.random()} ${animationDuration}ms linear forwards;
+            animation: snowfall-${Date.now()}-${Math.random()} ${adjustedDuration}ms linear forwards;
             --drift: ${drift}px;
             --fall-distance: ${documentHeight + SCREEN_BUFFER}px;
         `;
