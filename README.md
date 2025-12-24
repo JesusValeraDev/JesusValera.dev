@@ -53,14 +53,14 @@ CSS structure:
 
 ```
 css/
-├── theme.css        # TailwindCSS v4 config (@theme blocks, @source)
-├── base.css         # Base resets, global HTML/body styles
-└── components/      # Component-specific styles
-    ├── base.css     # Common components (badges, buttons)
-    ├── books.css    # Reading list components
+├── theme.css         # TailwindCSS v4 config (@theme blocks, @source)
+├── base.css          # Base resets, global HTML/body styles
+└── components/       # Component-specific styles
+    ├── base.css      # Common components (badges, buttons)
+    ├── books.css     # Reading list components
     ├── catalogue.css # Project catalogue  
-    ├── cv.css       # CV/resume components
-    └── post.css     # Blog post components
+    ├── cv.css        # CV/resume components
+    └── post.css      # Blog post components
 ```
 
 ### Linting & Git hooks
@@ -84,8 +84,9 @@ Colors, font stacks, spacing scales, etc. are defined in `tailwind.config.js` un
   "scripts": {
     "prebuild-css": "node ./scripts/concat-tailwind.js",
     "build-css": "npm run prebuild-css && postcss ./css/tailwind.entry.css -o ./static/tailwind.css --watch",
+    "build-css-dev": "concurrently \"node ./scripts/concat-tailwind.js --watch\" \"postcss ./css/tailwind.entry.css -o ./static/tailwind.css --watch\" --names \"CONCAT,TAILWIND\" --prefix-colors \"yellow,cyan\"",
     "build-css-prod": "npm run prebuild-css && postcss ./css/tailwind.entry.css -o ./static/tailwind.css",
-    "dev": "npm run build-css & zola serve",
+    "dev": "concurrently \"npm run build-css-dev\" \"zola serve\" --names \"CSS,ZOLA\" --prefix-colors \"blue,green\"",
     "lint:css": "stylelint \"css/**/*.{css,scss}\"",
     "prepare": "husky"
   }
