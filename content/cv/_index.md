@@ -577,6 +577,29 @@ aliases = ['resume']
   <div class="timeline-item">
     <div class="timeline-card">
       <div class="timeline-header" style="margin-bottom: 0;">
+        <img src="/cv/dkrisna.webp" alt="D'Krisna Beauty Salon" class="company-logo" loading="lazy">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="https://dkrisna.es/" target="_blank" rel="noopener noreferrer">D'Krisna
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15,3 21,3 21,9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </h3>
+          <div class="job-role">Beauty and wellness salon in Murcia</div>
+        </div>
+      </div>
+      <div class="job-description">
+        <p>Collaborated directly with the client through extensive conversations to understand their vision and business needs. Designed the complete visual identity and user experience from initial concept to final implementation.</p>
+        <p>Developed a modern, bilingual website featuring integrated booking system and responsive design for enhanced client engagement.</p>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <div class="timeline-header" style="margin-bottom: 0;">
         <img src="/cv/bip39.webp" alt="BIP39 Word Selector" class="company-logo" loading="lazy">
         <div class="timeline-info">
           <h3 class="company-name">
@@ -592,7 +615,8 @@ aliases = ['resume']
         </div>
       </div>
       <div class="job-description">
-        <p>Developed a free, privacy-focused web tool for working with BIP39 mnemonics. Enables bidirectional conversion between BIP39 words and binary patterns by typing words or selecting numbers.</p>
+        <p>Developed a privacy-focused web tool for cryptocurrency enthusiasts working with BIP39 mnemonic phrases. Features bidirectional conversion between words and binary patterns with client-side processing.</p>
+        <p>Built with vanilla JavaScript ensuring no data storage or tracking for maximum user security.</p>
       </div>
     </div>
   </div>
@@ -614,7 +638,8 @@ aliases = ['resume']
         </div>
       </div>
       <div class="job-description">
-        <p>Added syntax highlighting, code navigation, editing support, and more for Phel files; published in the JetBrains Marketplace.</p>
+        <p>Developed a comprehensive IntelliJ IDEA plugin written in Kotlin for Phel functional programming language. Implemented syntax highlighting, code navigation, auto-completion, and error detection features.</p>
+        <p>Successfully published in JetBrains Marketplace, serving the growing Phel developer community.</p>
       </div>
     </div>
   </div>
@@ -636,7 +661,8 @@ aliases = ['resume']
         </div>
       </div>
       <div class="job-description">
-        <p>Contributed bug fixes, automated tests, and design improvements; implemented the project’s search engine and refined the webpage.</p>
+        <p>Contributed bug fixes, automated test suites, and design improvements to enhance language stability. Designed and developed the complete project website from scratch with responsive design and documentation.</p>
+        <p>Implemented custom search engine and collaborated with core team to improve developer experience.</p>
       </div>
     </div>
   </div>
@@ -658,7 +684,8 @@ aliases = ['resume']
         </div>
       </div>
       <div class="job-description">
-        <p>Co-designed and developed a PHP modular framework, implementing the dependency resolver, code generator, and event manager system.</p>
+        <p>Co-designed and developed Gacela, a comprehensive PHP modular framework for splitting large applications. Implemented core components including dependency resolver, code generator, and event manager system.</p>
+        <p>Collaborated on design patterns and documentation, promoting clean architecture principles for scalable development.</p>
       </div>
     </div>
   </div>
