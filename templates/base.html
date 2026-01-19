@@ -220,7 +220,7 @@
   {% block footer %}
   <footer class="border-t border-light-border dark:border-dark-header-footer-border py-8 bg-light-catalogue-bg/80 dark:bg-dark-header-bg">
     <div class="container-custom flex items-center justify-between max-md:flex-col gap-4">
-      <span class="text-base text-light-text-secondary dark:text-dark-text-primary">© 2025 Jesus Valera Reales</span>
+      <span class="text-base text-light-text-secondary dark:text-dark-text-primary">© {{ now() | date(format="%Y") }} Jesus Valera Reales</span>
       <div class="flex items-center gap-4 max-md:justify-center">
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="https://github.com/JesusValeraDev" target="_blank" aria-label="Visit my GitHub profile" title="GitHub">
           <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
