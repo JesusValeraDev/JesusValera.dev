@@ -595,6 +595,17 @@ aliases = ['resume']
         <p>Collaborated directly with the client through extensive conversations to understand their vision and business needs. Designed the complete visual identity and user experience from initial concept to final implementation.</p>
         <p>Developed a modern, bilingual website featuring integrated booking system and responsive design for enhanced client engagement.</p>
       </div>
+      <div class="project-gallery">
+        <a href="/cv/projects/dkrisna1.webp">
+          <img src="/cv/projects/dkrisna1.webp" alt="DKrisna Screenshot 1" loading="lazy">
+        </a>
+        <a href="/cv/projects/dkrisna2.webp">
+          <img src="/cv/projects/dkrisna2.webp" alt="DKrisna Screenshot 2" loading="lazy">
+        </a>
+        <a href="/cv/projects/dkrisna3.webp">
+          <img src="/cv/projects/dkrisna3.webp" alt="DKrisna Screenshot 3" loading="lazy">
+        </a>
+      </div>
     </div>
   </div>
   <div class="timeline-item">
@@ -617,6 +628,17 @@ aliases = ['resume']
       <div class="job-description">
         <p>Developed a privacy-focused web tool for cryptocurrency enthusiasts working with BIP39 mnemonic phrases. Features bidirectional conversion between words and binary patterns with client-side processing.</p>
         <p>Built with vanilla JavaScript ensuring no data storage or tracking for maximum user security.</p>
+      </div>
+      <div class="project-gallery">
+        <a href="/cv/projects/bip1.webp">
+          <img src="/cv/projects/bip1.webp" alt="BIP39 Screenshot 1" loading="lazy">
+        </a>
+        <a href="/cv/projects/bip2.webp">
+          <img src="/cv/projects/bip2.webp" alt="BIP39 Screenshot 2" loading="lazy">
+        </a>
+        <a href="/cv/projects/bip3.webp">
+          <img src="/cv/projects/bip3.webp" alt="BIP39 Screenshot 3" loading="lazy">
+        </a>
       </div>
     </div>
   </div>
@@ -641,6 +663,17 @@ aliases = ['resume']
         <p>Developed a comprehensive IntelliJ IDEA plugin written in Kotlin for Phel functional programming language. Implemented syntax highlighting, code navigation, auto-completion, and error detection features.</p>
         <p>Successfully published in JetBrains Marketplace, serving the growing Phel developer community.</p>
       </div>
+      <div class="project-gallery">
+        <a href="/cv/projects/phelplugin1.webp">
+          <img src="/cv/projects/phelplugin1.webp" alt="Phel Plugin Screenshot 1" loading="lazy">
+        </a>
+        <a href="/cv/projects/phelplugin2.webp">
+          <img src="/cv/projects/phelplugin2.webp" alt="Phel Plugin Screenshot 2" loading="lazy">
+        </a>
+        <a href="/cv/projects/phelplugin3.webp">
+          <img src="/cv/projects/phelplugin3.webp" alt="Phel Plugin Screenshot 3" loading="lazy">
+        </a>
+      </div>
     </div>
   </div>
   <div class="timeline-item">
@@ -661,8 +694,19 @@ aliases = ['resume']
         </div>
       </div>
       <div class="job-description">
-        <p>Contributed bug fixes, automated test suites, and design improvements to enhance language stability. Designed and developed the complete project website from scratch with responsive design and documentation.</p>
-        <p>Implemented custom search engine and collaborated with core team to improve developer experience.</p>
+        <p><strong>Language Development:</strong> Contributed bug fixes, automated test suites, and design improvements to enhance language stability and reliability.</p>
+        <p><strong>Website Design:</strong> Designed and developed the complete project website from scratch with responsive design, documentation, and custom search engine functionality.</p>
+      </div>
+      <div class="project-gallery">
+        <a href="/cv/projects/phel1.webp">
+          <img src="/cv/projects/phel1.webp" alt="Phel Lang Screenshot 1" loading="lazy">
+        </a>
+        <a href="/cv/projects/phel2.webp">
+          <img src="/cv/projects/phel2.webp" alt="Phel Lang Screenshot 2" loading="lazy">
+        </a>
+        <a href="/cv/projects/phel3.webp">
+          <img src="/cv/projects/phel3.webp" alt="Phel Lang Screenshot 3" loading="lazy">
+        </a>
       </div>
     </div>
   </div>
@@ -686,6 +730,17 @@ aliases = ['resume']
       <div class="job-description">
         <p>Co-designed and developed Gacela, a comprehensive PHP modular framework for splitting large applications. Implemented core components including dependency resolver, code generator, and event manager system.</p>
         <p>Collaborated on design patterns and documentation, promoting clean architecture principles for scalable development.</p>
+      </div>
+      <div class="project-gallery">
+        <a href="/cv/projects/gacela1.webp">
+          <img src="/cv/projects/gacela1.webp" alt="Gacela Screenshot 1" loading="lazy">
+        </a>
+        <a href="/cv/projects/gacela2.webp">
+          <img src="/cv/projects/gacela2.webp" alt="Gacela Screenshot 2" loading="lazy">
+        </a>
+        <a href="/cv/projects/gacela3.webp">
+          <img src="/cv/projects/gacela3.webp" alt="Gacela Screenshot 3" loading="lazy">
+        </a>
       </div>
     </div>
   </div>
