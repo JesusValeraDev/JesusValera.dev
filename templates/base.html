@@ -126,8 +126,12 @@
     }
 
     function loadSeasonalScripts() {
-        const currentMonth = new Date().getMonth();
-        const isWinter = currentMonth === 11 || currentMonth === 0; // December or January
+        const now = new Date();
+        const currentMonth = now.getMonth();
+        const currentDay = now.getDate();
+
+        // December 20 - January 5
+        const isWinter = (currentMonth === 11 && currentDay >= 20) || (currentMonth === 0 && currentDay <= 5);
 
         if (isWinter) {
             loadScript('/js/effects/snow.js');
