@@ -54,12 +54,10 @@ and persist it in the database by creating, updating or removing elements.
 
 <div class="separator"></div>
 
-I hope you will be able to write from now on queries and mutations for your GraphQL API, in order to do that first you
-should understand the DB architecture and relations between elements, but that is the basic idea.
-In the end, it is very similar to how Restful works, but with another syntax.
+To write queries and mutations effectively, you need to understand the database architecture and relations between
+elements. Beyond that, GraphQL works similarly to REST, just with different syntax.
 
 ![graphql logo](/images/2022-03-16/4.webp)
 
-I recommend you to take a look at the [GraphQL documentation](https://graphql.org/) for more information, not only from
-a black-box side perspective but also as a white box and learn more about other elements like `enums`, `interfaces`.<br>
-How to create and manage new entities, even building up new architectures.
+The [GraphQL documentation](https://graphql.org/) covers more advanced topics like `enums`, `interfaces`, entity
+management, and schema design. Worth checking out if you're building a GraphQL API from scratch.

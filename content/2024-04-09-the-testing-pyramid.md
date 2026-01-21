@@ -11,56 +11,109 @@ static_thumbnail = "/images/2024-04-09/1.webp"
 subtitle = "How to structure your test suite 🗼"
 +++
 
-The Testing Pyramid (also known as _Cohn Pyramid_) is a concept that visualizes the ideal distribution of different
-types of tests within a testing strategy. It resembles a pyramid with three layers: **Unit** at the base, followed by
-**Service** in the middle, and finally, **User Interface** tests on top.
+The Testing Pyramid (also known as _Cohn Pyramid_) visualizes the ideal distribution of different types of tests. It has
+three layers: **Unit** at the base, **Integration** in the middle, and **E2E** tests on top.
+
+The pyramid shape matters. As you move up, tests become slower, more expensive, and more brittle. But they also provide
+more confidence that the system works as a whole. The key is balancing speed and cost at the bottom with confidence at
+the top.
 
 ![cohn-pyramid](/images/2024-04-09/1.webp)
 
-### Unit Tests
+## Unit Tests (50-60%)
 
-Ideally between **50-60%** of all tests in our system should belong to this category. They are fast, focused, and
-inexpensive to maintain.
+Unit tests are small, focused tests that validate individual components in isolation. They're fast to run and cheap to
+maintain.
 
-- Are small, focused tests that validate the behavior of individual components or units of code in isolation
-- Help ensure that each function, method, or class behaves correctly under various conditions
+They verify that each function, method, or class behaves correctly under different conditions. Because they run in
+milliseconds, you can run them constantly during development.
 
-### Service Tests
+```php source
+public function test_calculate_discount(): void
+{
+    $calculator = new PriceCalculator();
 
-A range of **20-40%** is a good number of tests that should belong to this category. They are broader in scope than unit
-tests and may involve testing across multiple layers of the application, such as testing database interactions or API
-endpoints.
+    $result = $calculator->calculateDiscount(100, 20);
 
-- Verify interactions between different components or modules of the system
-- Unlike unit tests, which isolate specific units of code, service tests examine how these units work together
-- Help identify issues that may arise when different components interact with each other
+    self::assertSame(80, $result);
+}
+```
 
-### UI Tests
+Unit tests should form the foundation of your test suite. They're the fastest feedback loop - run them on every save.
+They also force better design by making you write testable code with clear dependencies.
 
-About **0-10%** of all tests should belong to this category. They are the slowest and most brittle tests to write and
-maintain, but they provide the highest level of confidence by simulating real user scenarios.
+The majority of your edge cases, error handling, and boundary conditions should be covered at this level. Testing a
+division by zero? Unit test. Testing negative numbers? Unit test. Don't push these scenarios up to slower test layers.
 
-- These tests interact with the application as a user would, often through 3rd party applications like Selenium or
-  Cypress
-- Validate the flow of the application and help ensure that all components work together seamlessly in a production-like
-  environment
-- They are much slower to write and execute than an integration tests and are more likely to break due to changes in
-  the application
+## Integration Tests (20-40%)
 
-## Conclusion
+Integration tests verify interactions between different components or modules. They're broader than unit tests and may
+involve multiple layers of the application, such as database interactions or API endpoints.
 
-The Testing Pyramid promotes a balanced testing strategy where the majority of tests are fast, focused, and inexpensive
-to maintain (Unit tests), while fewer tests are allocated to higher layers (Service and UI tests). This approach ensures
-efficient test coverage while minimizing the time and effort required for testing, ultimately leading to faster feedback
-cycles and more robust software.
+These tests catch integration issues - problems that appear when components that work individually fail when combined.
+
+```php source
+public function test_create_order_persists_to_database(): void
+{
+    $orderService = new OrderService($this->database);
+
+    $order = $orderService->createOrder($items, $userId);
+
+    $persisted = $this->database->findOrder($order->id);
+    self::assertEquals($order->total, $persisted->total);
+}
+```
+
+Integration tests are slower because they involve real dependencies - databases, file systems, external services. They
+catch issues like incorrect SQL queries, serialization problems, or misconfigured connections.
+
+Don't test every possible scenario at this level. Test the happy path, major error cases, and critical workflows. Leave
+the edge cases to unit tests.
+
+## E2E Tests (0-10%)
+
+End-to-end tests interact with the application as a user would, typically using tools like Selenium or Cypress. They're
+the slowest and most brittle tests, but they validate complete user flows from start to finish.
+
+```javascript
+test('user can complete checkout', async ({ page }) => {
+    await page.goto('/products');
+    await page.click('text=Add to Cart');
+    await page.click('text=Checkout');
+    await page.fill('#card-number', '4242424242424242');
+    await page.click('text=Pay');
+
+    await expect(page.locator('text=Order confirmed')).toBeVisible();
+});
+```
+
+E2E tests are expensive to write and maintain. They break when CSS classes change, when animations slow down rendering,
+or when network latency increases. A single E2E test can take 10-30 seconds to run, compared to milliseconds for unit
+tests.
+
+Use them only for critical user journeys. Authentication flow? Yes. Checkout process? Yes. Every possible form
+validation error? No - test those at the unit level.
+
+## The Anti-Pattern: Inverted Pyramid
+
+Some teams end up with an inverted pyramid - mostly E2E tests, few unit tests. This happens when developers skip unit
+testing and rely on E2E tests to catch everything.
+
+The result of that are slow test suites that take 30+ minutes to run, frequent false positives from flaky tests, and
+difficulties with debugging because failures don't point to specific components.
+
+If your test suite takes more than a few minutes to run, you probably have too many integration or E2E tests.
 
 <div class="separator"></div>
 
-Remember which kind of project you are - you won't have the same testing strategy approach whether the project you are
-working on is legacy or greenfield. Depending on it, those values may vary.
+These percentages vary depending on your project. Legacy codebases coupled with third-party libraries often make unit
+tests difficult to write.
 
-In legacy projects coupled with third-party libraries (like the database), sometimes it is tough to write unit tests.
-The recommendation is to follow the inverse order, I mean, to not break the current functionality, due to the fragility,
-it might be worth writing first a Service or UI tests, and having this
-security net, you can then refactorize the code and finally write the unit tests. Writing these more general tests will
-also bring you experience in how everything interacts in the application domain.
+For legacy projects, invert the pyramid temporarily. Start with Integration or E2E tests to prevent breaking existing
+functionality. Once you have this safety net, refactor the code and add unit tests. The broader tests give you
+confidence to make changes, while also teaching you how the system works.
+
+Eventually, migrate toward the proper pyramid. As you refactor and decouple the code, add unit tests and remove the
+broader tests that become redundant.
+
+The goal is still a fast, maintainable test suite dominated by unit tests.
