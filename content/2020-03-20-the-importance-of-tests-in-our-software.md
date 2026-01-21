@@ -11,50 +11,119 @@ static_thumbnail = "/images/2020-03-20/1.webp"
 subtitle = ""
 +++
 
-If you've ever built software, you know how exciting it is to see your code come to life. But how do you make sure it
-works as expected in the long term? That's where testing comes in.
-
-Writing tests ensures that every part of your program functions correctly under different conditions. Think of tests as
-a built-in safety net for your code: ensures correctness, catches bugs early, make refactoring safer, encourage modular
-and maintainable code and boost confidence in the code.
+Writing tests is one of the most effective ways to ensure your software works as intended. Tests verify that each part
+of your program functions correctly under different conditions, acting as a safety net that catches issues before they
+reach production.
 
 ![programming comic joke](/images/2020-03-20/1.webp)
 
-Here's why testing should be a non-negotiable part of your development process:
 
-### ✅ Ensuring Correctness
+### Verification and Early Detection
 
-At the core of every great software product is reliability. You want to be sure that your **software behaves as
-expected**; whether handling user input, processing data, or integrating with other systems.
+Tests **verify correctness and catch bugs before they reach production**. The cost of fixing a bug increases
+exponentially as it moves through the development lifecycle - a bug caught during development takes minutes to fix,
+while the same bug in production can take days and could have a potential cost.
 
-### 🐞 Catching Bugs Early
+```php source
+public function test_applies_discount_correctly(): void
+{
+    $result = $calculator->calculateDiscount(100, 20);
 
-Bugs are inevitable. But the **earlier you catch them, the cheaper and easier they are to fix**.
-Testing helps identify these issues before they make their way into production.
+    self::assertSame(80, $result);
+}
+```
 
-### 🛠️ Making Refactoring Safer
+This simple test catches calculation errors, edge cases, and regressions immediately. Without it, bugs slip through to
+QA or production where they're exponentially more expensive to fix.
 
-Refactoring is the process of improving your code's structure without changing its behavior. But how do you make sure
-that your optimizations don't break existing functionality? **Tests act as a safety net**, ensuring that everything
-still works after changes.
+### Safe Refactoring
 
-### 🧩 Encouraging Modular, Maintainable Code
+Tests give you **confidence to improve code structure without breaking functionality**. Without tests, refactoring is
+risky and developers avoid it, leading to code degradation over time.
 
-Good **testing practices naturally lead to better software design**. Writing tests forces you to break your code into
-smaller, independent components-each of which can be tested separately.
+```php source
+// You can safely refactor this:
+return $price - ($price * $percentage / 100);
 
-### 🏡 Boosting Confidence in Your Code
+// To this:
+return $price * (100 - $percentage) / 100;
 
-Writing tests encourages you **to break down your code into smaller, more manageable parts**. Each part can be tested
-independently, which makes it easier to identify and fix problems.
+// Tests ensure the behavior remains identical
+```
 
-When your tests cover different scenarios -including edge cases- you can roll out updates without worrying about
-breaking something unexpectedly.
+When your test suite passes, you know the refactoring didn't introduce bugs. This enables continuous improvement of the
+codebase.
+
+### Better Design and Documentation
+
+Writing testable code forces you to **break code into smaller, independent components** with clear responsibilities.
+Tests also serve as executable documentation showing how the code should be used.
+
+```php source
+public function test_order_workflow(): void
+{
+    $order = new Order($items);
+    $order->applyDiscount(20);
+    $order->addShipping(10);
+
+    self::assertSame(90, $order->total());
+}
+```
+
+This test documents the expected workflow and demonstrates the API. Anyone reading it understands how to use the `Order`
+class without digging through implementation details.
+
+## Common Mistakes When Writing Tests
+
+### Testing Implementation Details
+
+One of the most common mistakes is testing how something works instead of what it does. **Tests should verify behavior,
+not implementation**. If you refactor the internal logic without changing the public API, your tests shouldn't break.
+
+```php source
+// BAD - Testing implementation details
+public function test_uses_percentage_calculation(): void
+{
+    $calculator = $this->createPartialMock(PriceCalculator::class, ['getPercentageValue']);
+    $calculator->expects($this->once())->method('getPercentageValue');
+
+    $calculator->calculateDiscount(100, 20);
+    // This test breaks when you refactor the internal logic
+}
+
+// GOOD - Testing behavior
+public function test_applies_discount_correctly(): void
+{
+    $calculator = new PriceCalculator();
+
+    $result = $calculator->calculateDiscount(100, 20);
+
+    self::assertSame(80, $result);
+    // This test only cares about the result, not how it's calculated
+}
+```
+
+The first test will break if you change the internal implementation, even if the behavior remains correct. The second
+test only verifies the outcome, making it more maintainable.
+
+### Creating Brittle Tests
+
+Tests that break whenever you make minor changes are worse than no tests at all. They slow down development and
+eventually get ignored or deleted. Common causes include:
+
+- Hardcoding values that should be dynamic
+- Testing private methods directly
+- Over-mocking dependencies
+- Asserting on exact string matches instead of patterns
+
+### Not Testing the Right Things
+
+Some developers chase code coverage metrics without thinking about what they're actually testing. **You don't need to
+test framework code, simple getters/setters, or language features**. Focus on business logic, edge cases, and error
+handling.
 
 <div class="separator"></div>
 
-Writing tests in software development isn't just a good practice-it's an investment in the quality, stability, and
-longevity of your code. **It saves time, reduces stress, and leads to better user experiences**. Plus, **testing skills
-are highly valued** in the tech industry.
-
-If you're not already writing tests, now it is the perfect time to start! 💯
+Tests are not just about finding bugs. They're about designing better software, maintaining confidence in your codebase,
+and reducing the cost of change over time. The initial investment in writing tests pays off in the long run through
+fewer production incidents, easier maintenance, and faster development cycles.
