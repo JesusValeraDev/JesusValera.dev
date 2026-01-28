@@ -1,6 +1,6 @@
 +++
 title = "Functional Tests"
-description = "Differences between Functional tests: unit, integration and system tests"
+description = "Differences between Functional tests: unit, integration and e2e tests"
 date = 2023-08-26
 
 [taxonomies]
@@ -8,35 +8,24 @@ tags = ['Testing', 'Test types', 'Unit Testing', 'Programming']
 
 [extra]
 static_thumbnail = "/images/2023-08-26/1.webp"
-subtitle = "Unit, Integration and System tests"
+subtitle = "Unit, Integration and E2E tests"
 +++
 
 ![functional testing types](/images/2023-08-26/1.webp)
 
-A test is an empirical assertion that demonstrates the behaviour of an expected functionality from some assertion.
+A test is an empirical assertion that verifies whether a piece of functionality behaves as expected under specific conditions.
 
-Tests can be classified by using the "box" approach.
+Tests can be classified using the "box" approach, which categorizes tests based on how they interact with the system from the tester's perspective. There are two main approaches: `white-box` and `black-box` testing.
 
-This approach divides the tests on how they interact with the system from the point of view of the
-tester. There are two big approaches, the white and the black-box.
+The `white-box` approach occurs when the tester has access to the source code. In this scenario, the tester focuses on testing different code paths and internal structures to ensure comprehensive coverage.
 
-The `white-box` approach happens when the tester has access to the source code, in this scenario, the tester will focus
-on testing all possible combinations to assert the test being written will cover the different code paths.
+In the `black-box` approach, the system's internal workings are hidden from the tester. Here, the tester can only provide input and observe output, focusing on whether the application behaves correctly from an external perspective, without concern for the internal implementation details.
 
-In the `black-box` approach, on the contrary, the system is opaque, what happens inside the application is "magic", in
-this scenario, the tester can only send an input and expect some output, the tester is not worried about what happens
-internally, but how the application reacts based on the sent input.
+However, there is another, more specific classification: `functional` and `non-functional` tests.
 
-However, there is another classification for tests, which is a bit more specific, which are `functional`
-and `non-functional` tests.
+`Non-functional` tests refer to aspects that are not related to specific functions or user actions. They can be divided into `security`, `performance`, `usability`, and `compatibility` testing.
 
-`Non-functional` tests refers to aspects that are not related to a specific function or user action. They can be divided
-into `security`, `performance`, `usability` and `compatibility`.
-
-`Functional` tests refers to activities that verify a specific action or function of the code. They can be divided into
-`unit`, `integration` and `system` tests. From a tester point of view, we could consider the functional tests more
-important as we will spend most of our time on these kind of test rather than non-functional, also, it is tremendous
-important to master them to write cleaner code.
+`Functional` tests refer to activities that verify specific actions or functions of the code. They can be divided into `unit`, `integration`, and `e2e` tests. From a tester's point of view, functional tests are more fundamental as we spend most of our time writing these types of tests rather than non-functional ones. Additionally, it is tremendously important to master them to write cleaner code.
 
 ## Differences between functional tests
 
@@ -44,66 +33,58 @@ important to master them to write cleaner code.
 
 ![given when then](/images/2023-08-26/2.webp)
 
-A unit test is a verification between an input and an expected output, it is an isolated logic and decoupled from the
-outside. We could consider a unit test as the public method from one API class. Usually, it is a good idea to use
-interfaces to invert the dependencies in our application (~DIP: Dependency Inversion Principle).
+A unit test verifies the relationship between an input and an expected output for a single, isolated piece of logic that is decoupled from external dependencies. You can think of a unit test as testing one public method of a class. It's usually a good idea to use interfaces to invert dependencies in your application (following the Dependency Inversion Principle).
 
-Indeed, we can also depend on external dependencies using stubs or mocks.
+When unit tests need to interact with external dependencies, we use stubs or mocks instead of real implementations.
 
-The benefit of using unit test is that they took less time on execution, for that reason, they can be launched more
-often. Also, they force you to write less coupled code, doing better software design.
+The benefit of unit tests is that they execute quickly, allowing them to be run more frequently. They also force you to write loosely coupled code, leading to better software design.
 
-So, a unit test is, therefore, the demonstration of an isolated functionality from the outside.
+In essence, a unit test demonstrates that an isolated piece of functionality works correctly in isolation.
 
-The unit tests give you:
+Unit tests provide you with:
 
 - A simple way to test your code exhaustively and independently
-- They command you to the portion of code that causes the problem
+- Quick feedback that points you directly to the problematic code section
 
-A test is not a unit test if…
+A test is not a unit test if it
 
-- it performs queries to the database
-- it connects in any way with the network
-- it operates with a file system
-- it cannot be launched in parallel with other unit tests
-- you need to modify any file (config file for example) to be able to run it
+- performs queries to a database
+- connects to the network in any way
+- operates with the file system
+- cannot be run in parallel with other unit tests
+- requires you to modify configuration files to run
 
 They are also known as ‘white box testing’. We know the internal code from the method.
 
-The tests are focused on the object state.
+These tests focus on verifying the object's behavior and state.
 
-There are frameworks for automatizing this task, the most popular is the xUnit family: JUnit, PHPUnit…
+There are frameworks for automating unit testing, with the most popular being the xUnit family: JUnit, PHPUnit, NUnit, etc.
 
 ### Integration test
 
-The integration tests are similar to the units except that they are focused on proving the interaction between two or
-more components together, they could be classes, modules, etc…
+Integration tests are similar to unit tests except that they focus on verifying the interaction between two or more components working together, such as classes, modules, services, etc.
 
-Further, this kind of tests can connect to the database, to the network, filesystem, etc.
+Unlike unit tests, integration tests can connect to databases, networks, file systems, and other external dependencies.
 
 The integration tests are slower than unit tests due to their complexity, besides, sometimes it’s needed to load
 specific configuration in order to work properly.
 
-These kinds of tests are dependent on the environment, I mean, if a test fails, the problem could be a different
-configuration from one environment to another.
+These tests are environment-dependent, meaning that if a test fails, the problem could be due to different configurations between environments.
 
 You can even create integration tests with PHPUnit, the `Unit` in the name is just a convention.
 
-### System test
+### E2E test
 
-The system tests are called end-to-end (E2E) or browser testing.
+The E2E tests (End-to-End) are also called system tests or browser testing.
 
-These kinds of tests do not check the how, but the what, I mean, if that specific test executes some magic but the
-expected result is whatever we want.
+These tests focus on what the application does rather than how it does it. In other words, they verify the expected behavior from the user's perspective, regardless of the internal implementation details.
 
-In other words, we do not care what the developer did, we care about the output as we were the client.
+E2E tests simulate real user interactions and validate that the entire system works correctly from start to finish.
 
 ![functional test](/images/2023-08-26/3.webp)
 
-For example, if we send a form with a wrong value, we expect to see an error message in a specific field, we do not care
-about what regular expression is and why it failed.
+For example, if we submit a form with an invalid value, we expect to see an error message in a specific field. We don't care about the underlying validation logic or regular expressions—only that the user sees the appropriate feedback.
 
-Those tests are also known as “black-box testing”. We do not know the code we are testing. They focus on object
-behaviour.
+E2E tests are also known as “black-box testing”. We don't need to know the internal code structure. They focus on testing the application's behavior from the user's perspective.
 
-One of the best known is Selenium.
+Popular E2E testing tools include Selenium, Cypress, and Playwright.
