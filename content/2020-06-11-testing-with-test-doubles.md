@@ -18,8 +18,8 @@ subtitle = "Dummy, Stub, Spy, Mock or Fake"
 A Test Double is an object that can stand-in for a real object in a test, similar to how a stunt double stands in for an
 actor in a movie.
 
-As I wrote in [“The importance of the Tests in our Software”](/the-importance-of-tests-in-our-software), there are
-several types of tests. They are also known as Test Doubles instead of “Mocks”.
+As I wrote in ["The importance of the Tests in our Software"](/the-importance-of-tests-in-our-software), there are
+several types of tests. They are also known as Test Doubles instead of "Mocks".
 
 ### The five types of Test Doubles are:
 
@@ -28,7 +28,7 @@ several types of tests. They are also known as Test Doubles instead of “Mocks�
 - **Dummy**: It is used as a placeholder when an argument needs to be filled in.
 - **Stub**: It provides fake data to the SUT (System Under Test).
 - **Spy**: It records information about how the class is being used.
-- **Mock**: It defines an expectation of how it will be used. It will cause failure if the expectation isn’t met.
+- **Mock**: It defines an expectation of how it will be used. It will cause failure if the expectation isn't met.
 - **Fake**: It is an actual implementation of the contract but is unsuitable for production.
 
 ![bodo istvan](/images/2020-06-11/3.webp)
@@ -37,18 +37,18 @@ several types of tests. They are also known as Test Doubles instead of “Mocks�
 > The idea is to make it understandable to everyone familiar with OOP.
 
 ## Dummy
-The dummies are objects that our SUT depends on, but they are never used. We don’t care about them because they are
+The dummies are objects that our SUT depends on, but they are never used. We don't care about them because they are
 irrelevant to the test scope.
 
-Let’s imagine we have a service with a dependency that is irrelevant in the current test. We can perform something
+Let's imagine we have a service with a dependency that is irrelevant in the current test. We can perform something
 similar to the following snippet:
 
-```java
+```kotlin
 final class Service
 {
     public final String OUTPUT = 'something';
 
-    public function format(?Dependency dependency): String
+    public function format(dependency: Dependency?): String
     {
         // 'dependency' won't interfere in the expected result.
         return self::OUTPUT;
@@ -70,14 +70,14 @@ final class ServiceTest extends TestCase
 ## Stub
 A stub is an object which returns fake data.
 
-Let’s imagine our service depends on a user model, then the service does something, and finally, it returns the user’s
+Let's imagine our service depends on a user model, then the service does something, and finally, it returns the user's
 UUID.
 We can create a stub object with fake values to assert the service works as expected.
 
-```java
+```kotlin
 final class Service
 {
-    public function doSomething(UserModelInterface user): Int
+    public function doSomething(user: UserModelInterface): Int
     {
         /* Do things */
         return user.uuid;
@@ -87,7 +87,7 @@ final class Service
 
 To test this service, we can create a stub of the user and check if the response is what we were expecting.
 
-```java
+```kotlin
 final class ServiceTest extends TestCase
 {
     public function testDoSomething(): void
@@ -122,17 +122,17 @@ the messages.
 The point of this spy is to have much more knowledge of the internal object state in exchange for deeper coupling, which
 could be problematic in the future because it makes our tests more fragile.
 
-```java
+```kotlin
 interface LoggerInterface
 {
-    public function log(String message): void;
+    public function log(message: String): void;
 }
 
 final class LoggerSpy implements LoggerInterface
 {
     public Array<String> messages = [];
 
-    public function log(String message): void
+    public function log(message: String): void
     {
         this.messages.add(message);
     }
@@ -144,7 +144,7 @@ final class UserNotifier
         private LoggerInterface logger,
     ) {}
 
-    public function registerUser(UserModelInterface user): void
+    public function registerUser(user: UserModelInterface): void
     {
         this.logger.log("Notifying the user: {user.name()}");
         // ...
@@ -154,7 +154,7 @@ final class UserNotifier
 
 The following would be the implementation of the spy in a test:
 
-```java
+```kotlin
 final class UserNotifierTest extends TestCase
 {
     public function testLogMessage(): void
@@ -177,83 +177,71 @@ final class UserNotifierTest extends TestCase
 A mock is an object that is **capable of controlling both indirect input and output**, and it has a mechanism for
 automatic **assertion of expectations and results**.
 
-Imagine the ShoppingCart class calls the database and performs big and complex functions. For this reason, we cannot
-unit test this class correctly due to the coupling.
+The key difference between a mock and a stub is that a mock **verifies behavior**: it sets expectations about how the
+collaborator should be used (which methods are called, how many times, with what arguments) and the test **fails if
+those expectations aren't met**.
 
-```java
-final class ShoppingService
+Imagine we have a `PaymentService` that processes payments and must notify the user via email after a successful
+payment. We want to verify that the notification is actually sent.
+
+```kotlin
+interface NotificationServiceInterface
 {
-    public function calculateAmount(Lines lines): Float
+    public function sendEmail(to: String, subject: String, body: String): void;
+}
+
+final class PaymentService
+{
+    public function __construct(
+        private NotificationServiceInterface notifier,
+    ) {}
+
+    public function processPayment(user: User, amount: Float): void
     {
-        Float amount = 0;
-
-        /** Complex code to test, we need a mock for this class */
-        Array<Line> linesTransformed = ShoppingCart::transform(lines);
-        foreach (Line line : linesTransformed) {
-            amount += line.price();
-        }
-
-        return amount;
+        // Process the payment...
+        
+        // Notify the user
+        this.notifier.sendEmail(
+            user.email(),
+            "Payment Confirmed",
+            "Your payment of {amount} has been processed."
+        );
     }
 }
 ```
 
-In this kind of situations, mocking is the best option if we cannot modify this class easily (maybe the class is used in
-different parts), and it could take too long to refactorize.
+In this test, we use a mock to **verify that `sendEmail()` is called exactly once** with the expected arguments.
+If the method isn't called, or is called with wrong arguments, the test fails:
 
-My favourite solution for this is “[extract method refactoring](https://refactoring.guru/extract-method)”:
-
-```java
-class ShoppingService // Not final anymore because of the mock!!
+```kotlin
+final class PaymentServiceTest extends TestCase
 {
-    public function calculateAmount(Lines lines): Float
+    public function testProcessPaymentSendsNotification(): void
     {
-        Float amount = 0;
+        User user = new User(email: 'jesus@example.com');
 
-        /** Complex code to test, we need a mock for this class */
-        Array<Line> linesTransformed = this.getShoppingCart(lines);
-        foreach (Line line : linesTransformed) {
-            amount += line.price();
-        }
+        MockNotificationService notifier = this.createMock(NotificationServiceInterface::class);
+        notifier
+            .expects(this.once()) // Expectation: must be called exactly once!
+            .method('sendEmail')
+            .with(
+                'jesus@example.com',
+                'Payment Confirmed',
+                this.stringContains('100.00')
+            );
 
-        return amount;
-    }
+        PaymentService service = new PaymentService(notifier);
+        service.processPayment(user, 100.00);
 
-    /**
-     * Protected to have access in the mock object.
-     *
-     * @codeCoverageIgnore
-     */
-    protected function getShoppingCart(Lines lines): Array
-    {
-        return ShoppingCart::transform(lines);
+        // No assertion needed! The mock itself verifies the expectation.
+        // If sendEmail() wasn't called (or called incorrectly), the test fails.
     }
 }
 ```
 
-And this is the mock:
-
-```java
-final class LoggerTest extends TestCase
-{
-    public function testMovieBudgetFactory(): void
-    {
-        MockShoppingService service = this.createMock(ShoppingService::class);
-        service
-            .method('getShoppingCart') // Overriding the method.
-            .willReturn([100, 200, 300]);
-
-        Lines stubLines = new Lines(null);
-        Float totalAmount = service.calculateAmount(stubLines);
-
-        self.assertEquals(600, totalAmount);
-    }
-}
-```
-
-> This methodology is very handy when we want to refactor a class step-by-step, but we could go further and extract that
-> logic in a new class, then when the class `ShoppingService` is created, just injecting the dependency via constructor
-> would help us to separate the logic.
+> Notice that unlike stubs (which just return fake data), mocks **verify interactions**. The `expects(this.once())`
+> sets up an expectation that will be automatically verified when the test ends. This is powerful for testing
+> side effects like sending emails, logging, or calling external services.
 
 ## Fake
 A fake is a simpler implementation of real objects.
@@ -264,15 +252,15 @@ our application limit (repositories or queues, for example).
 As you can observe in the first picture (the diagram), a fake is not in the hierarchical line within the dummy, stub,
 spy or mock. This is because a fake can behave like a dummy, stub, spy or mock for our concrete use case.
 
-```java
+```kotlin
 interface UserRepositoryInterface
 {
-    public function getUserById(String uuid): User;
+    public function getUserById(uuid: String): User;
 }
     
 final class FakeUserRepository implements UserRepositoryInterface
 {
-    public function getUserById(String uuid): UserModel
+    public function getUserById(uuid: String): UserModel
     {
         return new User(uuid, 'Jesus', "['ADMIN_ROLE']");
     }
