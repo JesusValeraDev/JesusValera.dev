@@ -57,7 +57,7 @@ creator = "JesusValeraDev"
 # Menu items
 [[extra.menu]]
 name = "Writing"
-url = ""
+url = "writing"
 
 [[extra.menu]]
 name = "Bookshelf"

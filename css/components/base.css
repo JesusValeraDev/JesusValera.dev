@@ -54,6 +54,32 @@
   @apply opacity-40 mx-0.5 select-none;
 }
 
+@utility pagination {
+  @apply flex items-center justify-center gap-4 font-mono text-xs mt-8 mb-4;
+}
+
+@utility pagination-btn {
+  @apply inline-flex items-center px-3 py-1.5 rounded text-light-link dark:text-dark-link no-underline;
+  border: 1px solid var(--color-light-border);
+  transition: border-color 150ms ease, color 150ms ease;
+  &:hover {
+    border-color: var(--color-light-text-secondary);
+    @apply text-light-text-primary dark:text-dark-text-primary no-underline;
+  }
+  .dark & {
+    border-color: var(--color-dark-border);
+  }
+}
+
+@utility pagination-btn--disabled {
+  @apply opacity-35 cursor-default;
+  pointer-events: none;
+}
+
+@utility pagination-info {
+  @apply text-light-text-secondary dark:text-dark-text-secondary tabular-nums;
+}
+
 @utility main-offset-md {
   @media (min-width: 768px) {
     body & {

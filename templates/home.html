@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+{%- set writing = get_section(path="writing/_index.md") -%}
+{%- set first_posts = writing.pages | slice(end=2) -%}
+{% for page in first_posts %}
+  {% if page.extra.static_thumbnail %}
+  <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
+  {% endif %}
+{% endfor %}
+{% endblock scripts %}
+
+{% block seo -%}
+  {{ super() }}
+
+  {%- set og_title = "Home" -%}
+  {% if config.title -%}
+    {% set title = "Home | " ~ config.title -%}
+  {% else -%}
+    {% set title = "Home" -%}
+  {% endif -%}
+
+  {{ macros::seo(title=title, og_title=og_title, description=section.description, site_url=site_url) }}
+{%- endblock seo %}
+
+{% block content %}
+  {%- set writing = get_section(path="writing/_index.md") -%}
+  {%- set books_data = load_data(path="content/bookshelf/books.json", format="json") -%}
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <div class="home-hero">
+    <div class="home-hero-inner">
+
+      <div class="home-hero-text">
+        <h1 class="home-name">{{ section.title }}</h1>
+        <p class="home-bio"><strong>Senior Software Engineer</strong> — writing, reading, and building. A log of the things I learn along the way.</p>
+        <div class="home-social">
+          <a href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="home-social-link no-underline">
+            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="home-social-link no-underline">
+            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
+          </a>
+          <a href="/work" class="hero-link" title="View my work expecience">View my work experience<span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Latest posts ──────────────────────────────────────── -->
+  <h2 class="catalogue-section-heading">Latest Posts</h2>
+  <div class="catalogue">
+    {% for page in writing.pages | slice(end=3) %}
+      {{ macros::page(page=page) }}
+    {% endfor %}
+  </div>
+  <a href="{{ get_url(path='writing') | safe }}" class="hero-link home-section-cta">All posts<span class="arrow">→</span></a>
+
+  <!-- ── From the shelf ────────────────────────────────────── -->
+  <h2 class="catalogue-section-heading">Latest Reads</h2>
+  <br>
+  <div class="home-books-preview">
+    {% for book in books_data | sort(attribute="date") | reverse | slice(end=3) %}
+    <div class="book-item">
+      <div class="book-cover-small">
+        <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
+        {% if book.date %}<span class="book-entry-date">{{ book.date | date(format="%b %Y") }}</span>{% endif %}
+      </div>
+      <div class="book-entry-info">
+        <span class="book-entry-title">{{ book.title }}</span>
+        <span class="book-entry-author">{{ book.author }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="{{ get_url(path='bookshelf') | safe }}" class="hero-link home-section-cta">All books<span class="arrow">→</span></a>
+
+{% endblock content %}

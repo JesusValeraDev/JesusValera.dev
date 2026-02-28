@@ -37,6 +37,10 @@ window.addEventListener('load', function() {
                 
                 if (element.tagName.toLowerCase() === 'a') {
                     element.href = 'mailto:' + email;
+                    // Only set text when the anchor has no child elements (icon-only links keep their SVG)
+                    if (element.children.length === 0) {
+                        element.textContent = email;
+                    }
                 } else {
                     element.innerHTML = email;
                 }
@@ -46,6 +50,9 @@ window.addEventListener('load', function() {
                     const email = atob(base64Email);
                     if (element.tagName.toLowerCase() === 'a') {
                         element.href = 'mailto:' + email;
+                        if (element.children.length === 0) {
+                            element.textContent = email;
+                        }
                     } else {
                         element.innerHTML = email;
                     }

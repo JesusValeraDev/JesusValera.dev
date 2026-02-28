@@ -17,7 +17,6 @@
   @apply mt-3;
 }
 
-
 @utility work-post {
   & h2 {
     @apply font-mono font-semibold uppercase text-light-text-secondary dark:text-dark-text-secondary mt-6 md:mt-8 mb-3;

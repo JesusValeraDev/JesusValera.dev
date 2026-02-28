@@ -74,6 +74,80 @@
   }
 }
 
+/* ── Home quote ─────────────────────────────────────────── */
+
+@utility home-quote {
+  @apply font-mono text-sm text-light-text-secondary dark:text-dark-text-secondary mt-8 mb-0;
+  border-left: 3px solid var(--color-light-border);
+  padding-left: 1rem;
+  .dark & {
+    border-left-color: var(--color-dark-border);
+  }
+  & p {
+    @apply m-0 italic leading-relaxed;
+  }
+  & cite {
+    @apply block mt-1 not-italic opacity-60 text-xs;
+  }
+}
+
+/* ── Home nav cards ─────────────────────────────────────── */
+
+@utility home-nav-grid {
+  @apply grid grid-cols-3 gap-3 mb-0;
+  @media (max-width: 640px) {
+    @apply grid-cols-1;
+  }
+}
+
+@utility home-nav-card {
+  @apply flex flex-col gap-1 p-4 rounded-lg;
+  border: 1px solid var(--color-light-border);
+  transition: border-color 150ms ease, background-color 150ms ease;
+  &:hover {
+    border-color: var(--color-light-text-secondary);
+    background-color: var(--color-light-catalogue-bg);
+  }
+  .dark & {
+    border-color: var(--color-dark-border);
+  }
+  .dark &:hover {
+    border-color: var(--color-dark-border);
+    background-color: var(--color-dark-catalogue-bg);
+  }
+}
+
+@utility home-nav-card-title {
+  @apply font-mono text-sm font-semibold text-light-text-primary dark:text-dark-text-primary;
+}
+
+@utility home-nav-card-desc {
+  @apply text-xs text-light-text-secondary dark:text-dark-text-secondary leading-relaxed flex-1;
+}
+
+@utility home-nav-card-arrow {
+  @apply font-mono text-xs text-light-link dark:text-dark-link mt-1 self-end;
+}
+
+/* ── Home section CTA ───────────────────────────────────── */
+
+@utility home-section-cta {
+  @apply mt-3 mb-0;
+  display: inline-flex;
+}
+
+/* ── Home books preview ─────────────────────────────────── */
+
+@utility home-books-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+}
+
 /* ── Section heading ─────────────────────────────────────── */
 
 @utility catalogue-section-heading {

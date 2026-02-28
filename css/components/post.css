@@ -1,3 +1,25 @@
+@utility post-nav {
+  @apply flex justify-between gap-6 mt-12 pt-6;
+  border-top: 1px solid var(--color-light-border);
+  .dark & { border-top-color: var(--color-dark-border); }
+}
+
+@utility post-nav-link {
+  @apply flex flex-col gap-1 flex-1 no-underline;
+  max-width: 48%;
+  &:hover .post-nav-title { @apply text-light-link dark:text-dark-link; }
+}
+
+@utility post-nav-label {
+  @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary uppercase;
+  letter-spacing: 0.08em;
+}
+
+@utility post-nav-title {
+  @apply text-sm font-semibold text-light-text-primary dark:text-dark-text-primary leading-snug;
+  transition: color 150ms ease;
+}
+
 @utility back-to-blog {
   @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary no-underline mb-6 mt-0 block transition-colors duration-150 ease-custom;
   letter-spacing: 0.02em;
@@ -68,6 +90,12 @@
   }
   & img {
     @apply rounded-md my-4;
+  }
+  & > p:first-child > img,
+  & > img:first-child {
+    max-height: 420px;
+    object-fit: cover;
+    width: 100%;
   }
   & .book-cover img {
     @apply m-0 rounded-none;

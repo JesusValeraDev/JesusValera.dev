@@ -12,13 +12,13 @@ aliases = ['resume', 'cv']
          width="150" height="150">
     <div class="home-hero-text">
       <h1 class="home-name">Work Experience</h1>
-      <p class="home-bio">Senior Software Engineer</p>
+      <p class="home-bio">Senior Software Engineer passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
       <div class="work-contact">
         <span class="work-contact-item">
           Berlin, Germany
         </span>
         <span class="work-contact-sep">·</span>
-        <span class="work-contact-item email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2"></span>
+        <a class="work-contact-item email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" href="#" aria-label="Send me an email"></a>
       </div>
       <div class="work-actions">
         <a href="/assets/documents/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">

@@ -185,11 +185,16 @@
 
 <body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
   {% block header %}
-  <header class="header-fixed-md z-50 bg-light-catalogue-bg dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full">
+  <header class="bg-light-catalogue-bg dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full">
     <div class="container-custom h-14 md:h-16 flex items-center justify-between">
       <nav class="flex items-center gap-5 md:gap-8">
+        <a class="inline-flex items-center no-underline px-1 text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path='') | safe }}" aria-label="Home" title="Home">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <polygon points="0,6 0,16 6,16 6,10 10,10 10,16 16,16 16,6 8,0"/>
+          </svg>
+        </a>
         {% for menu in config.extra.menu %}
-        <a class="font-mono text-sm no-underline text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
+        <a class="font-mono text-sm font-bold no-underline px-1 text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
       </nav>
       <div class="flex items-center">
@@ -206,7 +211,7 @@
   </header>
   {% endblock header %}
 
-  <main class="container-custom py-8 main-offset-md">
+  <main class="container-custom py-8">
     {% block content %}{% endblock content %}
   </main>
 

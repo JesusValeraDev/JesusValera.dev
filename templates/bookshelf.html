@@ -66,21 +66,13 @@
 
 {% set total_authors = all_authors | length %}
 
-<div class="post">
-  <div class="bookshelf-hero">
-    <div class="home-hero-inner">
-      <img class="home-avatar"
-           src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}"
-           srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
-           alt="Jesus Valera Reales"
-           width="100" height="100">
-      <div class="home-hero-text">
-        <h1 class="bookshelf-title">Bookshelf</h1>
-        <p class="bookshelf-description">A list of every book I've read — from software architecture and engineering to leadership, philosophy, and fiction.<br>I keep this list to remember what I've learned and to make it easier to share recommendations with others.</p>
-      </div>
+<div class="home-hero">
+  <div class="home-hero-inner">
+    <div class="home-hero-text">
+      <h1 class="home-name">Bookshelf</h1>
+      <p class="home-bio">A list of every book I've read — from software architecture and engineering to leadership, philosophy, and fiction.</p>
     </div>
   </div>
-
 </div>
 
 <h2 class="catalogue-section-heading">Statistics</h2>
@@ -175,7 +167,7 @@
     <div class="book-item" data-tags="{{ book.tags }}">
       <div class="book-cover-small">
         <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
-        {% if book.date %}<span class="book-entry-date">{{ book.date }}</span>{% endif %}
+        {% if book.date %}<span class="book-entry-date">{{ book.date | date(format="%b %Y") }}</span>{% endif %}
       </div>
       <div class="book-entry-info">
         <span class="book-entry-title">{{ book.title }}</span>

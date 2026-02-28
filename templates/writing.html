@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+{%- set first_posts = paginator.pages | slice(end=2) -%}
+{% for page in first_posts %}
+  {% if page.extra.static_thumbnail %}
+  <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
+  {% endif %}
+{% endfor %}
+{% endblock scripts %}
+
+{% block seo -%}
+  {{ super() }}
+
+  {%- set og_title = section.title -%}
+  {% if config.title and section.title -%}
+    {% set title = section.title ~ " | " ~ config.title -%}
+  {% elif section.title -%}
+    {% set title = section.title -%}
+  {% elif config.title -%}
+    {% set title = config.title -%}
+  {% else -%}
+    {% set title = "" -%}
+  {% endif -%}
+
+  {% if section.description -%}
+    {% set description = section.description -%}
+  {% endif -%}
+
+  {{ macros::seo(title=title, og_title=og_title, description=description, site_url=site_url) }}
+{%- endblock seo %}
+
+{% block content %}
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <div class="home-hero">
+    <div class="home-hero-inner">
+
+      <div class="home-hero-text">
+        <h1 class="home-name">Writing</h1>
+        <p class="home-bio">{{ section.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Posts ─────────────────────────────────────────────── -->
+  <h2 class="catalogue-section-heading">Posts</h2>
+  <div class="catalogue">
+    {% for page in paginator.pages %}
+      {{ macros::page(page=page) }}
+    {% endfor %}
+  </div>
+
+  <!-- ── Pagination ────────────────────────────────────────── -->
+  {% if paginator.number_pagers > 1 %}
+  <nav class="pagination" aria-label="Post pagination">
+    {% if paginator.previous %}
+      <a href="{{ paginator.previous | safe }}" class="pagination-btn" aria-label="Previous page">← Prev</a>
+    {% else %}
+      <span class="pagination-btn pagination-btn--disabled" aria-disabled="true">← Prev</span>
+    {% endif %}
+
+    <span class="pagination-info">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
+
+    {% if paginator.next %}
+      <a href="{{ paginator.next | safe }}" class="pagination-btn" aria-label="Next page">Next →</a>
+    {% else %}
+      <span class="pagination-btn pagination-btn--disabled" aria-disabled="true">Next →</span>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+{% endblock content %}

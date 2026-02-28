@@ -1,4 +1,4 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
 
 {% block seo -%}
   {{ super() }}
@@ -43,7 +43,7 @@
 
 {% block content %}
   <article class="post">
-    <a href="{{ get_url(path='') | safe }}" class="back-to-blog">← back</a>
+    <a href="{{ get_url(path='writing') | safe }}" class="back-to-blog">← back</a>
     <small class="post-meta">
       <time datetime="{{ page.date }}">
         {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min read
@@ -64,6 +64,25 @@
       {% endfor %}
     </div>
     {% endif %}
+
     {{ page.content | safe }}
+
+    {% if page.earlier or page.later %}
+    <nav class="post-nav" aria-label="Post navigation">
+      {% if page.earlier %}
+      <a href="{{ page.earlier.permalink | safe }}" class="post-nav-link" rel="prev">
+        <span class="post-nav-label">← Older</span>
+        <span class="post-nav-title">{{ page.earlier.title }}</span>
+      </a>
+      {% else %}<div class="flex-1"></div>{% endif %}
+
+      {% if page.later %}
+      <a href="{{ page.later.permalink | safe }}" class="post-nav-link" style="text-align:right;" rel="next">
+        <span class="post-nav-label">Newer →</span>
+        <span class="post-nav-title">{{ page.later.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+    {% endif %}
   </article>
 {% endblock content %}
