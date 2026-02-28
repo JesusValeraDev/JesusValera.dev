@@ -4,7 +4,7 @@ function filterBy(tag) {
         wasSelected = true;
     }
 
-    document.querySelectorAll('.book-tags button').forEach(el => {
+    document.querySelectorAll('.bookshelf-filters button').forEach(el => {
         el.removeAttribute('selected');
     })
 
@@ -20,13 +20,13 @@ function filterBy(tag) {
             if (showBook === false) {
                 book.style.display = 'none';
             } else {
-                book.style.display = 'block';
+                book.style.display = '';
             }
         })
     } else {
         let books = document.querySelectorAll('.book-item');
         books.forEach(book => {
-            book.style.display = 'block';
+            book.style.display = '';
         });
     }
 }

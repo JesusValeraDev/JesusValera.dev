@@ -30,7 +30,7 @@
 
 {% block content %}
 
-{% set books = load_data(path="content/readings/books.json", format="json") %}
+{% set books = load_data(path="content/bookshelf/books.json", format="json") %}
 
 {% set total_books = books | length %}
 {% set books_last_12_months = 0 %}
@@ -67,52 +67,35 @@
 {% set total_authors = all_authors | length %}
 
 <div class="post">
-  <h2 id="reading-collection">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-      <path d="M9 2v6l1.5-1 1.5 1V2"></path>
-    </svg>Reading Collection
-  </h2>
-  
-  <p class="reading-description">I keep this list to track the books that have helped me grow both personally and professionally.
-    <br>It helps me remember what I've learned and serves as a resource I can share with others who are looking for book recommendations in areas I'm passionate about.
-  </p>
-
-  <div class="book-info">
-    <div class="book-intro">
-      <span class="stats-title">Statistics</span>
-    </div>
-    <div class="book-statistics">
-      <div class="stats-grid-enhanced">
-        <div class="stat-item">
-          <div class="stat-label">Total Books</div>
-          <div class="stat-number">{{ total_books }}</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Software Books</div>
-          <div class="stat-number">{{ software_books }}</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Authors</div>
-          <div class="stat-number">{{ total_authors }}</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Read last year</div>
-          <div class="stat-number">{{ books_last_12_months }}</div>
-        </div>
+  <div class="bookshelf-hero">
+    <div class="home-hero-inner">
+      <img class="home-avatar"
+           src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}"
+           srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
+           alt="Jesus Valera Reales"
+           width="100" height="100">
+      <div class="home-hero-text">
+        <h1 class="bookshelf-title">Bookshelf</h1>
+        <p class="bookshelf-description">A list of every book I've read — from software architecture and engineering to leadership, philosophy, and fiction.<br>I keep this list to remember what I've learned and to make it easier to share recommendations with others.</p>
       </div>
     </div>
   </div>
 
-  <h2 id="books-section">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -0.1rem; margin-right: 0.5rem;">
-      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-    </svg>Books
-  </h2>
+</div>
 
-  <div class="book-tags" role="group" aria-label="Book category filters">
+<h2 class="catalogue-section-heading">Statistics</h2>
+
+<div class="bookshelf-stats">
+  <span class="stat-entry"><span class="stat-val">{{ total_books }}</span><span class="stat-key">TOTAL BOOKS</span></span>
+  <span class="stat-entry"><span class="stat-val">{{ software_books }}</span><span class="stat-key">SOFTWARE BOOKS</span></span>
+  <span class="stat-entry"><span class="stat-val">{{ total_authors }}</span><span class="stat-key">TOTAL AUTHORS</span></span>
+  <span class="stat-entry"><span class="stat-val">{{ books_last_12_months }}</span><span class="stat-key">THIS YEAR</span></span>
+</div>
+
+<h2 class="catalogue-section-heading">Books
+</h2>
+
+<div class="bookshelf-filters" role="group" aria-label="Book category filters">
     <button data-tag="Software" onclick="filterBy(this)" aria-label="Filter books by Software category" title="Filter books by Software category" aria-pressed="false">
       <svg width="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M9 8L5 11.6923L9 16M15 8L19 11.6923L15 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -159,6 +142,8 @@
       Philosophy
     </button>
 
+    <div style="flex-basis:100%;height:0;" aria-hidden="true"></div>
+
     <button data-tag="Psychology" onclick="filterBy(this)" aria-label="Filter books by Psychology category" title="Filter books by Psychology category" aria-pressed="false">
       <svg width="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C8.20602 1 6.15147 3.02886 5.1033 5.03734C4.591 6.01899 4.31823 6.98949 4.17245 7.70719C4.09911 8.06826 4.05672 8.3713 4.03245 8.58786C4.01718 8.72417 4 8.86266 4 9C4 11.7224 5.23215 13.3137 6.29447 14.1534C6.82295 14.5712 7.11709 14.999 7.16406 15.3747L7.78873 20.3721C7.97639 21.8734 9.25259 23 10.7656 23H13.2344C14.7474 23 16.0236 21.8734 16.2113 20.3721L16.8359 15.3747C16.8829 14.999 17.177 14.5712 17.7055 14.1534C18.7678 13.3137 20 11.7224 20 9C20 8.86266 19.9828 8.72417 19.9675 8.58786C19.9433 8.3713 19.9009 8.06826 19.8275 7.70719C19.6818 6.98949 19.409 6.01899 18.8967 5.03734C17.8485 3.02886 15.794 1 12 1ZM7.53474 12.5845C6.43811 11.7176 5.86517 10.1925 6.02001 8.81057C6.03864 8.64432 6.07247 8.40049 6.13243 8.10531C6.25324 7.51051 6.47539 6.73101 6.87637 5.96266C7.65476 4.47114 9.10021 3 12 3C14.8998 3 16.3452 4.47114 17.1236 5.96266C17.5246 6.73101 17.7468 7.51051 17.8676 8.10531C17.9275 8.40049 17.9614 8.64432 17.98 8.81057C18.1348 10.1925 17.5619 11.7176 16.4653 12.5845C15.7853 13.1219 14.9955 13.974 14.8514 15.1267L14.6172 17H9.38278L9.14862 15.1267C9.00453 13.974 8.21469 13.1219 7.53474 12.5845ZM9.63278 19L9.77329 20.124C9.83584 20.6245 10.2612 21 10.7656 21H13.2344C13.7388 21 14.1642 20.6245 14.2267 20.124L14.3672 19H9.63278Z" fill="currentColor"/>
@@ -185,21 +170,18 @@
     </button>
   </div>
 
-  <div class="books">
+  <div class="bookshelf-grid">
     {% for book in books %}
     <div class="book-item" data-tags="{{ book.tags }}">
-      <div class="book-cover">
-        <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" fetchpriority="high" width="200" height="300">
-        {% if book.date %}
-        <div class="date">{{ book.date}}</div>
-        {% endif %}
+      <div class="book-cover-small">
+        <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
+        {% if book.date %}<span class="book-entry-date">{{ book.date }}</span>{% endif %}
       </div>
-      <div class="book-content">
-        <div class="title">{{ book.title}}</div>
-        <div class="author">{{ book.author}}</div>
+      <div class="book-entry-info">
+        <span class="book-entry-title">{{ book.title }}</span>
+        <span class="book-entry-author">{{ book.author }}</span>
       </div>
     </div>
     {% endfor %}
   </div>
-</div>
 {% endblock content %}

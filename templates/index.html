@@ -26,6 +26,30 @@
 {%- endblock seo %}
 
 {% block content %}
+  <div class="home-hero">
+    <div class="home-hero-inner">
+      <img class="home-avatar"
+           src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}"
+           srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
+           alt="Jesus Valera Reales"
+           width="100" height="100"
+           fetchpriority="high">
+      <div class="home-hero-text">
+        <h1 class="home-name">{{ section.title }}</h1>
+        <p class="home-bio">Senior Software Engineer passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
+        <div class="home-social">
+          <a href="https://github.com/JesusValeraDev" target="_blank" aria-label="GitHub" title="GitHub" class="home-social-link no-underline">
+            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" aria-label="LinkedIn" title="LinkedIn" class="home-social-link no-underline">
+            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
+          </a>
+          <a href="{{ get_url(path='work') | safe }}" class="hero-link" title="View my work expecience">View my work experience<span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="catalogue-section-heading">Latest Posts</h2>
   <div class="catalogue">
     {% for page in section.pages %}
       {{ macros::page(page=page) }}

@@ -43,24 +43,27 @@
 
 {% block content %}
   <article class="post">
+    <a href="{{ get_url(path='') | safe }}" class="back-to-blog">← back</a>
     <small class="post-meta">
       <time datetime="{{ page.date }}">
-        <span class="day">
-          <svg width="12" height="12" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-calendar"></use></svg>
-          <span>{{ page.date | date(format="%B %e, %Y") }}</span>
-        </span>
-        <span class="reading">
-          <svg width="12" height="12" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-clock"></use></svg>
-            <span>{{ page.reading_time }} mins</span>
-          </span>
+        {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min read
       </time>
       <span class="found-typo">
         {% set url = config.extra.repo_content_url ~ page.relative_path %}
-        <svg width="12" height="12" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-edit"></use></svg> Found a typo? <a href="{{ url }}" target="_blank" aria-label="Edit this page on GitHub to submit a pull request" title="Edit on GitHub">Edit me</a>
+        <a href="{{ url }}" target="_blank" aria-label="Edit this page on GitHub to submit a pull request" title="Edit on GitHub">suggest edit</a>
       </span>
     </small>
     <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.extra.subtitle %}
     <h2 class="post-subtitle">{{ page.extra.subtitle }}</h2>
+    {% endif %}
+    {% if page.taxonomies.tags %}
+    <div class="post-tags">
+      {% for tag in page.taxonomies.tags %}
+        <span class="tag-pill">{{ tag | upper }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
     {{ page.content | safe }}
   </article>
 {% endblock content %}

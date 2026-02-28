@@ -20,7 +20,7 @@
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       document.documentElement.setAttribute('color-theme', 'dark');
-      document.documentElement.style.backgroundColor = '#161e32';
+      document.documentElement.style.backgroundColor = '#111114';
       document.documentElement.style.color = '#cbd5e1';
     } else {
       document.documentElement.classList.remove('dark');
@@ -53,7 +53,7 @@
 
     /* Ensure buttons are clickable and properly sized */
     #light-mode, #dark-mode { 
-      min-width: 44px;
+      min-width: 22px;
       min-height: 44px;
       pointer-events: auto; 
       user-select: none;
@@ -78,7 +78,7 @@
   <link rel="stylesheet" href="{{ get_url(path='tailwind.css', cachebust=true) | safe }}">
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfd">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111114">
   <meta name="color-scheme" content="dark light">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io ws://127.0.0.1:* ws://localhost:*; frame-src 'self' https://www.youtube.com https://youtube.com; base-uri 'self'">
 
@@ -185,30 +185,23 @@
 
 <body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
   {% block header %}
-  <header class="header-fixed-md z-50 backdrop-blur-header bg-light-catalogue-bg/80 dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full" style="backdrop-filter: blur(6px);">
-    <div class="container-custom md:h-16 flex flex-col md:flex-row items-center md:justify-between gap-3 md:gap-0 py-3 md:py-0">
-      <a class="profile-icon flex items-center justify-center mx-auto md:mx-0" href="{{ get_url(path='') | safe }}">
-        <img alt="JesusValera" 
-             class="hidden md:block rounded-full w-10 h-10 shrink-0"
-             src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}" 
-             srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
-             fetchpriority="high" 
-             width="100" 
-             height="100">
-      </a>
-      <nav class="flex items-center justify-center gap-6">
+  <header class="header-fixed-md z-50 bg-light-catalogue-bg dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full">
+    <div class="container-custom h-14 md:h-16 flex items-center justify-between">
+      <nav class="flex items-center gap-5 md:gap-8">
         {% for menu in config.extra.menu %}
-        <a class="font-medium no-underline text-light-text-primary dark:text-dark-text-primary hover:text-light-text-secondary dark:hover:text-dark-text-secondary" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
+        <a class="font-mono text-sm no-underline text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
         {% endfor %}
-        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
+      </nav>
+      <div class="flex items-center">
+        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center py-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-sun"></use></svg>
           <span class="sr-only">Switch to dark mode</span>
         </button>
-        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
+        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center py-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
           <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-moon"></use></svg>
           <span class="sr-only">Switch to light mode</span>
         </button>
-      </nav>
+      </div>
     </div>
   </header>
   {% endblock header %}
@@ -218,7 +211,7 @@
   </main>
 
   {% block footer %}
-  <footer class="border-t border-light-border dark:border-dark-header-footer-border py-8 bg-light-catalogue-bg/80 dark:bg-dark-header-bg">
+  <footer class="border-t border-light-border dark:border-dark-header-footer-border py-8 bg-white dark:bg-dark-header-bg">
     <div class="container-custom flex items-center justify-between max-md:flex-col gap-4">
       <span class="text-base text-light-text-secondary dark:text-dark-text-primary">© {{ now() | date(format="%Y") }} Jesus Valera Reales</span>
       <div class="flex items-center gap-4 max-md:justify-center">

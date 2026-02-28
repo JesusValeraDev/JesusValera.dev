@@ -25,11 +25,11 @@ several types of tests. They are also known as Test Doubles instead of "Mocks".
 
 ![test types](/images/2020-06-11/2.webp)
 
-- **Dummy**: It is used as a placeholder when an argument needs to be filled in.
-- **Stub**: It provides fake data to the SUT (System Under Test).
-- **Spy**: It records information about how the class is being used.
-- **Mock**: It defines an expectation of how it will be used. It will cause failure if the expectation isn't met.
-- **Fake**: It is an actual implementation of the contract but is unsuitable for production.
+- **Dummy**: A dummy is passed around but never actually used. It exists only to satisfy a parameter requirement. If your test inspects it, it stops being a dummy
+- **Stub**: A stub provides predefined responses to calls made during the test. It doesn’t care how it’s used; it just returns canned data
+- **Spy**: A spy records information about how it was used (for example, whether a method was called, with what arguments, and how many times). The test inspects the spy afterward
+- **Mock**: A mock defines expectations up front about how it should be used and will fail automatically if those expectations aren’t met. The verification is built into the mock itself
+- **Fake**: A fake is a working implementation of the interface, but simplified. It behaves realistically enough to run tests, but isn’t suitable for production (eg: in-memory database)
 
 ![bodo istvan](/images/2020-06-11/3.webp)
 

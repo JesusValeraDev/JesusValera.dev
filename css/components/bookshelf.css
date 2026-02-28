@@ -1,0 +1,111 @@
+/* ── Readings hero ───────────────────────────────────────── */
+
+@utility bookshelf-hero {
+  @apply mb-6;
+}
+
+@utility bookshelf-title {
+  @apply text-2xl md:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary mt-0 mb-2 tracking-tight;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+}
+
+@utility bookshelf-description {
+  @apply text-base text-light-text-secondary dark:text-dark-text-secondary leading-relaxed font-normal m-0;
+  max-width: var(--container-content);
+}
+
+/* ── Stats bar ─────────────────────────────────────────── */
+
+@utility bookshelf-stats {
+  @apply flex flex-wrap items-end justify-around font-mono mt-8 mb-2 gap-y-4;
+}
+
+@utility stat-entry {
+  @apply flex flex-col items-center gap-1;
+}
+
+@utility stat-key {
+  @apply text-xs uppercase tracking-widest text-light-text-secondary dark:text-dark-text-secondary;
+  letter-spacing: 0.12em;
+}
+
+@utility stat-val {
+  @apply text-2xl font-bold text-light-text-primary dark:text-dark-text-primary;
+}
+
+/* ── Filter buttons ─────────────────────────────────────── */
+
+@utility bookshelf-filters {
+  @apply flex flex-wrap justify-center gap-y-2 gap-x-2 py-4 my-4 pb-8;
+  & button {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono font-semibold uppercase tracking-wide text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded cursor-pointer transition-colors duration-150 ease-custom hover:text-light-text-primary dark:hover:text-dark-text-primary hover:border-light-text-secondary dark:hover:border-dark-text-secondary whitespace-nowrap;
+    background: transparent;
+  }
+  & button svg {
+    @apply shrink-0;
+  }
+  & button[selected='true'] {
+    color: var(--color-light-timeline-bg);
+    border-color: var(--color-light-timeline-bg);
+  }
+  .dark & button[selected='true'] {
+    color: var(--color-dark-timeline-bg);
+    border-color: var(--color-dark-timeline-bg);
+  }
+  & button[selected='true']:hover {
+    @apply opacity-80;
+  }
+}
+
+/* ── Books grid ─────────────────────────────────────────── */
+
+@utility bookshelf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  contain: layout;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@utility book-item {
+  @apply flex flex-col;
+}
+
+@utility book-cover-small {
+  @apply relative w-full overflow-hidden rounded-sm;
+  aspect-ratio: 2 / 3;
+  background: var(--color-dark-catalogue-bg);
+  & img {
+    @apply block w-full h-full m-0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@utility book-entry-info {
+  @apply flex flex-col gap-0.5 pt-2;
+}
+
+@utility book-entry-title {
+  @apply text-xs font-semibold text-light-text-primary dark:text-dark-text-primary leading-snug;
+}
+
+@utility book-entry-author {
+  @apply text-xs text-light-text-secondary dark:text-dark-text-secondary;
+}
+
+@utility book-entry-date {
+  @apply absolute top-2 right-2 font-mono text-xs font-medium px-1.5 py-0.5 rounded;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  line-height: 1.4;
+}

@@ -1,124 +1,166 @@
+/* ── Home hero ───────────────────────────────────────────── */
+
+@utility home-hero {
+  @apply mb-8 md:mb-12;
+}
+
+@utility home-hero-inner {
+  @apply flex items-start gap-6 pt-4;
+  @media (max-width: 640px) {
+    @apply flex-col items-center gap-4;
+  }
+}
+
+@utility home-avatar {
+  @apply rounded-full shrink-0 object-cover mt-4 mb-0;
+  width: 80px;
+  height: 80px;
+  opacity: 0.9;
+  /* Override .post img { rounded-md my-6 } when avatar is inside a .post wrapper */
+  .post & {
+    @apply rounded-full mt-4 mb-0;
+  }
+  @media (max-width: 640px) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@utility home-hero-text {
+  @apply flex flex-col flex-1 min-w-0;
+  & > h1, & > p {
+    margin-top: 0;
+  }
+  @media (max-width: 640px) {
+    @apply items-center text-center;
+  }
+}
+
+@utility home-name {
+  @apply text-2xl md:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary mt-0 mb-2 tracking-tight;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+}
+
+@utility home-bio {
+  @apply text-base text-light-text-secondary dark:text-dark-text-secondary leading-relaxed m-0 max-w-xl;
+}
+
+@utility home-social {
+  @apply flex items-center gap-4 flex-wrap mt-3;
+  @media (max-width: 640px) {
+    @apply justify-center;
+  }
+}
+
+@utility home-social-link {
+  @apply inline-flex items-center justify-center text-light-text-secondary dark:text-dark-text-secondary;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    @apply text-light-text-primary dark:text-dark-text-primary;
+  }
+}
+
+@utility hero-link {
+  @apply inline-flex items-center font-mono text-xs text-light-link dark:text-dark-link no-underline;
+  & .arrow {
+    @apply inline-block ml-1 transition-transform duration-150 ease-custom;
+  }
+  &:hover {
+    @apply opacity-80 no-underline;
+  }
+  &:hover .arrow {
+    @apply transform translate-x-0.5;
+  }
+}
+
+/* ── Section heading ─────────────────────────────────────── */
+
+@utility catalogue-section-heading {
+  @apply font-mono text-xs font-semibold uppercase text-light-text-secondary dark:text-dark-text-secondary mb-4 mt-8 md:mt-10;
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-light-border);
+  }
+  .dark &::after {
+    background: var(--color-dark-border);
+  }
+}
+
+/* ── Post list ───────────────────────────────────────────── */
+
 @utility catalogue {
   contain: layout;
 }
 
 @utility catalogue-link {
-  @apply block no-underline text-inherit my-6;
+  @apply block no-underline text-inherit;
   &:hover {
     @apply no-underline;
-  }
-  &:hover .catalogue-cta .arrow {
-    @apply transform translate-x-0.5;
-  }
-}
-
-@utility catalogue-cta {
-  .catalogue-link:hover & .arrow {
-    @apply transform translate-x-0.5;
-  }
-  @apply text-sm font-semibold leading-none text-light-link dark:text-dark-link inline-flex items-center mt-auto;
-  & .arrow {
-    @apply inline-block ml-1 transition-transform duration-150 ease-custom;
-  }
-}
-
-@utility arrow {
-  .catalogue-link:hover .catalogue-cta & {
-    @apply transform translate-x-0.5;
-  }
-  .catalogue-cta & {
-    @apply inline-block ml-1 transition-transform duration-150 ease-custom;
   }
 }
 
 @utility catalogue-card {
-  @apply card-base flex min-h-catalogue-card border-b border-light-border dark:border-dark-border;
-  contain: layout style paint;
-  will-change: transform;
-  overflow: hidden;
-  @media (max-width: 768px) {
-    @apply flex-col min-h-0;
+  @apply flex flex-col py-4;
+  border-bottom: 1px solid var(--color-light-border);
+  .dark & {
+    border-bottom-color: var(--color-dark-border);
   }
-}
-
-@utility catalogue-image {
-  @apply shrink-0 w-catalogue-image h-auto min-h-catalogue-card bg-cover bg-center bg-no-repeat bg-light-catalogue-bg dark:bg-dark-catalogue-bg overflow-hidden;
-  @media (max-width: 768px) {
-    @apply w-full min-h-catalogue-image-mobile;
+  &:last-child {
+    border-bottom: none;
   }
 }
 
 @utility catalogue-text {
-  @apply flex-1 flex flex-col justify-between p-6 min-w-0;
-  contain: layout style;
-  @media (max-width: 768px) {
-    @apply p-5;
-  }
+  @apply flex flex-col;
 }
 
 @utility catalogue-meta {
-  @apply mb-3 flex justify-between items-start gap-4 flex-wrap;
+  @apply mb-1;
   & time {
-    @apply flex gap-6;
-  }
-  @media (max-width: 480px) {
-    & time {
-      @apply gap-6;
-    }
-  }
-  & .day {
-    @apply text-sm font-medium leading-relaxed text-light-text-secondary dark:text-dark-text-secondary inline-flex items-center gap-1;
-  }
-  & .reading {
-    @apply text-sm font-medium leading-relaxed text-light-text-secondary dark:text-dark-text-secondary inline-flex items-center gap-1;
-  }
-  & .day svg {
-    @apply w-3 h-3 shrink-0;
-  }
-  & .reading svg {
-    @apply w-3 h-3 shrink-0;
-  }
-  @media (max-width: 768px) {
-    & svg {
-      width: 10px;
-      height: 10px;
-    }
-  }
-}
-
-@utility day {
-  .catalogue-meta & {
-    @apply text-sm font-medium leading-relaxed text-light-text-secondary dark:text-dark-text-secondary inline-flex items-center gap-1;
-  }
-  .catalogue-meta & svg {
-    @apply w-3 h-3 shrink-0;
-  }
-}
-
-@utility reading {
-  .catalogue-meta & {
-    @apply text-sm font-medium leading-relaxed text-light-text-secondary dark:text-dark-text-secondary inline-flex items-center gap-1;
-  }
-  .catalogue-meta & svg {
-    @apply w-3 h-3 shrink-0;
+    @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary;
   }
 }
 
 @utility catalogue-tags {
-  @apply flex flex-wrap gap-2 items-center;
+  @apply flex flex-wrap gap-x-1 gap-y-1 items-center mt-2.5;
 }
 
 @utility tag-pill {
-  @apply text-xs font-medium leading-none bg-light-catalogue-bg dark:bg-dark-catalogue-bg text-light-text-secondary dark:text-dark-text-secondary border border-light-border dark:border-dark-border rounded-2xl px-3 py-1 whitespace-nowrap;
+  @apply font-mono font-medium whitespace-nowrap px-1 py-px rounded;
+  font-size: 0.65rem;
+  color: var(--color-light-timeline-bg);
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  .dark & {
+    color: var(--color-dark-timeline-bg);
+    background: rgba(74, 222, 128, 0.07);
+    border-color: rgba(74, 222, 128, 0.15);
+  }
 }
 
 @utility catalogue-title {
-  @apply text-xl font-bold leading-tight text-light-text-primary dark:text-dark-text-primary m-0 mb-2;
+  @apply text-xl font-bold leading-snug text-light-text-primary dark:text-dark-text-primary m-0 mb-1 mt-0;
   @media (max-width: 768px) {
-    @apply text-lg leading-snug;
+    @apply text-lg;
   }
 }
 
 @utility catalogue-subtitle {
-  @apply text-base font-normal leading-relaxed text-light-text-secondary dark:text-dark-text-secondary m-0 mb-6 opacity-90 flex-grow;
+  @apply text-sm leading-relaxed text-light-text-secondary dark:text-dark-text-secondary m-0;
+}
+
+@utility catalogue-cta {
+  @apply font-mono text-xs text-light-link dark:text-dark-link mt-3 inline-flex items-center gap-1;
+  opacity: 0.65;
+  transition: opacity 150ms ease;
+  .catalogue-link:hover & {
+    opacity: 1;
+  }
 }

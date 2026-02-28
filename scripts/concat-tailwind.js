@@ -10,9 +10,9 @@ const parts = [
   'css/base.css',
   'css/components/base.css',
   'css/components/catalogue.css',
-  'css/components/books.css',
-  'css/components/cv.css',
+  'css/components/bookshelf.css',
   'css/components/post.css',
+  'css/components/work.css',
 ];
 
 // Check if we're in watch mode

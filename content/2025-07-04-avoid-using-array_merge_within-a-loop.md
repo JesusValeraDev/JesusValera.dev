@@ -43,14 +43,14 @@ foreach ($this->someCall() as $someObject) {
 $userLists = array_merge(...$userLists);
 ```
 
-Pros and cons:
+#### Pros and cons:
 
-- 🟠 Requires PHP 7.4+ (spread operator for arrays)
-- 🔴 If any `$someObject->getUsers()` returns an empty array, PHP emits a warning (you'll need to check or provide a
+- Requires PHP 7.4+ (spread operator for arrays)
+- If any `$someObject->getUsers()` returns an empty array, PHP emits a warning (you'll need to check or provide a
   default value)
-- 🔴 Holds all intermediate arrays in memory before merging
-- 🟢 Clean and modern syntax
-- 🟢 Performs only one merge operation - faster than repeated array_merge() in a loop
+- Holds all intermediate arrays in memory before merging
+- Clean and modern syntax
+- Performs only one merge operation - faster than repeated array_merge() in a loop
 
 ### Manual nested loop
 
@@ -65,9 +65,9 @@ foreach ($this->someCall() as $someObject) {
 }
 ```
 
-Pros and cons:
+#### Pros and cons:
 
-- 🟢 Works on all PHP versions
-- 🟢 No risk of warning if `$someObject->getUsers()` returns an empty array (the inner loop is not executed)
-- 🟢 Best memory performance for large datasets
-- 🔴 Slightly more verbose
+- Works on all PHP versions
+- No risk of warning if `$someObject->getUsers()` returns an empty array (the inner loop is not executed)
+- Best memory performance for large datasets
+- Slightly more verbose

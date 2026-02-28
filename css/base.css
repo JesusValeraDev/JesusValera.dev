@@ -8,9 +8,9 @@
   }
   html { @apply scroll-smooth leading-relaxed bg-light-bg dark:bg-dark-bg; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; }
   *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
-  body { @apply font-inter text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary font-variant-numeric-oldstyle antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
-  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(59,130,246,0.3); }
-  .dark a { text-decoration-color: rgba(112,172,246,0.3); }
+  body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
+  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(22,163,74,0.3); }
+  .dark a { text-decoration-color: rgba(74,222,128,0.3); }
   a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
   h2 { @apply mb-4; }
   .post h2 { @apply mt-12 mb-4; }
@@ -21,11 +21,20 @@
   li::marker { color: var(--color-light-text-primary); }
   .dark li::marker { color: var(--color-dark-text-primary); }
   img { @apply block mx-auto my-4 max-w-full; }
-  blockquote { @apply p-2 px-4 bg-light-blockquote-bg dark:bg-dark-blockquote-bg border-l-4 border-light-blockquote-border dark:border-dark-blockquote-border mb-6 mx-3; }
+  blockquote {
+    @apply pl-5 rounded-lg font-mono text-sm bg-light-blockquote-bg dark:bg-dark-blockquote-bg;
+    border: 1px solid rgba(22, 163, 74, 0.2);
+    border-left: 4px solid var(--color-light-blockquote-border);
+  }
+  .dark blockquote {
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    border-left: 4px solid var(--color-dark-blockquote-border);
+  }
   .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
 
   /* Revert Tailwind Preflight margin:0 for headings and text elements */
-  blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
+  blockquote { margin: 0; }
+  dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
 
   /* Reset text selection to system default-like colors */
   ::selection { background: rgba(180, 213, 255, 0.6); color: inherit; }

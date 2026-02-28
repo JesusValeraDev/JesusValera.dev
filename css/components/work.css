@@ -1,0 +1,364 @@
+/* ── Work hero contact row ───────────────────────────────── */
+
+@utility work-contact {
+  @apply flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary mt-2;
+}
+
+@utility work-contact-item {
+  @apply inline-flex items-center gap-1;
+  & svg { @apply shrink-0 opacity-60; }
+}
+
+@utility work-contact-sep {
+  @apply opacity-30 select-none;
+}
+
+@utility work-actions {
+  @apply mt-3;
+}
+
+
+@utility work-post {
+  & h2 {
+    @apply font-mono font-semibold uppercase text-light-text-secondary dark:text-dark-text-secondary mt-6 md:mt-8 mb-3;
+    letter-spacing: 0.15em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.3rem;
+  }
+
+  & h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-light-border);
+  }
+  .dark & h2::after {
+    background: var(--color-dark-border);
+  }
+  & h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  & .job-description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  & .job-meta {
+    margin-bottom: 0.25rem;
+  }
+  & a {
+    @apply text-light-link dark:text-dark-link;
+  }
+}
+
+/* ── Download button ─────────────────────────────────────── */
+
+@utility download-button {
+  .post & {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono font-semibold border border-light-timeline-bg dark:border-dark-timeline-bg text-light-timeline-bg dark:text-dark-timeline-bg rounded cursor-pointer whitespace-nowrap no-underline;
+    background: transparent;
+    transition: background 150ms ease, color 150ms ease;
+  }
+  .post &:hover {
+    @apply text-light-bg dark:text-dark-bg no-underline;
+    background: var(--color-light-timeline-bg);
+  }
+  .dark .post &:hover {
+    background: var(--color-dark-timeline-bg);
+    @apply text-dark-bg;
+  }
+  .post & svg { @apply shrink-0; }
+}
+
+/* ── Cards → flat entries ────────────────────────────────── */
+
+/* Remove card styling — timeline-item provides the separator */
+@utility timeline-card {
+  display: block;
+}
+
+/* Flat wrapper for About Me / Skills / Languages / Conferences */
+@utility about-me-card {
+  @apply mb-4;
+}
+
+/* ── Timeline list (Experience / Education / Projects) ──── */
+
+@utility timeline-items {
+  @apply flex flex-col;
+  /* No green left line */
+}
+
+@utility timeline-item {
+  @apply py-4 md:pb-6 relative;
+  border-bottom: 1px solid var(--color-light-border);
+  .dark & { border-bottom-color: var(--color-dark-border); }
+  &:last-child { border-bottom: none; }
+}
+
+@utility current-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 0;
+  font-family: monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-light-timeline-bg);
+  padding: 0.15rem 0.45rem;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  border-radius: 3px;
+  .dark & {
+    color: var(--color-dark-timeline-bg);
+    border-color: rgba(74, 222, 128, 0.25);
+  }
+}
+
+@utility timeline-header {
+  @apply flex items-center gap-4;
+  margin-bottom: 0.25rem;
+  @media (max-width: 640px) {
+    @apply flex-col items-center;
+    gap: 0.25rem;
+  }
+}
+
+@utility company-logo {
+  @apply shrink-0 rounded object-cover;
+  width: 44px;
+  height: 44px;
+  opacity: 0.9;
+}
+
+@utility timeline-info {
+  @apply flex-1 min-w-0;
+  @media (max-width: 640px) {
+    @apply text-center w-full;
+  }
+}
+
+@utility company-name {
+  @apply text-lg font-bold text-light-text-primary dark:text-dark-text-primary m-0 mb-0.5 leading-snug;
+  & a {
+    @apply text-light-link dark:text-dark-link no-underline hover:underline inline-flex items-center gap-1;
+  }
+}
+
+@utility job-role {
+  @apply text-xs font-normal text-light-text-secondary dark:text-dark-text-secondary mt-0.5;
+}
+
+@utility job-meta {
+  @apply flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary;
+  margin-top: 0.125rem;
+  margin-bottom: 0.25rem;
+  @media (max-width: 640px) {
+    @apply justify-center;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@utility job-date {
+  @apply inline-flex items-center;
+}
+
+@utility job-location {
+  @apply inline-flex items-center;
+  &::before {
+    content: '·';
+    margin-right: 0.5rem;
+    opacity: 0.4;
+  }
+}
+
+@utility job-description {
+  @apply text-xs mb-2;
+  & ul {
+    row-gap: 0.375rem;
+    display: flex;
+    flex-direction: column;
+  }
+  & li {
+    @apply relative pl-4 text-light-text-primary dark:text-dark-text-primary;
+    line-height: 1.6;
+  }
+  & li::before {
+    content: '▸';
+    @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg;
+  }
+  & p {
+    line-height: 1.6;
+    @apply mb-1.5;
+  }
+}
+
+@utility job-skills {
+  @apply flex flex-wrap items-center gap-x-2 gap-y-1 mt-1;
+}
+
+
+@utility external-link-icon {
+  @apply w-3 h-3 opacity-50;
+}
+
+/* ── Skill tags — match tag-pill styling ─────────────────── */
+
+@utility skill-tag {
+  @apply font-mono text-xs font-medium whitespace-nowrap px-1.5 py-0.5 rounded;
+  color: var(--color-light-timeline-bg);
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  .dark & {
+    color: var(--color-dark-timeline-bg);
+    background: rgba(74, 222, 128, 0.07);
+    border-color: rgba(74, 222, 128, 0.15);
+  }
+}
+
+@utility skill-tags {
+  @apply flex flex-wrap gap-1.5;
+}
+
+@utility skills-content {
+  @apply space-y-5;
+}
+
+@utility skills-category-title {
+  @apply font-mono uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary mb-2 mt-0;
+  &:first-child { @apply mt-0; }
+}
+
+/* ── About Me content ────────────────────────────────────── */
+
+@utility about-me-content {
+  @apply space-y-1.5;
+  & p {
+    @apply m-0 text-xs text-light-text-primary dark:text-dark-text-primary relative pl-4;
+    line-height: 1.6;
+  }
+  & p::before {
+    content: '▸';
+    @apply absolute left-0 top-0 text-light-timeline-bg dark:text-dark-timeline-bg;
+  }
+}
+
+/* ── Languages ───────────────────────────────────────────── */
+
+@utility conference-event-title {
+  @apply block font-mono text-xs font-bold text-light-text-primary dark:text-dark-text-primary mt-4 mb-3;
+}
+
+@utility languages-content {
+  @apply py-2;
+}
+
+@utility language-items {
+  @apply flex flex-wrap gap-x-8 gap-y-3;
+}
+
+@utility language-item {
+  @apply flex items-center gap-2;
+}
+
+@utility language-flag {
+  @apply text-2xl;
+}
+
+@utility language-name {
+  @apply text-sm font-semibold text-light-text-primary dark:text-dark-text-primary;
+}
+
+@utility language-level {
+  @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary;
+  &::before { content: '('; opacity: 0.5; }
+  &::after  { content: ')'; opacity: 0.5; }
+}
+
+/* ── Project gallery ─────────────────────────────────────── */
+
+@utility project-gallery {
+  @apply grid grid-cols-3 gap-3 mt-4;
+  & a {
+    @apply block overflow-hidden rounded no-underline cursor-pointer;
+    border: 1px solid var(--color-light-border);
+    background-color: transparent;
+    transition: opacity 200ms ease, background-color 200ms ease;
+  }
+  .dark & a {
+    border-color: var(--color-dark-border);
+  }
+  & a:hover {
+    opacity: 0.85;
+    background-color: rgb(156 163 175 / 0.25);
+  }
+  & img {
+    @apply w-full h-auto object-cover m-0;
+    aspect-ratio: 3 / 2;
+  }
+  @media (max-width: 640px) {
+    @apply flex flex-wrap justify-center gap-2;
+    & a {
+      width: 90px;
+      flex-shrink: 0;
+    }
+    & img {
+      width: 90px;
+      height: 60px;
+    }
+  }
+}
+
+/* ── Lightbox ────────────────────────────────────────────── */
+
+#lightbox-modal {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: none; align-items: center; justify-content: center;
+  z-index: 9999; cursor: pointer;
+  opacity: 0; transition: opacity 300ms ease;
+}
+#lightbox-modal.active { display: flex; opacity: 1; }
+#lightbox-image-wrapper {
+  max-width: 90%; max-height: 90%;
+  display: inline-block;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden; cursor: default;
+}
+#lightbox-modal img {
+  display: block; width: 100%; height: auto;
+  object-fit: contain; max-height: 90vh;
+}
+#lightbox-close {
+  position: absolute; top: 20px; right: 30px;
+  color: #fff; font-size: 36px; font-weight: bold;
+  cursor: pointer; z-index: 10000;
+  transition: color 200ms ease;
+  user-select: none; -webkit-user-select: none;
+}
+#lightbox-close:hover { color: #aaa; }
+#lightbox-prev, #lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  font-size: 40px; font-weight: bold; cursor: pointer;
+  padding: 14px 18px; z-index: 10000;
+  transition: background 200ms ease;
+  user-select: none; -webkit-user-select: none;
+  border-radius: 4px; line-height: 1;
+}
+#lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,0.25); }
+#lightbox-prev { left: 30px; }
+#lightbox-next { right: 30px; }
+@media (max-width: 768px) {
+  #lightbox-prev, #lightbox-next { font-size: 30px; padding: 10px 14px; }
+  #lightbox-prev { left: 10px; }
+  #lightbox-next { right: 10px; }
+  #lightbox-close { top: 10px; right: 10px; font-size: 28px; }
+}

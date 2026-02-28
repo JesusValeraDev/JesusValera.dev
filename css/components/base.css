@@ -1,18 +1,19 @@
 @utility card-base {
-  @apply shadow-card bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg rounded-xl overflow-hidden;
-  transition-property: transform, box-shadow, background-color;
-  transition-duration: 300ms;
+  @apply bg-light-catalogue-item-bg dark:bg-dark-catalogue-item-bg rounded-lg overflow-hidden border border-light-border dark:border-dark-border;
+  transition-property: border-color, background-color;
+  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg shadow-card-hover;
+    @apply bg-light-catalogue-bg dark:bg-dark-catalogue-bg;
+    border-color: var(--color-light-text-secondary);
   }
   .dark &:hover {
-    @apply shadow-card-dark-hover;
+    border-color: var(--color-dark-border);
   }
 }
 
 @utility container-custom {
-  @apply max-w-content mx-auto px-6 md:px-4;
+  @apply max-w-content mx-auto px-4 md:px-6;
 }
 
 @utility badge {
@@ -47,6 +48,10 @@
     left: 0;
     right: 0;
   }
+}
+
+@utility meta-sep {
+  @apply opacity-40 mx-0.5 select-none;
 }
 
 @utility main-offset-md {
