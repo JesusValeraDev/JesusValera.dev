@@ -26,14 +26,31 @@
 {% block content %}
   {%- set writing = get_section(path="writing/_index.md") -%}
   {%- set books_data = load_data(path="content/bookshelf/books.json", format="json") -%}
+  {%- set work = get_section(path="work/_index.md") -%}
 
-  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <!-- ── Hero ──────────────────────────────────────────────── -->
   <div class="home-hero">
     <div class="home-hero-inner">
 
       <div class="home-hero-text">
         <h1 class="home-name">{{ section.title }}</h1>
-        <p class="home-bio">Reading, writing, building, and AI. Exploring systems design, models, and practical engineering.</p>
+        <p class="home-bio">Reading, writing, building, and AI.<br>Exploring systems design, models, and practical engineering.</p>
+        <hr class="home-bio-divider">
+        <div class="home-work-card">
+          <div class="timeline-header">
+            <img src="{{ work.extra.preview_company_logo | safe }}" alt="{{ work.extra.preview_company }} logo" class="company-logo">
+            <div class="timeline-info">
+              <h3 class="company-name">
+                <a href="{{ work.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ work.extra.preview_company }}</a>
+              </h3>
+              <div class="job-role">{{ work.extra.preview_role }}</div>
+              <div class="job-meta">
+                <span class="job-date">{{ work.extra.preview_period }}</span>
+                <span class="job-location">{{ work.extra.preview_location }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="home-social">
           <a href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="home-social-link no-underline">
             <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
@@ -41,7 +58,7 @@
           <a href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="home-social-link no-underline">
             <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
           </a>
-          <a href="/work" class="hero-link" title="View my work experience">View my work experience<span class="arrow">→</span></a>
+          <a href="{{ get_url(path='work') | safe }}" class="hero-link">Full experience<span class="arrow">→</span></a>
         </div>
       </div>
     </div>
@@ -56,9 +73,8 @@
   </div>
   <a href="{{ get_url(path='writing') | safe }}" class="hero-link home-section-cta">All posts<span class="arrow">→</span></a>
 
-  <!-- ── From the shelf ────────────────────────────────────── -->
+  <!-- ── Latest reads ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Reads</h2>
-  <br>
   <div class="home-books-preview">
     {% for book in books_data | sort(attribute="date") | reverse | slice(end=3) %}
     <div class="book-item">

@@ -2,6 +2,15 @@
 title = "CV"
 template = "work.html"
 aliases = ['resume', 'cv']
+
+[extra]
+preview_company = "GotPhoto.com | fotograf.de"
+preview_company_url = "https://www.gotphoto.com/"
+preview_company_logo = "/cv/fotograf.webp"
+preview_role = "Senior Backend Developer"
+preview_period = "Sep 2023 — Present"
+preview_location = "Berlin, Germany"
+preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
 +++
 
 <div class="home-hero">

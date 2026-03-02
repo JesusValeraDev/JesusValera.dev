@@ -7,7 +7,7 @@
 @utility home-hero-inner {
   @apply flex items-start gap-6 pt-4;
   @media (max-width: 640px) {
-    @apply flex-col items-center gap-4;
+    @apply flex-col items-center gap-4 pt-0;
   }
 }
 
@@ -43,7 +43,7 @@
 }
 
 @utility home-bio {
-  @apply text-base text-light-text-secondary dark:text-dark-text-secondary leading-relaxed m-0 max-w-xl;
+  @apply text-base text-light-text-secondary dark:text-dark-text-secondary leading-relaxed m-0 max-w-[38rem];
 }
 
 @utility home-social {
@@ -141,11 +141,26 @@
 @utility home-books-preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   @media (max-width: 640px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
   }
+}
+
+/* ── Home work ──────────────────────────────────────────── */
+
+@utility home-bio-divider {
+  @apply w-full mb-3 mt-5;
+  border: none;
+  border-top: 1px solid var(--color-light-border);
+  .dark & {
+    border-top-color: var(--color-dark-border);
+  }
+}
+
+@utility home-work-card {
+  @apply flex flex-col gap-2 mt-3;
 }
 
 /* ── Section heading ─────────────────────────────────────── */
