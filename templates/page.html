@@ -67,19 +67,18 @@
 
     {{ page.content | safe }}
 
-    {% if page.earlier or page.later %}
-    <nav class="post-nav" aria-label="Post navigation">
-      {% if page.earlier %}
-      <a href="{{ page.earlier.permalink | safe }}" class="post-nav-link" rel="prev">
-        <span class="post-nav-label">← Older</span>
-        <span class="post-nav-title">{{ page.earlier.title }}</span>
+    {% if page.lower or page.higher %}
+    <nav class="post-adjacent" aria-label="Adjacent posts">
+      {% if page.lower %}
+      <a href="{{ page.lower.permalink | safe }}" class="post-adjacent-link post-adjacent-link--newer" rel="next">
+        <span class="post-adjacent-label">← Newer</span>
+        <span class="post-adjacent-title">{{ page.lower.title }}</span>
       </a>
-      {% else %}<div class="flex-1"></div>{% endif %}
-
-      {% if page.later %}
-      <a href="{{ page.later.permalink | safe }}" class="post-nav-link" style="text-align:right;" rel="next">
-        <span class="post-nav-label">Newer →</span>
-        <span class="post-nav-title">{{ page.later.title }}</span>
+      {% else %}<div></div>{% endif %}
+      {% if page.higher %}
+      <a href="{{ page.higher.permalink | safe }}" class="post-adjacent-link post-adjacent-link--older" rel="prev">
+        <span class="post-adjacent-label">Older →</span>
+        <span class="post-adjacent-title">{{ page.higher.title }}</span>
       </a>
       {% endif %}
     </nav>

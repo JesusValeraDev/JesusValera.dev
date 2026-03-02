@@ -1,5 +1,5 @@
 +++
 template = "home.html"
-title = "Jesus Valera Reales"
+title = ""
 description = "Senior Software Engineer passionate about clean code, architecture, and sharing knowledge through technology."
 +++

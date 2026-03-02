@@ -62,7 +62,7 @@
 }
 
 @utility hero-link {
-  @apply inline-flex items-center font-mono text-xs text-light-link dark:text-dark-link no-underline;
+  @apply inline-flex items-center font-mono text-sm text-light-link dark:text-dark-link no-underline;
   & .arrow {
     @apply inline-block ml-1 transition-transform duration-150 ease-custom;
   }
@@ -175,13 +175,19 @@
 
 @utility catalogue-link {
   @apply block no-underline text-inherit;
+  border-radius: 6px;
+  transition: background-color 150ms ease;
   &:hover {
     @apply no-underline;
+    background-color: var(--color-light-catalogue-bg);
+  }
+  .dark &:hover {
+    background-color: var(--color-dark-catalogue-bg);
   }
 }
 
 @utility catalogue-card {
-  @apply flex flex-col py-4;
+  @apply flex flex-col py-5;
   border-bottom: 1px solid var(--color-light-border);
   .dark & {
     border-bottom-color: var(--color-dark-border);

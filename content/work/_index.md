@@ -11,8 +11,8 @@ aliases = ['resume', 'cv']
          alt="Jesus Valera Reales"
          width="150" height="150">
     <div class="home-hero-text">
-      <h1 class="home-name">Work Experience</h1>
-      <p class="home-bio">Senior Software Engineer passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
+      <h1 class="home-name">Jesus Valera Reales</h1>
+      <p class="home-bio"><strong>Senior Software Engineer</strong> passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
       <div class="work-contact">
         <span class="work-contact-item">
           Berlin, Germany

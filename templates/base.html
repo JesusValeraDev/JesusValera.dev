@@ -183,7 +183,7 @@
   <script src="{{ get_url(path='js/ui/lightbox.js') | safe }}" defer></script>
 </head>
 
-<body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
+<body class="min-h-screen flex flex-col bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
   {% block header %}
   <header class="bg-light-catalogue-bg dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full">
     <div class="container-custom h-14 md:h-16 flex items-center justify-between">
@@ -211,7 +211,7 @@
   </header>
   {% endblock header %}
 
-  <main class="container-custom py-8">
+  <main class="container-custom py-8 grow w-full main-offset-md">
     {% block content %}{% endblock content %}
   </main>
 

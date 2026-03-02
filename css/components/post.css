@@ -53,7 +53,14 @@
 
 @utility post {
   & a {
-    @apply text-light-link dark:text-dark-link no-underline hover:underline;
+    @apply text-light-link dark:text-dark-link no-underline hover:no-underline;
+  }
+  & a[href^="http"]:not(.post-adjacent-link)::after,
+  & a[target="_blank"]:not(.post-adjacent-link)::after {
+    content: ' ↗';
+    font-size: 0.7em;
+    opacity: 0.55;
+    font-style: normal;
   }
   
   & h1, & h2, & h3, & h4, & h5, & h6 {
@@ -148,4 +155,58 @@
   .post & img {
     @apply m-0 rounded-none;
   }
+}
+
+/* ── Adjacent posts (Read Next) ──────────────────────────── */
+
+@utility post-adjacent {
+  @apply grid grid-cols-2 gap-4 mt-10 pt-8;
+  border-top: 1px solid var(--color-light-border);
+  .dark & {
+    border-top-color: var(--color-dark-border);
+  }
+  @media (max-width: 640px) {
+    @apply grid-cols-1;
+  }
+}
+
+@utility post-adjacent-link {
+  @apply flex flex-col gap-1 p-3 rounded-lg no-underline;
+  border: 1px solid var(--color-light-border);
+  transition: border-color 150ms ease, background-color 150ms ease;
+  &:hover {
+    border-color: var(--color-light-timeline-bg);
+    background-color: var(--color-light-catalogue-bg);
+    @apply no-underline;
+    & .post-adjacent-title {
+      color: var(--color-light-timeline-bg);
+    }
+  }
+  .dark & {
+    border-color: var(--color-dark-border);
+  }
+  .dark &:hover {
+    border-color: var(--color-dark-timeline-bg);
+    background-color: var(--color-dark-catalogue-bg);
+    & .post-adjacent-title {
+      color: var(--color-dark-timeline-bg);
+    }
+  }
+}
+
+@utility post-adjacent-link--newer {
+  @apply items-start;
+}
+
+@utility post-adjacent-link--older {
+  @apply items-end text-right;
+}
+
+@utility post-adjacent-label {
+  @apply font-mono text-xs uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary;
+  letter-spacing: 0.1em;
+}
+
+@utility post-adjacent-title {
+  @apply text-sm font-semibold text-light-text-primary dark:text-dark-text-primary leading-snug;
 }

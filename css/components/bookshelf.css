@@ -68,7 +68,7 @@
   & img {
     @apply block w-full h-full m-0;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
   }
 }
 

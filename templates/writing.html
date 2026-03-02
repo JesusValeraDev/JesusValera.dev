@@ -52,6 +52,8 @@
   </div>
 
   <!-- ── Pagination ────────────────────────────────────────── -->
+  {%- set writing_section = get_section(path="writing/_index.md") -%}
+  {%- set total_posts = writing_section.pages | length -%}
   {% if paginator.number_pagers > 1 %}
   <nav class="pagination" aria-label="Post pagination">
     {% if paginator.previous %}
@@ -60,7 +62,7 @@
       <span class="pagination-btn pagination-btn--disabled" aria-disabled="true">← Prev</span>
     {% endif %}
 
-    <span class="pagination-info">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
+    <span class="pagination-info">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}<span class="meta-sep"> · </span>{{ total_posts }} posts</span>
 
     {% if paginator.next %}
       <a href="{{ paginator.next | safe }}" class="pagination-btn" aria-label="Next page">Next →</a>
