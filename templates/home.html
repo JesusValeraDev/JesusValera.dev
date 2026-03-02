@@ -1,15 +1,5 @@
 {% extends "base.html" %}
 
-{% block scripts %}
-{%- set writing = get_section(path="writing/_index.md") -%}
-{%- set first_posts = writing.pages | slice(end=2) -%}
-{% for page in first_posts %}
-  {% if page.extra.static_thumbnail %}
-  <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
-  {% endif %}
-{% endfor %}
-{% endblock scripts %}
-
 {% block seo -%}
   {{ super() }}
 
