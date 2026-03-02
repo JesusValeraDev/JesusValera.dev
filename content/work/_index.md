@@ -28,6 +28,16 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
         </span>
         <span class="work-contact-sep">·</span>
         <a class="work-contact-item email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" href="#" aria-label="Send me an email"></a>
+        <span class="work-contact-sep">·</span>
+        <a class="work-contact-item home-social-link no-underline" href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-github"></use></svg>
+          GitHub
+        </a>
+        <span class="work-contact-sep">·</span>
+        <a class="work-contact-item home-social-link no-underline" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-linkedin"></use></svg>
+          LinkedIn
+        </a>
       </div>
       <div class="work-actions">
         <a href="/assets/documents/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">

@@ -151,7 +151,7 @@
 /* ── Home work ──────────────────────────────────────────── */
 
 @utility home-bio-divider {
-  @apply w-full mb-3 mt-5;
+  @apply w-full ;
   border: none;
   border-top: 1px solid var(--color-light-border);
   .dark & {
