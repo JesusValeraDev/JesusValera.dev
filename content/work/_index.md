@@ -34,11 +34,10 @@ aliases = ['resume', 'cv']
 <div class="about-me-card">
   <div class="timeline-card">
     <div class="about-me-content">
-      <p><strong>{{ experience_years(start_year=2018) }}+ years of experience</strong> developing <strong>scalable, maintainable software</strong> across various domains</p>
-      <p>Focused on <strong>clean architecture</strong>, <strong>design patterns</strong>, and <strong>test-driven development</strong></p>
-      <p>Committed to <strong>continuous learning</strong> and staying current with <strong>industry practices</strong></p>
-      <p>Experienced in <strong>mentoring</strong>, <strong>knowledge sharing</strong>, and <strong>technical communication</strong></p>
-      <p><strong>Strong collaborator</strong> dedicated to building <strong>high-quality, reliable products</strong></p>
+      <p><strong>{{ experience_years(start_year=2018) }}+ years</strong> building scalable, <strong>maintainable software with clean architecture</strong> and <strong>TDD</strong></p>
+      <p>Experienced in <strong>mentoring</strong> and <strong>knowledge sharing</strong>, including speaking at public conferences</p>
+      <p><strong>Active open-source contributor</strong>, sharing knowledge and driving innovation</p>
+      <p><strong>Collaborative engineer</strong> passionate about <strong>delivering</strong> reliable, high-quality products</p>
     </div>
   </div>
 </div>
@@ -51,16 +50,18 @@ aliases = ['resume', 'cv']
       <div class="skills-category">
         <h3 class="skills-category-title">Programming Languages & Frameworks</h3>
         <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Kotlin</span>
           <span class="skill-tag">PHP</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Deno</span>
           <span class="skill-tag">Symfony</span>
           <span class="skill-tag">Laravel</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Deno</span>
           <span class="skill-tag">VueJS</span>
           <span class="skill-tag">Android</span>
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Java</span>
         </div>
       </div>
       <div class="skills-category">
@@ -74,6 +75,7 @@ aliases = ['resume', 'cv']
       <div class="skills-category">
         <h3 class="skills-category-title">Tools & Platforms</h3>
         <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
           <span class="skill-tag">Docker</span>
           <span class="skill-tag">Git</span>
           <span class="skill-tag">Atlassian</span>
@@ -96,7 +98,7 @@ aliases = ['resume', 'cv']
             <a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de
             </a>
           </h3>
-          <div class="job-role">Backend Developer</div>
+          <div class="job-role">Senior Backend Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -109,9 +111,11 @@ aliases = ['resume', 'cv']
       </div>
       <div class="job-description">
         <ul>
-          <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a <strong>RESTful API</strong> architecture, which significantly improved the performance, scalability, and maintainability</li>
-          <li>Improved the legacy shop's <strong>package customization flow</strong>, optimizing usability and logic, contributing to higher conversion rates</li>
-          <li><strong>Extracted components</strong> from the monolith into external services, improving maintainability and drastically reducing deployment time</li>
+          <li>Improved the legacy <strong>shop's package customization flow</strong>, optimizing usability and business logic, leading the development of a key feature that increased the order rate by 20% while reducing bugs and support overhead</li>
+          <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a RESTful API architecture, which significantly improved performance, scalability, and long-term maintainability</li>
+          <li><strong>Extracted components</strong> from the monolith into external services, improving maintainability and drastically reducing deployment time from 30 minutes to 40 seconds</li>
+          <li>Made <strong>extensive daily use of AI development tools</strong>, applying them to experimentation, analysis, and solution design, and promoting best practices within the team to enhance productivity and technical outcomes</li>
+          <li><strong>Mentored new team joiners</strong>, guiding them through team ceremonies, knowledge-sharing practices, and technical workflows, enabling faster onboarding and more effective collaboration</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -138,7 +142,7 @@ aliases = ['resume', 'cv']
             <a href="https://www.artnight.com/" target="_blank">ArtNight
             </a>
           </h3>
-          <div class="job-role">Backend Developer</div>
+          <div class="job-role">Middle Backend Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -151,9 +155,10 @@ aliases = ['resume', 'cv']
       </div>
       <div class="job-description">
         <ul>
-          <li>Refactored the <strong>PHP monolith into a modular architecture</strong> using Hexagonal Architecture, improving maintainability, scalability, and design</li>
-          <li>Contributed to the design and implementation of key features such as Group Events, Bestsellers, and other core modules</li>
-          <li>Promoted best practices by organizing <strong>internal tech talks and coding katas</strong>, fostering clean code and <strong>TDD</strong> culture</li>
+          <li>Refactored the <strong>PHP monolith into a modular architecture</strong> using Hexagonal Architecture, improving maintainability, scalability, and long-term evolvability of the codebase</li>
+          <li>Actively <strong>reviewed and influenced architectural decisions</strong>, balancing business constraints with technical quality and sustainability</li>
+          <li>Led by example in <strong>code reviews and refactoring initiatives</strong>, raising overall code quality and reducing technical debt</li>
+          <li>Promoted best practices by organizing <strong>internal tech talks and coding katas</strong>, fostering clean code principles and a strong <strong>TDD</strong> culture across the team</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -178,7 +183,7 @@ aliases = ['resume', 'cv']
             <a href="https://www.kollex.de/" target="_blank">Kollex
             </a>
           </h3>
-          <div class="job-role">Backend Developer</div>
+          <div class="job-role">Junior Backend Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -192,7 +197,7 @@ aliases = ['resume', 'cv']
       <div class="job-description">
         <ul>
           <li><strong>Read and write CSV</strong> files to an AWS S3 bucket, enabling efficient data exchange and integration with external systems</li>
-          <li>Contributed to the development of multiple features and improvements</li>
+          <li>Developed and enhanced multiple features, including performance and reliability improvements</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -217,7 +222,7 @@ aliases = ['resume', 'cv']
             <a href="https://selectra.info/" target="_blank">Selectra
             </a>
           </h3>
-          <div class="job-role">Backend Developer</div>
+          <div class="job-role">Junior Backend Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -230,8 +235,7 @@ aliases = ['resume', 'cv']
       </div>
       <div class="job-description">
         <ul>
-          <li>Actively contributed to multiple ongoing projects, focusing on bug fixing, feature development, and improving existing functionality</li>
-          <li>Took initiative in organizing <strong>internal tech talks and coding katas</strong></li>
+          <li>Contributed to multiple projects through bug fixes, feature development, and enhancements</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -256,7 +260,7 @@ aliases = ['resume', 'cv']
             <a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn
             </a>
           </h3>
-          <div class="job-role">Backend Developer</div>
+          <div class="job-role">Junior Backend Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -269,8 +273,7 @@ aliases = ['resume', 'cv']
       </div>
       <div class="job-description">
         <ul>
-          <li>Developed features to <strong>export and import CSV files</strong>, enabling smooth data interchange between the application and external systems</li>
-          <li>Implemented <strong>automated PDF generation</strong> with dynamic content</li>
+          <li>Designed and implemented CSV import and export functionality, along with dynamic PDF generation</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -292,7 +295,7 @@ aliases = ['resume', 'cv']
         <img src="/cv/rad4m.webp" alt="rad4m logo" class="company-logo">
         <div class="timeline-info">
           <h3 class="company-name">RAD4M</h3>
-          <div class="job-role">Android Developer Intern</div>
+          <div class="job-role">Intern Android Developer</div>
         </div>
       </div>
       <div class="job-meta">
@@ -305,7 +308,7 @@ aliases = ['resume', 'cv']
       </div>
       <div class="job-description">
         <ul>
-          <li>Designed and developed an Android application from scratch, with persistent storage (<strong>SharedPreferences</strong>) and third-party APIs such as <strong>Google Maps</strong></li>
+          <li>Designed and developed an application from scratch, with persistent storage and third-party APIs</li>
         </ul>
       </div>
       <div class="job-skills">
@@ -343,6 +346,13 @@ aliases = ['resume', 'cv']
           Cartagena, Spain
         </span>
       </div>
+      <div class="job-skills">
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">MySQL</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="timeline-item">
@@ -364,6 +374,16 @@ aliases = ['resume', 'cv']
         <span class="job-location">
           Caravaca, Spain
         </span>
+      </div>
+      <div class="job-skills">
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Android</span>
+          <span class="skill-tag">OracleSQL</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
       </div>
     </div>
   </div>

@@ -105,16 +105,16 @@
   right: 0;
   font-family: monospace;
   font-size: 0.6rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-light-timeline-bg);
+  color: #fff;
+  background: var(--color-light-timeline-bg);
   padding: 0.15rem 0.45rem;
-  border: 1px solid rgba(22, 163, 74, 0.3);
   border-radius: 3px;
   .dark & {
-    color: var(--color-dark-timeline-bg);
-    border-color: rgba(74, 222, 128, 0.25);
+    background: var(--color-dark-timeline-bg);
+    color: #111;
   }
 }
 
@@ -149,7 +149,7 @@
 }
 
 @utility job-role {
-  @apply text-xs font-normal text-light-text-secondary dark:text-dark-text-secondary mt-0.5;
+  @apply text-sm font-normal text-light-text-secondary dark:text-dark-text-secondary mt-0.5;
 }
 
 @utility job-meta {
@@ -176,7 +176,7 @@
 }
 
 @utility job-description {
-  @apply text-xs mb-2;
+  @apply text-sm mb-2;
   & ul {
     row-gap: 0.375rem;
     display: flex;
@@ -197,7 +197,7 @@
 }
 
 @utility job-skills {
-  @apply flex flex-wrap items-center gap-x-2 gap-y-1 mt-1;
+  @apply flex flex-wrap items-center gap-x-2 gap-y-1 mt-3;
 }
 
 
@@ -221,6 +221,9 @@
 
 @utility skill-tags {
   @apply flex flex-wrap gap-1.5;
+  & + & {
+    margin-top: 0.5rem;
+  }
 }
 
 @utility skills-content {
@@ -228,7 +231,7 @@
 }
 
 @utility skills-category-title {
-  @apply font-mono uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary mb-2 mt-0;
+  @apply font-mono text-xs uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary mb-2 mt-0;
   &:first-child { @apply mt-0; }
 }
 
@@ -237,7 +240,7 @@
 @utility about-me-content {
   @apply space-y-1.5;
   & p {
-    @apply m-0 text-xs text-light-text-primary dark:text-dark-text-primary relative pl-4;
+    @apply m-0 text-sm text-light-text-primary dark:text-dark-text-primary relative pl-4;
     line-height: 1.6;
   }
   & p::before {
@@ -292,8 +295,7 @@
     border-color: var(--color-dark-border);
   }
   & a:hover {
-    opacity: 0.85;
-    background-color: rgb(156 163 175 / 0.25);
+    opacity: 0.65;
   }
   & img {
     @apply w-full h-auto object-cover m-0;

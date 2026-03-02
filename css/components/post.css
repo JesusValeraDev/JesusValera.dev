@@ -55,8 +55,12 @@
   & a {
     @apply text-light-link dark:text-dark-link no-underline hover:no-underline;
   }
-  & a[href^="http"]:not(.post-adjacent-link)::after,
-  & a[target="_blank"]:not(.post-adjacent-link)::after {
+  & p a[href^="http"]::after,
+  & li a[href^="http"]::after,
+  & blockquote a[href^="http"]::after,
+  & p a[target="_blank"]::after,
+  & li a[target="_blank"]::after,
+  & blockquote a[target="_blank"]::after {
     content: ' ↗';
     font-size: 0.7em;
     opacity: 0.55;
