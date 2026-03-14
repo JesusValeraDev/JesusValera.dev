@@ -4,6 +4,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@view-transition { navigation: auto; }
+
 @theme {
   --color-light-bg: #fcfcfd;
   --color-dark-bg: #111114;
