@@ -1,7 +1,14 @@
 /* ── Work hero contact row ───────────────────────────────── */
 
 @utility work-contact {
-  @apply flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary mt-2;
+  @apply flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary mt-3;
+  @media (max-width: 640px) {
+    @apply justify-center;
+  }
+}
+
+@utility work-contact-group {
+  @apply inline-flex flex-wrap items-center gap-x-2 gap-y-1 whitespace-nowrap;
 }
 
 @utility work-contact-item {
@@ -14,7 +21,7 @@
 }
 
 @utility work-actions {
-  @apply mt-3;
+  @apply mt-5;
 }
 
 @utility work-post {
