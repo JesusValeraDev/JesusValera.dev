@@ -42,18 +42,20 @@
     </div>
   </div>
 
-  <hr class="home-bio-divider">
-  <div class="home-work-card">
-    <div class="timeline-header">
-      <img src="{{ work.extra.preview_company_logo | safe }}" alt="{{ work.extra.preview_company }} logo" class="company-logo">
-      <div class="timeline-info">
-        <h3 class="company-name">
-          <a href="{{ work.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ work.extra.preview_company }}</a>
-        </h3>
-        <div class="job-role">{{ work.extra.preview_role }}</div>
-        <div class="job-meta">
-          <span class="job-date">{{ work.extra.preview_period }}</span>
-          <span class="job-location">{{ work.extra.preview_location }}</span>
+  <h2 class="catalogue-section-heading">Current Role</h2>
+  <div class="bento-grid bento-grid--1">
+    <div class="bento-cell">
+      <div class="timeline-header">
+        <img src="{{ work.extra.preview_company_logo | safe }}" alt="{{ work.extra.preview_company }} logo" class="company-logo">
+        <div class="timeline-info">
+          <h3 class="company-name">
+            <a href="{{ work.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ work.extra.preview_company }}</a>
+          </h3>
+          <div class="job-role">{{ work.extra.preview_role }}</div>
+          <div class="job-meta">
+            <span class="job-date">{{ work.extra.preview_period }}</span>
+            <span class="job-location">{{ work.extra.preview_location }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -62,18 +64,35 @@
 
   <!-- ── Latest posts ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Posts</h2>
-  <div class="catalogue">
+  <div class="bento-grid bento-grid--1">
     {% for page in writing.pages | slice(end=3) %}
-      {{ macros::page(page=page) }}
+    <a href="{{ page.permalink | safe }}" class="bento-cell bento-cell--link">
+      <div class="catalogue-meta">
+        <time datetime="{{ page.date }}">
+          {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min
+        </time>
+      </div>
+      <h3 class="catalogue-title">{{ page.title }}</h3>
+      {% if page.extra.subtitle %}
+      <p class="catalogue-subtitle">{{ page.extra.subtitle }}</p>
+      {% endif %}
+      {% if page.taxonomies.tags %}
+      <div class="catalogue-tags">
+        {% for tag in page.taxonomies.tags | slice(end=3) %}
+          <span class="tag-pill">{{ tag | upper }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </a>
     {% endfor %}
   </div>
   <a href="{{ get_url(path='writing') | safe }}" class="hero-link home-section-cta">All posts<span class="arrow">→</span></a>
 
   <!-- ── Latest reads ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Reads</h2>
-  <div class="home-books-preview">
+  <div class="bento-grid bento-grid--3">
     {% for book in books_data | sort(attribute="date") | reverse | slice(end=3) %}
-    <div class="book-item">
+    <div class="bento-cell bento-cell--book">
       <div class="book-cover-small">
         <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
         {% if book.date %}<span class="book-entry-date">{{ book.date | date(format="%b %Y") }}</span>{% endif %}

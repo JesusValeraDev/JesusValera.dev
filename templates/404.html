@@ -20,11 +20,17 @@
 
 
 {% block content %}
-<section class="text-center py-20">
-  <h1 class="text-3xl font-bold mb-4">{{ config.extra.expressions.p404 | default(value="404: Page not found") }}</h1>
-  <div class="h-0.5 w-16 bg-light-border dark:bg-dark-border mx-auto mb-6"></div>
-  <p class="text-light-text-secondary dark:text-dark-text-secondary">
-    Oops! We can't seem to find the page you are looking for. Let's <a href="{{ config.base_url | safe }}">head back home</a>.
-  </p>
+<section class="py-20">
+  <div class="bento-grid bento-grid--1">
+    <div class="bento-cell bento-cell--compact">
+      <p class="font-mono text-xs uppercase tracking-widest text-light-text-secondary dark:text-dark-text-secondary mb-4">Error 404</p>
+      <h1 class="text-3xl font-bold mb-4">{{ config.extra.expressions.p404 | default(value="Page not found") }}</h1>
+      <div class="h-0.5 w-16 bg-light-border dark:bg-dark-border mx-auto mb-6"></div>
+      <p class="text-light-text-secondary dark:text-dark-text-secondary mb-8">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <a href="{{ config.base_url | safe }}" class="hero-link no-underline font-mono text-sm">← Back to home</a>
+    </div>
+  </div>
 </section>
 {% endblock content %}

@@ -136,33 +136,6 @@
   display: inline-flex;
 }
 
-/* ── Home books preview ─────────────────────────────────── */
-
-@utility home-books-preview {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
-/* ── Home work ──────────────────────────────────────────── */
-
-@utility home-bio-divider {
-  @apply w-full ;
-  border: none;
-  border-top: 1px solid var(--color-light-border);
-  .dark & {
-    border-top-color: var(--color-dark-border);
-  }
-}
-
-@utility home-work-card {
-  @apply flex flex-col gap-2 mt-3;
-}
-
 /* ── Section heading ─────────────────────────────────────── */
 
 @utility catalogue-section-heading {
@@ -183,38 +156,6 @@
 }
 
 /* ── Post list ───────────────────────────────────────────── */
-
-@utility catalogue {
-  contain: layout;
-}
-
-@utility catalogue-link {
-  @apply block no-underline text-inherit;
-  border-radius: 6px;
-  transition: background-color 150ms ease;
-  &:hover {
-    @apply no-underline;
-    background-color: var(--color-light-catalogue-bg);
-  }
-  .dark &:hover {
-    background-color: var(--color-dark-catalogue-bg);
-  }
-}
-
-@utility catalogue-card {
-  @apply flex flex-col py-5;
-  border-bottom: 1px solid var(--color-light-border);
-  .dark & {
-    border-bottom-color: var(--color-dark-border);
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-@utility catalogue-text {
-  @apply flex flex-col;
-}
 
 @utility catalogue-meta {
   @apply mb-1;
@@ -251,11 +192,3 @@
   @apply text-sm leading-relaxed text-light-text-secondary dark:text-dark-text-secondary m-0;
 }
 
-@utility catalogue-cta {
-  @apply font-mono text-xs text-light-link dark:text-dark-link mt-3 inline-flex items-center gap-1;
-  opacity: 0.65;
-  transition: opacity 150ms ease;
-  .catalogue-link:hover & {
-    opacity: 1;
-  }
-}

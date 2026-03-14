@@ -77,11 +77,23 @@
 
 <h2 class="catalogue-section-heading">Statistics</h2>
 
-<div class="bookshelf-stats">
-  <span class="stat-entry"><span class="stat-val">{{ total_books }}</span><span class="stat-key">TOTAL BOOKS</span></span>
-  <span class="stat-entry"><span class="stat-val">{{ software_books }}</span><span class="stat-key">SOFTWARE BOOKS</span></span>
-  <span class="stat-entry"><span class="stat-val">{{ total_authors }}</span><span class="stat-key">TOTAL AUTHORS</span></span>
-  <span class="stat-entry"><span class="stat-val">{{ books_last_12_months }}</span><span class="stat-key">THIS YEAR</span></span>
+<div class="bento-grid bento-grid--4">
+  <div class="bento-cell bento-cell--compact">
+    <span class="stat-val">{{ total_books }}</span>
+    <span class="stat-key">Total Books</span>
+  </div>
+  <div class="bento-cell bento-cell--compact">
+    <span class="stat-val">{{ software_books }}</span>
+    <span class="stat-key">Software</span>
+  </div>
+  <div class="bento-cell bento-cell--compact">
+    <span class="stat-val">{{ total_authors }}</span>
+    <span class="stat-key">Authors</span>
+  </div>
+  <div class="bento-cell bento-cell--compact">
+    <span class="stat-val">{{ books_last_12_months }}</span>
+    <span class="stat-key">This Year</span>
+  </div>
 </div>
 
 <h2 class="catalogue-section-heading">Books
@@ -162,9 +174,9 @@
     </button>
   </div>
 
-  <div class="bookshelf-grid">
+  <div class="bento-grid bento-grid--4">
     {% for book in books %}
-    <div class="book-item" data-tags="{{ book.tags }}">
+    <div class="bento-cell bento-cell--book book-item" data-tags="{{ book.tags }}">
       <div class="book-cover-small">
         <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
         {% if book.date %}<span class="book-entry-date">{{ book.date | date(format="%b %Y") }}</span>{% endif %}

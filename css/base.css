@@ -7,6 +7,22 @@
     font-display: swap;
   }
   html { @apply scroll-smooth leading-relaxed bg-light-bg dark:bg-dark-bg; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+    mix-blend-mode: overlay;
+  }
+  .dark body::before {
+    opacity: 0.12;
+    mix-blend-mode: soft-light;
+  }
   *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
   body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
   a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(22,163,74,0.3); }

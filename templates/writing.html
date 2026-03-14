@@ -35,7 +35,6 @@
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <div class="home-hero">
     <div class="home-hero-inner">
-
       <div class="home-hero-text">
         <h1 class="home-name">Writing</h1>
         <p class="home-bio">{{ section.description }}</p>
@@ -45,9 +44,26 @@
 
   <!-- ── Posts ─────────────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Posts</h2>
-  <div class="catalogue">
+  <div class="bento-grid bento-grid--1">
     {% for page in paginator.pages %}
-      {{ macros::page(page=page) }}
+    <a href="{{ page.permalink | safe }}" class="bento-cell bento-cell--link">
+      <div class="catalogue-meta">
+        <time datetime="{{ page.date }}">
+          {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min
+        </time>
+      </div>
+      <h3 class="catalogue-title">{{ page.title }}</h3>
+      {% if page.extra.subtitle %}
+      <p class="catalogue-subtitle">{{ page.extra.subtitle }}</p>
+      {% endif %}
+      {% if page.taxonomies.tags %}
+      <div class="catalogue-tags">
+        {% for tag in page.taxonomies.tags | slice(end=3) %}
+          <span class="tag-pill">{{ tag | upper }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </a>
     {% endfor %}
   </div>
 
