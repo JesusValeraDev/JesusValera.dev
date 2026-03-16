@@ -90,7 +90,7 @@
 
   <!-- ── Latest reads ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Reads</h2>
-  <div class="bento-grid bento-grid--3">
+  <div class="bento-grid bento-grid--3-fixed">
     {% for book in books_data | sort(attribute="date") | reverse | slice(end=3) %}
     <div class="bento-cell bento-cell--book">
       <div class="book-cover-small">

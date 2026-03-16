@@ -412,21 +412,21 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
   <div class="bento-cell">
     <span class="conference-event-title" style="margin-top: 0;">IPC 2026 - Berlin</span>
     <div class="about-me-content">
-      <p><strong>Workshop Leader</strong> - Modern PHP in Practice: TDD, Refactoring, and Pair Programming <a href="https://phpconference.com/php-core-coding/refactoring-workshop-modernizing-legacy-php-pair-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs">[link]</a></p>
-      <p><strong>Speaker</strong> - Evolving a Legacy PHP Application: Patterns for Refactoring Success <a href="https://phpconference.com/software-architecture/legacy-php-refactoring-patterns/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs">[link]</a></p>
+      <p><strong>Workshop Leader</strong> - Modern PHP in Practice: TDD, Refactoring, and Pair Programming <a href="https://phpconference.com/php-core-coding/refactoring-workshop-modernizing-legacy-php-pair-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold">[link]</a></p>
+      <p><strong>Speaker</strong> - Evolving a Legacy PHP Application: Patterns for Refactoring Success <a href="https://phpconference.com/software-architecture/legacy-php-refactoring-patterns/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold">[link]</a></p>
     </div>
   </div>
   <div class="bento-cell">
     <span class="conference-event-title" style="margin-top: 0;">IPC 2025 - Munich</span>
     <div class="about-me-content">
-      <p><strong>Workshop Leader</strong> - Refactoring Workshop: Modernizing Legacy PHP with Pair Programming <a href="https://phpconference.com/php-core-coding/refactoring-workshop-modernizing-legacy-php-pair-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs">[link]</a></p>
-      <p><strong>Speaker</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques <a href="https://phpconference.com/software-architecture/php-refactoring-techniques" target="_blank" rel="noopener noreferrer" class="font-mono text-xs">[link]</a></p>
+      <p><strong>Workshop Leader</strong> - Refactoring Workshop: Modernizing Legacy PHP with Pair Programming <a href="https://phpconference.com/php-core-coding/refactoring-workshop-modernizing-legacy-php-pair-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold">[link]</a></p>
+      <p><strong>Speaker</strong> - From Mess to Maintainable: Real-World PHP Refactoring Techniques <a href="https://phpconference.com/software-architecture/php-refactoring-techniques" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold">[link]</a></p>
     </div>
   </div>
   <div class="bento-cell">
     <span class="conference-event-title" style="margin-top: 0;">IPC 2025 - Berlin</span>
     <div class="about-me-content">
-      <p><strong>Speaker</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming <a href="https://phpconference.com/slideless-pure-coding/testing-refactoring-kata-live-coding-pair-mob-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs">[link]</a></p>
+      <p><strong>Speaker</strong> - Solving a Testing & Refactoring Kata: Live Coding in Pair/Mob Programming <a href="https://phpconference.com/slideless-pure-coding/testing-refactoring-kata-live-coding-pair-mob-programming" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold">[link]</a></p>
     </div>
   </div>
 </div>
