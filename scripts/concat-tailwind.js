@@ -12,7 +12,7 @@ const parts = [
   'css/components/catalogue.css',
   'css/components/bookshelf.css',
   'css/components/post.css',
-  'css/components/work.css',
+  'css/components/cv.css',
 ];
 
 // Check if we're in watch mode

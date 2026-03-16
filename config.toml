@@ -64,5 +64,5 @@ name = "Bookshelf"
 url = "bookshelf"
 
 [[extra.menu]]
-name = "Work"
-url = "work"
+name = "CV"
+url = "cv"

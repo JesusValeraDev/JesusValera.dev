@@ -1,30 +1,30 @@
-/* ── Work hero contact row ───────────────────────────────── */
+/* ── CV hero contact row ─────────────────────────────────── */
 
-@utility work-contact {
+@utility cv-contact {
   @apply flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary mt-3;
   @media (max-width: 640px) {
     @apply justify-center;
   }
 }
 
-@utility work-contact-group {
+@utility cv-contact-group {
   @apply inline-flex flex-wrap items-center gap-x-2 gap-y-1 whitespace-nowrap;
 }
 
-@utility work-contact-item {
+@utility cv-contact-item {
   @apply inline-flex items-center gap-1;
   & svg { @apply shrink-0 opacity-60; }
 }
 
-@utility work-contact-sep {
+@utility cv-contact-sep {
   @apply opacity-30 select-none;
 }
 
-@utility work-actions {
+@utility cv-actions {
   @apply mt-5;
 }
 
-@utility work-post {
+@utility cv-post {
   & h2 {
     @apply font-mono font-semibold uppercase text-light-text-secondary dark:text-dark-text-secondary mt-6 md:mt-8 mb-3;
     letter-spacing: 0.15em;

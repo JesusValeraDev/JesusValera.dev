@@ -16,7 +16,7 @@
 {% block content %}
   {%- set writing = get_section(path="writing/_index.md") -%}
   {%- set books_data = load_data(path="content/bookshelf/books.json", format="json") -%}
-  {%- set work = get_section(path="work/_index.md") -%}
+  {%- set cv = get_section(path="cv/_index.md") -%}
 
   <!-- ── Hero ──────────────────────────────────────────────── -->
   <div class="home-hero">
@@ -46,21 +46,21 @@
   <div class="bento-grid bento-grid--1">
     <div class="bento-cell">
       <div class="timeline-header">
-        <img src="{{ work.extra.preview_company_logo | safe }}" alt="{{ work.extra.preview_company }} logo" class="company-logo">
+        <img src="{{ cv.extra.preview_company_logo | safe }}" alt="{{ cv.extra.preview_company }} logo" class="company-logo">
         <div class="timeline-info">
           <h3 class="company-name">
-            <a href="{{ work.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ work.extra.preview_company }}</a>
+            <a href="{{ cv.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ cv.extra.preview_company }}</a>
           </h3>
-          <div class="job-role">{{ work.extra.preview_role }}</div>
+          <div class="job-role">{{ cv.extra.preview_role }}</div>
           <div class="job-meta">
-            <span class="job-date">{{ work.extra.preview_period }}</span>
-            <span class="job-location">{{ work.extra.preview_location }}</span>
+            <span class="job-date">{{ cv.extra.preview_period }}</span>
+            <span class="job-location">{{ cv.extra.preview_location }}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <a href="{{ get_url(path='work') | safe }}" class="hero-link home-section-cta">Work experience<span class="arrow">→</span></a>
+  <a href="{{ get_url(path='cv') | safe }}" class="hero-link home-section-cta">Work experience<span class="arrow">→</span></a>
 
   <!-- ── Latest posts ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Posts</h2>

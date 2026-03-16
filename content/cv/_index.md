@@ -1,7 +1,7 @@
 +++
 title = "CV"
-template = "work.html"
-aliases = ['resume', 'cv']
+template = "cv.html"
+aliases = ['resume', 'work',]
 
 [extra]
 preview_company = "GotPhoto.com | fotograf.de"
@@ -22,25 +22,25 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
     <div class="home-hero-text">
       <h1 class="home-name">Jesus Valera Reales</h1>
       <p class="home-bio"><strong>Senior Software Engineer</strong> passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
-      <div class="work-contact">
-        <span class="work-contact-group">
-          <span class="work-contact-item">Berlin, Germany</span>
-          <span class="work-contact-sep">·</span>
-          <a class="work-contact-item email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" href="#" aria-label="Send me an email"></a>
+      <div class="cv-contact">
+        <span class="cv-contact-group">
+          <span class="cv-contact-item">Berlin, Germany</span>
+          <span class="cv-contact-sep">·</span>
+          <a class="cv-contact-item email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" href="#" aria-label="Send me an email"></a>
         </span>
-        <span class="work-contact-group">
-          <a class="work-contact-item home-social-link no-underline" href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <span class="cv-contact-group">
+          <a class="cv-contact-item home-social-link no-underline" href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-github"></use></svg>
             GitHub
           </a>
-          <span class="work-contact-sep">·</span>
-          <a class="work-contact-item home-social-link no-underline" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <span class="cv-contact-sep">·</span>
+          <a class="cv-contact-item home-social-link no-underline" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-linkedin"></use></svg>
             LinkedIn
           </a>
         </span>
       </div>
-      <div class="work-actions">
+      <div class="cv-actions">
         <a href="/assets/documents/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf" class="download-button">
           Download PDF
         </a>
