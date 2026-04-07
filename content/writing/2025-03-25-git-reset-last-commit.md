@@ -69,7 +69,7 @@ git push origin {branch} -f
 
 ## Conclusion
 
-Understanding when to use `git reset --soft` and `git reset --hard` is crucial for managing commits effectively.<br>
-Use `--soft` when you need to adjust your commits without losing changes and `--hard` when you need a complete reset. Always double-check before using `--hard` to avoid unintended data loss!
+Use `--soft` when you need to adjust your commits without losing changes and `--hard` when you need a complete reset.<br>
+Always double-check before using `--hard` to avoid unintended data loss!
 
 If you have doubts, or you are working in a branch with other people, it is preferable to use `git revert` instead.

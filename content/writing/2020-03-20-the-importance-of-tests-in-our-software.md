@@ -12,18 +12,17 @@ static_thumbnail = "/images/2020-03-20/1.webp"
 subtitle = ""
 +++
 
-Writing tests is one of the most effective ways to ensure your software works as intended. Tests verify that each part
-of your program functions correctly under different conditions, acting as a safety net that catches issues before they
-reach production.
+Writing tests is one of the most effective ways to verify your software works as intended. Tests check that each part of
+your program behaves correctly under different conditions, acting as a safety net that catches issues before they reach
+production.
 
 ![programming comic joke](/images/2020-03-20/1.webp)
 
 
 ### Verification and Early Detection
 
-Tests **verify correctness and catch bugs before they reach production**. The cost of fixing a bug increases
-exponentially as it moves through the development lifecycle - a bug caught during development takes minutes to fix,
-while the same bug in production can take days and could have a potential cost.
+Tests **verify correctness and catch bugs before they reach production**. A bug caught during development takes minutes
+to fix, while the same bug in production can take days and cost far more.
 
 ```php source
 public function test_applies_discount_correctly(): void

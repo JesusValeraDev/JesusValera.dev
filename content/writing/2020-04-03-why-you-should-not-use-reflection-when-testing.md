@@ -155,8 +155,8 @@ But our Vehicle class is final, so we cannot perform this test, also, we said we
 probably we are doing something wrong in this class (TIP: you should make **final** your classes by default 😉).
 
 - **Question**: So what is the problem here?
-- **Answer**: The problem here is that we are performing an action inside the class (on the constructor) to which we do not
-  have access from the outside.
+- **Answer**: The problem here is that we are performing an action inside the class (on the constructor) to which we do
+  not have access from the outside.
 
 One solution could be to inject the value in the constructor like:
 
@@ -190,8 +190,8 @@ public function testPrice(): void
 }
 ```
 
-To sum up, I don’t recommend using the Reflection class anywhere in your code unless you are very aware of what you are
-doing, usually, there are alternative implementations to what you want to achieve without using it.
+I don’t recommend using the Reflection class anywhere in your code unless you are very aware of what you are doing.
+Usually, there are alternative implementations to what you want to achieve without using it.
 
 ![stone figures](/images/2020-04-03/2.webp)
 

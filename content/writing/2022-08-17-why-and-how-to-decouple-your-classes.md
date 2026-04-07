@@ -1,7 +1,7 @@
 +++
 path = "2022-08-17-why-and-how-to-decouple-your-classes"
 title = "Why and How to decouple your classes"
-description = "Some frameworks embrace you to using their own helpers, but this has some negative impact on your code and we will take a look at it in this post."
+description = "Some frameworks embrace you to using their own helpers, but this has some negative impact on your code."
 date = 2022-08-17
 
 [taxonomies]
@@ -40,8 +40,8 @@ to infrastructure code.
 
 For the next example, let’s try to use a Laravel facade and a PHP function.
 
-Imagine we have the following service, and we really want to invert the dependencies. As you can see, we have the
-`trans()` facade and the `date()` PHP function.
+Imagine we have the following service, and we really want to invert the dependencies. We have the`trans()` facade and
+the `date()` PHP function.
 
 ```php source
 namespace App\Application;

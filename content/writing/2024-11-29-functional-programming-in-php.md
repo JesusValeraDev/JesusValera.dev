@@ -16,7 +16,7 @@ The PHP 8.4 version includes four new array functions that will help to write mo
 
 ![interlaken-mountain](/images/2024-11-29/1.webp)
 
-Let's take a look at the current PHP `array_*` methods and an small example about how to deal with each of them (similarly as I did in this JavaScript [post](/functional-programming-in-javascript)).
+Here are the current PHP `array_*` methods and a small example about how to deal with each of them (similarly as I did in this JavaScript [post](/functional-programming-in-javascript)).
 
 ## Imperative vs Declarative
 
@@ -42,7 +42,7 @@ foreach ($numbers as $n) {
 $result = array_filter($numbers, fn (int $n) => $n % 2 === 1);
 ```
 
-As you can see, in the declarative way, we did not create any explicit loop or added any `if` statement, it was all done automatically under-the-hood, we just defined which condition should be applied to each element of the list.
+In the declarative way, we did not create any explicit loop or added any `if` statement, it was all done automatically under-the-hood, we just defined which condition should be applied to each element of the list.
 
 There is no a better way, both imperative and declarative codes do the same, in some situations one way could fit better than the other, although, usually the declarative is shorter and cleaner.
 

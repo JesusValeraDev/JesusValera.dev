@@ -254,8 +254,8 @@ final  class ProductTransfer
 // $product->name = 'Acer FC-288';
 ```
 
-As you can see, having the _@psalm-immutable_ on your immutable classes you don’t need to worry about any of this
-(cloning or getters), and you can even leave your properties public without any fear because they are write-only.
+With _@psalm-immutable_ on your immutable classes you don’t need to worry about any of this (cloning or getters), and
+you can even leave your properties public without any fear because they are write-only.
 
 ## Recommendations
 

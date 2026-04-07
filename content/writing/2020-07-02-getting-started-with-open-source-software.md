@@ -75,7 +75,7 @@ Once you're done, let’s create a PR!
 
 ![hungarian tori in snow](/images/2020-07-02/4.webp)
 
-## To sum up
+## Summary
 
 ```bash
 # Synchronize your local repository to the original one

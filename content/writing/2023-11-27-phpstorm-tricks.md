@@ -12,18 +12,18 @@ static_thumbnail = "/images/2023-11-27/1.webp"
 subtitle = "Customize the IDE with templates, plugins and more"
 +++
 
-PhpStorm is a powerful IDE that helps to boost your development, let's take a look to some hidden tricks to make
-PhpStorm even better! ⚡️
+PhpStorm is a powerful IDE that helps to boost your development. Here are some tricks to get more out of PhpStorm! ⚡️
 
 ![phpstorm logo](/images/2023-11-27/1.webp)
 
 ## Plugins
 
-Plugins are a crucial part of the IDE.
+Plugins extend what the IDE can do.
 
 If you are a Symfony user, probably you use plugins
 like <a href="https://plugins.jetbrains.com/plugin/7219-symfony-support" target="_blank">Symfony Support</a>
-and <a href="https://plugins.jetbrains.com/plugin/7303-twig" target="_blank">Twig</a>. In the other hand, if you are a Laravel one, I bet you use <a href="https://plugins.jetbrains.com/plugin/13441-laravel-idea" target="_blank">Laravel Idea</a>
+and <a href="https://plugins.jetbrains.com/plugin/7303-twig" target="_blank">Twig</a>. In the other hand, if you are a
+Laravel one, I bet you use <a href="https://plugins.jetbrains.com/plugin/13441-laravel-idea" target="_blank">Laravel Idea</a>
 and <a href="https://plugins.jetbrains.com/plugin/7569-blade" target="_blank">Blade</a>.
 However, I recommend you <a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox" target="_blank">GitToolBox</a>
 or <a href="https://plugins.jetbrains.com/plugin/2162-string-manipulation" target="_blank">String Manipulation</a> in
