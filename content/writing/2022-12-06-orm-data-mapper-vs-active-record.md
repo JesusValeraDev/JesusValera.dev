@@ -30,7 +30,7 @@ _hasOne()_ / _hasMany()_ methods for the Active Record.
 As I previously mentioned, the entity itself can be created, updated or deleted. In PHP for example, Eloquent is an
 Active Record ORM developed by the Laravel community.
 
-```php source
+```php
 final class UserCreator
 {
     public function create(UserInformation $userInfo): void
@@ -50,7 +50,7 @@ final class UserCreator
 In the data mapper, we need an external class that will update the DB. In PHP for example, Doctrine is the de facto Data
 Mapper ORM for Symfony.
 
-```php source
+```php
 final class UserCreator
 {
     public function __construct(
@@ -93,7 +93,7 @@ want to provide to the user.
 In order to do this, we need to create an interface and a class that will implement the interface where we will drop all
 logic.
 
-```php source
+```php
 # App/User/Domain
 interface UserRepository
 {
@@ -138,7 +138,7 @@ final class DataMapperUserRepository implements UserRepository
 So the last step is to define which class will be resolved when we inject our `UserRepository` interface, and finally,
 our `UserCreator` will be like:
 
-```php source
+```php
 final class UserCreator
 {
     public function __construct(

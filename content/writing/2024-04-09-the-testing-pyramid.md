@@ -29,7 +29,7 @@ maintain.
 They verify that each function, method, or class behaves correctly under different conditions. Because they run in
 milliseconds, you can run them constantly during development.
 
-```php source
+```php
 public function test_calculate_discount(): void
 {
     $calculator = new PriceCalculator();
@@ -53,7 +53,7 @@ involve multiple layers of the application, such as database interactions or API
 
 These tests catch integration issues - problems that appear when components that work individually fail when combined.
 
-```php source
+```php
 public function test_create_order_persists_to_database(): void
 {
     $orderService = new OrderService($this->database);

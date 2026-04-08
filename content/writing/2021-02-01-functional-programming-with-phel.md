@@ -60,7 +60,7 @@ It’s a _recursive_ problem!
 
 The developer describes the steps one-by-one to achieve the desired result.
 
-```php source
+```php
 function factorial(int $number): int {
     $factorial = 1;
     while ($number >= 1) {

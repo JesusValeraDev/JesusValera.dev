@@ -43,7 +43,7 @@ For the next example, let’s try to use a Laravel facade and a PHP function.
 Imagine we have the following service, and we really want to invert the dependencies. We have the`trans()` facade and
 the `date()` PHP function.
 
-```php source
+```php
 namespace App\Application;
 
 final class WelcomeService
@@ -64,7 +64,7 @@ final class WelcomeService
 The first thing we should do is to move the `trans()` Laravel function logic to a different place, in order to do that,
 we have to invert the dependencies introducing a new interface as follows:
 
-```php source
+```php
 namespace App\Domain;
 
 interface Translator
@@ -75,7 +75,7 @@ interface Translator
 
 And place in a new class (which belongs to infrastructure layer) the original Laravel implementation.
 
-```php source
+```php
 namespace App\Infrastructure;
 
 final class LaravelTranslator implements Translator
@@ -93,7 +93,7 @@ the `Translator` interface.
 We can inject the new `LaravelTranslator` service in our `WelcomeService` defining in the service container
 which implementation we want to resolve when the framework faces the `Translator` in the constructor.
 
-```php source
+```php
 namespace App\Application;
 
 final class WelcomeService
@@ -114,7 +114,7 @@ final class WelcomeService
 
 The next step is to do the same but with the `date()` method.
 
-```php source
+```php
 namespace App\Domain;
 
 interface Date
@@ -125,7 +125,7 @@ interface Date
 
 And the PHP implementation:
 
-```php source
+```php
 namespace App\Infrastructure;
 
 final class SystemDate implements Date
@@ -140,7 +140,7 @@ final class SystemDate implements Date
 Let’s do the same as we did previously, but this time we can inject our own `SystemDate` implementation through the
 `Date` interface.
 
-```php source
+```php
 namespace App\Application;
 
 final class WelcomeService
@@ -162,7 +162,7 @@ final class WelcomeService
 
 Finally, we can create a test for the `WelcomeService` injecting the required dependencies.
 
-```php source
+```php
 final class WelcomeServiceTest extends TestCase
 {
     public function test_welcome(): void

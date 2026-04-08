@@ -16,7 +16,7 @@ subtitle = ""
 
 If you're a PHP developer, chances are you've encountered (or written) code like this:
 
-```php source
+```php
 $userLists = [];
 foreach ($this->someCall() as $someObject) {
     $userLists = array_merge($userLists, $someObject->getUsers());
@@ -36,7 +36,7 @@ significantly with larger datasets.
 
 Instead of merging in every iteration, we collect all elements and merge them only once at the end.
 
-```php source
+```php
 $userLists = [];
 foreach ($this->someCall() as $someObject) {
     $userLists[] = $someObject->getUsers();
@@ -57,7 +57,7 @@ $userLists = array_merge(...$userLists);
 
 This method avoids all intermediate arrays and merges on the fly.
 
-```php source
+```php
 $userLists = [];
 foreach ($this->someCall() as $someObject) {
     foreach ($someObject->getUsers() as $user) {

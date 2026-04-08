@@ -26,7 +26,7 @@ A list is an ordered collection.<br>
 The order is sequential starting from 0 and increasing 1 by 1 for each item.<br>
 It is also possible to have duplicated items in a list.<br>
 
-```php source
+```php
 $list = ['Croatia', 'Belgium', 'Austria', 'Belgium', 'Denmark'];
 print_r($list);
 
@@ -46,7 +46,7 @@ A map is an unordered collection.<br>
 Each element is composed of a key and a value.<br>
 It is not possible to have the same key more than once.<br>
 
-```php source
+```php
 $map = [
     'Croatia' => 0,
     'Belgium' => 1,
@@ -84,7 +84,7 @@ U = user-defined ➝ defined by the user in a callback
 
 These methods sort lists in _ascending/descending_ order.
 
-```php source
+```php
 # sort: Sort list by *ascending* order.
 $sort = ['Croatia', 'Belgium', 'Austria', 'Belgium'];
 sort($sort);
@@ -118,7 +118,7 @@ Array
 
 These methods sort associative arrays by _key/value_ in _ascending/descending_ order.
 
-```php source
+```php
 # ksort: Sort map by *key* in *ascending* order.
 $ksort = [100 => 'Croatia', 200 => 'Austria', 300 => 'Belgium'];
 ksort($ksort);
@@ -185,7 +185,7 @@ Basically, this operator is syntactic sugar specialized for comparisons.
 
 The first parameter is the array we want to sort and the second is a callback that returns an integer value.
 
-```php source
+```php
 /** @var callable(mixed,mixed):int $callable */
 $callable = function (mixed $a, mixed $b): int { ... }
 
@@ -195,7 +195,7 @@ usort(&$array, $callable): bool
 The values this callable must return are `-1`, `0` and `1` if the current item is less, equal or greater than the
 previous one, to be sorted before or after in the collection.
 
-```php source
+```php
 function compare(int $a, int $b): int
 {
     if ($a == $b) {
@@ -221,7 +221,7 @@ fn (int $a, int $b): int => $a <=> $b;
 These methods sort by keys or values (preserving or resetting the keys) in a user-defined callback. Let’s see some
 examples:
 
-```php source
+```php
 # usort: Sort list/map by callback from the values, keys are reset.
 $usort = [100 => 'Croatia', 300 => 'Austria', 200 => 'Belgium'];
 usort($usort, fn (string $a, string $b): int => $a <=> $b);
@@ -265,7 +265,7 @@ objects, it would be the same but comparing some property, it depends on your ne
 
 ## 📑 Cheat Sheet
 
-```php source
+```php
 sort() - sort list in ascending order
 rsort() - sort list in descending order
 

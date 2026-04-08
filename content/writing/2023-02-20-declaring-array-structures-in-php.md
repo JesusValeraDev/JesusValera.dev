@@ -48,7 +48,7 @@ Being explicit with `array<int, User>` or `list<User>` is still a better practic
 
 In the end, the more explicit, the better.
 
-```php source
+```php
 /** @var User[] $users */
 $users = [ ... ];
 
@@ -66,7 +66,7 @@ We use **angled brackets** to declare the types of the key and the value: `array
 > 💡There is a very handy shortcut when the key is an auto-incremental integer: `list<T>`.<br>
 > `list<T>` is an alias of `array<int<0, max>, T>`
 
-```php source
+```php
 /** @var array<string, User> $users */
 $users = [
     'jesus' => new User('Jesus Valera'),
@@ -96,7 +96,7 @@ $secondUser = $users[1];
 We use object shape when the array is not a collection of objects but a map which holds information.<br>
 To do that, we use the **curly bracket syntax** and define the key name and the type, we can split by commas if there are multiple elements: `array{foo:int, bar:string}`.
 
-```php source
+```php
 /** @var array{id:int, birthdate:DateTimeImmutable} */
 $additionalInfo = [ ... ];
 
@@ -108,13 +108,13 @@ $birthdate = $additionalInfo['birthdate']; # DateTimeImmutable
 
 Given the following 'object shape' array
 
-```php source
+```php
 ['hello' => 'world', new stdClass(), false];
 ```
 
 It will be addressed internally as follows:
 
-```php source
+```php
 array{'hello': string, 0: stdClass, 1: false}
 ```
 
@@ -124,7 +124,7 @@ array{'hello': string, 0: stdClass, 1: false}
 
 Example of a User class that holds two arrays: a list and an object shape.
 
-```php source
+```php
 final readonly class User
 {
     /** @var list<Comment> */
@@ -141,7 +141,7 @@ There are multiple advantages when using these PHP comments, they not only provi
 
 Of course, it's possible to represent any complex array structure using these PHPDoc annotations. Example:
 
-```php source
+```php
 /**
  * @var list<
  *   array{

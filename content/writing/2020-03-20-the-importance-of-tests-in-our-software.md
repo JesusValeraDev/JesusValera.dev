@@ -24,7 +24,7 @@ production.
 Tests **verify correctness and catch bugs before they reach production**. A bug caught during development takes minutes
 to fix, while the same bug in production can take days and cost far more.
 
-```php source
+```php
 public function test_applies_discount_correctly(): void
 {
     $result = $calculator->calculateDiscount(100, 20);
@@ -41,7 +41,7 @@ QA or production where they're exponentially more expensive to fix.
 Tests give you **confidence to improve code structure without breaking functionality**. Without tests, refactoring is
 risky and developers avoid it, leading to code degradation over time.
 
-```php source
+```php
 // You can safely refactor this:
 return $price - ($price * $percentage / 100);
 
@@ -59,7 +59,7 @@ codebase.
 Writing testable code forces you to **break code into smaller, independent components** with clear responsibilities.
 Tests also serve as executable documentation showing how the code should be used.
 
-```php source
+```php
 public function test_order_workflow(): void
 {
     $order = new Order($items);
@@ -80,7 +80,7 @@ class without digging through implementation details.
 One of the most common mistakes is testing how something works instead of what it does. **Tests should verify behavior,
 not implementation**. If you refactor the internal logic without changing the public API, your tests shouldn't break.
 
-```php source
+```php
 // BAD - Testing implementation details
 public function test_uses_percentage_calculation(): void
 {

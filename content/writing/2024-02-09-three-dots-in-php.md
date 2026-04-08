@@ -27,7 +27,7 @@ in the PHP grammar).
 
 That means, you could store a function or method in a variable and pass it around as a parameter.
 
-```php source
+```php
 $snakeCase = static fn($s): string => strtolower(preg_replace('/\B([A-Z])/', '_$1', $s));
 $upperCase = strtoupper(...);
 
@@ -52,7 +52,7 @@ A variadic function doesn't have a fixed arity, that means, it can take an indet
 end, the parameter will behave like an array.<br>
 The variadic argument MUST be at the end of the parameter list.
 
-```php source
+```php
 function foo(string $string, int ...$numbers): void
 {
     echo sprintf('%s [%s]', $string, implode(', ', $numbers));
@@ -72,7 +72,7 @@ argument doesn't match with the type that was defined in the function signature,
 Arrays and traversable objects can be unpacked into argument lists when calling functions by using the `...` operator.
 This is also known as the `splat operator` in other languages.
 
-```php source
+```php
 function add(int $a, int $b, int $c): void
 {
     echo $a + $b + $c;
@@ -92,13 +92,13 @@ unpacking is about transforming an array into multiple variables.
 
 The following snippet is a valid PHP code.
 
-```php source
+```php
 echo (fn(int ...$n) => array_sum($n))(...)(...[1, 2, 3]); // => 6
 ```
 
 The same code but a bit more readable.
 
-```php source
+```php
 function add(int ...$n): void
 {
     echo array_sum($n);

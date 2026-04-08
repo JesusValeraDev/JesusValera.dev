@@ -24,7 +24,7 @@ be mutable for example).
 
 ## Mutability examples and their impacts
 
-```php source
+```php
 final class ProductTransfer
 {
     public function __construct(
@@ -68,7 +68,7 @@ variable and the object itself.
 
 ## Modifying the name (being a string)
 
-```php source
+```php
 $name = $product->name;
 $name = 'Acer FC-288';
 
@@ -90,7 +90,7 @@ Strings in PHP are copied by value, therefore. When we modify the variable `$nam
 
 ## Modifying the price (being a number)
 
-```php source
+```php
 $price = $product->price;
 $price = 1.0;
 
@@ -111,7 +111,7 @@ Numbers in PHP are also copied by value.
 
 ## Modifying the tags (being an array)
 
-```php source
+```php
 $tags = $product->tags;
 $tags = ['phone', 'reconditioned'];
 
@@ -134,7 +134,7 @@ and any modification won’t alter the original one.
 
 ## Modifying the released date (being an object)
 
-```php source
+```php
 $date = $product->releaseDate;
 $date = $date->modify('+1 day');
 
@@ -157,7 +157,7 @@ In OOP languages, objects are passed (or assigned) by reference: any modificatio
 
 If we replace the `\DateTime` by a `\DateTimeImmutable` class, let’s see what happens with the previous example.
 
-```php source
+```php
 final class ProductTransfer
 {
     public function __construct(
@@ -193,7 +193,7 @@ values.
 
 Perfect, now our code is working like a charm, doesn't it? Well, take a look at the following snippet.
 
-```php source
+```php
 /** @var \DateTimeImmutable $date */
 $date = &$product->releaseDate; // Notice the '&' character 👀
 $date = $date->modify('+1 day');
@@ -219,7 +219,7 @@ alternatives.
 
 On the one hand, is to make private the properties and implement getters, then, in the getter use the clone keyword.
 
-```php source
+```php
 private \DateTimeImmutable $releaseDate;
 
 public function releaseDate(): \DateTimeImmutable
@@ -236,7 +236,7 @@ public function releaseDate(): \DateTimeImmutable
 On the other hand, is about a static analyzer code library (such as Psalm), it will complain if you are not taking into
 account the PHPDoc that you define.
 
-```php source
+```php
 /** @psalm-immutable */
 final  class ProductTransfer
 {

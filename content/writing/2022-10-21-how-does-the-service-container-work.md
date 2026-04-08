@@ -37,7 +37,7 @@ a `PostgreSQLUserRepository` or a `InMemoryUserRespository` instance.
 We can define our services as `php` or `yaml` file extension (you can define this configuration directly in
 the `src/Kernel.php` file).
 
-```php source
+```php
 # config/services.php
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
@@ -53,7 +53,7 @@ return function(ContainerConfigurator $containerConfigurator) {
 
 Alternatively, we can define a different instance for the _testing_ environment:
 
-```php source
+```php
 # config/services_test.yml
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
@@ -71,7 +71,7 @@ return function(ContainerConfigurator $containerConfigurator) {
 
 In Laravel, however, you can do this in the `AppServiceProvider` class.
 
-```php source
+```php
 namespace App\Providers;
 
 final class AppServiceProvider extends ServiceProvider
@@ -103,7 +103,7 @@ final class AppServiceProvider extends ServiceProvider
 So, from now on, the next time we try to inject our interface `UserRepository` as a dependency in the constructor of
 another class, eg:
 
-```php source
+```php
 final class UserCreator
 {
     public function __construct(
@@ -125,7 +125,7 @@ Let’s go deeper into the technical details, how could you create such a depend
 Gacela ([link](https://github.com/gacela-project/container/blob/d3f0714306cbe1e77707741a4146411d84539f2a/src/Container/DependencyResolver.php)),
 and this is a simplified version of it:
 
-```php source
+```php
 final class DependencyResolver
 {
     /** @var array<class-string,mixed> */

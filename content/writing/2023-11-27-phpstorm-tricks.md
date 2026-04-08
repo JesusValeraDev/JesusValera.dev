@@ -73,7 +73,7 @@ Live Templates are snippets of code that are very used, and you can write them i
 
 PhpStorm brings some live templates, for example, if we type `prif`, the generated code will be:
 
-```php source
+```php
 private function ░()
 {
 

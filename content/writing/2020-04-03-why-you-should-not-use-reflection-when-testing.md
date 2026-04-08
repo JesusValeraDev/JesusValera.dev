@@ -30,7 +30,7 @@ So, we do not need to test the private methods per se; they are called indirectl
 
 ## Comparison between standard and Reflection tests
 
-```php source
+```php
 final class Addition
 {
     public function simpleOperation(int $number1, int $number2): int
@@ -80,7 +80,7 @@ final class OperationTest
 What would happen if we modified the `simpleOperation()` method from the Addition class to the following, and we run the
 tests?
 
-```php source
+```php
 final class Addition
 {
    public function simpleOperation(int $number1, int $number2): int
@@ -100,7 +100,7 @@ final class Addition
 Let me show you a more realistic example (idea from 
 [PHPTheRightWay](https://phptherightway.com/pages/Design-Patterns.html)):
 
-```php source
+```php
 final readonly class Vehicle
 {
     public string $model;
@@ -116,7 +116,7 @@ final readonly class Vehicle
 
 To test the vehicle’s model is easy, but what about the price?
 
-```php source
+```php
 public function testModel(): void
 {
     $model = 'Seat';
@@ -136,7 +136,7 @@ public function testPrice(): void
 
 One possible solution could be using the Reflection class to be able to set explicitly the price like:
 
-```php source
+```php
 public function testGetPrice(): void
 {
      /** @var Vehicle|MockObject $vehicle */
@@ -160,7 +160,7 @@ probably we are doing something wrong in this class (TIP: you should make **fina
 
 One solution could be to inject the value in the constructor like:
 
-```php source
+```php
 final readonly class Vehicle
 {
     public function __construct(
@@ -173,14 +173,14 @@ final readonly class Vehicle
 
 And when we want to create this class, we could pass the final price as:
 
-```php source
+```php
 $vehiclePrice = random_int(1000, 3000);
 $vehicle = new Vehicle(‘Seat’, $vehiclePrice);
 ```
 
 So, our price test could be like:
 
-```php source
+```php
 public function testPrice(): void
 {
     $price = 200;

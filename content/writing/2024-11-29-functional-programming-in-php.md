@@ -27,7 +27,7 @@ There are two ways of applying transformations to arrays in PHP.
 
 **Example:** Having a list of numbers from 1 to 10, to filter odd numbers, we can do:
 
-```php source
+```php
 $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 ## Imperative
@@ -72,7 +72,7 @@ The new four methods were discussed in this <a href="https://wiki.php.net/rfc/ar
 
 `array_find()` is useful to get the **value** of the first occurrence of a certain element in an array. It will return _NULL_ otherwise.
 
-```php source
+```php
 $countries = ['Spain', 'Germany', 'Portugal', 'France'];
 $find = array_find($countries, fn(string $c) => str_contains($c, 'an'));
 var_dump($find);
@@ -85,7 +85,7 @@ string(7) "Germany"
 
 `array_find_key()` is useful to get the **key** of the first occurrence of a certain element in an array. It will return _NULL_ otherwise.
 
-```php source
+```php
 $countries = ['Spain', 'Germany', 'Portugal', 'France'];
 $findKey = array_find_key($countries, fn(string $c) => str_contains($c, 'an'));
 var_dump($findKey);
@@ -98,7 +98,7 @@ int(1)
 
 `array_all()` is useful to know if **all** elements from an array meet a specific closure. This method will return _true_ or _false_.
 
-```php source
+```php
 $countries = ['Spain', 'Germany', 'Portugal', 'France'];
 $allA = array_all($countries, fn(string $c) => str_contains($c, 'a'));
 $allE = array_all($countries, fn(string $c) => str_contains($c, 'e'));
@@ -114,7 +114,7 @@ bool(false)
 
 `array_any()` is useful to know if **any** element from an array meet a specific closure. This method will return _true_ or _false_.
 
-```php source
+```php
 $countries = ['Spain', 'Germany', 'Portugal', 'France'];
 $anyA = array_any($countries, fn(string $c) => str_contains($c, 'a'));
 $anyE = array_any($countries, fn(string $c) => str_contains($c, 'e'));
