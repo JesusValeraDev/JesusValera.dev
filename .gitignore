@@ -1,4 +1,5 @@
 .idea
+.omc
 
 # Zola build output
 public
@@ -12,6 +13,7 @@ yarn-error.log*
 
 # Tailwind CSS generated files
 static/tailwind.css
+static/giallo.css
 css/tailwind.entry.css
 
 # Posts in progress

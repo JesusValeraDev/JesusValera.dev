@@ -24,13 +24,9 @@ taxonomies = [
     {name = "tags", feed = false, render = false},
 ]
 
-[markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-    { theme = "OneHalfDark", filename = "assets/styles/syntax-theme-dark.css" },
-    { theme = "demain", filename = "assets/styles/syntax-theme-light.css" },
-]
+[markdown.highlighting]
+style = "class"
+theme = "github-light"
 
 [extra]
 # Basic information
