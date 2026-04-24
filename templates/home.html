@@ -90,8 +90,8 @@
 
   <!-- ── Latest reads ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Reads</h2>
-  <div class="bento-grid bento-grid--3-fixed">
-    {% for book in books_data | sort(attribute="date") | reverse | slice(end=3) %}
+  <div class="bento-grid bento-grid--4-3">
+    {% for book in books_data | sort(attribute="date") | reverse | slice(end=4) %}
     <div class="bento-cell bento-cell--book">
       <div class="book-cover-small">
         <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">

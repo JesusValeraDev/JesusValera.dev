@@ -102,8 +102,12 @@
   }
 }
 
-@utility bento-grid--3-fixed {
-  grid-template-columns: repeat(3, 1fr);
+@utility bento-grid--4-3 {
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+    & > :nth-child(4) { display: none; }
+  }
 }
 
 @utility bento-grid--4 {
