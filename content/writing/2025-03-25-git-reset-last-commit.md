@@ -22,7 +22,7 @@ You can use `git revert` or `git reset` commands to have a cleaner Git history.
 If you want to **undo a commit without losing the history but creating a new commit** undoing what you did, consider using `git revert`:
 
 ```bash
-git revert HEAD~1
+git revert HEAD
 ```
 
 This command is a safer option in shared repositories.
