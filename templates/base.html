@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="dns-prefetch" href="//rum.cronitor.io">
-  <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
   <!-- Ultra-aggressive font preloading to prevent font swapping -->
   <link rel="preload" as="font" href="{{ get_url(path='assets/fonts/Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
 
@@ -80,7 +78,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfd">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111114">
   <meta name="color-scheme" content="dark light">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://rum.cronitor.io https://static.cloudflareinsights.com https://scripts.simpleanalyticscdn.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://rum.cronitor.io https://queue.simpleanalyticscdn.com https://scripts.simpleanalyticscdn.com ws://127.0.0.1:* ws://localhost:*; frame-src 'self' https://www.youtube.com https://youtube.com; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://scripts.simpleanalyticscdn.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://queue.simpleanalyticscdn.com https://scripts.simpleanalyticscdn.com ws://127.0.0.1:* ws://localhost:*; frame-src 'self' https://www.youtube.com https://youtube.com; base-uri 'self'">
 
   <!-- Favicon and touch icons -->
   <link rel="icon" type="image/x-icon" href="{{ get_url(path='assets/icons/icon.ico') | safe }}">
@@ -92,12 +90,6 @@
     <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
     <link type="application/rss+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
   {% endif %}
-
-  <script async src="https://rum.cronitor.io/script.js"></script>
-  <script>
-    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
-    cronitor('config', { clientKey: '{{ config.extra.cronitor }}' });
-  </script>
 
   {% block seo %}
     {%- set site_url = current_url | default(value=get_url(path="404.html")) -%}
