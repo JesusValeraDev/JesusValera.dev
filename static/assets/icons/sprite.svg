@@ -46,6 +46,14 @@
     <path d="M4 4a16 16 0 0 1 16 16"/>
     <circle cx="5" cy="19" r="1"/>
   </symbol>
+  <symbol id="icon-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v18"/>
+    <path d="M8 21h8"/>
+    <path d="M5 7h14"/>
+    <path d="M16 7l-4-4-4 4"/>
+    <path d="M19 7l3 7a4 4 0 0 1-6 0z"/>
+    <path d="M5 7l-3 7a4 4 0 0 0 6 0z"/>
+  </symbol>
 
   <!-- Misc -->
   <symbol id="icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

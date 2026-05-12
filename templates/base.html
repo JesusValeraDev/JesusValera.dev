@@ -86,10 +86,8 @@
   <link rel="icon" type="image/webp" sizes="16x16" href="{{ get_url(path='assets/icons/favicon-16x16.webp') | safe }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='assets/icons/apple-touch-icon.webp') | safe }}">
 
-  {% if config.generate_feeds %}
-    <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
-    <link type="application/rss+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
-  {% endif %}
+  <link type="application/atom+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
+  <link type="application/rss+xml" rel="alternate" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" title="{{ config.title | default(value='Jesus Valera Reales') }} - RSS Feed">
 
   {% block seo %}
     {%- set site_url = current_url | default(value=get_url(path="404.html")) -%}
@@ -224,12 +222,14 @@
           <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-mail"></use></svg>
           <span class="sr-only">Send me an email</span>
         </a>
-        {% if config.generate_feeds %}
         <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" aria-label="Subscribe to RSS feed" title="RSS Feed">
           <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-rss"></use></svg>
           <span class="sr-only">Subscribe to RSS feed</span>
         </a>
-        {% endif %}
+        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="{{ get_url(path='legal') | safe }}" aria-label="Legal notice" title="Legal">
+          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-scale"></use></svg>
+          <span class="sr-only">Legal notice</span>
+        </a>
       </div>
     </div>
   </footer>
