@@ -55,6 +55,7 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
   <div class="bento-cell">
     <div class="about-me-content">
       <p><strong>{{ experience_years(start_year=2018) }}+ years</strong> building scalable, <strong>maintainable software with clean architecture</strong> and <strong>TDD</strong></p>
+      <p>Proficient with <strong>AI development tools</strong> to improve productivity, problem-solving, and system design</p>
       <p>Experienced in <strong>mentoring</strong> and <strong>knowledge sharing</strong>, including speaking at public conferences</p>
       <p><strong>Active open-source contributor</strong>, sharing knowledge and driving innovation</p>
       <p><strong>Collaborative engineer</strong> passionate about <strong>delivering</strong> reliable, high-quality products</p>
@@ -139,11 +140,10 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
         <span class="skill-tag">Deno</span>
         <span class="skill-tag">PHP</span>
         <span class="skill-tag">Symfony</span>
-        <span class="skill-tag">CakePHP</span>
-        <span class="skill-tag">Jira</span>
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">Docker</span>
         <span class="skill-tag">GitLab</span>
+        <span class="skill-tag">Jira</span>
       </div>
     </div>
   </div>
@@ -183,6 +183,7 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">Docker</span>
         <span class="skill-tag">GitLab</span>
+        <span class="skill-tag">Jira</span>
       </div>
     </div>
   </div>
@@ -207,7 +208,7 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
     </div>
     <div class="job-description">
       <ul>
-        <li><strong>Read and write CSV</strong> files to an AWS S3 bucket, enabling efficient data exchange and integration with external systems</li>
+        <li><strong>Read and write</strong> files to an AWS S3 bucket, enabling efficient data exchange and integration with external systems</li>
         <li>Developed and enhanced multiple features, including performance and reliability improvements</li>
       </ul>
     </div>
@@ -215,6 +216,7 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
       <div class="skill-tags">
         <span class="skill-tag">PHP</span>
         <span class="skill-tag">Symfony</span>
+        <span class="skill-tag">RabbitMQ</span>
         <span class="skill-tag">Jira</span>
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">PostgreSQL</span>
@@ -252,10 +254,11 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
         <span class="skill-tag">PHP</span>
         <span class="skill-tag">Laravel</span>
         <span class="skill-tag">Redis</span>
-        <span class="skill-tag">Trello</span>
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">Docker</span>
-        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Trello</span>
+        <span class="skill-tag">Basecamp</span>
       </div>
     </div>
   </div>
@@ -290,8 +293,8 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">VueJS</span>
         <span class="skill-tag">MySQL</span>
-        <span class="skill-tag">Jira</span>
         <span class="skill-tag">BitBucket</span>
+        <span class="skill-tag">Jira</span>
       </div>
     </div>
   </div>
