@@ -1,7 +1,7 @@
 +++
 title = "CV"
 template = "cv.html"
-aliases = ['resume', 'work',]
+aliases = ['resume', 'work']
 
 [extra]
 preview_company = "GotPhoto.com | fotograf.de"
@@ -10,7 +10,6 @@ preview_company_logo = "/cv/fotograf.webp"
 preview_role = "Senior Backend Developer"
 preview_period = "Sep 2023 — Present"
 preview_location = "Berlin, Germany"
-preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
 +++
 
 <div class="home-hero">
@@ -54,11 +53,11 @@ preview_skills = ["PHP", "TypeScript", "Symfony", "Deno", "Docker"]
 <div class="bento-grid bento-grid--1">
   <div class="bento-cell">
     <div class="about-me-content">
-      <p><strong>{{ experience_years(start_year=2018) }}+ years</strong> building scalable, <strong>maintainable software with clean architecture</strong> and <strong>TDD</strong></p>
-      <p>Proficient with <strong>AI development tools</strong> to improve productivity, problem-solving, and system design</p>
-      <p>Experienced in <strong>mentoring</strong> and <strong>knowledge sharing</strong>, including speaking at public conferences</p>
-      <p><strong>Active open-source contributor</strong>, sharing knowledge and driving innovation</p>
-      <p><strong>Collaborative engineer</strong> passionate about <strong>delivering</strong> reliable, high-quality products</p>
+      <p><strong>{{ experience_years(start_year=2018) }}+ years</strong> of experience building scalable, maintainable systems, with a strong focus on clean architecture, test-driven development, and long-term code quality</p>
+      <p>Leverages modern <strong>AI development tools</strong> to enhance productivity, accelerate problem-solving, and design more robust, adaptable systems</p>
+      <p>Passionate about <strong>mentorship</strong> and <strong>knowledge sharing</strong>, with experience guiding engineers and speaking at public conferences on technical topics</p>
+      <p><strong>Active contributor to open-source projects</strong>, continuously sharing insights and building tools that support the broader developer community</p>
+      <p><strong>Collaborative and product-minded engineer</strong> who values clear communication, ownership, and delivering reliable, high-quality solutions that create real impact</p>
     </div>
   </div>
 </div>
