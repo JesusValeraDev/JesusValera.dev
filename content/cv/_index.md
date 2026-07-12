@@ -438,6 +438,33 @@ preview_location = "Berlin, Germany"
 <div class="bento-grid bento-grid--1">
   <div class="bento-cell">
     <div class="timeline-header" style="margin-bottom: 0;">
+      <img src="/cv/securityscorecard.webp" alt="Laravel Security Scorecard" class="company-logo" loading="lazy">
+      <div class="timeline-info">
+        <h3 class="company-name">
+          <a href="https://laravel-security-scorecard-production-q6p9v4.laravel.cloud/" target="_blank" rel="noopener noreferrer">Security Scorecard
+          </a>
+        </h3>
+        <div class="job-role">Instant security audit for Laravel applications</div>
+      </div>
+    </div>
+    <div class="job-description">
+      <p>Automated security auditing tool for Laravel applications.</p>
+      <p>It scans publicly accessible deployments for common security issues such as leaked files, exposed dashboards, missing HTTP security headers, and configuration mistakes, then provides a graded report with clear, actionable remediation steps.</p>
+    </div>
+    <div class="project-gallery">
+      <a href="/cv/projects/securityscorecard1.webp">
+        <img src="/cv/projects/securityscorecard1.webp" alt="SecurityScorecard Screenshot 1" loading="lazy">
+      </a>
+      <a href="/cv/projects/securityscorecard2.webp">
+        <img src="/cv/projects/securityscorecard2.webp" alt="SecurityScorecard Screenshot 2" loading="lazy">
+      </a>
+      <a href="/cv/projects/securityscorecard3.webp">
+        <img src="/cv/projects/securityscorecard3.webp" alt="SecurityScorecard Screenshot 3" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="bento-cell">
+    <div class="timeline-header" style="margin-bottom: 0;">
       <img src="/cv/dkrisna.webp" alt="D'Krisna Beauty Salon" class="company-logo" loading="lazy">
       <div class="timeline-info">
         <h3 class="company-name">
