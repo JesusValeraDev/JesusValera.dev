@@ -1,5 +1,6 @@
 +++
 title = "CV"
+description = "Professional experience, skills and background of Jesus Valera Reales, Senior Software Engineer."
 template = "cv.html"
 aliases = ['resume', 'work']
 

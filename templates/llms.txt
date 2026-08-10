@@ -1,0 +1,31 @@
+{%- set home = get_section(path="_index.md", metadata_only=true) -%}
+{%- set writing = get_section(path="writing/_index.md", metadata_only=true) -%}
+{%- set bookshelf = get_section(path="bookshelf/_index.md", metadata_only=true) -%}
+{%- set cv = get_section(path="cv/_index.md", metadata_only=true) -%}
+{%- set legal = get_section(path="legal/_index.md", metadata_only=true) -%}
+# {{ config.title }}
+
+> {{ config.description }}
+
+The site is a static Zola blog. The Markdown source of every article is available at {{ config.extra.repo_content_url }}writing/.
+
+## Site
+
+- [Home]({{ home.permalink }}): {{ home.description }}
+- [{{ writing.title }}]({{ writing.permalink }}): {{ writing.description }}
+- [{{ bookshelf.title }}]({{ bookshelf.permalink }}): {{ bookshelf.description }}
+- [{{ cv.title }}]({{ cv.permalink }}): {{ cv.description }}
+- [{{ legal.title }}]({{ legal.permalink }}): {{ legal.description }}
+
+## Articles
+{% for page in pages %}{% if page.relative_path is starting_with("writing/") %}
+- [{{ page.title }}]({{ page.permalink }}){% if page.description %}: {{ page.description }}{% endif %}
+{%- endif %}{% endfor %}
+
+## Optional
+{% for page in pages %}{% if not page.relative_path is starting_with("writing/") %}
+- [{{ page.title }}]({{ page.permalink }}){% if page.description %}: {{ page.description }}{% endif %}
+{%- endif %}{% endfor %}
+- [Atom feed]({{ get_url(path="atom.xml") }}): Feed of all published articles.
+- [Sitemap]({{ get_url(path="sitemap.xml") }}): Full list of site URLs.
+- [Source repository]({{ config.extra.github }}/JesusValera.dev): Zola source code and Markdown content of this site.
