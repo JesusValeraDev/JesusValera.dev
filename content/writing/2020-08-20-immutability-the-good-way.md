@@ -272,4 +272,4 @@ you can even leave your properties public without any fear because they are writ
 
 - [Mutable vs Immutable Objects | InterviewCake](https://www.interviewcake.com/concept/java/mutable)
 - [From Impure to Pure Code | Tommi Kaikkonen](https://tommikaikkonen.github.io/impure-to-pure/)
-- [Entity vs DTO | StackOverflow](https://stackoverflow.com/a/51458159/4988034)
+- [Entity vs DTO | StackOverflow](https://stackoverflow.com/a/51458159)

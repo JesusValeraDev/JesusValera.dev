@@ -169,4 +169,4 @@ different scenarios like what to do depending on whether the resolved parameter 
 
 - [Symfony — Service Container](https://symfony.com/doc/current/service_container.html)
 - [Laravel — Service Container](https://laravel.com/docs/9.x/container#binding-primitives)
-- [Gacela — Bindings](https://gacela-project.com/docs/bootstrap/#bindings)
+- [Gacela — Bindings](https://gacela-project.com/docs/bindings)

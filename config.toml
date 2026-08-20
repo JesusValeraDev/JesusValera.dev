@@ -28,6 +28,14 @@ taxonomies = [
 style = "class"
 theme = "github-light"
 
+# Link checker (`zola check`)
+# StackOverflow sits behind Cloudflare, which serves 403 to non-browser
+# clients regardless of user agent, so its links are unverifiable here.
+[link_checker]
+skip_prefixes = [
+    "https://stackoverflow.com/",
+]
+
 [extra]
 # Basic information
 github = "https://github.com/JesusValeraDev"
