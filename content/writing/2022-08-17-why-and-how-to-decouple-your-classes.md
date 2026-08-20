@@ -1,8 +1,9 @@
 +++
-path = "2022-08-17-why-and-how-to-decouple-your-classes"
+path = "why-and-how-to-decouple-your-classes"
 title = "Why and How to decouple your classes"
 description = "Some frameworks embrace you to using their own helpers, but this has some negative impact on your code."
 date = 2022-08-17
+aliases = ['2022-08-17-why-and-how-to-decouple-your-classes']
 
 [taxonomies]
 tags = ['PHP', 'Solid', 'Decoupling', 'Dependency Inversion', 'OOP']

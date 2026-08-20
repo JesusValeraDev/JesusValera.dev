@@ -1,8 +1,9 @@
 +++
-path = "2020-08-20-immutability-the-good-way"
+path = "immutability-the-good-way"
 title = "Immutability, the good way"
 description = "An immutable object will remain in the same state as it was created. Design and implementation will be much easier and more consistent over the time"
 date = 2020-08-20
+aliases = ['2020-08-20-immutability-the-good-way']
 
 [taxonomies]
 tags = ['PHP', 'Immutability', 'Good Practices', 'Programming', 'OOP']

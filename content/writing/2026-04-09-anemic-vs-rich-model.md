@@ -1,8 +1,9 @@
 +++
-path = "2026-04-09-anemic-vs-rich-model"
+path = "anemic-vs-rich-model"
 title = "Anemic vs Rich Domain Model"
 description = "anemic and rich domain models in PHP with practical examples"
 date = 2026-04-09
+aliases = ['2026-04-09-anemic-vs-rich-model']
 
 [taxonomies]
 tags = ['PHP', 'OOP', 'Design Patterns', 'DDD']

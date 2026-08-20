@@ -1,8 +1,9 @@
 +++
-path = "2020-03-20-the-importance-of-tests-in-our-software"
+path = "the-importance-of-tests-in-our-software"
 title = "The importance of tests in our software"
 description = "A list of reasons that support the importance of writing tests in software development."
 date = 2020-03-20
+aliases = ['2020-03-20-the-importance-of-tests-in-our-software']
 
 [taxonomies]
 tags = ['Testing', 'Programming', 'Scalability', 'Modularity', 'Refactoring', 'Quality']

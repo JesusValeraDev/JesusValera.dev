@@ -1,8 +1,9 @@
 +++
-path = "2024-11-29-functional-programming-in-php"
+path = "functional-programming-in-php"
 title = "New PHP 8.4 array functions"
 description = "Imperative vs declarative and the new PHP 8.4 functions: array_find, array_find_key, array_all & array_any"
 date = 2024-11-29
+aliases = ['2024-11-29-functional-programming-in-php']
 
 [taxonomies]
 tags = ['PHP', 'array', 'sorting', 'Programming', 'Functional Programming', 'Functions']

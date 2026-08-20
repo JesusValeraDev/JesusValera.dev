@@ -1,8 +1,9 @@
 +++
-path = "2026-07-24-apply-git-patches-vendor-libraries"
+path = "apply-git-patches-vendor-libraries"
 title = "Apply Patches to Vendor Libraries using Composer"
 description = "Learn how to patch PHP vendor packages with Composer patches instead of editing files in the vendor directory on PHP"
 date = 2026-07-24
+aliases = ['2026-07-24-apply-git-patches-vendor-libraries']
 
 [taxonomies]
 tags = ['PHP', 'Composer', 'dependencies', 'patches', 'vendor']
@@ -212,7 +213,7 @@ Point Composer at your fork and require the branch your fix lives on:
 
 The `repositories` entry on its own changes nothing. Composer only resolves to the fork once the constraint in `require` points at a branch that exists there.
 
-Keep in mind that a fork is a standing maintenance cost, as every upstream release becomes yours to merge. If all you need is a local copy to develop against, [path repositories](/2026-01-19-link-local-packages-using-composer/) are the lighter option.
+Keep in mind that a fork is a standing maintenance cost, as every upstream release becomes yours to merge. If all you need is a local copy to develop against, [path repositories](/link-local-packages-using-composer/) are the lighter option.
 
 Whichever route you take, open a pull request upstream. Once the fix is released, you get to delete the patch or the fork entirely.
 

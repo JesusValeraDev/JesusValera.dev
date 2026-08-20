@@ -1,8 +1,9 @@
 +++
-path = "2024-04-09-the-testing-pyramid"
+path = "the-testing-pyramid"
 title = "The testing pyramid"
 description = "A post about the testing pyramid and its importance in the software development. The importance of the unit tests, integration tests and UI tests."
 date = 2024-04-09
+aliases = ['2024-04-09-the-testing-pyramid']
 
 [taxonomies]
 tags = ['Programming', 'Test', 'Cohn', 'Pyramid', 'Unit', 'Integration']

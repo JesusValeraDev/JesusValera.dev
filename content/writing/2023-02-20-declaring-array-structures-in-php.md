@@ -1,8 +1,9 @@
 +++
-path = "2023-02-20-declaring-array-structures-in-php"
+path = "declaring-array-structures-in-php"
 title = "Declaring array structures in PHP"
 description = "It is not possible in PHP to define explicitly the types of your arrays, but using PHPDoc + static analyzers (PHPStan or Psalm), we can do it. Here is how"
 date = 2023-02-20
+aliases = ['2023-02-20-declaring-array-structures-in-php']
 
 [taxonomies]
 tags = ["Programming", "PHP", "Arrays", "Phpstan", "Psalm"]

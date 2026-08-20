@@ -1,8 +1,9 @@
 +++
-path = "2022-03-16-a-brief-introduction-to-graphql"
+path = "a-brief-introduction-to-graphql"
 title = "A brief introduction to GraphQL"
 description = "A RESTful API is a de-facto standard to allow communication between applications, although, recently GraphQL comes up. Let's see how GraphQL works"
 date = 2022-03-16
+aliases = ['2022-03-16-a-brief-introduction-to-graphql']
 
 [taxonomies]
 tags = ['GraphQL', 'Rest', 'Https', 'API', 'Facebook']

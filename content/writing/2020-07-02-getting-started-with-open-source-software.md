@@ -1,8 +1,9 @@
 +++
-path = "2020-07-02-getting-started-with-open-source-software"
+path = "getting-started-with-open-source-software"
 title = "Getting started with Open Source Software"
 description = "Learn why and how to work in OSS"
 date = 2020-07-02
+aliases = ['2020-07-02-getting-started-with-open-source-software']
 
 [taxonomies]
 tags = ['Collaboration', 'Git', 'Github', 'Open Source', 'Programming']

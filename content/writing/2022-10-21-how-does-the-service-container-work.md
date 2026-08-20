@@ -1,8 +1,9 @@
 +++
-path = "2022-10-21-how-does-the-service-container-work"
+path = "how-does-the-service-container-work"
 title = "How does the Service Container work?"
 description = "What is a service container and how does it work? Let's answer these questions and create one from scratch"
 date = 2022-10-21
+aliases = ['2022-10-21-how-does-the-service-container-work']
 
 [taxonomies]
 tags = ['Service Container', 'Binding', 'Laravel', 'Symfony', 'Programming']

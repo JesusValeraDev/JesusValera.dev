@@ -1,8 +1,9 @@
 +++
-path = "2023-04-25-how-to-create-a-global-gitignore-file"
+path = "how-to-create-a-global-gitignore-file"
 title = "How to create a global .gitignore file"
 description = "There is a way to not commit unnecessary files with a global .gitignore file. Here you will learn how to create this configuration in your git globally."
 date = 2023-04-25
+aliases = ['2023-04-25-how-to-create-a-global-gitignore-file']
 
 [taxonomies]
 tags = ['Git', 'Programming', 'Gitignore', 'Github', 'Version Control']

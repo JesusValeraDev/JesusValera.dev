@@ -1,8 +1,9 @@
 +++
-path = "2023-08-26-functional-tests"
+path = "functional-tests"
 title = "Functional Tests"
 description = "Differences between Functional tests: unit, integration and e2e tests"
 date = 2023-08-26
+aliases = ['2023-08-26-functional-tests']
 
 [taxonomies]
 tags = ['Testing', 'Test types', 'Unit Testing', 'Programming']

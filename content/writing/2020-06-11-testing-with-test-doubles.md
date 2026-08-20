@@ -1,8 +1,9 @@
 +++
-path = "2020-06-11-testing-with-test-doubles"
+path = "testing-with-test-doubles"
 title = "Testing with Test Doubles?"
 description = "Example of the types of Test Doubles: dummy, stub, spy, mock and fake"
 date = 2020-06-11
+aliases = ['2020-06-11-testing-with-test-doubles']
 
 [taxonomies]
 tags = ['PHP', 'Testing', 'Mocking', 'Test Doubles', 'Stub']

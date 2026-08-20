@@ -1,9 +1,9 @@
 +++
-path = "2020-04-03-why-you-should-not-use-reflection-when-testing"
+path = "why-you-should-not-use-reflection-when-testing"
 title = "Why you should not use Reflection when testing"
 description = "Do our tests get fragile when we use reflection? Do we get coupled to our code when we use it? Which alternatives do we have instead? Is it a good practice?"
 date = 2020-04-03
-aliases = ['is-it-a-good-idea-to-use-reflection-while-testing']
+aliases = ['is-it-a-good-idea-to-use-reflection-while-testing', '2020-04-03-why-you-should-not-use-reflection-when-testing']
 
 [taxonomies]
 tags = ['PHP', 'Testing', 'Reflections', 'Architectural Design', 'Programming']

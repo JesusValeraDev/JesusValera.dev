@@ -1,8 +1,9 @@
 +++
-path = "2021-08-18-sorting-functions-in-php"
+path = "sorting-functions-in-php"
 title = "Sorting functions in PHP"
 description = "In PHP there are multiple ways to sort a collection, and sometimes it’s not clear which method we should use. Let's take a look at the alternatives."
 date = 2021-08-18
+aliases = ['2021-08-18-sorting-functions-in-php']
 
 [taxonomies]
 tags = ['PHP', 'Programming', 'Sorting Algorithms', 'Oop', 'Functional Programming']

@@ -1,8 +1,9 @@
 +++
-path = "2022-12-06-orm-data-mapper-vs-active-record"
+path = "orm-data-mapper-vs-active-record"
 title = "ORM: Data Mapper vs Active Record"
 description = "Overview between ORMs (Data Mapper vs Active Record) in PHP using Eloquent & Doctrine, which we will take a look at Repository Pattern and how it helps us."
 date = 2022-12-06
+aliases = ['2022-12-06-orm-data-mapper-vs-active-record']
 
 [taxonomies]
 tags = ["PHP", "Testing", "Orm", "Programming", "Refactoring"]

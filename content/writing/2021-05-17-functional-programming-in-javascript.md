@@ -1,8 +1,9 @@
 +++
-path = "2021-05-17-functional-programming-in-javascript"
+path = "functional-programming-in-javascript"
 title = "Functional Programming in JavaScript"
 description = "Functional Programming is a paradigm where programs are constructed by applying and composing functions. Let's take a look at some functions we have on JS"
 date = 2021-05-17
+aliases = ['2021-05-17-functional-programming-in-javascript']
 
 [taxonomies]
 tags = ['JavaScript', 'Typescript', 'Programming', 'Functional Programming', 'Functions']

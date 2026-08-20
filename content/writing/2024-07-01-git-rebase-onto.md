@@ -1,8 +1,9 @@
 +++
-path = "2024-07-01-git-rebase-onto"
+path = "git-rebase-onto"
 title = "Git Rebase onto"
 description = "How to solve Git conflicts or changing the branch history when rebasing onto a branch"
 date = 2024-07-01
+aliases = ['2024-07-01-git-rebase-onto']
 
 [taxonomies]
 tags = ['Git', 'Rebase', 'Onto', 'Branch']

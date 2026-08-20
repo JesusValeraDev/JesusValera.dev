@@ -1,8 +1,9 @@
 +++
-path = "2025-04-18-jobs-queues-vs-events"
+path = "jobs-queues-vs-events"
 title = "Jobs (Queues) vs. Events"
 description = "Differences between Jobs (queues) and Events"
 date = 2025-04-18
+aliases = ['2025-04-18-jobs-queues-vs-events']
 
 [taxonomies]
 tags = ['programming', 'job', 'event', 'queue', 'async']

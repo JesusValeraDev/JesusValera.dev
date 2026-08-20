@@ -1,8 +1,9 @@
 +++
-path = "2025-07-04-avoid-using-array_merge_within-a-loop"
+path = "avoid-using-array_merge_within-a-loop"
 title = "Avoid using array_merge within a loop"
 description = "Why the PHP function array_merge() inside a loop is greedy for resources, and how to fix it"
 date = 2025-07-04
+aliases = ['2025-07-04-avoid-using-array_merge_within-a-loop']
 
 [taxonomies]
 tags = ['php', 'arrays', 'merge', 'array_merge', 'resources']

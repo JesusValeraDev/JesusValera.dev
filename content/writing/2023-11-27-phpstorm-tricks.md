@@ -1,8 +1,9 @@
 +++
-path = "2023-11-27-phpstorm-tricks"
+path = "phpstorm-tricks"
 title = "PhpStorm tricks ✨"
 description = "PhpStorm tricks: Customize the IDE with templates, plugins, shortcuts and more"
 date = 2023-11-27
+aliases = ['2023-11-27-phpstorm-tricks']
 
 [taxonomies]
 tags = ['PhpStorm', 'Intellij', 'Settings', 'Customize', 'IDE']

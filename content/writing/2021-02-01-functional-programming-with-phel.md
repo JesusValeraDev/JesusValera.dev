@@ -1,8 +1,9 @@
 +++
-path = "2021-02-01-functional-programming-with-phel"
+path = "functional-programming-with-phel"
 title = "Functional Programming with Phel 🐘"
 description = "Functional Programming is a programming paradigm, it’s even older than Object-Oriented Programming, let's compare some snippets between FP and OOP"
 date = 2021-02-01
+aliases = ['2021-02-01-functional-programming-with-phel']
 
 [taxonomies]
 tags = ['PHP', 'Functional Programming', 'Phel', 'Programming', 'Software']

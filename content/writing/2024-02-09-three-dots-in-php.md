@@ -1,8 +1,9 @@
 +++
-path = "2024-02-09-three-dots-in-php"
+path = "three-dots-in-php"
 title = "Three dots in PHP"
 description = "first-class callable syntax, variadic function and argument unpacking"
 date = 2024-02-09
+aliases = ['2024-02-09-three-dots-in-php']
 
 [taxonomies]
 tags = ['PHP', 'first-class', 'callables', 'variadic', 'varargs', 'argument unpacking', 'splat operator']

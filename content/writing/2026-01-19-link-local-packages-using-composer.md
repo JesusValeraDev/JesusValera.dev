@@ -1,8 +1,9 @@
 +++
-path = "2026-01-19-link-local-packages-using-composer"
+path = "link-local-packages-using-composer"
 title = "Link Local Packages using Composer"
 description = "Learn how to link and use local PHP packages in your projects using Composer's path repositories"
 date = 2026-01-19
+aliases = ['2026-01-19-link-local-packages-using-composer']
 
 [taxonomies]
 tags = ['PHP', 'Composer', 'dependencies', 'development', 'packages']

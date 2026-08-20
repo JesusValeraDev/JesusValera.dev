@@ -1,8 +1,9 @@
 +++
-path = "2026-08-10-combine-arrays-in-php"
+path = "combine-arrays-in-php"
 title = "How to Combine Arrays in PHP: Complete Guide"
 description = "Learn the differences between array_merge, array_merge_recursive, array_combine, the spread operator and the + operator in PHP with practical examples"
 date = 2026-08-10
+aliases = ['2026-08-10-combine-arrays-in-php']
 
 [taxonomies]
 tags = ['PHP', 'arrays', 'merge', 'spread']
@@ -84,7 +85,7 @@ Array
 
 String keys from the **second array overwrite** values from the first.
 
-`array_merge()` accepts any number of arrays, so prefer a single call over repeated calls. Building a result by [calling it inside a loop](/2025-07-04-avoid-using-array_merge_within-a-loop/) reallocates the whole array on every iteration.
+`array_merge()` accepts any number of arrays, so prefer a single call over repeated calls. Building a result by [calling it inside a loop](/avoid-using-array_merge_within-a-loop/) reallocates the whole array on every iteration.
 
 <div class="separator"></div>
 
@@ -377,7 +378,7 @@ Array
 )
 ```
 
-The unpacking syntax is the same one used for variadic functions and argument unpacking, covered in [Three dots in PHP](/2024-02-09-three-dots-in-php/).
+The unpacking syntax is the same one used for variadic functions and argument unpacking, covered in [Three dots in PHP](/three-dots-in-php/).
 
 <div class="separator"></div>
 
