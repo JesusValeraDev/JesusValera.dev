@@ -1,5 +1,5 @@
 +++
-title = "Parlamento de la batalla del 3 de Mayo"
+title = "Parlamento entre el Rey Cristiano y el Sultán Moro"
 description = "Parlamento de la batalla del día 3 de mayo entre el Rey Cristiano y Sultán Moro en Caravaca de la Cruz, Murcia"
 date = 2023-05-03
 
@@ -8,7 +8,7 @@ tags = ["Caravaca", "Parlamento", "Discurso", "Moros", "Cristianos", "batalla"]
 
 [extra]
 static_thumbnail = "/other/1.webp"
-subtitle = "en Caravaca de la Cruz entre el Rey Cristiano y Sultán Moro ☨"
+subtitle = "de la batalla del 3 de Mayo en Caravaca de la Cruz ☨"
 +++
 
 ![parlamento-batalla-moros-cristianos](/other/1.webp)
