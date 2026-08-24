@@ -54,7 +54,7 @@ preview_location = "Berlin, Germany"
 <div class="bento-grid bento-grid--1">
   <div class="bento-cell">
     <div class="about-me-content">
-      <p><strong>{{ experience_years(start_year=2018) }}+ years</strong> of experience building scalable, maintainable systems, with a strong focus on clean architecture, test-driven development, and long-term code quality</p>
+      <p><strong>{{ <experience_years start_year={2018} /> }}+ years</strong> of experience building scalable, maintainable systems, with a strong focus on clean architecture, test-driven development, and long-term code quality</p>
       <p>Leverages modern <strong>AI development tools</strong> to enhance productivity, accelerate problem-solving, and design more robust, adaptable systems</p>
       <p>Passionate about <strong>mentorship</strong> and <strong>knowledge sharing</strong>, with experience guiding engineers and speaking at public conferences on technical topics</p>
       <p><strong>Active contributor to open-source projects</strong>, continuously sharing insights and building tools that support the broader developer community</p>
@@ -119,7 +119,7 @@ preview_location = "Berlin, Germany"
     </div>
     <div class="job-meta">
       <span class="job-date">
-        Sep 2023 — Present · {{ duration(start_year=2023, start_month=9) }}
+        Sep 2023 — Present · {{ <duration start_year={2023} start_month={9} /> }}
       </span>
       <span class="job-location">
         Berlin, Germany (hybrid)

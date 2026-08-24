@@ -34,7 +34,7 @@ function addDynamicallyCssHighlightTheme(theme) {
 
     const style = document.createElement('link');
     style.classList.add('highlight_theme');
-    style.href = `/assets/styles/syntax-theme-${theme}.css`;
+    style.href = `/giallo-${theme}.css`;
     style.type = 'text/css';
     style.rel = 'stylesheet';
     head.append(style);

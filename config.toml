@@ -19,6 +19,10 @@ feed_filenames = ["atom.xml", "llms.txt"]
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# Blog posts regularly contain literal `{%`/`{{` inside code blocks, so keep
+# Tera content templating away from them; components stay usable elsewhere.
+skip_content_templating = ["writing/**"]
+
 # The taxonomies to be rendered for the site and their configuration.
 taxonomies = [
     {name = "tags", feed = false, render = false},
@@ -26,14 +30,17 @@ taxonomies = [
 
 [markdown.highlighting]
 style = "class"
-theme = "github-light"
+light_theme = "one-light"
+dark_theme = "one-dark-pro"
 
 # Link checker (`zola check`)
-# StackOverflow sits behind Cloudflare, which serves 403 to non-browser
-# clients regardless of user agent, so its links are unverifiable here.
+# StackOverflow and Tuts+ sit behind bot protection, which serves 403 to
+# non-browser clients regardless of user agent, so their links are
+# unverifiable here.
 [link_checker]
 skip_prefixes = [
     "https://stackoverflow.com/",
+    "https://code.tutsplus.com/",
 ]
 
 [extra]

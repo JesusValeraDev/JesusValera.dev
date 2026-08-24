@@ -10,7 +10,7 @@
     {% set title = "Home" -%}
   {% endif -%}
 
-  {{ macros::seo(title=title, og_title=og_title, description=section.description, site_url=site_url) }}
+  {{ <seo config={config} title={title} og_title={og_title} description={section.description} site_url={site_url} /> }}
 {%- endblock seo %}
 
 {% block content %}
@@ -65,7 +65,7 @@
   <!-- ── Latest posts ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Posts</h2>
   <div class="bento-grid bento-grid--1">
-    {% for page in writing.pages | slice(end=3) %}
+    {% for page in writing.pages[:3] %}
     <a href="{{ page.permalink | safe }}" class="bento-cell bento-cell--link">
       <div class="catalogue-meta">
         <time datetime="{{ page.date }}">
@@ -78,7 +78,7 @@
       {% endif %}
       {% if page.taxonomies.tags %}
       <div class="catalogue-tags">
-        {% for tag in page.taxonomies.tags | slice(end=3) %}
+        {% for tag in page.taxonomies.tags[:3] %}
           <span class="tag-pill">{{ tag | upper }}</span>
         {% endfor %}
       </div>
@@ -91,7 +91,8 @@
   <!-- ── Latest reads ──────────────────────────────────────── -->
   <h2 class="catalogue-section-heading">Latest Reads</h2>
   <div class="bento-grid bento-grid--4-3">
-    {% for book in books_data | sort(attribute="date") | reverse | slice(end=4) %}
+    {% set latest_books = books_data | sort(attribute="date") | reverse %}
+    {% for book in latest_books[:4] %}
     <div class="bento-cell bento-cell--book">
       <div class="book-cover-small">
         <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">

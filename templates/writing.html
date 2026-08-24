@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block scripts %}
-{%- set first_posts = paginator.pages | slice(end=2) -%}
+{%- set first_posts = paginator.pages[:2] -%}
 {% for page in first_posts %}
   {% if page.extra.static_thumbnail %}
   <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
@@ -27,7 +27,7 @@
     {% set description = section.description -%}
   {% endif -%}
 
-  {{ macros::seo(title=title, og_title=og_title, description=description, site_url=site_url) }}
+  {{ <seo config={config} title={title} og_title={og_title} description={description} site_url={site_url} /> }}
 {%- endblock seo %}
 
 {% block content %}
@@ -58,7 +58,7 @@
       {% endif %}
       {% if page.taxonomies.tags %}
       <div class="catalogue-tags">
-        {% for tag in page.taxonomies.tags | slice(end=3) %}
+        {% for tag in page.taxonomies.tags[:3] %}
           <span class="tag-pill">{{ tag | upper }}</span>
         {% endfor %}
       </div>

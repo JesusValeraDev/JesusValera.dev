@@ -1,12 +1,14 @@
-{% macro seo(
+{% component seo(
+  config,
   title="",
   og_title="",
   description="",
   site_url="",
   image="",
-  image_height="",
-  image_width="",
-  web_type="WebSite"
+  image_height=none,
+  image_width=none,
+  web_type="WebSite",
+  page=none
   ) -%}
 {% if title %}
 <title>{{ title }}</title>
@@ -42,14 +44,14 @@
   {%- endif %}
 {% endif %}
 
-{% if page.date %}
+{% if page?.date %}
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="{{ page.date | date(format='%+') }}">
+  <meta property="article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 {% endif %}
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
-<meta http-equiv="content-language" content="en-US">{% if page.taxonomies.tags %}
+<meta http-equiv="content-language" content="en-US">{% if page?.taxonomies?.tags %}
 <meta name="keywords" content="{% for tag in page.taxonomies.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">{% endif %}
 
 <meta name="twitter:card" content="summary_large_image">
@@ -70,13 +72,13 @@
 <meta name="twitter:image:alt" content="{{ og_title | default(value='Blog post illustration') }}">
 {% endif %}
 
-{% if config.extra.seo.webmaster %}
-  {% if config.extra.seo.webmaster.google %}
-    <meta name="google-site-verification" content="{{ config.extra.seo.webmaster.google }}"/>
+{% if config.extra.seo?.webmaster %}
+  {% if config.extra.seo?.webmaster?.google %}
+    <meta name="google-site-verification" content="{{ config.extra.seo?.webmaster?.google }}"/>
   {% endif %}
 
-  {% if config.extra.seo.webmaster.bing %}
-    <meta name="msvalidate.01" content="{{ config.extra.seo.webmaster.bing }}"/>
+  {% if config.extra.seo?.webmaster?.bing %}
+    <meta name="msvalidate.01" content="{{ config.extra.seo?.webmaster?.bing }}"/>
   {% endif %}
 {% endif %}
 
@@ -86,8 +88,8 @@
   "@type": "{{ web_type }}",
   "headline": "{{ og_title }}",
   "description": "{{ description }}",
-  "url": "{{ site_url | safe }}"{% if page.date %},
-  "datePublished": "{{ page.date | date(format='%+') }}"{% endif %},
+  "url": "{{ site_url | safe }}"{% if page?.date %},
+  "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}"{% endif %},
   "author": {
     "@type": "Person",
     "name": "Jesus Valera Reales",
@@ -104,8 +106,8 @@
   },
   "image": {
     "@type": "ImageObject",
-    "url": "{% if page.extra.static_thumbnail %}{{ config.base_url | safe }}{{ page.extra.static_thumbnail | safe }}{% else %}{{ config.base_url | safe }}/assets/images/profile/jesus-150.webp{% endif %}"
-  }{% if page.reading_time %},
+    "url": "{% if page?.extra?.static_thumbnail %}{{ config.base_url | safe }}{{ page.extra.static_thumbnail | safe }}{% else %}{{ config.base_url | safe }}/assets/images/profile/jesus-150.webp{% endif %}"
+  }{% if page?.reading_time %},
   "timeRequired": "PT{{ page.reading_time }}M"{% endif %},
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -114,4 +116,43 @@
   "inLanguage": "en-US"
 }
 </script>
-{%- endmacro %}
+{%- endcomponent seo %}
+
+{% component youtube(id, class="") -%}
+<div {% if class %}class="{{class}}"{% endif %}>
+  <iframe
+    src="https://www.youtube.com/embed/{{id}}"
+    width="100%"
+    height="395"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen>
+  </iframe>
+</div>
+{%- endcomponent youtube %}
+
+{% component duration(start_year, start_month) -%}
+{%- set end_year = now() | date(format="%Y") | int -%}
+{%- set end_month = now() | date(format="%m") | int -%}
+{#- LinkedIn adds one extra month -#}
+{%- set total_months = (end_year - start_year) * 12 + (end_month - start_month) + 1 -%}
+{%- set years = (total_months / 12) | int -%}
+{%- set months = total_months % 12 -%}
+
+{%- if years > 0 -%}
+  {{ years }} yr{% if years != 1 %}s{% endif %}
+{%- endif -%}
+
+{%- if years > 0 and months > 0 -%}
+  {{ " " }}
+{%- endif -%}
+
+{%- if months > 0 -%}
+  {{ months }} mo{% if months != 1 %}s{% endif %}
+{%- endif -%}
+{%- endcomponent duration %}
+
+{% component experience_years(start_year) -%}
+{%- set current_year = now() | date(format="%Y") | int -%}
+{{- current_year - start_year -}}
+{%- endcomponent experience_years %}

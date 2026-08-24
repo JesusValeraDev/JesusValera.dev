@@ -18,12 +18,12 @@ The site is a static Zola blog. The Markdown source of every article is availabl
 - [{{ legal.title }}]({{ legal.permalink }}): {{ legal.description }}
 
 ## Articles
-{% for page in pages %}{% if page.relative_path is starting_with("writing/") %}
+{% for page in pages %}{% if page.relative_path is starting_with(pat="writing/") %}
 - [{{ page.title }}]({{ page.permalink }}){% if page.description %}: {{ page.description }}{% endif %}
 {%- endif %}{% endfor %}
 
 ## Optional
-{% for page in pages %}{% if not page.relative_path is starting_with("writing/") %}
+{% for page in pages %}{% if page.relative_path is not starting_with(pat="writing/") %}
 - [{{ page.title }}]({{ page.permalink }}){% if page.description %}: {{ page.description }}{% endif %}
 {%- endif %}{% endfor %}
 - [Atom feed]({{ get_url(path="atom.xml") }}): Feed of all published articles.

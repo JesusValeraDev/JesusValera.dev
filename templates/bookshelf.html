@@ -25,7 +25,7 @@
 
   {% set web_type = "WebPage" -%}
   
-  {{ macros::seo(title=title, og_title=og_title, description=description, site_url=site_url, image=image, image_height=image_height, image_width=image_width, web_type=web_type) }}
+  {{ <seo config={config} title={title} og_title={og_title} description={description} site_url={site_url} image={image} image_height={image_height} image_width={image_width} web_type={web_type} /> }}
 {%- endblock seo %}
 
 {% block content %}
@@ -60,7 +60,7 @@
   {% endfor %}
   
   {% if book.author not in all_authors %}
-    {% set_global all_authors = all_authors | concat(with=[book.author]) %}
+    {% set_global all_authors = [...all_authors, book.author] %}
   {% endif %}
 {% endfor %}
 
