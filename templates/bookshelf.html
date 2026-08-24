@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block scripts %}
-<script src="{{ get_url(path='js/pages/filter-books.js') | safe }}" defer></script>
+<script src="{{ get_url(path='js/pages/filter-books.js', cachebust=true) | safe }}" defer></script>
 {% endblock scripts %}
 
 {% block seo -%}
