@@ -136,8 +136,9 @@
 {%- set end_month = now() | date(format="%m") | int -%}
 {#- LinkedIn adds one extra month -#}
 {%- set total_months = (end_year - start_year) * 12 + (end_month - start_month) + 1 -%}
-{%- set years = (total_months / 12) | int -%}
 {%- set months = total_months % 12 -%}
+{#- Subtract the remainder first: newer Tera refuses to cast a non-integer float to int -#}
+{%- set years = ((total_months - months) / 12) | int -%}
 
 {%- if years > 0 -%}
   {{ years }} yr{% if years != 1 %}s{% endif %}
