@@ -439,6 +439,33 @@ preview_location = "Berlin, Germany"
 <div class="bento-grid bento-grid--1">
   <div class="bento-cell">
     <div class="timeline-header" style="margin-bottom: 0;">
+      <img src="/cv/narrale.webp" alt="Narrale" class="company-logo" loading="lazy">
+      <div class="timeline-info">
+        <h3 class="company-name">
+          <a href="https://narrale.com/" target="_blank" rel="noopener noreferrer">Narrale
+          </a>
+        </h3>
+        <div class="job-role">A quiet writing workspace for novelists</div>
+      </div>
+    </div>
+    <div class="job-description">
+      <p>Designed and developed a SaaS writing app for novelists.</p>
+      <p>Distraction-free drafting, an AI-assisted Story Bible that extracts characters and places from the manuscript, a planning canvas with a chronology view, and editorial lenses that review each chapter for prose, pacing, characters, grammar and tone.</p>
+    </div>
+    <div class="project-gallery">
+      <a href="/cv/projects/narrale1.webp">
+        <img src="/cv/projects/narrale1.webp" alt="Narrale Screenshot 1" loading="lazy">
+      </a>
+      <a href="/cv/projects/narrale2.webp">
+        <img src="/cv/projects/narrale2.webp" alt="Narrale Screenshot 2" loading="lazy">
+      </a>
+      <a href="/cv/projects/narrale3.webp">
+        <img src="/cv/projects/narrale3.webp" alt="Narrale Screenshot 3" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="bento-cell">
+    <div class="timeline-header" style="margin-bottom: 0;">
       <img src="/cv/securityscorecard.webp" alt="Laravel Security Scorecard" class="company-logo" loading="lazy">
       <div class="timeline-info">
         <h3 class="company-name">
