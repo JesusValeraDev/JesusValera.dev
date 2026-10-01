@@ -155,7 +155,7 @@
       Philosophy<span class="chip-count">{{ count_philosophy }}</span></span>
     </button>
 
-    <div style="flex-basis:100%;height:0;" aria-hidden="true"></div>
+    <div class="bookshelf-filters-break" aria-hidden="true"></div>
 
     <button data-tag="Psychology" onclick="filterBy(this)" aria-label="Filter books by Psychology category" title="Filter books by Psychology category" aria-pressed="false">
       <span class="chip"><svg width="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -186,11 +186,13 @@
   <div class="shelf-grid">
     {% for book in books %}
     <figure class="book book-item" data-tags="{{ book.tags }}">
-      <img class="book-cover" src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="Cover of {{ book.title }}" width="200" height="300" loading="lazy">
+      <div class="book-cover-wrap">
+        <img class="book-cover" src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="Cover of {{ book.title }}" width="200" height="300" loading="lazy">
+        {% if book.date %}<time class="book-badge" datetime="{{ book.date | date(format="%Y-%m") }}" aria-label="Finished {{ book.date | date(format="%b %Y") }}">{{ book.date | date(format="%b %Y") }}</time>{% endif %}
+      </div>
       <figcaption class="book-caption">
         <span class="book-title">{{ book.title }}</span>
         <span class="book-author">{{ book.author }}</span>
-        {% if book.date %}<span class="book-date">Finished {{ book.date | date(format="%b %Y") }}</span>{% endif %}
       </figcaption>
     </figure>
     {% endfor %}
