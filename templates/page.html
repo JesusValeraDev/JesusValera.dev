@@ -42,42 +42,39 @@
 {%- endblock seo %}
 
 {% block content %}
+  {%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
   <article class="post">
-    <a href="{{ get_url(path='writing') | safe }}" class="back-to-blog">← back</a>
-    <small class="post-meta">
-      <time datetime="{{ page.date }}">
-        {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min read
-      </time>
-      <span class="found-typo">
-        {% set url = config.extra.repo_content_url ~ page.relative_path %}
-        <a href="{{ url }}" target="_blank" aria-label="Edit this page on GitHub to submit a pull request" title="Edit on GitHub">suggest edit</a>
-      </span>
-    </small>
+    <div class="post-top">
+      <a class="post-back" href="{{ get_url(path='writing') | safe }}"><svg class="arrow-icon arrow-icon--back" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-left"></use></svg>All posts</a>
+      {% set edit_url = config.extra.repo_content_url ~ page.relative_path %}
+      <a class="post-edit" href="{{ edit_url }}" target="_blank" rel="noopener" aria-label="Suggest an edit on GitHub" title="Edit on GitHub"><svg width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-pencil"></use></svg>Suggest an edit</a>
+    </div>
+    <div class="post-meta">
+      <time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time> · {{ page.reading_time }} min read
+    </div>
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.extra.subtitle %}
-    <h2 class="post-subtitle">{{ page.extra.subtitle }}</h2>
+    <p class="post-subtitle">{{ page.extra.subtitle }}</p>
     {% endif %}
     {% if page.taxonomies.tags %}
-    <div class="post-tags">
-      {% for tag in page.taxonomies.tags %}
-        <span class="tag-pill">{{ tag | upper }}</span>
-      {% endfor %}
+    <div class="tags post-tags">
+      {% for tag in page.taxonomies.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
     </div>
     {% endif %}
-
-    {{ page.content | safe }}
-
+    <div class="prose">
+      {{ page.content | safe }}
+    </div>
     {% if page.lower or page.higher %}
-    <nav class="post-adjacent" aria-label="Adjacent posts">
+    <nav class="card post-adjacent" aria-label="Adjacent posts">
       {% if page.lower %}
       <a href="{{ page.lower.permalink | safe }}" class="post-adjacent-link post-adjacent-link--newer" rel="next">
-        <span class="post-adjacent-label">← Newer</span>
+        <span class="post-adjacent-label"><svg class="arrow-icon arrow-icon--back" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-left"></use></svg>Newer</span>
         <span class="post-adjacent-title">{{ page.lower.title }}</span>
       </a>
-      {% else %}<div></div>{% endif %}
+      {% endif %}
       {% if page.higher %}
       <a href="{{ page.higher.permalink | safe }}" class="post-adjacent-link post-adjacent-link--older" rel="prev">
-        <span class="post-adjacent-label">Older →</span>
+        <span class="post-adjacent-label">Older<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></span>
         <span class="post-adjacent-title">{{ page.higher.title }}</span>
       </a>
       {% endif %}

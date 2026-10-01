@@ -1,216 +1,482 @@
-@utility post-nav {
-  @apply flex justify-between gap-6 mt-12 pt-6;
-  border-top: 1px solid var(--color-light-border);
-  .dark & { border-top-color: var(--color-dark-border); }
+@utility external-link-icon {
+  @apply w-3 h-3 opacity-50;
 }
 
-@utility post-nav-link {
-  @apply flex flex-col gap-1 flex-1 no-underline;
-  max-width: 48%;
-  &:hover .post-nav-title { @apply text-light-link dark:text-dark-link; }
-}
+@layer components {
+  /* ── Writing: list and pagination ─────────────────────────── */
 
-@utility post-nav-label {
-  @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary uppercase;
-  letter-spacing: 0.08em;
-}
-
-@utility post-nav-title {
-  @apply text-sm font-semibold text-light-text-primary dark:text-dark-text-primary leading-snug;
-  transition: color 150ms ease;
-}
-
-@utility back-to-blog {
-  @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary no-underline mb-6 mt-0 block transition-colors duration-150 ease-custom;
-  letter-spacing: 0.02em;
-  &:hover {
-    @apply text-light-text-primary dark:text-dark-text-primary no-underline;
+  .page-list {
+    margin-top: 2rem;
   }
-}
 
-@utility post-meta {
-  @apply flex items-center font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary mt-1 mb-0;
-  & .found-typo {
-    @apply ml-auto;
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 2rem;
   }
-}
-
-@utility post-tags {
-  @apply flex flex-wrap gap-x-1 gap-y-1 mt-4 mb-8;
-}
-
-@utility post-title {
-  @apply text-2xl md:text-4xl font-extrabold tracking-tight text-light-text-primary dark:text-dark-text-primary mt-5 mb-2;
-}
-
-@utility post-subtitle {
-  @apply text-base md:text-lg font-normal text-light-text-secondary dark:text-dark-text-secondary mt-0 mb-0;
-
-  .post & {
-    @apply font-medium;
+  .pager-info {
+    font-size: 0.8125rem;
+    color: var(--ui-fg2);
+    font-variant-numeric: tabular-nums;
   }
-}
-
-@utility post {
-  & a {
-    @apply text-light-link dark:text-dark-link no-underline hover:no-underline;
+  .pager-links {
+    display: flex;
+    gap: 8px;
   }
-  & p a[href^="http"]::after,
-  & li a[href^="http"]::after,
-  & blockquote a[href^="http"]::after,
-  & p a[target="_blank"]::after,
-  & li a[target="_blank"]::after,
-  & blockquote a[target="_blank"]::after {
+
+  /* ── Post header ──────────────────────────────────────────── */
+
+  .post {
+    padding-top: 1.5rem;
+  }
+  .post-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0 -12px;
+  }
+  .post-back,
+  .post-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .post-back {
+    font-weight: 600;
+    color: var(--ui-accent);
+  }
+  .post-edit {
+    color: var(--ui-fg2);
+  }
+  .post-back:hover,
+  .post-edit:hover {
+    color: var(--ui-fg);
+    text-decoration: none;
+  }
+  .post-meta {
+    margin-top: 1.5rem;
+    font-size: 0.8125rem;
+    color: var(--ui-fg2);
+  }
+  .post-title {
+    margin: 0.5rem 0 0;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--ui-fg);
+  }
+  .post-subtitle {
+    margin: 0.625rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--ui-fg2);
+  }
+  .post-tags {
+    margin-top: 1rem;
+  }
+  @media (max-width: 640px) {
+    .post-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  /* ── Prose (post body, legal) ─────────────────────────────── */
+
+  .prose {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ui-fg);
+  }
+  .prose > :first-child {
+    margin-top: 0;
+  }
+  .prose p,
+  .prose ul,
+  .prose ol {
+    margin: 0 0 1.25rem;
+  }
+  .prose a {
+    color: var(--ui-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--ui-pill-line);
+    text-underline-offset: 3px;
+  }
+  .prose a:hover {
+    color: var(--ui-fg);
+    text-decoration-color: currentColor;
+  }
+  /* Icons inside links flow with the text (Tailwind makes svg block by default) */
+  .prose a svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .prose :not(pre) > code + a {
+    white-space: nowrap;
+  }
+  .prose a.btn {
+    color: var(--ui-fg);
+    text-decoration: none;
+  }
+  /* Text links get a small arrow; links that already carry an icon do not */
+  .prose p a[href^='http']:not(:has(svg))::after,
+  .prose li a[href^='http']:not(:has(svg))::after,
+  .prose blockquote a[href^='http']:not(:has(svg))::after,
+  .prose p a[target='_blank']:not(:has(svg))::after,
+  .prose li a[target='_blank']:not(:has(svg))::after,
+  .prose blockquote a[target='_blank']:not(:has(svg))::after {
     content: ' ↗';
     font-size: 0.7em;
     opacity: 0.55;
     font-style: normal;
   }
-  
-  & h1, & h2, & h3, & h4, & h5, & h6 {
-    @apply text-light-text-primary dark:text-dark-text-primary;
+  .prose h2 {
+    margin: 3rem 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--ui-fg);
   }
-  
-  & h1:not(.home-name) { @apply text-2xl md:text-3xl font-bold; }
-  & h2 { @apply text-xl md:text-2xl font-bold; }
-  & h3 { @apply text-lg md:text-xl font-semibold; }
-  & h4 { @apply text-base md:text-lg font-semibold; }
-  & h5 { @apply text-sm md:text-base font-medium; }
-  & h6 { @apply text-xs md:text-sm font-medium; }
-
-  & .post-subtitle {
-    @apply font-medium;
+  .prose h3 {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--ui-fg);
   }
-  & p {
-    @apply leading-relaxed;
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ui-fg);
   }
-  & ul {
-    @apply list-disc pl-6;
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.5rem;
   }
-  & ol {
-    @apply list-decimal pl-6;
+  .prose ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
   }
-
-  @media (max-width: 768px) {
-    & ul {
-      @apply pl-0;
-    }
+  .prose li {
+    margin: 0.375rem 0;
   }
-  & hr {
-    @apply my-8 border-t border-light-border dark:border-dark-border;
+  .prose hr {
+    margin: 2rem 0;
+    border-top: 1px solid var(--ui-line);
   }
-  & img {
-    @apply rounded-md my-4;
+  .prose img {
+    margin: 1.5rem auto;
+    border-radius: 10px;
   }
-  & > p:first-child > img,
-  & > img:first-child {
+  /* Cover image: natural proportions, never upscaled or cropped */
+  .prose > p:first-child > img,
+  .prose > img:first-child {
+    width: auto;
+    height: auto;
+    max-width: 100%;
     max-height: 420px;
-    object-fit: cover;
-    width: 100%;
+    margin: 0 auto 0.75rem;
+    border: 1px solid var(--ui-line);
   }
-  & .book-cover img {
-    @apply m-0 rounded-none;
+  /* Asides and notes: accent bar, light tint, even padding */
+  .prose blockquote {
+    margin: 1.5rem 0;
+    padding: 0.875rem 1.25rem;
+    border: 0;
+    border-left: 3px solid var(--ui-accent);
+    border-radius: 0 8px 8px 0;
+    background: var(--ui-pill-bg);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--ui-fg);
+  }
+  .prose blockquote > * {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .prose blockquote > :last-child {
+    margin-bottom: 0;
+  }
+  .prose :not(pre) > code {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.875em;
+    white-space: nowrap;
+    background: var(--ui-inline-code);
+    color: var(--ui-fg);
+  }
+  .prose iframe {
+    max-width: 100%;
   }
 
-  /* Code */
-  & pre {
-    @apply bg-light-code-bg dark:bg-dark-code-bg rounded-lg p-4 overflow-x-auto text-sm leading-relaxed dark:text-dark-text-accent;
+  /* ── Disclosures: consecutive <details> form one joined card ─ */
+
+  .prose details {
+    border: 1px solid var(--ui-line);
+    background: var(--ui-surface);
+    overflow: hidden;
   }
-  & pre code {
-    @apply bg-transparent p-0 dark:text-dark-text-accent;
+  .prose details + details {
+    border-top: 0;
   }
-  & :not(pre) > code {
-    @apply px-1.5 py-0.5 rounded text-[0.9em] font-mono whitespace-nowrap;
-    background: var(--color-light-code-inline-bg);
-    color: var(--color-light-text-accent);
-    /* Hide literal backticks if present inside inline code */
+  .prose details:not(details + details) {
+    margin-top: 1.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .prose details:not(:has(+ details)) {
+    margin-bottom: 1.5rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .prose summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 16px;
+    list-style: none;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--ui-fg);
+    cursor: pointer;
+    transition: background-color 150ms ease;
+  }
+  .prose summary::-webkit-details-marker {
+    display: none;
+  }
+  .prose summary::after {
+    content: '';
+    flex-shrink: 0;
+    width: 7px;
+    height: 7px;
+    margin-right: 4px;
+    border-right: 2px solid var(--ui-fg2);
+    border-bottom: 2px solid var(--ui-fg2);
+    transform: rotate(-45deg);
+    transition: transform 150ms ease;
+  }
+  .prose details[open] > summary::after {
+    transform: rotate(45deg);
+  }
+  .prose summary:hover {
+    background-color: var(--ui-hover);
+  }
+  .prose summary:focus-visible {
+    outline: 2px solid var(--ui-accent);
+    outline-offset: -2px;
+  }
+  .prose details[open] > summary {
+    border-bottom: 1px solid var(--ui-line);
+  }
+  .prose details > pre,
+  .prose details > .code-block {
+    margin: 0;
+  }
+  .prose details pre {
+    border: 0;
+    border-radius: 0;
+  }
+  .prose details > :not(summary, pre, .code-block) {
+    margin: 0.75rem 1rem;
+  }
+
+  /* ── Code blocks ──────────────────────────────────────────── */
+
+  .prose pre {
+    margin: 1.75rem 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.84375rem;
+    line-height: 1.65;
+    border: 1px solid var(--ui-line);
+    border-radius: 10px;
+    background: var(--ui-code-bg);
+  }
+  .prose pre code {
+    padding: 0;
+    background: transparent;
+  }
+  .code-block {
     position: relative;
+    margin: 1.75rem 0;
   }
-  .dark & :not(pre) > code {
-    background: var(--color-dark-code-inline-bg);
-    color: var(--color-dark-text-accent);
+  .code-block pre {
+    margin: 0;
   }
-  & :not(pre) > code::before {
-    content: none;
-  }
-  & :not(pre) > code::after {
-    content: none;
-  }
-  /* Keep inline code unwrapped; pre handles long code blocks */
-  & p > code + a {
-    @apply inline whitespace-nowrap align-baseline;
-  }
-  & li > code + a {
-    @apply inline whitespace-nowrap align-baseline;
-  }
-  & p > code + a svg {
-    @apply inline-block align-middle;
-  }
-  & li > code + a svg {
-    @apply inline-block align-middle;
+  .code-lang {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--ui-code-bg);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ui-fg2);
+    pointer-events: none;
+    user-select: none;
   }
 
-  & blockquote {
-    @apply my-6;
+  /* ── Newer / older posts ──────────────────────────────────── */
+
+  .post-adjacent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 3.5rem;
   }
-}
-
-@utility book-cover {
-  .post & img {
-    @apply m-0 rounded-none;
+  .post-adjacent-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 1.25rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 150ms ease;
   }
-}
-
-/* ── Adjacent posts (Read Next) ──────────────────────────── */
-
-@utility post-adjacent {
-  @apply grid grid-cols-2 gap-4 mt-10 pt-8;
-  border-top: 1px solid var(--color-light-border);
-  .dark & {
-    border-top-color: var(--color-dark-border);
+  .post-adjacent-link:hover {
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--ui-hover);
+  }
+  .post-adjacent-link--older {
+    align-items: flex-end;
+    text-align: right;
+    border-left: 1px solid var(--ui-line);
+  }
+  .post-adjacent-link:only-child {
+    grid-column: 1 / -1;
+  }
+  .post-adjacent-link--older:first-child {
+    border-left: 0;
+  }
+  .post-adjacent-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--ui-accent);
+  }
+  .post-adjacent-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ui-fg);
   }
   @media (max-width: 640px) {
-    @apply grid-cols-1;
-  }
-}
-
-@utility post-adjacent-link {
-  @apply flex flex-col gap-1 p-3 rounded-lg no-underline;
-  border: 1px solid var(--color-light-border);
-  transition: border-color 150ms ease, background-color 150ms ease;
-  &:hover {
-    border-color: var(--color-light-timeline-bg);
-    background-color: var(--color-light-catalogue-bg);
-    @apply no-underline;
-    & .post-adjacent-title {
-      color: var(--color-light-timeline-bg);
+    .post-adjacent {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .post-adjacent-link--older {
+      align-items: flex-start;
+      text-align: left;
+      border-left: 0;
+      border-top: 1px solid var(--ui-line);
+    }
+    .post-adjacent-link--older:first-child {
+      border-top: 0;
     }
   }
-  .dark & {
-    border-color: var(--color-dark-border);
+
+  /* ── Legal ────────────────────────────────────────────────── */
+
+  .legal-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2rem;
   }
-  .dark &:hover {
-    border-color: var(--color-dark-timeline-bg);
-    background-color: var(--color-dark-catalogue-bg);
-    & .post-adjacent-title {
-      color: var(--color-dark-timeline-bg);
+  .legal-summary-item {
+    display: flex;
+    gap: 12px;
+    padding: 1.25rem;
+  }
+  .legal-summary-item + .legal-summary-item {
+    border-left: 1px solid var(--ui-line);
+  }
+  .legal-summary-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--ui-accent);
+  }
+  .legal-summary-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--ui-fg);
+  }
+  .legal-summary-text {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ui-fg2);
+  }
+  .legal .prose {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+  .legal .prose p,
+  .legal .prose ul,
+  .legal .prose ol {
+    max-width: 70ch;
+  }
+  .legal .prose h2 {
+    font-size: 1.375rem;
+  }
+  @media (max-width: 640px) {
+    .legal-summary {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .legal-summary-item + .legal-summary-item {
+      border-left: 0;
+      border-top: 1px solid var(--ui-line);
     }
   }
-}
 
-@utility post-adjacent-link--newer {
-  @apply items-start;
-}
+  /* ── 404 ──────────────────────────────────────────────────── */
 
-@utility post-adjacent-link--older {
-  @apply items-end text-right;
-}
-
-@utility post-adjacent-label {
-  @apply font-mono text-xs uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary;
-  letter-spacing: 0.1em;
-}
-
-@utility post-adjacent-title {
-  @apply text-sm font-semibold text-light-text-primary dark:text-dark-text-primary leading-snug;
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 6rem 0 1.5rem;
+    text-align: center;
+  }
+  .not-found-code {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ui-fg2);
+  }
+  .not-found-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+  @media (max-width: 640px) {
+    .not-found-actions {
+      flex-direction: column;
+      align-self: stretch;
+    }
+  }
 }

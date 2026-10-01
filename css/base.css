@@ -25,7 +25,7 @@
   }
   *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
   body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
-  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(22,163,74,0.3); }
+  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(21,128,61,0.3); }
   .dark a { text-decoration-color: rgba(74,222,128,0.3); }
   a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
   h2 { @apply mb-4; }
@@ -39,7 +39,7 @@
   img { @apply block mx-auto my-4 max-w-full; }
   blockquote {
     @apply pl-5 rounded-lg font-mono text-sm bg-light-blockquote-bg dark:bg-dark-blockquote-bg;
-    border: 1px solid rgba(22, 163, 74, 0.2);
+    border: 1px solid rgba(21, 128, 61, 0.2);
   }
   .dark blockquote {
     border: 1px solid rgba(34, 197, 94, 0.15);
@@ -56,6 +56,47 @@
 
   :root { --border: var(--color-light-border); }
   .dark { --border: var(--color-dark-border); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* Semantic UI tokens shared by the page components */
+  :root {
+    --ui-bg: #fcfcfd;
+    --ui-surface: #ffffff;
+    --ui-header: #fefefe;
+    --ui-fg: #374151;
+    --ui-fg2: #4b5563;
+    --ui-line: #e5e7eb;
+    --ui-line-strong: #9ca3af;
+    --ui-accent: #15803d;
+    --ui-on-accent: #ffffff;
+    --ui-pill-bg: rgba(21, 128, 61, 0.07);
+    --ui-pill-line: rgba(21, 128, 61, 0.22);
+    --ui-hover: #f7f8f9;
+    --ui-shadow: 0 1px 2px rgba(17, 24, 39, 0.06);
+    --ui-code-bg: #fafafa; /* matches the one-light highlight theme */
+    --ui-inline-code: rgba(27, 31, 35, 0.06);
+    --ui-serif: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+  }
+  .dark {
+    --ui-bg: #111114;
+    --ui-surface: #141416;
+    --ui-header: #000000;
+    --ui-fg: #cbd5e1;
+    --ui-fg2: #a1a1aa;
+    --ui-line: #2a2a2e;
+    --ui-line-strong: #52525b;
+    --ui-accent: #4ade80;
+    --ui-on-accent: #0b0b0d;
+    --ui-pill-bg: rgba(74, 222, 128, 0.07);
+    --ui-pill-line: rgba(74, 222, 128, 0.18);
+    --ui-hover: #18181b;
+    --ui-shadow: none;
+    --ui-code-bg: #282c34; /* matches the one-dark-pro highlight theme */
+    --ui-inline-code: #1e1e20;
+  }
 
   /* Accessible focus styles for keyboard navigation */
   a:focus-visible,

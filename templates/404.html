@@ -20,17 +20,38 @@
 
 
 {% block content %}
-<section class="py-20">
-  <div class="bento-grid bento-grid--1">
-    <div class="bento-cell bento-cell--compact">
-      <p class="font-mono text-xs uppercase tracking-widest text-light-text-secondary dark:text-dark-text-secondary mb-4">Error 404</p>
-      <h1 class="text-3xl font-bold mb-4">{{ config.extra?.expressions?.p404 | default(value="Page not found") }}</h1>
-      <div class="h-0.5 w-16 bg-light-border dark:bg-dark-border mx-auto mb-6"></div>
-      <p class="text-light-text-secondary dark:text-dark-text-secondary mb-8">
-        The page you're looking for doesn't exist or has been moved.
-      </p>
-      <a href="{{ config.base_url | safe }}" class="hero-link no-underline font-mono text-sm">← Back to home</a>
-    </div>
+{%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
+{%- set writing = get_section(path="writing/_index.md") -%}
+<section class="not-found" aria-labelledby="nf-title">
+  <span class="not-found-code">Error 404</span>
+  <h1 id="nf-title" class="page-title">{{ config.extra?.expressions?.p404 | default(value="Page not found") }}</h1>
+  <p class="page-lead">The page you're looking for doesn't exist or has been moved.</p>
+  <div class="not-found-actions">
+    <a class="btn-primary" href="{{ config.base_url | safe }}"><svg width="16" height="16" aria-hidden="true"><use href="{{ sprite | safe }}#icon-home"></use></svg>Back to home</a>
+    <a class="btn" href="{{ get_url(path='writing') | safe }}">All posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-suggestions">
+  <div class="sec-head">
+    <h2 id="h-suggestions" class="sec-label">Maybe one of these</h2>
+    <div class="sec-rule" aria-hidden="true"></div>
+  </div>
+  <div class="card">
+    {% for page in writing.pages[:3] %}
+    <a class="list-row" href="{{ page.permalink | safe }}">
+      <div class="list-row-meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time> · {{ page.reading_time }} min read</div>
+      <h3 class="list-row-title">{{ page.title }}</h3>
+      {% if page.extra.subtitle %}
+      <p class="list-row-sub">{{ page.extra.subtitle }}</p>
+      {% endif %}
+      {% if page.taxonomies.tags %}
+      <div class="tags">
+        {% for tag in page.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    {% endfor %}
   </div>
 </section>
 {% endblock content %}

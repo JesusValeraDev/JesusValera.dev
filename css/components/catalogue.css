@@ -1,194 +1,325 @@
-/* ── Home hero ───────────────────────────────────────────── */
+@layer components {
+  /* ── Hero (home and CV) ───────────────────────────────────── */
 
-@utility home-hero {
-  @apply mb-8 md:mb-12;
-}
-
-@utility home-hero-inner {
-  @apply flex items-start gap-6 pt-4;
-  @media (max-width: 640px) {
-    @apply flex-col items-center gap-4 pt-0;
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0 0.5rem;
   }
-}
-
-@utility home-avatar {
-  @apply rounded-full shrink-0 object-cover mt-4 mb-0;
-  width: 80px;
-  height: 80px;
-  opacity: 0.9;
-  /* Override .post img { rounded-md my-6 } when avatar is inside a .post wrapper */
-  .post & {
-    @apply rounded-full mt-4 mb-0;
+  .hero-avatar {
+    display: block;
+    flex-shrink: 0;
+    width: 112px;
+    height: 112px;
+    margin: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px var(--ui-line);
+  }
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .hero-name {
+    margin: 0;
+    font-family: var(--ui-serif);
+    font-style: italic;
+    font-weight: 800;
+    font-size: 2.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ui-fg);
+  }
+  .hero-role {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ui-fg);
+  }
+  .hero-role img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px 0 0;
+    vertical-align: -4px;
+    border-radius: 4px;
+  }
+  .hero-role-place {
+    color: var(--ui-fg2);
+  }
+  .hero-role svg {
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: -2px;
+  }
+  .hero-bio {
+    margin: 0;
+    max-width: 40rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ui-fg2);
+  }
+  .hero-bio strong {
+    color: var(--ui-fg);
+  }
+  .hero-social {
+    display: flex;
+    align-items: center;
+    margin: -4px 0 -10px -13px;
   }
   @media (max-width: 640px) {
-    width: 64px;
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-top: 2rem;
+    }
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+    }
+    .hero-name {
+      font-size: 2rem;
+    }
+  }
+
+  /* ── Latest posts: featured post + compact rows ───────────── */
+
+  .feat {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+  .feat:hover,
+  .home-row:hover {
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--ui-hover);
+  }
+  .feat--noimg {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .feat-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+    margin: 0;
+    object-fit: cover;
+    border-right: 1px solid var(--ui-line);
+  }
+  .feat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1.5rem;
+  }
+  .feat-title {
+    margin: 0;
+    font-size: 1.3125rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--ui-fg);
+  }
+  .feat-sub {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--ui-fg2);
+  }
+  .feat .tags {
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  .home-row {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr) 96px;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid var(--ui-line);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+  .home-row-date {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.75rem;
+    color: var(--ui-fg2);
+  }
+  .home-row-date-inline {
+    display: none;
+    font-size: 0.75rem;
+    color: var(--ui-fg2);
+  }
+  .home-row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
+  .home-row-title {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--ui-fg);
+  }
+  .home-row-thumb {
+    display: block;
+    width: 96px;
     height: 64px;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--ui-line);
   }
-}
-
-@utility home-hero-text {
-  @apply flex flex-col flex-1 min-w-0;
-  & > h1, & > p {
-    margin-top: 0;
+  .meta {
+    font-size: 0.75rem;
+    color: var(--ui-fg2);
   }
   @media (max-width: 640px) {
-    @apply items-center text-center;
+    .feat {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .feat-img {
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 2 / 1;
+      border-right: 0;
+      border-bottom: 1px solid var(--ui-line);
+    }
+    .feat-body {
+      padding: 1.25rem;
+    }
+    .home-row {
+      grid-template-columns: minmax(0, 1fr) 72px;
+      gap: 14px;
+      padding: 16px;
+    }
+    .home-row-date {
+      display: none;
+    }
+    .home-row-date-inline {
+      display: block;
+    }
+    .home-row-thumb {
+      width: 72px;
+      height: 48px;
+    }
   }
-}
 
-@utility home-name {
-  @apply text-2xl md:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary mt-0 mb-2 tracking-tight;
-  font-style: italic;
-  font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
-}
+  /* ── Books (home shelf and bookshelf grid) ────────────────── */
 
-@utility home-bio {
-  @apply text-base text-light-text-secondary dark:text-dark-text-secondary leading-relaxed m-0 max-w-[38rem];
-}
-
-@utility home-social {
-  @apply flex items-center gap-4 flex-wrap mt-3;
+  .book {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+  }
+  .book-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--ui-line);
+    box-shadow: var(--ui-shadow);
+  }
+  .book-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .book-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ui-fg);
+  }
+  .book-author {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--ui-fg2);
+  }
+  .book-date {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--ui-fg2);
+  }
+  .shelf {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
   @media (max-width: 640px) {
-    @apply justify-center;
+    .shelf {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 132px;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 1rem;
+      margin: 0 -1rem;
+      padding: 0 1rem 4px;
+    }
+    .shelf > .book {
+      scroll-snap-align: start;
+    }
   }
-}
 
-@utility home-social-link {
-  @apply inline-flex items-center justify-center text-light-text-secondary dark:text-dark-text-secondary;
-  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    @apply text-light-text-primary dark:text-dark-text-primary;
-  }
-}
+  /* ── Building (home projects) ─────────────────────────────── */
 
-@utility hero-link {
-  @apply inline-flex items-center font-mono text-sm text-light-link dark:text-dark-link no-underline;
-  & .arrow {
-    @apply inline-block ml-1 transition-transform duration-150 ease-custom;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
   }
-  &:hover {
-    @apply opacity-80 no-underline;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 1.25rem;
   }
-  &:hover .arrow {
-    @apply transform translate-x-0.5;
+  .project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ui-fg2);
   }
-}
-
-/* ── Home quote ─────────────────────────────────────────── */
-
-@utility home-quote {
-  @apply font-mono text-sm text-light-text-secondary dark:text-dark-text-secondary mt-8 mb-0;
-  border-left: 3px solid var(--color-light-border);
-  padding-left: 1rem;
-  .dark & {
-    border-left-color: var(--color-dark-border);
+  .project-card-top img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border-radius: 8px;
+    object-fit: cover;
   }
-  & p {
-    @apply m-0 italic leading-relaxed;
+  .project-card-name {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--ui-fg);
   }
-  & cite {
-    @apply block mt-1 not-italic opacity-60 text-xs;
+  .project-card-desc {
+    margin: 4px 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ui-fg2);
   }
-}
-
-/* ── Home nav cards ─────────────────────────────────────── */
-
-@utility home-nav-grid {
-  @apply grid grid-cols-3 gap-3 mb-0;
   @media (max-width: 640px) {
-    @apply grid-cols-1;
+    .projects {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 }
-
-@utility home-nav-card {
-  @apply flex flex-col gap-1 p-4 rounded-lg;
-  border: 1px solid var(--color-light-border);
-  transition: border-color 150ms ease, background-color 150ms ease;
-  &:hover {
-    border-color: var(--color-light-text-secondary);
-    background-color: var(--color-light-catalogue-bg);
-  }
-  .dark & {
-    border-color: var(--color-dark-border);
-  }
-  .dark &:hover {
-    border-color: var(--color-dark-border);
-    background-color: var(--color-dark-catalogue-bg);
-  }
-}
-
-@utility home-nav-card-title {
-  @apply font-mono text-sm font-semibold text-light-text-primary dark:text-dark-text-primary;
-}
-
-@utility home-nav-card-desc {
-  @apply text-xs text-light-text-secondary dark:text-dark-text-secondary leading-relaxed flex-1;
-}
-
-@utility home-nav-card-arrow {
-  @apply font-mono text-xs text-light-link dark:text-dark-link mt-1 self-end;
-}
-
-/* ── Home section CTA ───────────────────────────────────── */
-
-@utility home-section-cta {
-  @apply mt-3 mb-0;
-  display: inline-flex;
-}
-
-/* ── Section heading ─────────────────────────────────────── */
-
-@utility catalogue-section-heading {
-  @apply font-mono text-xs font-semibold uppercase text-light-text-secondary dark:text-dark-text-secondary mb-4 mt-8 md:mt-10;
-  letter-spacing: 0.15em;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  &::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--color-light-border);
-  }
-  .dark &::after {
-    background: var(--color-dark-border);
-  }
-}
-
-/* ── Post list ───────────────────────────────────────────── */
-
-@utility catalogue-meta {
-  @apply mb-1;
-  & time {
-    @apply font-mono text-xs text-light-text-secondary dark:text-dark-text-secondary;
-  }
-}
-
-@utility catalogue-tags {
-  @apply flex flex-wrap gap-x-1 gap-y-1 items-center mt-2.5;
-}
-
-@utility tag-pill {
-  @apply font-mono font-medium whitespace-nowrap px-1 py-px rounded;
-  font-size: 0.65rem;
-  color: var(--color-light-timeline-bg);
-  background: rgba(22, 163, 74, 0.08);
-  border: 1px solid rgba(22, 163, 74, 0.2);
-  .dark & {
-    color: var(--color-dark-timeline-bg);
-    background: rgba(74, 222, 128, 0.07);
-    border-color: rgba(74, 222, 128, 0.15);
-  }
-}
-
-@utility catalogue-title {
-  @apply text-xl font-bold leading-snug text-light-text-primary dark:text-dark-text-primary m-0 mb-1 mt-0;
-  @media (max-width: 768px) {
-    @apply text-lg;
-  }
-}
-
-@utility catalogue-subtitle {
-  @apply text-sm leading-relaxed text-light-text-secondary dark:text-dark-text-secondary m-0;
-}
-

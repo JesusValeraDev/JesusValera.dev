@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 
-{% block scripts %}
-{%- set first_posts = paginator.pages[:2] -%}
-{% for page in first_posts %}
-  {% if page.extra.static_thumbnail %}
-  <link rel="preload" as="image" href="{{ get_url(path=page.extra.static_thumbnail) | safe }}" fetchpriority="high">
-  {% endif %}
-{% endfor %}
-{% endblock scripts %}
-
 {% block seo -%}
   {{ super() }}
 
@@ -31,60 +22,45 @@
 {%- endblock seo %}
 
 {% block content %}
+  {%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
 
-  <!-- ── Hero ─────────────────────────────────────────────── -->
-  <div class="home-hero">
-    <div class="home-hero-inner">
-      <div class="home-hero-text">
-        <h1 class="home-name">Writing</h1>
-        <p class="home-bio">{{ section.description }}</p>
-      </div>
+  <section class="page-hero" aria-labelledby="page-title">
+    <h1 id="page-title" class="page-title">Writing</h1>
+    <p class="page-lead">{{ section.description }}</p>
+  </section>
+
+  <section class="page-list" aria-label="Posts">
+    <div class="card">
+      {% for page in paginator.pages %}
+      <a class="list-row" href="{{ page.permalink | safe }}">
+        <div class="list-row-meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time> · {{ page.reading_time }} min read</div>
+        <h2 class="list-row-title">{{ page.title }}</h2>
+        {% if page.extra.subtitle %}
+        <p class="list-row-sub">{{ page.extra.subtitle }}</p>
+        {% endif %}
+        {% if page.taxonomies.tags %}
+        <div class="tags">
+          {% for tag in page.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </a>
+      {% endfor %}
     </div>
-  </div>
+  </section>
 
-  <!-- ── Posts ─────────────────────────────────────────────── -->
-  <h2 class="catalogue-section-heading">Posts</h2>
-  <div class="bento-grid bento-grid--1">
-    {% for page in paginator.pages %}
-    <a href="{{ page.permalink | safe }}" class="bento-cell bento-cell--link">
-      <div class="catalogue-meta">
-        <time datetime="{{ page.date }}">
-          {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min
-        </time>
-      </div>
-      <h3 class="catalogue-title">{{ page.title }}</h3>
-      {% if page.extra.subtitle %}
-      <p class="catalogue-subtitle">{{ page.extra.subtitle }}</p>
-      {% endif %}
-      {% if page.taxonomies.tags %}
-      <div class="catalogue-tags">
-        {% for tag in page.taxonomies.tags[:3] %}
-          <span class="tag-pill">{{ tag | upper }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </a>
-    {% endfor %}
-  </div>
-
-  <!-- ── Pagination ────────────────────────────────────────── -->
   {%- set writing_section = get_section(path="writing/_index.md") -%}
   {%- set total_posts = writing_section.pages | length -%}
   {% if paginator.number_pagers > 1 %}
-  <nav class="pagination" aria-label="Post pagination">
-    {% if paginator.previous %}
-      <a href="{{ paginator.previous | safe }}" class="pagination-btn" aria-label="Previous page">← Prev</a>
-    {% else %}
-      <span class="pagination-btn pagination-btn--disabled" aria-disabled="true">← Prev</span>
-    {% endif %}
-
-    <span class="pagination-info">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}<span class="meta-sep"> · </span>{{ total_posts }} posts</span>
-
-    {% if paginator.next %}
-      <a href="{{ paginator.next | safe }}" class="pagination-btn" aria-label="Next page">Next →</a>
-    {% else %}
-      <span class="pagination-btn pagination-btn--disabled" aria-disabled="true">Next →</span>
-    {% endif %}
+  <nav class="pager" aria-label="Post pagination">
+    <span class="pager-info">Page {{ paginator.current_index }} of {{ paginator.number_pagers }} · {{ total_posts }} posts</span>
+    <div class="pager-links">
+      {% if paginator.previous %}
+      <a class="btn" href="{{ paginator.previous | safe }}"><svg class="arrow-icon arrow-icon--back" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-left"></use></svg>Newer posts</a>
+      {% endif %}
+      {% if paginator.next %}
+      <a class="btn" href="{{ paginator.next | safe }}">Older posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+      {% endif %}
+    </div>
   </nav>
   {% endif %}
 

@@ -26,10 +26,11 @@ function initScrollTop() {
         topButton.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // Smooth scroll to top
+            // Smooth scroll to top, unless the visitor prefers reduced motion
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: reduceMotion ? 'instant' : 'smooth'
             });
         });
     }

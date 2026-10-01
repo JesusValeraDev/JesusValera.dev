@@ -1,32 +1,25 @@
 function filterBy(tag) {
-    let wasSelected = false;
-    if (tag.getAttribute('selected') === 'true') {
-        wasSelected = true;
-    }
+    const wasSelected = tag.getAttribute('selected') === 'true';
 
     document.querySelectorAll('.bookshelf-filters button').forEach(el => {
         el.removeAttribute('selected');
-    })
+        el.setAttribute('aria-pressed', 'false');
+    });
 
-    if (wasSelected === false) {
-        tag.setAttribute('selected', true);
+    const books = document.querySelectorAll('.book-item');
 
-        let selectedTag = tag.getAttribute('data-tag')
-        let books = document.querySelectorAll('.book-item');
-        books.forEach(book => {
-            let tags = book.dataset.tags;
-            let showBook = tags.includes(selectedTag);
-
-            if (showBook === false) {
-                book.style.display = 'none';
-            } else {
-                book.style.display = '';
-            }
-        })
-    } else {
-        let books = document.querySelectorAll('.book-item');
+    if (wasSelected) {
         books.forEach(book => {
             book.style.display = '';
         });
+        return;
     }
+
+    tag.setAttribute('selected', 'true');
+    tag.setAttribute('aria-pressed', 'true');
+
+    const selectedTag = tag.getAttribute('data-tag');
+    books.forEach(book => {
+        book.style.display = book.dataset.tags.includes(selectedTag) ? '' : 'none';
+    });
 }
