@@ -17,94 +17,130 @@
   {%- set writing = get_section(path="writing/_index.md") -%}
   {%- set books_data = load_data(path="content/bookshelf/books.json", format="json") -%}
   {%- set cv = get_section(path="cv/_index.md") -%}
+  {%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
+  {#- Every CV project block carries class="proj", so the count stays in sync with the CV -#}
+  {%- set projects_total = (cv.content | split(pat='class="proj"') | length) - 1 -%}
 
   <!-- ── Hero ──────────────────────────────────────────────── -->
-  <div class="home-hero">
-    <div class="home-hero-inner">
-      <img class="home-avatar"
-           src="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }}"
-           srcset="{{ get_url(path='assets/images/profile/jesus-100.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1.5x"
-           alt="Jesus Valera Reales"
-           width="100" height="100"
-           fetchpriority="high">
-      <div class="home-hero-text">
-        <h1 class="home-name">{{ section.title }}</h1>
-        <p class="home-bio">Reading, writing, building, and AI.<br>Exploring systems design, models, and practical engineering.</p>
-        <div class="home-social">
-          <a href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="home-social-link no-underline">
-            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="home-social-link no-underline">
-            <svg width="18" height="18" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
-          </a>
-        </div>
+  <section class="hero" aria-label="Introduction">
+    <img class="hero-avatar"
+         src="{{ get_url(path='assets/images/profile/jesus-150.webp') | safe }}"
+         srcset="{{ get_url(path='assets/images/profile/jesus-150.webp') | safe }} 1x, {{ get_url(path='assets/images/profile/jesus.webp') | safe }} 2x"
+         alt="Jesus Valera Reales"
+         width="112" height="112"
+         fetchpriority="high">
+    <div class="hero-body">
+      <h1 class="hero-name">{{ section.title }}</h1>
+      <p class="hero-role">
+        <img src="{{ cv.extra.preview_company_logo | safe }}" alt="" width="20" height="20">
+        <span>{{ cv.extra.preview_role }} at <a href="{{ cv.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ cv.extra.preview_company | split(pat=" | ") | first }}</a></span>
+        <span class="hero-role-place">· {{ cv.extra.preview_location | split(pat=",") | first }}</span>
+      </p>
+      <p class="hero-bio"><strong>Reading</strong>, <strong>writing</strong>, <strong>building</strong>, and <strong>AI</strong>. Exploring systems design, models, and practical engineering.</p>
+      <div class="hero-social">
+        <a class="icon-link" href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-github"></use></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-linkedin"></use></svg>
+        </a>
       </div>
     </div>
-  </div>
-
-  <h2 class="catalogue-section-heading">Current Role</h2>
-  <div class="bento-grid bento-grid--1">
-    <div class="bento-cell">
-      <div class="timeline-header">
-        <img src="{{ cv.extra.preview_company_logo | safe }}" alt="{{ cv.extra.preview_company }} logo" class="company-logo">
-        <div class="timeline-info">
-          <h3 class="company-name">
-            <a href="{{ cv.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ cv.extra.preview_company }}</a>
-          </h3>
-          <div class="job-role">{{ cv.extra.preview_role }}</div>
-          <div class="job-meta">
-            <span class="job-date">{{ cv.extra.preview_period }}</span>
-            <span class="job-location">{{ cv.extra.preview_location }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a href="{{ get_url(path='cv') | safe }}" class="hero-link home-section-cta">Work experience<span class="arrow">→</span></a>
+  </section>
 
   <!-- ── Latest posts ──────────────────────────────────────── -->
-  <h2 class="catalogue-section-heading">Latest Posts</h2>
-  <div class="bento-grid bento-grid--1">
-    {% for page in writing.pages[:3] %}
-    <a href="{{ page.permalink | safe }}" class="bento-cell bento-cell--link">
-      <div class="catalogue-meta">
-        <time datetime="{{ page.date }}">
-          {{ page.date | date(format="%b %d, %Y") }}<span class="meta-sep"> · </span>{{ page.reading_time }} min
-        </time>
-      </div>
-      <h3 class="catalogue-title">{{ page.title }}</h3>
-      {% if page.extra.subtitle %}
-      <p class="catalogue-subtitle">{{ page.extra.subtitle }}</p>
+  <section class="sec" aria-labelledby="h-posts">
+    <div class="sec-head">
+      <h2 id="h-posts" class="sec-label">Latest posts</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <a class="sec-link" href="{{ get_url(path='writing') | safe }}">All {{ writing.pages | length }} posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+    </div>
+    <div class="card">
+      {% for page in writing.pages[:3] %}
+      {% if loop.first %}
+      <a class="feat{% if not page.extra.static_thumbnail %} feat--noimg{% endif %}" href="{{ page.permalink | safe }}">
+        {% if page.extra.static_thumbnail %}
+        <img class="feat-img" src="{{ get_url(path=page.extra.static_thumbnail) | safe }}" alt="" width="300" height="190" fetchpriority="high">
+        {% endif %}
+        <div class="feat-body">
+          <div class="meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time> · {{ page.reading_time }} min read</div>
+          <h3 class="feat-title">{{ page.title }}</h3>
+          {% if page.extra.subtitle %}
+          <p class="feat-sub">{{ page.extra.subtitle }}</p>
+          {% endif %}
+          {% if page.taxonomies.tags %}
+          <div class="tags">
+            {% for tag in page.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </a>
+      {% else %}
+      <a class="home-row" href="{{ page.permalink | safe }}">
+        <div class="home-row-date"><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time><span>{{ page.reading_time }} min read</span></div>
+        <div class="home-row-body">
+          <div class="home-row-date-inline">{{ page.date | date(format="%b %d, %Y") }} · {{ page.reading_time }} min read</div>
+          <h3 class="home-row-title">{{ page.title }}</h3>
+          {% if page.taxonomies.tags %}
+          <div class="tags">
+            {% for tag in page.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% if page.extra.static_thumbnail %}
+        <img class="home-row-thumb" src="{{ get_url(path=page.extra.static_thumbnail) | safe }}" alt="" width="96" height="64" loading="lazy">
+        {% endif %}
+      </a>
       {% endif %}
-      {% if page.taxonomies.tags %}
-      <div class="catalogue-tags">
-        {% for tag in page.taxonomies.tags[:3] %}
-          <span class="tag-pill">{{ tag | upper }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </a>
-    {% endfor %}
-  </div>
-  <a href="{{ get_url(path='writing') | safe }}" class="hero-link home-section-cta">All posts<span class="arrow">→</span></a>
+      {% endfor %}
+    </div>
+  </section>
 
   <!-- ── Latest reads ──────────────────────────────────────── -->
-  <h2 class="catalogue-section-heading">Latest Reads</h2>
-  <div class="bento-grid bento-grid--4-3">
-    {% set latest_books = books_data | sort(attribute="date") | reverse %}
-    {% for book in latest_books[:4] %}
-    <div class="bento-cell bento-cell--book">
-      <div class="book-cover-small">
-        <img src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="{{ book.title }}" width="44" height="62" loading="lazy">
-        {% if book.date %}<span class="book-entry-date">{{ book.date | date(format="%b %Y") }}</span>{% endif %}
-      </div>
-      <div class="book-entry-info">
-        <span class="book-entry-title">{{ book.title }}</span>
-        <span class="book-entry-author">{{ book.author }}</span>
-      </div>
+  <section class="sec" aria-labelledby="h-reads">
+    <div class="sec-head">
+      <h2 id="h-reads" class="sec-label">Latest reads</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <a class="sec-link" href="{{ get_url(path='bookshelf') | safe }}">All {{ books_data | length }} books<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
     </div>
-    {% endfor %}
-  </div>
-  <a href="{{ get_url(path='bookshelf') | safe }}" class="hero-link home-section-cta">All books<span class="arrow">→</span></a>
+    <div class="shelf">
+      {% set latest_books = books_data | sort(attribute="date") | reverse %}
+      {% for book in latest_books[:4] %}
+      <figure class="book">
+        <img class="book-cover" src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="Cover of {{ book.title }}" width="200" height="300" loading="lazy">
+        <figcaption class="book-caption">
+          <span class="book-title">{{ book.title }}</span>
+          <span class="book-author">{{ book.author }}</span>
+          {% if book.date %}<span class="book-date">Finished {{ book.date | date(format="%b %Y") }}</span>{% endif %}
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ── Building ──────────────────────────────────────────── -->
+  {% if cv.extra.featured_projects %}
+  <section class="sec" aria-labelledby="h-building">
+    <div class="sec-head">
+      <h2 id="h-building" class="sec-label">Building</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <a class="sec-link" href="{{ get_url(path='cv') | safe }}#projects">All {{ projects_total }} projects<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+    </div>
+    <div class="projects">
+      {% for project in cv.extra.featured_projects %}
+      <a class="card card-link project-card" href="{{ project.url | safe }}" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <img src="{{ project.logo | safe }}" alt="" width="40" height="40" loading="lazy">
+          <svg width="16" height="16" aria-hidden="true"><use href="{{ sprite | safe }}#icon-external"></use></svg>
+        </div>
+        <div>
+          <h3 class="project-card-name">{{ project.name }}</h3>
+          <p class="project-card-desc">{{ project.tagline }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
 {% endblock content %}

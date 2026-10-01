@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Ultra-aggressive font preloading to prevent font swapping -->
-  <link rel="preload" as="font" href="{{ get_url(path='assets/fonts/Inter-Variable.woff2') | safe }}" type="font/woff2" crossorigin fetchpriority="high">
-
   <!-- Minimal critical CSS (screen reader only) -->
   <style>
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -38,6 +35,9 @@
       contain: layout style paint; /* CSS containment for better performance */
     }
 
+    #light-mode {
+      display: inline-flex;
+    }
     #dark-mode { 
       display: none; 
     }
@@ -49,9 +49,15 @@
     }
 
     /* Ensure buttons are clickable and properly sized */
-    #light-mode, #dark-mode { 
-      min-width: 22px;
-      min-height: 44px;
+    #light-mode, #dark-mode {
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-left: 4px;
+      padding: 0;
+      border-radius: 8px;
+      color: var(--ui-fg2);
       pointer-events: auto; 
       user-select: none;
       -webkit-user-select: none;
@@ -61,9 +67,11 @@
       z-index: 10;
       background: transparent;
       border: none;
-      outline: none;
       touch-action: manipulation;
       -webkit-touch-callout: none;
+    }
+    #light-mode:hover, #dark-mode:hover {
+      color: var(--ui-fg);
     }
 
     /* Mobile-first responsive optimizations */
@@ -170,75 +178,73 @@
   <script src="{{ get_url(path='js/ui/external-links.js', cachebust=true) | safe }}" defer></script>
   <script src="{{ get_url(path='js/core/email-protection.js', cachebust=true) | safe }}" defer></script>
   <script src="{{ get_url(path='js/ui/lightbox.js', cachebust=true) | safe }}" defer></script>
+  <script src="{{ get_url(path='js/ui/code-blocks.js', cachebust=true) | safe }}" defer></script>
 </head>
 
 <body class="min-h-screen flex flex-col bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
+  {%- set active_menu = "" -%}
+  {%- if section?.path -%}
+    {%- for menu in config.extra.menu -%}
+      {%- if section.path is starting_with(pat="/" ~ menu.url ~ "/") -%}{%- set_global active_menu = menu.url -%}{%- endif -%}
+    {%- endfor -%}
+  {%- elif page?.ancestors and "writing/_index.md" in page.ancestors -%}
+    {%- set active_menu = "writing" -%}
+  {%- endif -%}
+  {%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
+
   {% block header %}
-  <header class="bg-light-catalogue-bg dark:bg-dark-header-bg border-b border-light-border dark:border-dark-header-footer-border w-full">
-    <div class="container-custom h-14 md:h-16 flex items-center justify-between">
-      <nav class="flex items-center gap-5 md:gap-8">
-        <a class="inline-flex items-center justify-center no-underline px-2 py-2 rounded-md text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path='') | safe }}" aria-label="Home" title="Home">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-            <polygon points="0,6 0,16 6,16 6,10 10,10 10,16 16,16 16,6 8,0"/>
-          </svg>
-        </a>
+  <header class="site-header w-full">
+    <div class="container-custom site-header-inner">
+      <a class="site-home" href="{{ get_url(path='') | safe }}" aria-label="Home" title="Home">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <polygon points="0,6 0,16 6,16 6,10 10,10 10,16 16,16 16,6 8,0"/>
+        </svg>
+      </a>
+      <nav class="site-nav" aria-label="Main">
         {% for menu in config.extra.menu %}
-        <a class="font-mono text-sm font-bold no-underline px-1 text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary transition-colors duration-150" href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a>
+        <a class="site-nav-link" href="{{ get_url(path=menu.url) | safe }}"{% if active_menu == menu.url %} aria-current="page"{% endif %}>{{ menu.name }}</a>
         {% endfor %}
+        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-sun"></use></svg>
+        </button>
+        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-moon"></use></svg>
+        </button>
       </nav>
-      <div class="flex items-center">
-        <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" class="inline-flex items-center justify-center py-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
-          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-sun"></use></svg>
-          <span class="sr-only">Switch to dark mode</span>
-        </button>
-        <button id="dark-mode" type="button" aria-label="Switch to light mode" title="Switch to light mode" class="inline-flex items-center justify-center py-2 rounded-md hover:bg-light-catalogue-bg dark:hover:bg-dark-catalogue-bg transition-colors">
-          <svg width="16" height="16" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-moon"></use></svg>
-          <span class="sr-only">Switch to light mode</span>
-        </button>
-      </div>
     </div>
   </header>
   {% endblock header %}
 
-  <main class="container-custom py-6 md:py-8 grow w-full main-offset-md">
+  <main class="container-custom grow w-full">
     {% block content %}{% endblock content %}
   </main>
 
   {% block footer %}
-  <footer class="border-t border-light-border dark:border-dark-header-footer-border py-8 bg-white dark:bg-dark-header-bg">
-    <div class="container-custom flex items-center justify-between max-md:flex-col gap-4">
-      <span class="text-base text-light-text-secondary dark:text-dark-text-primary">© {{ now() | date(format="%Y") }} Jesus Valera Reales</span>
-      <div class="flex items-center gap-4 max-md:justify-center">
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="https://github.com/JesusValeraDev" target="_blank" aria-label="Visit my GitHub profile" title="GitHub">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-github"></use></svg>
-          <span class="sr-only">Visit my GitHub profile</span>
+  <footer class="site-footer">
+    <div class="container-custom site-footer-inner">
+      <span class="site-footer-copy">© {{ now() | date(format="%Y") }} Jesus Valera Reales</span>
+      <div class="site-footer-links">
+        <a class="icon-link" href="https://github.com/JesusValeraDev" target="_blank" aria-label="Visit my GitHub profile" title="GitHub">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-github"></use></svg>
         </a>
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" aria-label="Connect with me on LinkedIn" title="LinkedIn">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-linkedin"></use></svg>
-          <span class="sr-only">Connect with me on LinkedIn</span>
+        <a class="icon-link" href="https://www.linkedin.com/in/jesus-valera-reales/" target="_blank" aria-label="Connect with me on LinkedIn" title="LinkedIn">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-linkedin"></use></svg>
         </a>
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" target="_blank" aria-label="Send me an email" title="Email me">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-mail"></use></svg>
-          <span class="sr-only">Send me an email</span>
+        <a class="icon-link email-protected" data-email="bWVAamVzdXN2YWxlcmEuZGV2" href="#" aria-label="Send me an email" title="Email me">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-mail"></use></svg>
         </a>
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" aria-label="Subscribe to RSS feed" title="RSS Feed">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-rss"></use></svg>
-          <span class="sr-only">Subscribe to RSS feed</span>
+        <a class="icon-link" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" aria-label="Subscribe to RSS feed" title="RSS Feed">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-rss"></use></svg>
         </a>
-        <a class="inline-flex items-center text-light-text-secondary dark:text-dark-text-primary dark:hover:text-white" href="{{ get_url(path='legal') | safe }}" aria-label="Legal notice" title="Legal">
-          <svg width="20" height="20" aria-hidden="true"><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-scale"></use></svg>
-          <span class="sr-only">Legal notice</span>
+        <a class="icon-link" href="{{ get_url(path='legal') | safe }}" aria-label="Legal notice" title="Legal">
+          <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-scale"></use></svg>
         </a>
       </div>
     </div>
   </footer>
   {% endblock footer %}
   <a href="#" class="top" style="display: none" aria-label="Scroll to top" title="Scroll to top">
-    <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="miter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="12" cy="12" r="10"/>
-      <polyline points="16 13.2 12 9.5 8 13.2"/>
-    </svg>
-    <span class="sr-only">Scroll to top</span>
+    <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-up"></use></svg>
   </a>
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
