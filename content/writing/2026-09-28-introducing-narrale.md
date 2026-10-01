@@ -9,6 +9,7 @@ aliases = ['2026-09-28-introducing-narrale']
 tags = ['Narrale', 'Writing', 'AI', 'Product Design']
 
 [extra]
+pinned = true
 static_thumbnail = "/images/2026-09-28/1.webp"
 image = "images/2026-09-28/1.webp"
 image_width = 1810

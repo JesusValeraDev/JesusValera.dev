@@ -157,3 +157,18 @@
 {%- set current_year = now() | date(format="%Y") | int -%}
 {{- current_year - start_year -}}
 {%- endcomponent experience_years %}
+
+{% component post_row(post) -%}
+<a class="list-row" href="{{ post.permalink | safe }}">
+  <div class="list-row-meta">{% if post.extra.pinned %}<svg class="pin-icon" width="14" height="14" role="img" aria-label="Pinned"><title>Pinned</title><use href="{{ get_url(path='assets/icons/sprite.svg') | safe }}#icon-pushpin"></use></svg>{% endif %}<time datetime="{{ post.date }}">{{ post.date | date(format="%b %d, %Y") }}</time> · {{ post.reading_time }} min read</div>
+  <h2 class="list-row-title">{{ post.title }}</h2>
+  {% if post.extra.subtitle %}
+  <p class="list-row-sub">{{ post.extra.subtitle }}</p>
+  {% endif %}
+  {% if post.taxonomies.tags %}
+  <div class="tags">
+    {% for tag in post.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+  </div>
+  {% endif %}
+</a>
+{%- endcomponent post_row %}

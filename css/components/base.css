@@ -338,6 +338,12 @@
     font-size: 0.75rem;
     color: var(--ui-fg2);
   }
+  .pin-icon {
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: -2px;
+    color: var(--ui-accent);
+  }
   .list-row-title {
     margin: 0;
     font-size: 1.0625rem;

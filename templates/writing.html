@@ -31,19 +31,14 @@
 
   <section class="page-list" aria-label="Posts">
     <div class="card">
+      {#- Posts with extra.pinned lead the first page and are skipped where their date would place them -#}
+      {% if paginator.current_index == 1 %}
+      {% for page in section.pages %}
+      {% if page.extra.pinned %}{{ <post_row post={page} /> }}{% endif %}
+      {% endfor %}
+      {% endif %}
       {% for page in paginator.pages %}
-      <a class="list-row" href="{{ page.permalink | safe }}">
-        <div class="list-row-meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time> · {{ page.reading_time }} min read</div>
-        <h2 class="list-row-title">{{ page.title }}</h2>
-        {% if page.extra.subtitle %}
-        <p class="list-row-sub">{{ page.extra.subtitle }}</p>
-        {% endif %}
-        {% if page.taxonomies.tags %}
-        <div class="tags">
-          {% for tag in page.taxonomies.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
-        </div>
-        {% endif %}
-      </a>
+      {% if not page.extra.pinned %}{{ <post_row post={page} /> }}{% endif %}
       {% endfor %}
     </div>
   </section>
