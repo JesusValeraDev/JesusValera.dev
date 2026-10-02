@@ -312,8 +312,7 @@
     flex-shrink: 0;
   }
   .proj p {
-    max-width: 70ch;
-    font-size: 0.84375rem;
+    font-size: 0.85rem;
     line-height: 1.7;
     color: var(--ui-fg2);
   }

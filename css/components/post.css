@@ -431,11 +431,6 @@
     font-size: 0.9375rem;
     line-height: 1.75;
   }
-  .legal .prose p,
-  .legal .prose ul,
-  .legal .prose ol {
-    max-width: 70ch;
-  }
   .legal .prose h2 {
     font-size: 1.375rem;
   }

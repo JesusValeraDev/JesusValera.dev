@@ -362,7 +362,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/narrale.webp" alt="Narrale logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">Narrale</h3>
-        <span class="proj-tagline">A quiet writing workspace for novelists</span>
+        <span class="proj-tagline">A quiet workspace for novelists</span>
       </div>
       <a class="sec-link" href="https://narrale.com/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -379,7 +379,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/securityscorecard.webp" alt="Laravel Security Scorecard logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">Security Scorecard</h3>
-        <span class="proj-tagline">Instant security audit for Laravel applications</span>
+        <span class="proj-tagline">Instant Laravel security audit tool</span>
       </div>
       <a class="sec-link" href="https://laravel-security-scorecard-production-q6p9v4.laravel.cloud/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -396,7 +396,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/dkrisna.webp" alt="D'Krisna Beauty Salon logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">D'Krisna</h3>
-        <span class="proj-tagline">Beauty and wellness salon in Murcia</span>
+        <span class="proj-tagline">Beauty & wellness salon in Murcia</span>
       </div>
       <a class="sec-link" href="https://dkrisna.es/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -413,7 +413,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/bip39.webp" alt="BIP39 Word Selector logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">BIP39 Word Selector</h3>
-        <span class="proj-tagline">An online bidirectional Bitcoin mnemonic tool</span>
+        <span class="proj-tagline">Online Bitcoin mnemonic converter</span>
       </div>
       <a class="sec-link" href="https://bip39.jesusvalera.dev/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -430,7 +430,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/phel-plugin.webp" alt="Phel Lang Plugin logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">Phel Lang IntelliJ Plugin</h3>
-        <span class="proj-tagline">A plugin written in Kotlin for the JetBrains IDE family</span>
+        <span class="proj-tagline">A plugin for JetBrains IDEs</span>
       </div>
       <a class="sec-link" href="https://plugins.jetbrains.com/plugin/28459-phel-lang/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -447,7 +447,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/phel.webp" alt="Phel Lang logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">Phel Lang</h3>
-        <span class="proj-tagline">A functional programming language (Lisp dialect) that compiles to PHP</span>
+        <span class="proj-tagline">FP language that compiles to PHP</span>
       </div>
       <a class="sec-link" href="https://phel-lang.org/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
@@ -464,7 +464,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
       <img class="proj-logo" src="/cv/gacela.webp" alt="Gacela logo" width="36" height="36" loading="lazy">
       <div class="proj-title">
         <h3 class="proj-name">Gacela Project</h3>
-        <span class="proj-tagline">An application that helps you to split your application into different modules</span>
+        <span class="proj-tagline">Split your application into modules</span>
       </div>
       <a class="sec-link" href="https://gacela-project.com/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
     </div>
