@@ -175,7 +175,7 @@
   <script src="{{ get_url(path='js/ui/code-blocks.js', cachebust=true) | safe }}" defer></script>
 </head>
 
-<body class="min-h-screen flex flex-col bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
+<body class="min-h-screen flex flex-col">
   {%- set active_menu = "" -%}
   {%- if section?.path -%}
     {%- for menu in config.extra.menu -%}

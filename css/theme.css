@@ -7,16 +7,6 @@
 @view-transition { navigation: auto; }
 
 @theme {
-  --color-light-bg: #fcfcfd;
-  --color-dark-bg: #111114;
-  --color-light-text-primary: #374151;
-  --color-light-link: #15803d;
-  --color-dark-text-primary: #cbd5e1;
-  --color-dark-link: #4ade80;
-  --color-light-border: #e5e7eb;
-  --color-dark-border: #2a2a2e;
-  --color-light-blockquote-bg: #f0fdf4;
-  --color-dark-blockquote-bg: #111113;
   --font-mono:
     Consolas, 'Cascadia Code', ui-monospace, SFMono-Regular, 'SF Mono',
     Menlo, Monaco, 'Liberation Mono', 'Courier New', monospace;

@@ -1,5 +1,5 @@
 @layer base {
-  html { @apply scroll-smooth leading-relaxed bg-light-bg; }
+  html { @apply scroll-smooth leading-relaxed; background-color: var(--ui-bg); }
   body::before {
     content: '';
     position: fixed;
@@ -16,27 +16,28 @@
     opacity: 0.12;
     mix-blend-mode: soft-light;
   }
-  *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
-  body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; }
-  a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(21,128,61,0.3); }
+  *,::after,::before { @apply box-border border-0 border-solid; border-color: var(--ui-line); }
+  body { @apply font-mono text-body leading-relaxed min-h-screen m-0 antialiased transition-colors duration-150 ease-custom; background-color: var(--ui-bg); color: var(--ui-fg); }
+  a { @apply underline transition-colors duration-150 ease-custom; color: var(--ui-accent); text-decoration-color: rgba(21,128,61,0.3); }
   .dark a { text-decoration-color: rgba(74,222,128,0.3); }
-  a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
-  ul,ol { @apply list-inside pl-5 text-light-text-primary dark:text-dark-text-primary; }
+  a:hover { @apply underline; color: var(--ui-fg); text-decoration-color: currentColor; }
+  ul,ol { @apply list-inside pl-5; color: var(--ui-fg); }
   ul { @apply list-disc; }
   ol { @apply list-decimal; }
   li { @apply my-1.5; }
-  li::marker { color: var(--color-light-text-primary); }
-  .dark li::marker { color: var(--color-dark-text-primary); }
+  li::marker { color: var(--ui-fg); }
   img { @apply block mx-auto my-4 max-w-full; }
   blockquote {
-    @apply pl-5 rounded-lg font-mono text-sm bg-light-blockquote-bg dark:bg-dark-blockquote-bg;
+    @apply pl-5 rounded-lg font-mono text-sm;
     margin: 0;
     border: 1px solid rgba(21, 128, 61, 0.2);
+    background-color: #f0fdf4;
   }
   .dark blockquote {
     border: 1px solid rgba(34, 197, 94, 0.15);
+    background-color: #111113;
   }
-  .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
+  .separator { @apply w-1/5 border-t-8 border-dotted my-12 mx-auto; border-color: var(--ui-line); }
 
   /* Revert Tailwind Preflight margin:0 for headings and text elements */
   dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
@@ -87,7 +88,5 @@
 
   /* Accessible focus styles for keyboard navigation */
   a:focus-visible,
-  button:focus-visible { outline: 2px solid var(--color-light-text-primary); outline-offset: 3px; border-radius: 6px; }
-  .dark a:focus-visible,
-  .dark button:focus-visible { outline: 2px solid var(--color-dark-text-primary); outline-offset: 3px; border-radius: 6px; }
+  button:focus-visible { outline: 2px solid var(--ui-fg); outline-offset: 3px; border-radius: 6px; }
 }
