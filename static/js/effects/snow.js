@@ -129,7 +129,7 @@
         style.textContent = `
             /* Snowflake CSS custom properties and base styles */
             :root {
-                --snowflake-bg-color: var(--color-light-timeline-bg, #00a3f1);
+                --snowflake-bg-color: var(--ui-accent);
                 --snowflake-shadow-color: rgba(0, 163, 241, 0.3);
             }
             .dark {

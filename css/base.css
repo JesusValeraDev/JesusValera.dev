@@ -1,12 +1,5 @@
 @layer base {
-  @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter-Variable.woff2') format('woff2-variations');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-  html { @apply scroll-smooth leading-relaxed bg-light-bg dark:bg-dark-bg; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; }
+  html { @apply scroll-smooth leading-relaxed bg-light-bg; }
   body::before {
     content: '';
     position: fixed;
@@ -24,12 +17,10 @@
     mix-blend-mode: soft-light;
   }
   *,::after,::before { @apply box-border border-0 border-solid border-light-border dark:border-dark-border; }
-  body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; -moz-osx-font-smoothing: grayscale; }
+  body { @apply font-mono text-body leading-relaxed min-h-screen m-0 bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary antialiased transition-colors duration-150 ease-custom; }
   a { @apply text-light-link dark:text-dark-link underline transition-colors duration-150 ease-custom; text-decoration-color: rgba(21,128,61,0.3); }
   .dark a { text-decoration-color: rgba(74,222,128,0.3); }
   a:hover { @apply text-light-text-primary dark:text-dark-text-primary underline; text-decoration-color: currentColor; }
-  h2 { @apply mb-4; }
-  .post h2 { @apply mt-12 mb-4; }
   ul,ol { @apply list-inside pl-5 text-light-text-primary dark:text-dark-text-primary; }
   ul { @apply list-disc; }
   ol { @apply list-decimal; }
@@ -39,6 +30,7 @@
   img { @apply block mx-auto my-4 max-w-full; }
   blockquote {
     @apply pl-5 rounded-lg font-mono text-sm bg-light-blockquote-bg dark:bg-dark-blockquote-bg;
+    margin: 0;
     border: 1px solid rgba(21, 128, 61, 0.2);
   }
   .dark blockquote {
@@ -47,15 +39,10 @@
   .separator { @apply w-1/5 border-t-8 border-dotted border-light-border dark:border-dark-border my-12 mx-auto; }
 
   /* Revert Tailwind Preflight margin:0 for headings and text elements */
-  blockquote { margin: 0; }
   dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: revert; }
 
   /* Reset text selection to system default-like colors */
   ::selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
-  ::-moz-selection { background: rgba(180, 213, 255, 0.6); color: inherit; }
-
-  :root { --border: var(--color-light-border); }
-  .dark { --border: var(--color-dark-border); }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -100,9 +87,7 @@
 
   /* Accessible focus styles for keyboard navigation */
   a:focus-visible,
-  button:focus-visible,
-  .top:focus-visible { outline: 2px solid var(--color-light-text-primary); outline-offset: 3px; border-radius: 6px; }
+  button:focus-visible { outline: 2px solid var(--color-light-text-primary); outline-offset: 3px; border-radius: 6px; }
   .dark a:focus-visible,
-  .dark button:focus-visible,
-  .dark .top:focus-visible { outline: 2px solid var(--color-dark-text-primary); outline-offset: 3px; border-radius: 6px; }
+  .dark button:focus-visible { outline: 2px solid var(--color-dark-text-primary); outline-offset: 3px; border-radius: 6px; }
 }

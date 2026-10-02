@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Minimal critical CSS (screen reader only) -->
-  <style>
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
   <script>
   (function () {
     const theme = localStorage.theme || 'light';
@@ -28,8 +24,6 @@
   <script src="{{ get_url(path='js/core/dark-mode.js', cachebust=true) | safe }}"></script>
 
   <style>
-    body { margin: 0; }
-
     main {
       min-height: 50vh;
       contain: layout style paint; /* CSS containment for better performance */
@@ -76,7 +70,7 @@
 
     /* Mobile-first responsive optimizations */
     @media (max-width: 768px) {
-      body { -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; }
+      body { overscroll-behavior-y: contain; }
     }
   </style>
 
