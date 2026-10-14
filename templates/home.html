@@ -113,11 +113,13 @@
       {% set latest_books = books_data | sort(attribute="date") | reverse %}
       {% for book in latest_books[:4] %}
       <figure class="book">
-        <img class="book-cover" src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="Cover of {{ book.title }}" width="200" height="300" loading="lazy">
+        <div class="book-cover-wrap">
+          <img class="book-cover" src="/books/{{ book.img | replace(from=' ', to='%20') }}" alt="Cover of {{ book.title }}" width="200" height="300" loading="lazy">
+          {% if book.date %}<time class="book-badge" datetime="{{ book.date | date(format="%Y-%m") }}" aria-label="Finished {{ book.date | date(format="%b %Y") }}">{{ book.date | date(format="%b %Y") }}</time>{% endif %}
+        </div>
         <figcaption class="book-caption">
           <span class="book-title">{{ book.title }}</span>
           <span class="book-author">{{ book.author }}</span>
-          {% if book.date %}<span class="book-date">Finished {{ book.date | date(format="%b %Y") }}</span>{% endif %}
         </figcaption>
       </figure>
       {% endfor %}
