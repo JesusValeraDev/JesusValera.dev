@@ -41,7 +41,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
   <div class="hero-body">
     <h1 class="hero-name">Jesus Valera Reales</h1>
     <p class="hero-role hero-role-place"><svg width="15" height="15" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-pin"></use></svg>Berlin, Germany</p>
-    <p class="hero-bio"><strong>Senior Software Engineer</strong> passionate about <strong>clean code</strong>, <strong>architecture</strong>, and <strong>sharing knowledge through technology</strong>.</p>
+    <p class="hero-bio"><strong>Senior Software Engineer</strong> building products end-to-end with <strong>clean&nbsp;architecture</strong>, <strong>TDD</strong>, and <strong>AI</strong>.</p>
     <div class="cv-actions">
       <a class="btn-primary btn-sm" href="/assets/documents/Jesus-Valera-Reales-CV.pdf" download="Jesus-Valera-Reales-CV.pdf">
         <svg width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-download"></use></svg>
@@ -66,11 +66,11 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
 
 <div class="card card-pad">
   <ul class="bullets">
-    <li><strong>{{ <experience_years start_year={2018} /> }}+ years</strong> of experience building scalable, maintainable systems, with a strong focus on clean architecture, test-driven development, and long-term code quality</li>
-    <li>Leverages modern <strong>AI development tools</strong> to enhance productivity, accelerate problem-solving, and design more robust, adaptable systems</li>
-    <li>Passionate about <strong>mentorship</strong> and <strong>knowledge sharing</strong>, with experience guiding engineers and speaking at public conferences on technical topics</li>
-    <li><strong>Active contributor to open-source projects</strong>, continuously sharing insights and building tools that support the broader developer community</li>
-    <li><strong>Collaborative and product-minded engineer</strong> who values clear communication, ownership, and delivering reliable, high-quality solutions that create real impact</li>
+    <li><strong>{{ <experience_years start_year={2018} /> }}+ years</strong> shipping products, from data model to UI, with <strong>clean architecture</strong> and <strong>TDD</strong></li>
+    <li>Founded and shipped <strong>Narrale</strong>, an <strong>AI-powered SaaS</strong> with paid plans, solo and end-to-end</li>
+    <li>Experienced in <strong>mentoring</strong> and <strong>knowledge sharing</strong>, including speaking at public conferences</li>
+    <li><strong>Active open-source contributor</strong>, sharing knowledge and driving innovation</li>
+    <li><strong>Collaborative engineer</strong> passionate about delivering reliable, high-quality products</li>
   </ul>
 </div>
 

@@ -1,5 +1,5 @@
 +++
 template = "home.html"
 title = "Jesus Valera Reales"
-description = "Senior Software Engineer passionate about clean code, architecture, and sharing knowledge through technology."
+description = "Senior Software Engineer building products end-to-end with clean architecture, TDD, and AI."
 +++
