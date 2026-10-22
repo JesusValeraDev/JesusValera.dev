@@ -115,6 +115,43 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
 
 <div class="card">
   <article class="xp">
+    <img class="xp-logo" src="/cv/narrale.webp" alt="Narrale logo" width="44" height="44">
+    <div class="xp-body">
+      <div class="xp-head">
+        <div class="xp-title">
+          <h3 class="xp-name"><a href="https://narrale.com/" target="_blank">Narrale</a></h3>
+          <span class="xp-current">Current</span>
+        </div>
+        <div class="xp-role">Founder &amp; Engineer (side business)</div>
+        <div class="xp-meta">Mar 2026 — Present · {{ <duration start_year={2026} start_month={3} /> }} · Berlin, Germany</div>
+      </div>
+      <ul class="bullets">
+        <li>Designed, built, and launched a <strong>writing platform for novelists end-to-end</strong>: product design, data model, backend, frontend, billing, and deployment</li>
+        <li>Architected the backend as a <strong>modular monolith</strong> with <strong>Hexagonal Architecture and DDD</strong></li>
+        <li>Built a <strong>provider-agnostic AI layer</strong> with credit-based usage, powering story-bible and scene-notes extraction, "Ask your book" answers with cited passages, continuity tracking, and editorial feedback</li>
+        <li>Built the editor on <strong>TipTap/ProseMirror</strong> with offline-safe autosave and version history</li>
+        <li>Kept quality high working solo with <strong>AI coding agents</strong>: Spec-Driven Development, TDD, <strong>11,000+ tests</strong></li>
+        <li>Ran <strong>user discovery</strong> directly with novelists in online writing communities and turned feedback into the roadmap</li>
+      </ul>
+      <div class="project-gallery">
+        <a href="/cv/projects/narrale1.webp"><img src="/cv/projects/narrale1.webp" alt="Narrale screenshot 1" loading="lazy"></a>
+        <a href="/cv/projects/narrale2.webp"><img src="/cv/projects/narrale2.webp" alt="Narrale screenshot 2" loading="lazy"></a>
+        <a href="/cv/projects/narrale3.webp"><img src="/cv/projects/narrale3.webp" alt="Narrale screenshot 3" loading="lazy"></a>
+      </div>
+      <div class="tags">
+        <span class="skill">TypeScript</span>
+        <span class="skill">React</span>
+        <span class="skill">TipTap</span>
+        <span class="skill">PHP</span>
+        <span class="skill">Laravel</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">Paddle</span>
+        <span class="skill">OpenAI API</span>
+        <span class="skill">Docker</span>
+      </div>
+    </div>
+  </article>
+  <article class="xp">
     <img class="xp-logo" src="/cv/fotograf.webp" alt="fotograf.de logo" width="44" height="44">
     <div class="xp-body">
       <div class="xp-head">
@@ -357,23 +394,6 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
 ## Projects
 
 <div class="card">
-  <article class="proj">
-    <div class="proj-head">
-      <img class="proj-logo" src="/cv/narrale.webp" alt="Narrale logo" width="36" height="36" loading="lazy">
-      <div class="proj-title">
-        <h3 class="proj-name">Narrale</h3>
-        <span class="proj-tagline">A quiet workspace for novelists</span>
-      </div>
-      <a class="sec-link" href="https://narrale.com/" target="_blank" rel="noopener noreferrer">Visit site<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a>
-    </div>
-    <p>Designed and developed a SaaS writing app for novelists.</p>
-    <p>Distraction-free drafting, an AI-assisted Story Bible that extracts characters and places from the manuscript, a planning canvas with a chronology view, and editorial lenses that review each chapter for prose, pacing, characters, grammar and tone.</p>
-    <div class="project-gallery">
-      <a href="/cv/projects/narrale1.webp"><img src="/cv/projects/narrale1.webp" alt="Narrale screenshot 1" loading="lazy"></a>
-      <a href="/cv/projects/narrale2.webp"><img src="/cv/projects/narrale2.webp" alt="Narrale screenshot 2" loading="lazy"></a>
-      <a href="/cv/projects/narrale3.webp"><img src="/cv/projects/narrale3.webp" alt="Narrale screenshot 3" loading="lazy"></a>
-    </div>
-  </article>
   <article class="proj">
     <div class="proj-head">
       <img class="proj-logo" src="/cv/securityscorecard.webp" alt="Laravel Security Scorecard logo" width="36" height="36" loading="lazy">
