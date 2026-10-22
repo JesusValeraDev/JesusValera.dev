@@ -75,17 +75,24 @@
   @media (max-width: 640px) {
     .hero {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 1rem;
       padding-top: 2rem;
+      text-align: center;
     }
     .hero-avatar {
       width: 72px;
       height: 72px;
       margin-top: 0;
     }
+    .hero-body {
+      align-items: center;
+    }
     .hero-name {
       font-size: 2rem;
+    }
+    .hero-social {
+      margin-left: 0;
     }
   }
 
