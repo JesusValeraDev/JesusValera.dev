@@ -3,16 +3,18 @@
 
   .hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     padding: 4rem 0 0.5rem;
   }
+  /* Fixed offset instead of centering, so the avatar sits at the same height
+     on the home and CV heroes even when their text blocks differ in height */
   .hero-avatar {
     display: block;
     flex-shrink: 0;
     width: 112px;
     height: 112px;
-    margin: 0;
+    margin: 38px 0 0;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 0 0 1px var(--ui-line);
@@ -80,6 +82,7 @@
     .hero-avatar {
       width: 72px;
       height: 72px;
+      margin-top: 0;
     }
     .hero-name {
       font-size: 2rem;
