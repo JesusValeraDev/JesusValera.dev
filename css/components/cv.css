@@ -151,7 +151,16 @@
   .xp-name a {
     color: var(--ui-fg);
   }
-  .xp-name a:hover {
+  /* Inline, so the arrow follows the last word when a long name wraps */
+  .xp-name .arrow-icon {
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: -1px;
+    color: var(--ui-fg2);
+    transition: color 150ms ease, transform 150ms ease;
+  }
+  .xp-name a:hover,
+  .xp-name a:hover .arrow-icon {
     color: var(--ui-accent);
   }
   .xp-current {

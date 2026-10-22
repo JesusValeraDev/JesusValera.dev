@@ -125,7 +125,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://narrale.com/" target="_blank">Narrale</a></h3>
+          <h3 class="xp-name"><a href="https://narrale.com/" target="_blank" rel="noopener noreferrer">Narrale<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
           <span class="xp-current">Current</span>
         </div>
         <div class="xp-role">Founder &amp; Engineer (side business)</div>
@@ -162,7 +162,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de</a></h3>
+          <h3 class="xp-name"><a href="https://www.gotphoto.com/" target="_blank" rel="noopener noreferrer">GotPhoto.com | fotograf.de<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
           <span class="xp-current">Current</span>
         </div>
         <div class="xp-role">Senior Software Developer</div>
@@ -192,7 +192,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://www.artnight.com/" target="_blank">ArtNight</a></h3>
+          <h3 class="xp-name"><a href="https://www.artnight.com/" target="_blank" rel="noopener noreferrer">ArtNight<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
         </div>
         <div class="xp-role">Software Developer</div>
         <div class="xp-meta">Oct 2021 — May 2023 · 1 yr 8 mos · Berlin, Germany (hybrid)</div>
@@ -219,7 +219,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://www.kollex.de/" target="_blank">Kollex</a></h3>
+          <h3 class="xp-name"><a href="https://www.kollex.de/" target="_blank" rel="noopener noreferrer">Kollex<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
         </div>
         <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Sep 2020 — Sep 2021 · 1 yr 1 mo · Berlin, Germany (hybrid)</div>
@@ -245,7 +245,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://selectra.info/" target="_blank">Selectra</a></h3>
+          <h3 class="xp-name"><a href="https://selectra.info/" target="_blank" rel="noopener noreferrer">Selectra<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
         </div>
         <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Jun 2019 — Sep 2020 · 1 yr 4 mos · Madrid, Spain (onsite)</div>
@@ -270,7 +270,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
     <div class="xp-body">
       <div class="xp-head">
         <div class="xp-title">
-          <h3 class="xp-name"><a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn</a></h3>
+          <h3 class="xp-name"><a href="https://www.smileandlearn.com/" target="_blank" rel="noopener noreferrer">Smile And Learn<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
         </div>
         <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Nov 2018 — Jun 2019 · 8 mos · Madrid, Spain (onsite)</div>
@@ -318,7 +318,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
   <article class="card xp">
     <img class="xp-logo" src="/cv/carlos.webp" alt="CIFP Carlos III logo" width="44" height="44">
     <div class="xp-head">
-      <h3 class="xp-name"><a href="https://cifpcarlos3.es/" target="_blank">CIFP Carlos III</a></h3>
+      <h3 class="xp-name"><a href="https://cifpcarlos3.es/" target="_blank" rel="noopener noreferrer">CIFP Carlos III<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
       <div class="xp-role">Higher Technician in Web Applications Development</div>
       <div class="xp-meta">2016 — Jun 2017 · Cartagena, Spain</div>
       <div class="tags">
@@ -331,7 +331,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
   <article class="card xp">
     <img class="xp-logo" src="/cv/chirinos.webp" alt="IES Ginés Pérez Chirinos logo" width="44" height="44">
     <div class="xp-head">
-      <h3 class="xp-name"><a href="https://ieschirinos.eu/" target="_blank">IES Ginés Pérez Chirinos</a></h3>
+      <h3 class="xp-name"><a href="https://ieschirinos.eu/" target="_blank" rel="noopener noreferrer">IES Ginés Pérez Chirinos<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-external"></use></svg></a></h3>
       <div class="xp-role">Higher Technician in Multi-platform Applications Development</div>
       <div class="xp-meta">2014 — 2016 · Caravaca, Spain</div>
       <div class="tags">
