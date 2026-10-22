@@ -362,13 +362,23 @@
       gap: 8px;
     }
     .xp {
-      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
       padding: 1.25rem 1rem;
+    }
+    /* Logo beside the header only, so bullets, gallery and tags keep the full width */
+    .xp-body {
+      display: contents;
+    }
+    .xp-body > :not(.xp-head) {
+      grid-column: 1 / -1;
     }
     .xp-current {
       position: absolute;
-      top: 2rem;
+      top: 1.375rem;
       right: 1rem;
+    }
+    .xp-title:has(.xp-current) {
+      padding-right: 5.5rem;
     }
     .edu-grid,
     .lang-grid {
