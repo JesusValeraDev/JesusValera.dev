@@ -5,12 +5,18 @@ template = "cv.html"
 aliases = ['resume', 'work']
 
 [extra]
-preview_company = "GotPhoto.com | fotograf.de"
-preview_company_url = "https://www.gotphoto.com/"
-preview_company_logo = "/cv/fotograf.webp"
-preview_role = "Senior Software Developer"
-preview_period = "Sep 2023 — Present"
-preview_location = "Berlin, Germany"
+# Current roles listed under the name in the home page hero
+[[extra.hero_roles]]
+role = "Senior Software Developer"
+company = "GotPhoto.com"
+url = "https://www.gotphoto.com/"
+logo = "/cv/fotograf.webp"
+
+[[extra.hero_roles]]
+role = "Founder & Engineer"
+company = "Narrale"
+url = "https://narrale.com/"
+logo = "/cv/narrale.webp"
 
 # Projects highlighted in the "Building" section of the home page
 [[extra.featured_projects]]

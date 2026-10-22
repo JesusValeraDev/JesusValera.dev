@@ -37,12 +37,15 @@
          fetchpriority="high">
     <div class="hero-body">
       <h1 class="hero-name">{{ section.title }}</h1>
-      <p class="hero-role">
-        <img src="{{ cv.extra.preview_company_logo | safe }}" alt="" width="20" height="20">
-        <span>{{ cv.extra.preview_role }} at <a href="{{ cv.extra.preview_company_url | safe }}" target="_blank" rel="noopener">{{ cv.extra.preview_company | split(pat=" | ") | first }}</a></span>
-        <span class="hero-role-place">· {{ cv.extra.preview_location | split(pat=",") | first }}</span>
-      </p>
-      <p class="hero-bio"><strong>Reading</strong>, <strong>writing</strong>, <strong>building</strong>, and <strong>AI</strong>. Exploring systems design, models, and practical engineering.</p>
+      <div>
+        {%- for item in cv.extra.hero_roles %}
+        <p class="hero-role">
+          <img src="{{ item.logo | safe }}" alt="" width="20" height="20">
+          <span>{{ item.role }} at <a href="{{ item.url | safe }}" target="_blank" rel="noopener">{{ item.company }}</a></span>
+        </p>
+        {%- endfor %}
+      </div>
+      <p class="hero-bio"><strong>Writing</strong> about software, <strong>reading</strong> books, and <strong>building</strong> products.</p>
       <div class="hero-social">
         <a class="icon-link" href="https://github.com/JesusValeraDev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
           <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-github"></use></svg>
