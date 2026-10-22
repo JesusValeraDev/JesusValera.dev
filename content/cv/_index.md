@@ -8,7 +8,7 @@ aliases = ['resume', 'work']
 preview_company = "GotPhoto.com | fotograf.de"
 preview_company_url = "https://www.gotphoto.com/"
 preview_company_logo = "/cv/fotograf.webp"
-preview_role = "Senior Backend Developer"
+preview_role = "Senior Software Developer"
 preview_period = "Sep 2023 — Present"
 preview_location = "Berlin, Germany"
 
@@ -122,14 +122,14 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
           <h3 class="xp-name"><a href="https://www.gotphoto.com/" target="_blank">GotPhoto.com | fotograf.de</a></h3>
           <span class="xp-current">Current</span>
         </div>
-        <div class="xp-role">Senior Backend Developer</div>
+        <div class="xp-role">Senior Software Developer</div>
         <div class="xp-meta">Sep 2023 — Present · {{ <duration start_year={2023} start_month={9} /> }} · Berlin, Germany (hybrid)</div>
       </div>
       <ul class="bullets">
-        <li>Improved the legacy <strong>shop's package customization flow</strong>, optimizing usability and business logic, leading the development of a key feature that increased the order rate by 20% while reducing bugs and support overhead</li>
-        <li><strong>Redesigned and rebuilt a new shop from scratch</strong> using Symfony, implementing a RESTful API architecture, which significantly improved performance, scalability, and long-term maintainability</li>
+        <li>Improved the <strong>package customization flow</strong> in the shop photographers use to sell to parents, raising the order rate by 20% while reducing bugs and support overhead</li>
+        <li><strong>Redesigned and rebuilt a shop from scratch</strong> using Symfony, implementing a RESTful API architecture, which significantly improved performance, scalability, and long-term maintainability</li>
         <li><strong>Extracted components</strong> from the monolith into external services, improving maintainability and drastically reducing deployment time from 30 minutes to 40 seconds</li>
-        <li>Made <strong>extensive daily use of AI development tools</strong>, applying them to experimentation, analysis, and solution design, and promoting best practices within the team to enhance productivity and technical outcomes</li>
+        <li><strong>Drove team adoption of AI development tools</strong>, sharing practices for experimentation, analysis, and solution design</li>
         <li><strong>Mentored new team joiners</strong>, guiding them through team ceremonies, knowledge-sharing practices, and technical workflows, enabling faster onboarding and more effective collaboration</li>
       </ul>
       <div class="tags">
@@ -151,7 +151,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
         <div class="xp-title">
           <h3 class="xp-name"><a href="https://www.artnight.com/" target="_blank">ArtNight</a></h3>
         </div>
-        <div class="xp-role">Middle Backend Developer</div>
+        <div class="xp-role">Software Developer</div>
         <div class="xp-meta">Oct 2021 — May 2023 · 1 yr 8 mos · Berlin, Germany (hybrid)</div>
       </div>
       <ul class="bullets">
@@ -178,11 +178,11 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
         <div class="xp-title">
           <h3 class="xp-name"><a href="https://www.kollex.de/" target="_blank">Kollex</a></h3>
         </div>
-        <div class="xp-role">Junior Backend Developer</div>
+        <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Sep 2020 — Sep 2021 · 1 yr 1 mo · Berlin, Germany (hybrid)</div>
       </div>
       <ul class="bullets">
-        <li><strong>Read and write</strong> files to an AWS S3 bucket, enabling efficient data exchange and integration with external systems</li>
+        <li><strong>Built an S3-based file exchange</strong> to integrate with external systems</li>
         <li>Developed and enhanced multiple features, including performance and reliability improvements</li>
       </ul>
       <div class="tags">
@@ -204,7 +204,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
         <div class="xp-title">
           <h3 class="xp-name"><a href="https://selectra.info/" target="_blank">Selectra</a></h3>
         </div>
-        <div class="xp-role">Junior Backend Developer</div>
+        <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Jun 2019 — Sep 2020 · 1 yr 4 mos · Madrid, Spain (onsite)</div>
       </div>
       <ul class="bullets">
@@ -229,7 +229,7 @@ tagline = "A Kotlin plugin for the JetBrains IDE family"
         <div class="xp-title">
           <h3 class="xp-name"><a href="https://www.smileandlearn.com/" target="_blank">Smile And Learn</a></h3>
         </div>
-        <div class="xp-role">Junior Backend Developer</div>
+        <div class="xp-role">Junior Software Developer</div>
         <div class="xp-meta">Nov 2018 — Jun 2019 · 8 mos · Madrid, Spain (onsite)</div>
       </div>
       <ul class="bullets">
