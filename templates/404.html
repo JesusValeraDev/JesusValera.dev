@@ -28,7 +28,7 @@
   <p class="page-lead">The page you're looking for doesn't exist or has been moved.</p>
   <div class="not-found-actions">
     <a class="btn-primary" href="{{ config.base_url | safe }}"><svg width="16" height="16" aria-hidden="true"><use href="{{ sprite | safe }}#icon-home"></use></svg>Back to home</a>
-    <a class="btn" href="{{ get_url(path='writing') | safe }}">All posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+    <a class="btn" href="{{ get_url(path='writing', trailing_slash=true) | safe }}">All posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
   </div>
 </section>
 

@@ -62,7 +62,7 @@
     <div class="sec-head">
       <h2 id="h-posts" class="sec-label">Latest posts</h2>
       <div class="sec-rule" aria-hidden="true"></div>
-      <a class="sec-link" href="{{ get_url(path='writing') | safe }}">All {{ writing.pages | length }} posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+      <a class="sec-link" href="{{ get_url(path='writing', trailing_slash=true) | safe }}">All {{ writing.pages | length }} posts<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
     </div>
     <div class="card">
       <a class="feat{% if not featured.extra.static_thumbnail %} feat--noimg{% endif %}" href="{{ featured.permalink | safe }}">
@@ -110,7 +110,7 @@
     <div class="sec-head">
       <h2 id="h-reads" class="sec-label">Latest reads</h2>
       <div class="sec-rule" aria-hidden="true"></div>
-      <a class="sec-link" href="{{ get_url(path='bookshelf') | safe }}">All {{ books_data | length }} books<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+      <a class="sec-link" href="{{ get_url(path='bookshelf', trailing_slash=true) | safe }}">All {{ books_data | length }} books<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
     </div>
     <div class="shelf">
       {% set latest_books = books_data | sort(attribute="date") | reverse %}
@@ -135,7 +135,7 @@
     <div class="sec-head">
       <h2 id="h-building" class="sec-label">Building</h2>
       <div class="sec-rule" aria-hidden="true"></div>
-      <a class="sec-link" href="{{ get_url(path='cv') | safe }}#projects">All {{ projects_total }} projects<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
+      <a class="sec-link" href="{{ get_url(path='cv', trailing_slash=true) | safe }}#projects">All {{ projects_total }} projects<svg class="arrow-icon" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-right"></use></svg></a>
     </div>
     <div class="projects">
       {% for project in cv.extra.featured_projects %}

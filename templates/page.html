@@ -45,7 +45,7 @@
   {%- set sprite = get_url(path='assets/icons/sprite.svg') -%}
   <article class="post">
     <div class="post-top">
-      <a class="post-back" href="{{ get_url(path='writing') | safe }}"><svg class="arrow-icon arrow-icon--back" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-left"></use></svg>All posts</a>
+      <a class="post-back" href="{{ get_url(path='writing', trailing_slash=true) | safe }}"><svg class="arrow-icon arrow-icon--back" width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-arrow-left"></use></svg>All posts</a>
       {% set edit_url = config.extra.repo_content_url ~ page.relative_path %}
       <a class="post-edit" href="{{ edit_url }}" target="_blank" rel="noopener" aria-label="Suggest an edit on GitHub" title="Edit on GitHub"><svg width="14" height="14" aria-hidden="true"><use href="{{ sprite | safe }}#icon-pencil"></use></svg>Suggest an edit</a>
     </div>

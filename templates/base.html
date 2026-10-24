@@ -196,7 +196,7 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         {% for menu in config.extra.menu %}
-        <a class="site-nav-link" href="{{ get_url(path=menu.url) | safe }}"{% if active_menu == menu.url %} aria-current="page"{% endif %}>{{ menu.name }}</a>
+        <a class="site-nav-link" href="{{ get_url(path=menu.url, trailing_slash=true) | safe }}"{% if active_menu == menu.url %} aria-current="page"{% endif %}>{{ menu.name }}</a>
         {% endfor %}
         <button id="light-mode" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
           <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-sun"></use></svg>
@@ -230,7 +230,7 @@
         <a class="icon-link" href="{{ get_url(path=config.feed_filename | default(value='atom.xml')) | safe }}" aria-label="Subscribe to RSS feed" title="RSS Feed">
           <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-rss"></use></svg>
         </a>
-        <a class="icon-link" href="{{ get_url(path='legal') | safe }}" aria-label="Legal notice" title="Legal">
+        <a class="icon-link" href="{{ get_url(path='legal', trailing_slash=true) | safe }}" aria-label="Legal notice" title="Legal">
           <svg width="18" height="18" aria-hidden="true"><use href="{{ sprite | safe }}#icon-scale"></use></svg>
         </a>
       </div>
