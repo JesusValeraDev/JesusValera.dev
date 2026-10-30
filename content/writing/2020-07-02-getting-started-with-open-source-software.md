@@ -1,7 +1,7 @@
 +++
 path = "getting-started-with-open-source-software"
 title = "Getting started with Open Source Software"
-description = "Learn why and how to work in OSS"
+description = "Contribute to an open source project on GitHub step by step: fork and clone the repo, add the upstream remote, keep your fork in sync, open a pull request."
 date = 2020-07-02
 aliases = ['2020-07-02-getting-started-with-open-source-software']
 

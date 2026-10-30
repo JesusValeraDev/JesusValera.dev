@@ -1,7 +1,7 @@
 +++
 path = "three-dots-in-php"
 title = "Three dots in PHP"
-description = "first-class callable syntax, variadic function and argument unpacking"
+description = "The three meanings of ... in PHP, with examples: first-class callable syntax, variadic functions and argument unpacking, also known as the splat operator."
 date = 2024-02-09
 aliases = ['2024-02-09-three-dots-in-php']
 

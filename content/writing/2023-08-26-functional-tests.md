@@ -1,7 +1,7 @@
 +++
 path = "functional-tests"
 title = "Functional Tests"
-description = "Differences between Functional tests: unit, integration and e2e tests"
+description = "Unit, integration and end-to-end tests explained: what each checks, how white-box and black-box testing differ, and what stops a test being a unit test."
 date = 2023-08-26
 aliases = ['2023-08-26-functional-tests']
 

@@ -1,7 +1,7 @@
 +++
 path = "git-rebase-onto"
 title = "Git Rebase onto"
-description = "How to solve Git conflicts or changing the branch history when rebasing onto a branch"
+description = "How git rebase --onto works, with diagrams: move a range of commits onto another branch, skip the commits you don't want and keep your Git history linear."
 date = 2024-07-01
 aliases = ['2024-07-01-git-rebase-onto']
 

@@ -1,7 +1,7 @@
 +++
 path = "git-reset-last-commit"
 title = "Git: Reset last commit"
-description = "differences between git reset & git revert"
+description = "Undo your last Git commit with git revert, git reset --soft or git reset --hard: what each does to your changes and how to push after rewriting history."
 date = 2025-03-25
 aliases = ['2025-03-25-git-reset-last-commit']
 

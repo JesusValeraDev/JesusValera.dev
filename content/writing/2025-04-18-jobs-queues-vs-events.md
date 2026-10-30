@@ -1,7 +1,7 @@
 +++
 path = "jobs-queues-vs-events"
 title = "Jobs (Queues) vs. Events"
-description = "Differences between Jobs (queues) and Events"
+description = "Jobs run heavy work in the background or on a schedule; events announce that something happened so other code can react. When to use each, with examples."
 date = 2025-04-18
 aliases = ['2025-04-18-jobs-queues-vs-events']
 

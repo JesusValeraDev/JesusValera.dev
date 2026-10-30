@@ -1,7 +1,7 @@
 +++
 path = "anemic-vs-rich-model"
 title = "Anemic vs Rich Domain Model"
-description = "anemic and rich domain models in PHP with practical examples"
+description = "Anemic vs rich domain models in PHP, with examples: why a class of getters and setters can't protect its own rules, and when moving logic into it pays off."
 date = 2026-04-09
 aliases = ['2026-04-09-anemic-vs-rich-model']
 

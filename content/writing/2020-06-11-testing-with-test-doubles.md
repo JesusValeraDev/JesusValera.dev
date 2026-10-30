@@ -1,7 +1,7 @@
 +++
 path = "testing-with-test-doubles"
 title = "Testing with Test Doubles?"
-description = "Example of the types of Test Doubles: dummy, stub, spy, mock and fake"
+description = "The five kinds of test doubles explained with examples: dummy, stub, spy, mock and fake, what each one does in a test and when you would reach for it."
 date = 2020-06-11
 aliases = ['2020-06-11-testing-with-test-doubles']
 
