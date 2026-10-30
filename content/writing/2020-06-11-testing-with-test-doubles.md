@@ -20,7 +20,7 @@ subtitle = "Dummy, Stub, Spy, Mock or Fake"
 A Test Double is an object that can stand-in for a real object in a test, similar to how a stunt double stands in for an
 actor in a movie.
 
-As I wrote in ["The importance of the Tests in our Software"](/the-importance-of-tests-in-our-software), there are
+As I wrote in ["The importance of the Tests in our Software"](/the-importance-of-tests-in-our-software/), there are
 several types of tests. They are also known as Test Doubles instead of "Mocks".
 
 ### The five types of Test Doubles are:

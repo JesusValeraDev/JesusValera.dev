@@ -20,7 +20,7 @@ production.
 ![programming comic joke](/images/2020-03-20/1.webp)
 
 
-### Verification and Early Detection
+## Verification and Early Detection
 
 Tests **verify correctness and catch bugs before they reach production**. A bug caught during development takes minutes
 to fix, while the same bug in production can take days and cost far more.
@@ -37,7 +37,7 @@ public function test_applies_discount_correctly(): void
 This simple test catches calculation errors, edge cases, and regressions immediately. Without it, bugs slip through to
 QA or production where they're exponentially more expensive to fix.
 
-### Safe Refactoring
+## Safe Refactoring
 
 Tests give you **confidence to improve code structure without breaking functionality**. Without tests, refactoring is
 risky and developers avoid it, leading to code degradation over time.
@@ -55,7 +55,7 @@ return $price * (100 - $percentage) / 100;
 When your test suite passes, you know the refactoring didn't introduce bugs. This enables continuous improvement of the
 codebase.
 
-### Better Design and Documentation
+## Better Design and Documentation
 
 Writing testable code forces you to **break code into smaller, independent components** with clear responsibilities.
 Tests also serve as executable documentation showing how the code should be used.

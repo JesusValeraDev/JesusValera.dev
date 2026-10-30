@@ -17,7 +17,7 @@ The PHP 8.4 version includes four new array functions that will help to write mo
 
 ![interlaken-mountain](/images/2024-11-29/1.webp)
 
-Here are the current PHP `array_*` methods and a small example about how to deal with each of them (similarly as I did in this JavaScript [post](/functional-programming-in-javascript)).
+Here are the current PHP `array_*` methods and a small example about how to deal with each of them (similarly as I did in this JavaScript [post](/functional-programming-in-javascript/)).
 
 ## Imperative vs Declarative
 

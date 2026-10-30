@@ -69,7 +69,7 @@ Once you're done, let’s create a PR!
 (master)$ git remote set-url origin git@github.com:myself/forked.git
 ```
 
-### That's all!
+## That's all!
 
 > If your changes (_or someone else’s_) have been merged in the origin, you need to run **fetch upstream master** and 
 > **git merge upstream/master** in master to be up-to-date!

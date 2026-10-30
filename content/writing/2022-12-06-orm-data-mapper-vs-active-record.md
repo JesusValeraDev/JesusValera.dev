@@ -46,7 +46,7 @@ final class UserCreator
 }
 ```
 
-# Data Mapper
+## Data Mapper
 
 In the data mapper, we need an external class that will update the DB. In PHP for example, Doctrine is the de facto Data
 Mapper ORM for Symfony.
