@@ -72,6 +72,46 @@
     <div class="prose">
       {{ page.content | safe }}
     </div>
+    {%- if "writing/_index.md" in page.ancestors and page.taxonomies.tags %}
+    {#- Rank the other posts by how many tags they share with this one. Tags are compared
+        case-insensitively and "programming", which nearly every post carries, is ignored. -#}
+    {%- set_global own_tags = "|" -%}
+    {%- for tag in page.taxonomies.tags %}{% set_global own_tags = own_tags ~ (tag | lower) ~ "|" %}{% endfor -%}
+    {%- set writing_section = get_section(path="writing/_index.md") -%}
+    {%- set_global has_related = false -%}
+    {%- for other in writing_section.pages -%}
+      {%- if not has_related and other.permalink != page.permalink and other.taxonomies.tags -%}
+        {%- for tag in other.taxonomies.tags -%}
+          {%- if tag | lower != "programming" and "|" ~ (tag | lower) ~ "|" in own_tags %}{% set_global has_related = true %}{% endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor %}
+    {% if has_related %}
+    <section class="sec" aria-labelledby="h-related">
+      <div class="sec-head">
+        <h2 id="h-related" class="sec-label">Related posts</h2>
+        <div class="sec-rule" aria-hidden="true"></div>
+      </div>
+      <div class="card">
+        {%- set_global related_count = 0 -%}
+        {%- for wanted in [7, 6, 5, 4, 3, 2, 1] -%}
+          {%- for other in writing_section.pages -%}
+            {%- if other.permalink != page.permalink and related_count < 3 and other.taxonomies.tags -%}
+              {%- set_global shared = 0 -%}
+              {%- for tag in other.taxonomies.tags -%}
+                {%- if tag | lower != "programming" and "|" ~ (tag | lower) ~ "|" in own_tags %}{% set_global shared = shared + 1 %}{% endif -%}
+              {%- endfor -%}
+              {%- if shared == wanted -%}
+                {{ <post_row post={other} level={3} /> }}
+                {%- set_global related_count = related_count + 1 -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor %}
+      </div>
+    </section>
+    {% endif %}
+    {%- endif %}
     {% if page.lower or page.higher %}
     <nav class="card post-adjacent" aria-label="Adjacent posts">
       {% if page.lower %}

@@ -6,7 +6,7 @@ date = 2024-04-09
 aliases = ['2024-04-09-the-testing-pyramid']
 
 [taxonomies]
-tags = ['Programming', 'Test', 'Cohn', 'Pyramid', 'Unit', 'Integration']
+tags = ['Programming', 'Testing', 'Cohn', 'Pyramid', 'Unit', 'Integration']
 
 [extra]
 static_thumbnail = "/images/2024-04-09/1.webp"

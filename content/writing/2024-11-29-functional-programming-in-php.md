@@ -6,7 +6,7 @@ date = 2024-11-29
 aliases = ['2024-11-29-functional-programming-in-php']
 
 [taxonomies]
-tags = ['PHP', 'array', 'sorting', 'Programming', 'Functional Programming', 'Functions']
+tags = ['PHP', 'arrays', 'sorting', 'Programming', 'Functional Programming', 'Functions']
 
 [extra]
 static_thumbnail = "/images/2024-11-29/1.webp"
