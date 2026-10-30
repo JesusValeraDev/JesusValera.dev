@@ -90,7 +90,8 @@
   "headline": "{{ og_title }}",
   "description": "{{ description }}",
   "url": "{{ site_url | safe }}"{% if page?.date %},
-  "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}"{% endif %},
+  "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
+  "dateModified": "{% if page.updated %}{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%:z') }}{% else %}{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}{% endif %}"{% endif %},
   "author": {
     "@type": "Person",
     "name": "Jesus Valera Reales",
