@@ -10,7 +10,7 @@
     {% set title = "Home" -%}
   {% endif -%}
 
-  {{ <seo config={config} title={title} og_title={og_title} description={section.description} site_url={site_url} /> }}
+  {{ <seo config={config} title={title} og_title={og_title} description={section.description} site_url={site_url} image={image} image_height={image_height} image_width={image_width} /> }}
 {%- endblock seo %}
 
 {% block content %}

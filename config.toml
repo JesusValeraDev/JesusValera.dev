@@ -53,9 +53,9 @@ repo_content_url = "https://github.com/JesusValeraDev/JesusValera.dev/blob/main/
 ## Open Graph + Twitter Cards
 [extra.seo]
 # this image will be used as fallback if a page has no image of its own
-image = "assets/images/profile/jesus-100.webp"
-image_height = 100
-image_width = 100
+image = "assets/images/profile/jesus.webp"
+image_height = 512
+image_width = 512
 og_locale = "en_US"
 
 [extra.seo.twitter]

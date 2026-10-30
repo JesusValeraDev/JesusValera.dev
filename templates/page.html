@@ -21,6 +21,13 @@
 
   {% if page.extra.image -%}
     {% set image = page.extra.image -%}
+  {% elif page.extra.static_thumbnail -%}
+    {%- set thumbnail = get_image_metadata(path=page.extra.static_thumbnail, allow_missing=true) -%}
+    {% if thumbnail -%}
+      {% set image = page.extra.static_thumbnail -%}
+      {% set image_height = thumbnail.height -%}
+      {% set image_width = thumbnail.width -%}
+    {% endif -%}
   {% endif -%}
 
   {% if page.extra.image_height -%}
