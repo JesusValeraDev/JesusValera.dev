@@ -5,7 +5,8 @@
 
   {%- set og_title = page.title -%}
 
-  {% if config.title and page.title -%}
+  {#- Google cuts titles at about 60 characters, so drop the site name before the post's own words -#}
+  {% if config.title and page.title and (page.title ~ " | " ~ config.title) | length <= 60 -%}
     {% set title = page.title ~ " | " ~ config.title -%}
   {% elif page.title -%}
     {% set title = page.title -%}
