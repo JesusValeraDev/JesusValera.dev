@@ -191,6 +191,12 @@
     margin: 0 auto 0.75rem;
     border: 1px solid var(--ui-line);
   }
+  /* Same box as above, computed from the size page.html passes, so nothing shifts when it loads */
+  .prose[data-cover] > p:first-child > img,
+  .prose[data-cover] > img:first-child {
+    width: min(100%, var(--cover-w), calc(420px * var(--cover-ratio)));
+    aspect-ratio: var(--cover-ratio);
+  }
   /* Asides and notes: accent bar, light tint, even padding */
   .prose blockquote {
     margin: 1.5rem 0;

@@ -69,7 +69,12 @@
       {% for tag in page.taxonomies.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
     </div>
     {% endif %}
-    <div class="prose">
+    {#- Pass the cover's size to CSS so its box is reserved before the image loads -#}
+    {%- set cover = false -%}
+    {%- if page.extra.static_thumbnail and ('<img src="' ~ page.extra.static_thumbnail ~ '"') in page.content -%}
+      {%- set cover = get_image_metadata(path=page.extra.static_thumbnail, allow_missing=true) -%}
+    {%- endif %}
+    <div class="prose"{% if cover %} data-cover style="--cover-w: {{ cover.width }}px; --cover-ratio: {{ cover.width }} / {{ cover.height }}"{% endif %}>
       {{ page.content | safe }}
     </div>
     {%- if "writing/_index.md" in page.ancestors and page.taxonomies.tags %}
